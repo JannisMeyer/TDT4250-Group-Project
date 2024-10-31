@@ -28,12 +28,18 @@
     <genClasses ecoreClass="final_project_modeling.ecore#//SearchMenuItemsQuery"/>
     <genClasses ecoreClass="final_project_modeling.ecore#//WinePairingQuery"/>
     <genClasses ecoreClass="final_project_modeling.ecore#//Query">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference final_project_modeling.ecore#//Query/parameter"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute final_project_modeling.ecore#//Query/possiblePreceedingQueries"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference final_project_modeling.ecore#//Query/inputparameter"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference final_project_modeling.ecore#//Query/possibleSucceedingQueries"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference final_project_modeling.ecore#//Query/outputparameter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute final_project_modeling.ecore#//Query/queryString"/>
     </genClasses>
-    <genClasses ecoreClass="final_project_modeling.ecore#//Parameter">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute final_project_modeling.ecore#//Parameter/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute final_project_modeling.ecore#//Parameter/value"/>
+    <genClasses ecoreClass="final_project_modeling.ecore#//InputParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute final_project_modeling.ecore#//InputParameter/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute final_project_modeling.ecore#//InputParameter/value"/>
+    </genClasses>
+    <genClasses ecoreClass="final_project_modeling.ecore#//OutputParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute final_project_modeling.ecore#//OutputParameter/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute final_project_modeling.ecore#//OutputParameter/value"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

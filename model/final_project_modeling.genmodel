@@ -9,5 +9,7 @@
   <foreignModel>final_project_modeling.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="Final_project_modeling" basePackage="no.ntnu.tdt4250" disposableProviderFactory="true"
-      ecorePackage="final_project_modeling.ecore#/"/>
+      ecorePackage="final_project_modeling.ecore#/">
+    <genClasses ecoreClass="final_project_modeling.ecore#//testClass"/>
+  </genPackages>
 </genmodel:GenModel>

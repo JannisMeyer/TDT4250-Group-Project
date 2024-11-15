@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.recipeexplorer.MainActivity">
+
+    <!-- ImageView for recipe image -->
+    <ImageView
+        android:id="@+id/recipeImage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/ic_launcher_foreground"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="16dp"/>
+
+    <!-- TextView for recipe title -->
+    <TextView
+        android:id="@+id/recipeTitle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:text="@string/default_title"
+        android:background="@color/green"
+        app:layout_constraintStart_toEndOf="@+id/recipeImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/recipeImage"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"/>
+
+    <!-- ImageView for preparation time icon -->
+    <ImageView
+        android:id="@+id/preparationTimeIcon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_launcher_foreground"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recipeImage"
+        android:layout_margin="16dp"/>
+
+    <!-- TextView for recipe preparation time -->
+    <TextView
+        android:id="@+id/recipePreparationTime"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="@string/default_preparation_time"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/preparationTimeIcon"
+        app:layout_constraintTop_toBottomOf="@+id/recipeImage" />
+
+    <!-- ImageView for calories icon -->
+    <ImageView
+        android:id="@+id/caloriesIcon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_launcher_foreground"
+        app:layout_constraintEnd_toStartOf="@+id/recipeCalories"
+        app:layout_constraintTop_toBottomOf="@+id/recipeImage"
+        android:layout_margin="16dp"/>
+
+    <!-- TextView for recipe calories -->
+    <TextView
+        android:id="@+id/recipeCalories"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="@string/default_calories"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recipeImage" />
+
+    <View style="@style/Divider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recipeCalories"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- ScrollView for recipes data -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recipePreparationTime">
+
+        <!-- LinearLayout to hold content of ScrollView -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".MainActivity">
+
+            <!-- Headline for Ingredients -->
+            <TextView
+                android:id="@+id/textViewIngredientsHeadline"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/ingredients_headline"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- ingredients TextView -->
+            <TextView
+                android:id="@+id/textViewIngredients"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/default_ingredients"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/textViewIngredientsHeadline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- ingredients unit switch -->
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/mySwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="@string/ingredients_switch_text"
+                android:checked="false"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintTop_toTopOf="@id/textViewIngredientsHeadline"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- headline for instructions -->
+            <TextView
+                android:id="@+id/textViewInstructionsHeadline"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/instructions_headline"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/textViewIngredients"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- instructions TextView -->
+            <TextView
+                android:id="@+id/textViewInstructions"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/default_instructions"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/textViewInstructionsHeadline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- headline for macro nutrients -->
+            <TextView
+                android:id="@+id/textViewMacroNutrientsHeadline"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/macro_nutrients_headline"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/textViewInstructions"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- macro nutrients TextView -->
+            <TextView
+                android:id="@+id/textViewMacroNutrients"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/default_macro_nutrients"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/textViewMacroNutrientsHeadline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- headline for micro nutrients -->
+            <TextView
+                android:id="@+id/textViewMicroNutrientsHeadline"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/micro_nutrients_headline"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/textViewMacroNutrients"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- micro nutrients TextView -->
+            <TextView
+                android:id="@+id/textViewMicroNutrients"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/default_micro_nutrients"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/textViewMicroNutrientsHeadline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

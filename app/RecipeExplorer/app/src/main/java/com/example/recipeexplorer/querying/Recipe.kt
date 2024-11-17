@@ -9,7 +9,7 @@ class Recipe (
     var image: Int,
     var ingredientsMetric: List<String>,
     var ingredientsImperial: List<String>,
-    var description: String,
+    var instructions: String,
     var portions: Int,
     var preparationTime: Int,
     var healthScore: Int,

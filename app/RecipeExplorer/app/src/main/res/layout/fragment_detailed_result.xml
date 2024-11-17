@@ -67,13 +67,13 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:src="@drawable/ic_launcher_foreground"
-        app:layout_constraintEnd_toStartOf="@+id/recipeCalories"
+        app:layout_constraintEnd_toStartOf="@+id/calories"
         app:layout_constraintTop_toBottomOf="@+id/recipeImage"
         android:layout_margin="16dp"/>
 
     <!-- TextView for recipe calories -->
     <TextView
-        android:id="@+id/recipeCalories"
+        android:id="@+id/calories"
         android:layout_width="120dp"
         android:layout_height="30dp"
         android:layout_marginStart="5dp"
@@ -89,7 +89,7 @@
 
     <View style="@style/Divider"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recipeCalories"
+        app:layout_constraintTop_toBottomOf="@+id/calories"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp" />
 
@@ -111,7 +111,7 @@
 
             <!-- Headline for Ingredients -->
             <TextView
-                android:id="@+id/textViewIngredientsHeadline"
+                        android:id="@+id/ingredientsHeadline"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/ingredients_headline"
@@ -130,7 +130,7 @@
                 android:text="@string/default_ingredients"
                 android:textSize="16sp"
                 android:layout_marginTop="8dp"
-                app:layout_constraintTop_toBottomOf="@id/textViewIngredientsHeadline"
+                app:layout_constraintTop_toBottomOf="@id/ingredientsHeadline"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
@@ -142,12 +142,12 @@
                 android:text="@string/ingredients_switch_text_metric"
                 android:checked="false"
                 android:layout_marginEnd="16dp"
-                app:layout_constraintTop_toTopOf="@id/textViewIngredientsHeadline"
+                app:layout_constraintTop_toTopOf="@id/ingredientsHeadline"
                 app:layout_constraintEnd_toEndOf="parent" />
 
             <!-- headline for instructions -->
             <TextView
-                android:id="@+id/textViewInstructionsHeadline"
+                    android:id="@+id/instructionsHeadline"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/instructions_headline"
@@ -160,38 +160,38 @@
 
             <!-- instructions TextView -->
             <TextView
-                android:id="@+id/textViewInstructions"
+                android:id="@+id/instructions"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/default_instructions"
                 android:textSize="16sp"
                 android:layout_marginTop="8dp"
-                app:layout_constraintTop_toBottomOf="@id/textViewInstructionsHeadline"
+                app:layout_constraintTop_toBottomOf="@id/instructionsHeadline"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
             <!-- headline for macro nutrients -->
             <TextView
-                android:id="@+id/textViewMacroNutrientsHeadline"
+                android:id="@+id/macroNutrientsHeadline"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/macro_nutrients_headline"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:layout_marginTop="16dp"
-                app:layout_constraintTop_toBottomOf="@id/textViewInstructions"
+                app:layout_constraintTop_toBottomOf="@id/instructions"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
             <!-- macro nutrients TextView -->
             <TextView
-                android:id="@+id/textViewMacroNutrients"
+                android:id="@+id/macroNutrients"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/default_macro_nutrients"
                 android:textSize="16sp"
                 android:layout_marginTop="8dp"
-                app:layout_constraintTop_toBottomOf="@id/textViewMacroNutrientsHeadline"
+                app:layout_constraintTop_toBottomOf="@id/macroNutrientsHeadline"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
@@ -203,31 +203,31 @@
                 android:text="@string/nutrient_switch_text_amount"
                 android:checked="false"
                 android:layout_marginEnd="16dp"
-                app:layout_constraintTop_toTopOf="@id/textViewMacroNutrientsHeadline"
+                app:layout_constraintTop_toTopOf="@id/macroNutrientsHeadline"
                 app:layout_constraintEnd_toEndOf="parent" />
 
             <!-- headline for micro nutrients -->
             <TextView
-                android:id="@+id/textViewMicroNutrientsHeadline"
+                android:id="@+id/microNutrientsHeadline"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/micro_nutrients_headline"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:layout_marginTop="16dp"
-                app:layout_constraintTop_toBottomOf="@id/textViewMacroNutrients"
+                app:layout_constraintTop_toBottomOf="@id/macroNutrients"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
             <!-- micro nutrients TextView -->
             <TextView
-                android:id="@+id/textViewMicroNutrients"
+                android:id="@+id/microNutrients"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/default_micro_nutrients"
                 android:textSize="16sp"
                 android:layout_marginTop="8dp"
-                app:layout_constraintTop_toBottomOf="@id/textViewMicroNutrientsHeadline"
+                app:layout_constraintTop_toBottomOf="@id/microNutrientsHeadline"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent" />

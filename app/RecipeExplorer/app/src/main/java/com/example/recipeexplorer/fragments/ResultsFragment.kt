@@ -6,13 +6,22 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.recipeexplorer.R
 import com.example.recipeexplorer.adapter.ResultsAdapter
 import com.example.recipeexplorer.databinding.FragmentResultsBinding
+import com.example.recipeexplorer.querying.FetchedRecipes
+import com.example.recipeexplorer.querying.Recipe
 
-class ResultsFragment : Fragment() {
+interface OnItemClickListener {
+    fun onItemClicked(item: Recipe)
+}
+
+class ResultsFragment : Fragment(), OnItemClickListener {
 
     private var _binding: FragmentResultsBinding? = null
     private val binding get() = _binding!!
+
+    private var fetchedRecipes = FetchedRecipes.getInstance()?.recipes
 
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?,
@@ -35,11 +44,24 @@ class ResultsFragment : Fragment() {
 
     private fun showResults() {
 
-        lateinit var recipes:MutableList<Recipe>
-
         //supply recyclerView with actual recipe data
         val recyclerView = binding.resultsRecyclerView
         recyclerView.layoutManager = LinearLayoutManager(context)
-        recyclerView.adapter = ResultsAdapter(recipes)
+        recyclerView.adapter = fetchedRecipes?.let { ResultsAdapter(it, this) }
+    }
+
+    override fun onItemClicked(item: Recipe) {
+
+        // pass id of clicked recipe and launch detailed view fragment
+        val targetFragment = DetailedResultFragment().apply {
+            arguments = Bundle().apply {
+                putString("ID", item.id.toString())
+            }
+        }
+
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, targetFragment)
+            .addToBackStack(null)
+            .commit()
     }
 }

@@ -7,12 +7,17 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
+import com.example.recipeexplorer.R
 import com.example.recipeexplorer.databinding.FragmentSearchBinding
+import com.example.recipeexplorer.querying.FetchedRecipes
 
 class SearchFragment : Fragment() {
 
     private var _binding: FragmentSearchBinding? = null
     private val binding get() = _binding!!
+    private var searchParameters : MutableList<String>? = null
+
+    var fetchedRecipes = FetchedRecipes.getInstance()
 
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?,
@@ -27,12 +32,20 @@ class SearchFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // get search button from binding
-        val searchButton = binding.searchButton
-
         // setup search button logic
-        searchButton.setOnClickListener {
+        binding.searchButton.setOnClickListener {
 
+            // TODO: call method which fetched recipes from spoonacular
+            // fetchedRecipes = func(searchParameters)
+
+            // launch results fragment (fragments are not launched via intents but rather via
+            // the fragment manager
+            val newFragment = ResultsFragment()
+
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, newFragment)
+                .addToBackStack(null)
+                .commit()
         }
 
         // get spinners from binding
@@ -72,7 +85,8 @@ class SearchFragment : Fragment() {
                     position: Int,
                     id: Long
                 ) {
-                    // handle selection
+                    // add selected option to search parameters
+                    searchParameters?.add(parent?.getItemAtPosition(position).toString())
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -90,7 +104,8 @@ class SearchFragment : Fragment() {
                     position: Int,
                     id: Long
                 ) {
-                    // handle selection
+                    // add selected option to search parameters
+                    searchParameters?.add(parent?.getItemAtPosition(position).toString())
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>?) {

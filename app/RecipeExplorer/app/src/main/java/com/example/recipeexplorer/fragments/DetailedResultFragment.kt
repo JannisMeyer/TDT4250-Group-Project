@@ -50,30 +50,30 @@ class DetailedResultFragment : Fragment() {
             binding.recipeImage.imageAlpha = shownRecipe.image
             binding.recipePreparationTime.text = shownRecipe.preparationTime.toString()
             binding.calories.text = shownRecipe.calories.toString()
-            binding.textViewIngredients.text = shownRecipe.ingredientsMetric.toString()
+            binding.textViewIngredients.text = shownRecipe.ingredientsMetric.joinToString(separator = "\n")
             binding.instructions.text = shownRecipe.instructions
-            binding.macroNutrients.text = shownRecipe.macroNutrientsAmount.toString()
-            binding.microNutrients.text = shownRecipe.microNutrientsAmount.toString()
+            binding.macroNutrients.text = shownRecipe.macroNutrientsAmount.joinToString(separator = "\n")
+            binding.microNutrients.text = shownRecipe.microNutrientsAmount.joinToString(separator = "\n")
 
             // bind and set on-click logic for unit switch
             binding.unitSwitch.setOnCheckedChangeListener { _, isChecked ->
                 if (isChecked) {
-                    binding.textViewIngredients.text = shownRecipe.ingredientsImperial.toString()
+                    binding.textViewIngredients.text = shownRecipe.ingredientsImperial.joinToString(separator = "\n")
                 }
                 else {
-                    binding.textViewIngredients.text = shownRecipe.ingredientsMetric.toString()
+                    binding.textViewIngredients.text = shownRecipe.ingredientsMetric.joinToString(separator = "\n")
                 }
             }
 
             // bind and set on-click logic for nutrient switch
             binding.nutrientSwitch.setOnCheckedChangeListener { _, isChecked ->
                 if (isChecked) {
-                    binding.macroNutrients.text = shownRecipe.macroNutrientsPercentage.toString()
-                    binding.microNutrients.text = shownRecipe.microNutrientsPercentage.toString()
+                    binding.macroNutrients.text = shownRecipe.macroNutrientsPercentage.joinToString(separator = "\n")
+                    binding.microNutrients.text = shownRecipe.microNutrientsPercentage.joinToString(separator = "\n")
                 }
                 else {
-                    binding.macroNutrients.text = shownRecipe.macroNutrientsAmount.toString()
-                    binding.microNutrients.text = shownRecipe.microNutrientsAmount.toString()
+                    binding.macroNutrients.text = shownRecipe.macroNutrientsAmount.joinToString(separator = "\n")
+                    binding.microNutrients.text = shownRecipe.microNutrientsAmount.joinToString(separator = "\n")
                 }
             }
         }

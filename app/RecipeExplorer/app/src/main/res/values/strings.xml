@@ -19,5 +19,5 @@
     <string name="macro_nutrients_headline">Macro Nutrients</string>
     <string name="micro_nutrients_headline">Micro Nutrients</string>
     <string name="nutrient_switch_text_amount">Amount</string>
-    <string name="nutrient_switch_text_percentage">Percentage</string>
+    <string name="nutrient_switch_text_percentage">Daily Percentage</string>
 </resources>

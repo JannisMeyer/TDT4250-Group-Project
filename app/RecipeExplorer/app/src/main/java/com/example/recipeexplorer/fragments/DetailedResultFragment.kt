@@ -14,7 +14,7 @@ class DetailedResultFragment : Fragment() {
     private var _binding: FragmentDetailedResultBinding? = null
     private val binding get() = _binding!!
 
-    private var fetchedRecipes = FetchedRecipes.getInstance()?.recipes
+    private var fetchedRecipes = FetchedRecipes.getInstance()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,7 +35,7 @@ class DetailedResultFragment : Fragment() {
         var shownRecipe : Recipe? = null
 
         // get recipe corresponding to id
-        for (recipe in fetchedRecipes!!) {
+        for (recipe in fetchedRecipes?.recipes!!) {
             if (id != null) {
                 if (recipe.id == id.toInt()) {
                     shownRecipe = recipe

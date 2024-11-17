@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.recipeexplorer.R
@@ -21,7 +22,7 @@ class ResultsFragment : Fragment(), OnItemClickListener {
     private var _binding: FragmentResultsBinding? = null
     private val binding get() = _binding!!
 
-    private var fetchedRecipes = FetchedRecipes.getInstance()?.recipes
+    private var fetchedRecipes = FetchedRecipes.getInstance()
 
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?,
@@ -47,10 +48,12 @@ class ResultsFragment : Fragment(), OnItemClickListener {
         //supply recyclerView with actual recipe data
         val recyclerView = binding.resultsRecyclerView
         recyclerView.layoutManager = LinearLayoutManager(context)
-        recyclerView.adapter = fetchedRecipes?.let { ResultsAdapter(it, this) }
+        recyclerView.adapter = fetchedRecipes?.recipes?.let { ResultsAdapter(it, this) }
     }
 
     override fun onItemClicked(item: Recipe) {
+
+        Toast.makeText(context, "click", Toast.LENGTH_SHORT).show()
 
         // pass id of clicked recipe and launch detailed view fragment
         val targetFragment = DetailedResultFragment().apply {

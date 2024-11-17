@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import com.example.recipeexplorer.R
 import com.example.recipeexplorer.databinding.FragmentSearchBinding
 import com.example.recipeexplorer.querying.FetchedRecipes
+import com.example.recipeexplorer.querying.Recipe
 
 class SearchFragment : Fragment() {
 
@@ -37,6 +38,26 @@ class SearchFragment : Fragment() {
 
             // TODO: call method which fetched recipes from spoonacular
             // fetchedRecipes = func(searchParameters)
+            val sampleRecipes: MutableList<Recipe> = mutableListOf(
+                Recipe(
+                    id = 1,
+                    type = "Main Course",
+                    title = "Spaghetti Bolognese",
+                    image = R.drawable.ic_launcher_background,
+                    ingredientsMetric = listOf("200g spaghetti", "100g minced beef", "50ml tomato sauce"),
+                    ingredientsImperial = listOf("7oz spaghetti", "3.5oz minced beef", "1.7fl oz tomato sauce"),
+                    instructions = "Boil spaghetti. Cook minced beef. Mix with tomato sauce. Serve hot.",
+                    portions = 2,
+                    preparationTime = 30,
+                    healthScore = 85,
+                    calories = 400,
+                    macroNutrientsAmount = listOf("20g protein", "10g fat", "50g carbs"),
+                    microNutrientsAmount = listOf("10mg vitamin C", "50mg calcium"),
+                    macroNutrientsPercentage = listOf("20%", "10%", "50%"),
+                    microNutrientsPercentage = listOf("5%", "10%")
+                )
+            )
+            fetchedRecipes?.recipes = sampleRecipes
 
             // launch results fragment (fragments are not launched via intents but rather via
             // the fragment manager

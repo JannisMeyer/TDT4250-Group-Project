@@ -42,21 +42,9 @@ class ResultsAdapter(private val data: List<Recipe>,
         }
     }
 
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
-
-        private val context: Context = itemView.context
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         //connect recycler view item with recipe title as button
         var recipeTitle: TextView = itemView.findViewById(R.id.recipe_title)
-
-        init {
-
-            //set on-click logic for an item
-            recipeTitle.setOnClickListener(this)
-        }
-
-        override fun onClick(p0: View?) {
-            // has to be there but no use here
-        }
     }
 }

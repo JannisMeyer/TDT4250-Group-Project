@@ -11,13 +11,13 @@
     <string name="default_ingredients">Ingredient 1\nIngredient 2\nIngredient 3</string>
     <string name="default_instructions">bla bla bla</string>
     <string name="default_macro_nutrients">Carbs: 100g\nFat: 30g\nProtein: 30mg\nFiber: 10g</string>
-    <string name="default_micro_nutrients">Vitamin C: 20mg\nPotassium: 20mg\nCalcium: 20mg</string>
+    <string name="default_vitamins">Vitamin C: 20mg\nPotassium: 20mg\nCalcium: 20mg</string>
     <string name="ingredients_headline">Ingredients</string>
     <string name="ingredients_switch_text_imperial">Imperial</string>
     <string name="ingredients_switch_text_metric">Metric</string>
     <string name="instructions_headline">Instructions</string>
     <string name="macro_nutrients_headline">Macro Nutrients</string>
-    <string name="micro_nutrients_headline">Micro Nutrients</string>
+    <string name="vitamins_headline">Vitamins</string>
     <string name="nutrient_switch_text_amount">Amount</string>
     <string name="nutrient_switch_text_percentage">Daily Percentage</string>
 </resources>

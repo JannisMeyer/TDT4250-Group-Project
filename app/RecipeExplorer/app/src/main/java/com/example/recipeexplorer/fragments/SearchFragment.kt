@@ -37,7 +37,7 @@ class SearchFragment : Fragment() {
         binding.searchButton.setOnClickListener {
 
             // TODO: call method which fetched recipes from spoonacular
-            // fetchedRecipes = func(searchParameters)
+            // fetchedRecipes = func(searchParameters, nr)
             val sampleRecipes: MutableList<Recipe> = mutableListOf(
                 Recipe(
                     id = 1,
@@ -49,12 +49,11 @@ class SearchFragment : Fragment() {
                     instructions = "Boil spaghetti. Cook minced beef. Mix with tomato sauce. Serve hot.",
                     portions = 2,
                     preparationTime = 30,
-                    healthScore = 85,
                     calories = 400,
                     macroNutrientsAmount = listOf("20g protein", "10g fat", "50g carbs"),
-                    microNutrientsAmount = listOf("10mg vitamin C", "50mg calcium"),
+                    vitaminsAmount = listOf("10mg vitamin C", "50mg calcium"),
                     macroNutrientsPercentage = listOf("20%", "10%", "50%"),
-                    microNutrientsPercentage = listOf("5%", "10%")
+                    vitaminsPercentage = listOf("5%", "10%")
                 )
             )
             fetchedRecipes?.recipes = sampleRecipes

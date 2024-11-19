@@ -53,7 +53,7 @@ class DetailedResultFragment : Fragment() {
             binding.textViewIngredients.text = shownRecipe.ingredientsMetric.joinToString(separator = "\n")
             binding.instructions.text = shownRecipe.instructions
             binding.macroNutrients.text = shownRecipe.macroNutrientsAmount.joinToString(separator = "\n")
-            binding.microNutrients.text = shownRecipe.microNutrientsAmount.joinToString(separator = "\n")
+            binding.vitamins.text = shownRecipe.vitaminsAmount.joinToString(separator = "\n")
 
             // bind and set on-click logic for unit switch
             binding.unitSwitch.setOnCheckedChangeListener { _, isChecked ->
@@ -69,11 +69,11 @@ class DetailedResultFragment : Fragment() {
             binding.nutrientSwitch.setOnCheckedChangeListener { _, isChecked ->
                 if (isChecked) {
                     binding.macroNutrients.text = shownRecipe.macroNutrientsPercentage.joinToString(separator = "\n")
-                    binding.microNutrients.text = shownRecipe.microNutrientsPercentage.joinToString(separator = "\n")
+                    binding.vitamins.text = shownRecipe.vitaminsPercentage.joinToString(separator = "\n")
                 }
                 else {
                     binding.macroNutrients.text = shownRecipe.macroNutrientsAmount.joinToString(separator = "\n")
-                    binding.microNutrients.text = shownRecipe.microNutrientsAmount.joinToString(separator = "\n")
+                    binding.vitamins.text = shownRecipe.vitaminsAmount.joinToString(separator = "\n")
                 }
             }
         }

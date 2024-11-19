@@ -12,12 +12,11 @@ class Recipe (
     var instructions: String,
     var portions: Int,
     var preparationTime: Int,
-    var healthScore: Int,
     var calories: Int,
 
     // extra information
     var macroNutrientsAmount: List<String>,
-    var microNutrientsAmount: List<String>,
+    var vitaminsAmount: List<String>,
     var macroNutrientsPercentage: List<String>,
-    var microNutrientsPercentage: List<String>
+    var vitaminsPercentage: List<String>
 )

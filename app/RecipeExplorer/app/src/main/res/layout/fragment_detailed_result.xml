@@ -206,12 +206,12 @@
                 app:layout_constraintTop_toTopOf="@id/macroNutrientsHeadline"
                 app:layout_constraintEnd_toEndOf="parent" />
 
-            <!-- headline for micro nutrients -->
+            <!-- headline for vitamins -->
             <TextView
-                android:id="@+id/microNutrientsHeadline"
+                android:id="@+id/vitaminsHeadline"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/micro_nutrients_headline"
+                android:text="@string/vitamins_headline"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:layout_marginTop="16dp"
@@ -219,15 +219,15 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
-            <!-- micro nutrients TextView -->
+            <!-- vitamins TextView -->
             <TextView
-                android:id="@+id/microNutrients"
+                android:id="@+id/vitamins"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/default_micro_nutrients"
+                android:text="@string/default_vitamins"
                 android:textSize="16sp"
                 android:layout_marginTop="8dp"
-                app:layout_constraintTop_toBottomOf="@id/microNutrientsHeadline"
+                app:layout_constraintTop_toBottomOf="@id/vitaminsHeadline"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent" />

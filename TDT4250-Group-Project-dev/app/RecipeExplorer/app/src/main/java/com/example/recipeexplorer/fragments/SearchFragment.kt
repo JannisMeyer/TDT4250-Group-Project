@@ -57,7 +57,7 @@ class SearchFragment : Fragment() {
                 )
             )
             fetchedRecipes?.recipes = sampleRecipes
-
+                Thread.sleep(2000) // otherways recipe list is empty, and I need to reload page.
             // launch results fragment (fragments are not launched via intents but rather via
             // the fragment manager
             val newFragment = ResultsFragment()

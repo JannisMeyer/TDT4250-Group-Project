@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/no.ntnu.tdt4250.final_project_modeling/src-gen"
+    creationIcons="false" editDirectory="/no.ntnu.tdt4250.final_project_modeling.edit/src-gen"
+    editorDirectory="/no.ntnu.tdt4250.final_project_modeling.editor/src-gen" modelPluginID="no.ntnu.tdt4250.final_project_modeling"
+    modelName="Final_project_modeling" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="21.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>final_project_modeling.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Final_project_modeling" basePackage="no.ntnu.tdt4250" disposableProviderFactory="true"
+      ecorePackage="final_project_modeling.ecore#/">
+    <genClasses ecoreClass="final_project_modeling.ecore#//App">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference final_project_modeling.ecore#//App/screen"/>
+    </genClasses>
+    <genClasses ecoreClass="final_project_modeling.ecore#//Screen">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference final_project_modeling.ecore#//Screen/query"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute final_project_modeling.ecore#//Screen/name"/>
+    </genClasses>
+    <genClasses ecoreClass="final_project_modeling.ecore#//ComplexSearchQuery"/>
+    <genClasses ecoreClass="final_project_modeling.ecore#//SearchRecipesByIngredientsQuery"/>
+    <genClasses ecoreClass="final_project_modeling.ecore#//GetRecipeInformationQuery"/>
+    <genClasses ecoreClass="final_project_modeling.ecore#//GetRandomRecipesQuery"/>
+    <genClasses ecoreClass="final_project_modeling.ecore#//SearchIngredientsQuery"/>
+    <genClasses ecoreClass="final_project_modeling.ecore#//ConvertAmountsQuery"/>
+    <genClasses ecoreClass="final_project_modeling.ecore#//GetIngredientSubstitutes"/>
+    <genClasses ecoreClass="final_project_modeling.ecore#//SearchMenuItemsQuery"/>
+    <genClasses ecoreClass="final_project_modeling.ecore#//WinePairingQuery"/>
+    <genClasses ecoreClass="final_project_modeling.ecore#//Query">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference final_project_modeling.ecore#//Query/inputparameter"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference final_project_modeling.ecore#//Query/possibleSucceedingQueries"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference final_project_modeling.ecore#//Query/outputparameter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute final_project_modeling.ecore#//Query/queryString"/>
+    </genClasses>
+    <genClasses ecoreClass="final_project_modeling.ecore#//InputParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute final_project_modeling.ecore#//InputParameter/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute final_project_modeling.ecore#//InputParameter/value"/>
+    </genClasses>
+    <genClasses ecoreClass="final_project_modeling.ecore#//OutputParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute final_project_modeling.ecore#//OutputParameter/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute final_project_modeling.ecore#//OutputParameter/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

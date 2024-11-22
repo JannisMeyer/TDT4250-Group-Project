@@ -6,7 +6,7 @@ class Recipe (
     var id: Int = 0,
     var type: String,
     var title: String,
-    var image: Int,
+    var image: String,
     var ingredientsMetric: List<String>,
     var ingredientsImperial: List<String>,
     var instructions: String,

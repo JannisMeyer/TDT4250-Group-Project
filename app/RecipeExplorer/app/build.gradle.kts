@@ -40,6 +40,12 @@ android {
 }
 
 dependencies {
+    testImplementation("org.jetbrains.kotlin:kotlin-test")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.2")
+    implementation("com.squareup.okhttp3:okhttp:4.9.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1")
+    implementation("org.xerial:sqlite-jdbc:3.36.0.3")
+    implementation ("org.jetbrains.kotlin:kotlin-reflect:1.9.23")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

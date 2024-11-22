@@ -47,7 +47,8 @@ class DetailedResultFragment : Fragment() {
 
             // pass recipe data to UI
             binding.recipeTitle.text = shownRecipe.title
-            binding.recipeImage.imageAlpha = shownRecipe.image
+            //TODO:
+            //binding.recipeImage.imageAlpha = shownRecipe.image
             binding.recipePreparationTime.text = shownRecipe.preparationTime.toString()
             binding.calories.text = shownRecipe.calories.toString()
             binding.textViewIngredients.text = shownRecipe.ingredientsMetric.joinToString(separator = "\n")

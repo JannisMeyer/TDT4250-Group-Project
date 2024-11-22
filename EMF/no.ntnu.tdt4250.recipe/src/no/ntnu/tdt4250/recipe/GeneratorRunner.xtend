@@ -1,4 +1,4 @@
-package no.ntnu.tdt4250.recipe.xtend
+package no.ntnu.tdt4250.recipe
 
 import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.ecore.resource.Resource
@@ -7,10 +7,9 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl
 import java.io.FileWriter
 import no.ntnu.tdt4250.recipe.Page
-import no.ntnu.tdt4250.recipe.xtend.RecipeLayoutGenerator
+import no.ntnu.tdt4250.recipe.RecipeLayoutGenerator
 import org.eclipse.emf.ecore.EPackage
 import no.ntnu.tdt4250.recipe.impl.RecipePackageImpl
-import java.io.File
 
 class GeneratorRunner {
     
@@ -24,8 +23,8 @@ class GeneratorRunner {
 		// val folder = args.get(1)
 	
 		// We hardcode them here, but you can uncomment the code above otherwise
-		val model = "../../../../../../../no.ntnu.tdt4250.recipe/WithoutImage.recipe"
-		val folder = "../../../../../../"
+		val model = "WithoutImage.recipe"
+		val folder = "src/generated"
 	
 		registerMetamodel
 		registerResourceFactory
@@ -55,9 +54,7 @@ class GeneratorRunner {
 
         // Load a resource (replace the path with the correct one)
         // Relative paths are relative to the project root folder.
-        val file = new File(filePath);
-        val absolutePath = file.absolutePath
-        val uri = URI.createFileURI(absolutePath);
+        val uri = URI.createFileURI(filePath);
         
         println("> Loading: " + uri);
         val resource = resSet.getResource(uri, true);

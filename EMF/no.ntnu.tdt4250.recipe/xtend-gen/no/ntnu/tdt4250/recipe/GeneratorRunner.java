@@ -1,10 +1,7 @@
-package no.ntnu.tdt4250.recipe.xtend;
+package no.ntnu.tdt4250.recipe;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.util.Map;
-import no.ntnu.tdt4250.recipe.Page;
-import no.ntnu.tdt4250.recipe.RecipePackage;
 import no.ntnu.tdt4250.recipe.impl.RecipePackageImpl;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -21,8 +18,8 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 @SuppressWarnings("all")
 public class GeneratorRunner {
   public static void main(final String[] args) {
-    final String model = "../../../../../../../no.ntnu.tdt4250.recipe/WithoutImage.recipe";
-    final String folder = "../../../../../../";
+    final String model = "WithoutImage.recipe";
+    final String folder = "src/generated";
     GeneratorRunner.registerMetamodel();
     GeneratorRunner.registerResourceFactory();
     final Page page = GeneratorRunner.loadModel(model);
@@ -57,9 +54,7 @@ public class GeneratorRunner {
     Page _xblockexpression = null;
     {
       final ResourceSet resSet = new ResourceSetImpl();
-      final File file = new File(filePath);
-      final String absolutePath = file.getAbsolutePath();
-      final URI uri = URI.createFileURI(absolutePath);
+      final URI uri = URI.createFileURI(filePath);
       InputOutput.<String>println(("> Loading: " + uri));
       final Resource resource = resSet.getResource(uri, true);
       InputOutput.<String>println("> Loaded.");

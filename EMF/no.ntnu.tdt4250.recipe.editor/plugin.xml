@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated recipe -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="no.ntnu.tdt4250.recipe.presentation.RecipeModelWizardID"
+            name="%_UI_RecipeModelWizard_label"
+            class="no.ntnu.tdt4250.recipe.presentation.RecipeModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/RecipeModelFile.gif">
+         <description>%_UI_RecipeModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated recipe -->
+      <editor
+            id="no.ntnu.tdt4250.recipe.presentation.RecipeEditorID"
+            name="%_UI_RecipeEditor_label"
+            icon="icons/full/obj16/RecipeModelFile.gif"
+            extensions="recipe"
+            class="no.ntnu.tdt4250.recipe.presentation.RecipeEditor"
+            contributorClass="no.ntnu.tdt4250.recipe.presentation.RecipeActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

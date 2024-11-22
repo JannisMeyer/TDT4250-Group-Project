@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<recipe:Page xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:recipe="http://www.example.org/recipe" instructions="//@section.1" ingredients="//@section.0" name="Example1">
+  <section xsi:type="recipe:Ingredients" orderNumber="3">
+    <unittoggle/>
+  </section>
+  <section xsi:type="recipe:Instructions" orderNumber="2"/>
+  <section xsi:type="recipe:Nutrients" orderNumber="1">
+    <percentagetoggle/>
+    <vitamins>
+      <Vitamin>VITAMIN_B1</Vitamin>
+      <Vitamin>VITAMIN_B2</Vitamin>
+      <Vitamin>VITAMIN_B3</Vitamin>
+      <Vitamin>VITAMIN_B5</Vitamin>
+    </vitamins>
+  </section>
+  <header>
+    <basicinformation/>
+    <recipetitle/>
+    <image/>
+  </header>
+</recipe:Page>

@@ -31,9 +31,13 @@
                 android:layout_weight="1"
                 android:layout_marginStart="16dp"
                 android:gravity="center"
-                android:textSize="30sp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="12sp"
+                android:autoSizeMaxTextSize="30sp"
+                android:autoSizeStepGranularity="2sp"
                 android:background="@color/green"
-                android:text="@string/default_title"/>
+                android:text="@string/default_title"
+                android:padding="10dp"/>
         </LinearLayout>
 
         <!-- Time and Calories -->
@@ -130,7 +134,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="48dp"
                         android:checked="false"
-                        android:text="@string/ingredients_switch_text_imperial"/>
+                        android:text="@string/ingredients_switch_text_metric"/>
                 </LinearLayout>
 
                 <TextView
@@ -175,52 +179,76 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
+                <!-- Header row with Nutrients title and toggle -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
 
                     <TextView
-                        android:id="@+id/macroNutrientsHeadline"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:textSize="18sp"
+                        android:textSize="20sp"
                         android:textStyle="bold"
-                        android:text="@string/macro_nutrients_headline"/>
+                        android:text="@string/nutrients_title_text"/>
 
                     <androidx.appcompat.widget.SwitchCompat
                         android:id="@+id/nutrientSwitch"
                         android:layout_width="wrap_content"
                         android:layout_height="48dp"
                         android:checked="false"
-                        android:text="@string/nutrient_switch_text_percentage"/>
+                        android:text="@string/nutrient_switch_text_amount"/>
                 </LinearLayout>
 
-                <TextView
-                    android:id="@+id/macroNutrients"
+                <!-- Macros Section -->
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:textSize="16sp"
-                    android:text="@string/default_macro_nutrients"/>
+                    android:orientation="vertical"
+                    android:layout_marginTop="16dp">
 
-                <TextView
-                    android:id="@+id/vitaminsHeadline"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:text="@string/vitamins_headline"/>
+                    <TextView
+                        android:id="@+id/macroNutrientsHeadline"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:text="@string/macro_nutrients_headline"/>
 
-                <TextView
-                    android:id="@+id/vitamins"
+                    <TextView
+                        android:id="@+id/macroNutrients"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textSize="16sp"
+                        android:text="@string/default_macro_nutrients"/>
+                </LinearLayout>
+
+                <!-- Vitamins Section -->
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:textSize="16sp"
-                    android:text="@string/default_vitamins"/>
+                    android:orientation="vertical"
+                    android:layout_marginTop="16dp">
+
+                    <TextView
+                        android:id="@+id/vitaminsHeadline"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:text="@string/vitamins_headline"/>
+
+                    <TextView
+                        android:id="@+id/vitamins"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textSize="16sp"
+                        android:text="@string/default_vitamins"/>
+                </LinearLayout>
             </LinearLayout>
 
         </LinearLayout>

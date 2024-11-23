@@ -66,7 +66,11 @@ class RecipeLayoutGenerator {
                     android:layout_marginStart="16dp"
 					«ENDIF»
                     android:gravity="center"
-                    android:textSize="30sp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="12sp"
+                    android:autoSizeMaxTextSize="30sp"
+                    android:autoSizeStepGranularity="2sp"
+                    android:padding="10dp"
                     android:background="@color/green"
                     android:text="@string/default_title"/>
             </LinearLayout>
@@ -203,66 +207,90 @@ class RecipeLayoutGenerator {
     '''
     
     def dispatch generateSection(Nutrients nutrients) '''
-        <!-- Nutrients Section -->
+    <!-- Nutrients Section -->
+    <LinearLayout
+        android:id="@+id/nutrientsSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header row with Nutrients title and toggle -->
         <LinearLayout
-            android:id="@+id/nutrientsSection"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
-            
-            <LinearLayout
-                android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                
-                <TextView
-                    android:id="@+id/macroNutrientsHeadline"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:text="@string/macro_nutrients_headline"/>
-                
-                «IF nutrients.percentagetoggle !== null»
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="Nutrients"/>
+
+            «IF nutrients.percentagetoggle !== null»
                 <androidx.appcompat.widget.SwitchCompat
                     android:id="@+id/nutrientSwitch"
                     android:layout_width="wrap_content"
                     android:layout_height="48dp"
                     android:checked="false"
-                    android:text="@string/nutrient_switch_text_percentage"/>
-                «ENDIF»
-            </LinearLayout>
-            
-            «IF nutrients.macronutrients !== null»
-            <TextView
-                android:id="@+id/macroNutrients"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:textSize="16sp"
-                android:text="@string/default_macro_nutrients"/>
-            «ENDIF»
-            
-            «IF nutrients.vitamins !== null»
-            <TextView
-                android:id="@+id/vitaminsHeadline"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:text="@string/vitamins_headline"/>
-            
-            <TextView
-                android:id="@+id/vitamins"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:textSize="16sp"
-                android:text="@string/default_vitamins"/>
+                    android:text="@string/nutrient_switch_text_amount"/>
             «ENDIF»
         </LinearLayout>
-    '''
+
+        «IF nutrients.macronutrients !== null»
+            <!-- Macros Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:id="@+id/macroNutrientsHeadline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:text="@string/macro_nutrients_headline"/>
+
+                <TextView
+                    android:id="@+id/macroNutrients"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textSize="16sp"
+                    android:text="@string/default_macro_nutrients"/>
+            </LinearLayout>
+        «ENDIF»
+
+        «IF nutrients.vitamins !== null»
+            <!-- Vitamins Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:id="@+id/vitaminsHeadline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:text="@string/vitamins_headline"/>
+
+                <TextView
+                    android:id="@+id/vitamins"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textSize="16sp"
+                    android:text="@string/default_vitamins"/>
+            </LinearLayout>
+        «ENDIF»
+    </LinearLayout>
+'''
 }

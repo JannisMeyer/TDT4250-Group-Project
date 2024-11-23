@@ -27,10 +27,7 @@ public class GeneratorRunner {
     String _string = generator.generateLayout(page).toString();
     StringConcatenation _builder = new StringConcatenation();
     _builder.append(folder);
-    _builder.append("/");
-    String _name = page.getName();
-    _builder.append(_name);
-    _builder.append(".xml");
+    _builder.append("/fragment_detailed_result.xml");
     GeneratorRunner.writeText(_string, _builder.toString());
   }
 

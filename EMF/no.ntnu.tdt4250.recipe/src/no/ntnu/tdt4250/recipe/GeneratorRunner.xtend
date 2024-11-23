@@ -34,7 +34,7 @@ class GeneratorRunner {
 	
 		writeText(
 			generator.generateLayout(page).toString,
-			'''«folder»/«page.name».xml'''			
+			'''«folder»/fragment_detailed_result.xml'''			
 		)
 			
 	}

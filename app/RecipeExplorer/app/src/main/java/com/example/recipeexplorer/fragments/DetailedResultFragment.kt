@@ -78,9 +78,11 @@ class DetailedResultFragment : Fragment() {
             // bind and set on-click logic for unit switch
             binding.unitSwitch.setOnCheckedChangeListener { _, isChecked ->
                 if (isChecked) {
+                    binding.unitSwitch.text = getString(R.string.ingredients_switch_text_imperial)
                     binding.textViewIngredients.text = shownRecipe.ingredientsImperial.joinToString(separator = "\n")
                 }
                 else {
+                    binding.unitSwitch.text = getString(R.string.ingredients_switch_text_metric)
                     binding.textViewIngredients.text = shownRecipe.ingredientsMetric.joinToString(separator = "\n")
                 }
             }
@@ -88,10 +90,12 @@ class DetailedResultFragment : Fragment() {
             // bind and set on-click logic for nutrient switch
             binding.nutrientSwitch.setOnCheckedChangeListener { _, isChecked ->
                 if (isChecked) {
+                    binding.nutrientSwitch.text = getString(R.string.nutrient_switch_text_percentage)
                     binding.macroNutrients.text = shownRecipe.macroNutrientsPercentage.joinToString(separator = "\n")
                     binding.vitamins.text = shownRecipe.vitaminsPercentage.joinToString(separator = "\n")
                 }
                 else {
+                    binding.nutrientSwitch.text = getString(R.string.nutrient_switch_text_amount)
                     binding.macroNutrients.text = shownRecipe.macroNutrientsAmount.joinToString(separator = "\n")
                     binding.vitamins.text = shownRecipe.vitaminsAmount.joinToString(separator = "\n")
                 }

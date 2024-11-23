@@ -68,8 +68,8 @@ class DetailedResultFragment : Fragment() {
                 error(R.drawable.error_image)
                 crossfade(true)  // Animate the loading
             }
-            binding.recipePreparationTime.text = shownRecipe.preparationTime.toString()
-            binding.calories.text = shownRecipe.calories.toString()
+            binding.recipePreparationTime.text = shownRecipe.preparationTime.toString() + " min"
+            binding.calories.text = shownRecipe.calories.toString() + " kcal"
             binding.textViewIngredients.text = shownRecipe.ingredientsMetric.joinToString(separator = "\n")
             binding.instructions.text = formatInstructions(shownRecipe.instructions)
             binding.macroNutrients.text = shownRecipe.macroNutrientsAmount.joinToString(separator = "\n")

@@ -258,7 +258,7 @@ public class RecipeLayoutGenerator {
         _builder.newLine();
         _builder.append("    ");
         _builder.append("            ");
-        _builder.append("android:src=\"@drawable/ic_launcher_foreground\"/>");
+        _builder.append("android:src=\"@drawable/ic_prep_time\"/>");
         _builder.newLine();
         _builder.append("    ");
         _builder.append("            ");
@@ -339,7 +339,7 @@ public class RecipeLayoutGenerator {
         _builder.newLine();
         _builder.append("    ");
         _builder.append("            ");
-        _builder.append("android:src=\"@drawable/ic_launcher_foreground\"/>");
+        _builder.append("android:src=\"@drawable/ic_calories\"/>");
         _builder.newLine();
         _builder.append("    ");
         _builder.append("            ");

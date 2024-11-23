@@ -89,7 +89,7 @@ class RecipeLayoutGenerator {
                         android:id="@+id/preparationTimeIcon"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/ic_launcher_foreground"/>
+                        android:src="@drawable/ic_prep_time"/>
                         
                     <TextView
                         android:id="@+id/recipePreparationTime"
@@ -110,7 +110,7 @@ class RecipeLayoutGenerator {
                         android:id="@+id/caloriesIcon"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/ic_launcher_foreground"/>
+                        android:src="@drawable/ic_calories"/>
                         
                     <TextView
                         android:id="@+id/calories"

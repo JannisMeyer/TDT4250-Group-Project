@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: no.ntnu.tdt4250.recipe.dsl.tests
+Bundle-ManifestVersion: 2
+Bundle-Name: no.ntnu.tdt4250.recipe.dsl.tests
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: no.ntnu.tdt4250.recipe.dsl.tests; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: no.ntnu.tdt4250.recipe.dsl,
+ no.ntnu.tdt4250.recipe,
+ org.eclipse.xtext.testing,
+ org.eclipse.xtext.xbase.testing
+Import-Package: org.junit.jupiter.api;version="[5.1.0,6.0.0)",
+ org.junit.jupiter.api.extension;version="[5.1.0,6.0.0)"
+Bundle-RequiredExecutionEnvironment: JavaSE-21

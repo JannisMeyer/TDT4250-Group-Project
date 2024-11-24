@@ -72,6 +72,7 @@ class RecipeLayoutGenerator {
                     android:autoSizeStepGranularity="2sp"
                     android:padding="10dp"
                     android:background="@color/green"
+                    android:textColor="#FFFFFF"
                     android:text="@string/default_title"/>
             </LinearLayout>
             
@@ -165,7 +166,7 @@ class RecipeLayoutGenerator {
                     android:layout_width="wrap_content"
                     android:layout_height="48dp"
                     android:checked="false"
-                    android:text="@string/ingredients_switch_text_imperial"/>
+                    android:text="@string/ingredients_switch_text_metric"/>
                 «ENDIF»
             </LinearLayout>
             

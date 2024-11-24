@@ -18,17 +18,23 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 @SuppressWarnings("all")
 public class GeneratorRunner {
   public static void main(final String[] args) {
-    final String model = "WithoutImage.recipe";
+    final String model = "Standard.recipe";
     final String folder = "src/generated";
     GeneratorRunner.registerMetamodel();
     GeneratorRunner.registerResourceFactory();
     final Page page = GeneratorRunner.loadModel(model);
-    final RecipeLayoutGenerator generator = new RecipeLayoutGenerator();
-    String _string = generator.generateLayout(page).toString();
+    final RecipeLayoutGenerator layoutGenerator = new RecipeLayoutGenerator();
+    final RecipeFragmentGenerator fragmentGenerator = new RecipeFragmentGenerator();
+    String _string = layoutGenerator.generateLayout(page).toString();
     StringConcatenation _builder = new StringConcatenation();
     _builder.append(folder);
-    _builder.append("/fragment_detailed_result.xml");
+    _builder.append("/fragment_detailed_result_generated.xml");
     GeneratorRunner.writeText(_string, _builder.toString());
+    String _string_1 = fragmentGenerator.generateFragment(page).toString();
+    StringConcatenation _builder_1 = new StringConcatenation();
+    _builder_1.append(folder);
+    _builder_1.append("/DetailedResultFragmentGenerated.kt");
+    GeneratorRunner.writeText(_string_1, _builder_1.toString());
   }
 
   public static String writeText(final String text, final String filePath) {

@@ -3,6 +3,7 @@
   <viewpoint:DAnalysis uid="_WrbywJhmEe-xDM46j7nUhQ" selectedViews="_YQMxIJhmEe-xDM46j7nUhQ" version="15.4.1.202403191723">
     <semanticResources>recipe.ecore</semanticResources>
     <semanticResources>recipe.genmodel</semanticResources>
+    <semanticResources>../src/no/ntnu/tdt4250/recipe/RecipeFragmentGenerator.xtend</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_YQMxIJhmEe-xDM46j7nUhQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_YQ-NMJhmEe-xDM46j7nUhQ" name="recipe" repPath="#_YQqrMJhmEe-xDM46j7nUhQ" changeId="1732285653647">

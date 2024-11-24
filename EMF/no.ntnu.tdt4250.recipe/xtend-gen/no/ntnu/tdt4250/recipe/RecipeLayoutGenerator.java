@@ -193,6 +193,9 @@ public class RecipeLayoutGenerator {
     _builder.append("android:background=\"@color/green\"");
     _builder.newLine();
     _builder.append("            ");
+    _builder.append("android:textColor=\"#FFFFFF\"");
+    _builder.newLine();
+    _builder.append("            ");
     _builder.append("android:text=\"@string/default_title\"/>");
     _builder.newLine();
     _builder.append("    ");
@@ -511,7 +514,7 @@ public class RecipeLayoutGenerator {
         _builder.newLine();
         _builder.append("        ");
         _builder.append("    ");
-        _builder.append("android:text=\"@string/ingredients_switch_text_imperial\"/>");
+        _builder.append("android:text=\"@string/ingredients_switch_text_metric\"/>");
         _builder.newLine();
       }
     }

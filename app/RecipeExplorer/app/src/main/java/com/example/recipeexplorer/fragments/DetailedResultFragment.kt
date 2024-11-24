@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.recipeexplorer.databinding.FragmentDetailedResultBinding
+import com.example.recipeexplorer.databinding.FragmentDetailedResultGeneratedBinding
 import com.example.recipeexplorer.querying.FetchedRecipes
 import com.example.recipeexplorer.querying.Recipe
 import coil.load
@@ -15,7 +15,7 @@ import com.example.recipeexplorer.R
 
 class DetailedResultFragment : Fragment() {
 
-    private var _binding: FragmentDetailedResultBinding? = null
+    private var _binding: FragmentDetailedResultGeneratedBinding? = null
     private val binding get() = _binding!!
 
     private var fetchedRecipes = FetchedRecipes.getInstance()
@@ -27,7 +27,7 @@ class DetailedResultFragment : Fragment() {
     ): View {
 
         // bind this fragment to corresponding ui
-        _binding = FragmentDetailedResultBinding.inflate(inflater, container, false)
+        _binding = FragmentDetailedResultGeneratedBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -58,7 +58,7 @@ class DetailedResultFragment : Fragment() {
             return Html.fromHtml(cleanedHtml, Html.FROM_HTML_MODE_COMPACT)
         }
 
-
+        """
         if (shownRecipe != null) {
 
             // pass recipe data to UI
@@ -101,5 +101,6 @@ class DetailedResultFragment : Fragment() {
                 }
             }
         }
+        """
     }
 }

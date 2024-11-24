@@ -23,18 +23,24 @@ class GeneratorRunner {
 		// val folder = args.get(1)
 	
 		// We hardcode them here, but you can uncomment the code above otherwise
-		val model = "WithoutImage.recipe"
+		val model = "Standard.recipe"
 		val folder = "src/generated"
 	
 		registerMetamodel
 		registerResourceFactory
 	
 		val page = loadModel(model)
-		val generator = new RecipeLayoutGenerator()
-	
+		val layoutGenerator = new RecipeLayoutGenerator()
+		val fragmentGenerator = new RecipeFragmentGenerator()
+		
 		writeText(
-			generator.generateLayout(page).toString,
-			'''«folder»/fragment_detailed_result.xml'''			
+			layoutGenerator.generateLayout(page).toString,
+			'''«folder»/fragment_detailed_result_generated.xml'''			
+		)
+		
+		writeText(
+			fragmentGenerator.generateFragment(page).toString,
+			'''«folder»/DetailedResultFragmentGenerated.kt'''			
 		)
 			
 	}

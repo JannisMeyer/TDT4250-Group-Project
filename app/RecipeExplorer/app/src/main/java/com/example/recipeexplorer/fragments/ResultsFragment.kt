@@ -56,7 +56,7 @@ class ResultsFragment : Fragment(), OnItemClickListener {
         Toast.makeText(context, "click", Toast.LENGTH_SHORT).show()
 
         // pass id of clicked recipe and launch detailed view fragment
-        val targetFragment = DetailedResultFragment().apply {
+        val targetFragment = DetailedResultFragmentGenerated().apply {
             arguments = Bundle().apply {
                 putString("ID", item.id.toString())
             }

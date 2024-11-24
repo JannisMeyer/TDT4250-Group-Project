@@ -260,7 +260,18 @@ fun convertToRecipe(recipeInfo: RecipeInformation): Recipe {
     val calories = recipeInfo.nutrients.find { it.name.equals("Calories", ignoreCase = true) }?.amount?.toInt() ?: 0
 
     val macroNutrientsNames = listOf("Protein", "Fat", "Carbohydrates")
-    val vitaminsNames = listOf("Vitamin C", "Calcium")
+    val vitaminsNames = listOf(
+        "Vitamin A",
+        "Vitamin B1",
+        "Vitamin B2",
+        "Vitamin B3",
+        "Vitamin B5",
+        "Vitamin B6",
+        "Vitamin B12",
+        "Vitamin C",
+        "Vitamin E",
+        "Vitamin K"
+    )
 
     val macroNutrientsAmount = recipeInfo.nutrients.filter { it.name in macroNutrientsNames }
         .map { "${it.amount}${it.unit} ${it.name}" }

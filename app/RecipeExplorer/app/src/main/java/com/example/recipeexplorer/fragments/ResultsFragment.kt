@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.recipeexplorer.R
@@ -52,8 +51,6 @@ class ResultsFragment : Fragment(), OnItemClickListener {
     }
 
     override fun onItemClicked(item: Recipe) {
-
-        Toast.makeText(context, "click", Toast.LENGTH_SHORT).show()
 
         // pass id of clicked recipe and launch detailed view fragment
         val targetFragment = DetailedResultFragmentGenerated().apply {

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.example.recipeexplorer.R
@@ -24,7 +25,9 @@ class SearchFragment : Fragment() {
     private var _binding: FragmentSearchBinding? = null
     private val binding get() = _binding!!
     private var searchParameters : MutableList<String>? = mutableListOf()
-    var fetchedRecipes = FetchedRecipes.getInstance()
+    private lateinit var diet : String
+    private lateinit var type : String
+    private var fetchedRecipes = FetchedRecipes.getInstance()
 
 
     override fun onCreateView(inflater: LayoutInflater,
@@ -42,15 +45,22 @@ class SearchFragment : Fragment() {
             super.onViewCreated(view, savedInstanceState)
 
             // setup search button logic
-            binding.searchButton.setOnClickListener {
+            binding.searchButton.setOnClickListener { button ->
+
+                // show loading animation
+                binding.progressBar.visibility = View.VISIBLE
+                val thisButton = button as Button
+                thisButton.text = ""
+                thisButton.isEnabled = false
 
                 lifecycleScope.launch {
                     val maxReadyTime = 30
                     val calories = 500
-                    val dietType = "vegetarian"
+                    var dietType = "vegetarian"
                     val servings = 4
                     val sortingType = "popularity"
                     val nr = 2 // Number of recipes to fetch
+                    dietType = diet
 
                     // Fetch recipes on the IO dispatcher
                     fetchedRecipes?.recipes = withContext(Dispatchers.IO) {
@@ -63,7 +73,7 @@ class SearchFragment : Fragment() {
                             nr
                         )
                     }.toMutableList()
-                    Log.d("t", "Fetched Recipes: $fetchedRecipes")
+                    Log.d("t", "Fetched Recipes: ${fetchedRecipes?.recipes?.get(0)?.title}")
 
                     // After fetching, navigate to ResultsFragment
                     val newFragment = ResultsFragment()
@@ -73,16 +83,6 @@ class SearchFragment : Fragment() {
                         .addToBackStack(null)
                         .commit()
                 }
-
-
-            // launch results fragment (fragments are not launched via intents but rather via
-            // the fragment manager
-            val newFragment = ResultsFragment()
-
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, newFragment)
-                .addToBackStack(null)
-                .commit()
         }
 
         // get spinners from binding
@@ -93,7 +93,7 @@ class SearchFragment : Fragment() {
         val typeAdapter = ArrayAdapter(
             requireContext(),
             android.R.layout.simple_spinner_item,
-            listOf("omnivore", "vegetarian", "vegan")
+            listOf("main dish", "salad", "cake")
         )
         typeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
@@ -105,7 +105,7 @@ class SearchFragment : Fragment() {
         val dietAdapter = ArrayAdapter(
             requireContext(),
             android.R.layout.simple_spinner_item,
-            listOf("main dish", "salad", "cake")
+            listOf("omnivore", "vegetarian", "vegan")
         )
         dietAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
@@ -125,6 +125,7 @@ class SearchFragment : Fragment() {
                 ) {
                     // add selected option to search parameters
                     searchParameters?.add(parent?.getItemAtPosition(position).toString())
+                    diet = parent?.getItemAtPosition(position).toString()
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -145,8 +146,7 @@ class SearchFragment : Fragment() {
                 ) {
                     // add selected option to search parameters
                     searchParameters?.add(parent?.getItemAtPosition(position).toString())
-                    Log.d("t", "item: ${parent?.getItemAtPosition(position).toString()}")
-                    Log.d("t", "search parameters: $searchParameters")
+                    type = parent?.getItemAtPosition(position).toString()
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>?) {

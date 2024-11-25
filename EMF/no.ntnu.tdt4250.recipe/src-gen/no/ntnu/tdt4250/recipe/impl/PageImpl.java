@@ -2,28 +2,19 @@
  */
 package no.ntnu.tdt4250.recipe.impl;
 
-import java.util.Collection;
-
 import no.ntnu.tdt4250.recipe.Header;
 import no.ntnu.tdt4250.recipe.Ingredients;
 import no.ntnu.tdt4250.recipe.Instructions;
+import no.ntnu.tdt4250.recipe.Nutrients;
 import no.ntnu.tdt4250.recipe.Page;
 import no.ntnu.tdt4250.recipe.RecipePackage;
-import no.ntnu.tdt4250.recipe.Section;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,28 +24,18 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link no.ntnu.tdt4250.recipe.impl.PageImpl#getSection <em>Section</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.recipe.impl.PageImpl#getInstructions <em>Instructions</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.recipe.impl.PageImpl#getIngredients <em>Ingredients</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.recipe.impl.PageImpl#getHeader <em>Header</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.recipe.impl.PageImpl#getName <em>Name</em>}</li>
+ *   <li>{@link no.ntnu.tdt4250.recipe.impl.PageImpl#getNutrients <em>Nutrients</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	/**
-	 * The cached value of the '{@link #getSection() <em>Section</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSection()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Section> section;
-
-	/**
-	 * The cached value of the '{@link #getInstructions() <em>Instructions</em>}' reference.
+	 * The cached value of the '{@link #getInstructions() <em>Instructions</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getInstructions()
@@ -64,7 +45,7 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	protected Instructions instructions;
 
 	/**
-	 * The cached value of the '{@link #getIngredients() <em>Ingredients</em>}' reference.
+	 * The cached value of the '{@link #getIngredients() <em>Ingredients</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getIngredients()
@@ -104,6 +85,16 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	protected String name = NAME_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getNutrients() <em>Nutrients</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNutrients()
+	 * @generated
+	 * @ordered
+	 */
+	protected Nutrients nutrients;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -128,29 +119,7 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	 * @generated
 	 */
 	@Override
-	public EList<Section> getSection() {
-		if (section == null) {
-			section = new EObjectContainmentEList<Section>(Section.class, this, RecipePackage.PAGE__SECTION);
-		}
-		return section;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Instructions getInstructions() {
-		if (instructions != null && instructions.eIsProxy()) {
-			InternalEObject oldInstructions = (InternalEObject) instructions;
-			instructions = (Instructions) eResolveProxy(oldInstructions);
-			if (instructions != oldInstructions) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RecipePackage.PAGE__INSTRUCTIONS,
-							oldInstructions, instructions));
-			}
-		}
 		return instructions;
 	}
 
@@ -159,8 +128,18 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Instructions basicGetInstructions() {
-		return instructions;
+	public NotificationChain basicSetInstructions(Instructions newInstructions, NotificationChain msgs) {
+		Instructions oldInstructions = instructions;
+		instructions = newInstructions;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					RecipePackage.PAGE__INSTRUCTIONS, oldInstructions, newInstructions);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -170,11 +149,20 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	 */
 	@Override
 	public void setInstructions(Instructions newInstructions) {
-		Instructions oldInstructions = instructions;
-		instructions = newInstructions;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RecipePackage.PAGE__INSTRUCTIONS, oldInstructions,
-					instructions));
+		if (newInstructions != instructions) {
+			NotificationChain msgs = null;
+			if (instructions != null)
+				msgs = ((InternalEObject) instructions).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - RecipePackage.PAGE__INSTRUCTIONS, null, msgs);
+			if (newInstructions != null)
+				msgs = ((InternalEObject) newInstructions).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - RecipePackage.PAGE__INSTRUCTIONS, null, msgs);
+			msgs = basicSetInstructions(newInstructions, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RecipePackage.PAGE__INSTRUCTIONS, newInstructions,
+					newInstructions));
 	}
 
 	/**
@@ -184,15 +172,6 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	 */
 	@Override
 	public Ingredients getIngredients() {
-		if (ingredients != null && ingredients.eIsProxy()) {
-			InternalEObject oldIngredients = (InternalEObject) ingredients;
-			ingredients = (Ingredients) eResolveProxy(oldIngredients);
-			if (ingredients != oldIngredients) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RecipePackage.PAGE__INGREDIENTS,
-							oldIngredients, ingredients));
-			}
-		}
 		return ingredients;
 	}
 
@@ -201,8 +180,18 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Ingredients basicGetIngredients() {
-		return ingredients;
+	public NotificationChain basicSetIngredients(Ingredients newIngredients, NotificationChain msgs) {
+		Ingredients oldIngredients = ingredients;
+		ingredients = newIngredients;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					RecipePackage.PAGE__INGREDIENTS, oldIngredients, newIngredients);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -212,11 +201,20 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	 */
 	@Override
 	public void setIngredients(Ingredients newIngredients) {
-		Ingredients oldIngredients = ingredients;
-		ingredients = newIngredients;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RecipePackage.PAGE__INGREDIENTS, oldIngredients,
-					ingredients));
+		if (newIngredients != ingredients) {
+			NotificationChain msgs = null;
+			if (ingredients != null)
+				msgs = ((InternalEObject) ingredients).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - RecipePackage.PAGE__INGREDIENTS, null, msgs);
+			if (newIngredients != null)
+				msgs = ((InternalEObject) newIngredients).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - RecipePackage.PAGE__INGREDIENTS, null, msgs);
+			msgs = basicSetIngredients(newIngredients, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RecipePackage.PAGE__INGREDIENTS, newIngredients,
+					newIngredients));
 	}
 
 	/**
@@ -299,12 +297,68 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	 * @generated
 	 */
 	@Override
+	public Nutrients getNutrients() {
+		return nutrients;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetNutrients(Nutrients newNutrients, NotificationChain msgs) {
+		Nutrients oldNutrients = nutrients;
+		nutrients = newNutrients;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					RecipePackage.PAGE__NUTRIENTS, oldNutrients, newNutrients);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setNutrients(Nutrients newNutrients) {
+		if (newNutrients != nutrients) {
+			NotificationChain msgs = null;
+			if (nutrients != null)
+				msgs = ((InternalEObject) nutrients).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - RecipePackage.PAGE__NUTRIENTS, null, msgs);
+			if (newNutrients != null)
+				msgs = ((InternalEObject) newNutrients).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - RecipePackage.PAGE__NUTRIENTS, null, msgs);
+			msgs = basicSetNutrients(newNutrients, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RecipePackage.PAGE__NUTRIENTS, newNutrients,
+					newNutrients));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case RecipePackage.PAGE__SECTION:
-			return ((InternalEList<?>) getSection()).basicRemove(otherEnd, msgs);
+		case RecipePackage.PAGE__INSTRUCTIONS:
+			return basicSetInstructions(null, msgs);
+		case RecipePackage.PAGE__INGREDIENTS:
+			return basicSetIngredients(null, msgs);
 		case RecipePackage.PAGE__HEADER:
 			return basicSetHeader(null, msgs);
+		case RecipePackage.PAGE__NUTRIENTS:
+			return basicSetNutrients(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -317,20 +371,16 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case RecipePackage.PAGE__SECTION:
-			return getSection();
 		case RecipePackage.PAGE__INSTRUCTIONS:
-			if (resolve)
-				return getInstructions();
-			return basicGetInstructions();
+			return getInstructions();
 		case RecipePackage.PAGE__INGREDIENTS:
-			if (resolve)
-				return getIngredients();
-			return basicGetIngredients();
+			return getIngredients();
 		case RecipePackage.PAGE__HEADER:
 			return getHeader();
 		case RecipePackage.PAGE__NAME:
 			return getName();
+		case RecipePackage.PAGE__NUTRIENTS:
+			return getNutrients();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -344,10 +394,6 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case RecipePackage.PAGE__SECTION:
-			getSection().clear();
-			getSection().addAll((Collection<? extends Section>) newValue);
-			return;
 		case RecipePackage.PAGE__INSTRUCTIONS:
 			setInstructions((Instructions) newValue);
 			return;
@@ -359,6 +405,9 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 			return;
 		case RecipePackage.PAGE__NAME:
 			setName((String) newValue);
+			return;
+		case RecipePackage.PAGE__NUTRIENTS:
+			setNutrients((Nutrients) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -372,9 +421,6 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case RecipePackage.PAGE__SECTION:
-			getSection().clear();
-			return;
 		case RecipePackage.PAGE__INSTRUCTIONS:
 			setInstructions((Instructions) null);
 			return;
@@ -386,6 +432,9 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 			return;
 		case RecipePackage.PAGE__NAME:
 			setName(NAME_EDEFAULT);
+			return;
+		case RecipePackage.PAGE__NUTRIENTS:
+			setNutrients((Nutrients) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -399,8 +448,6 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case RecipePackage.PAGE__SECTION:
-			return section != null && !section.isEmpty();
 		case RecipePackage.PAGE__INSTRUCTIONS:
 			return instructions != null;
 		case RecipePackage.PAGE__INGREDIENTS:
@@ -409,6 +456,8 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 			return header != null;
 		case RecipePackage.PAGE__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case RecipePackage.PAGE__NUTRIENTS:
+			return nutrients != null;
 		}
 		return super.eIsSet(featureID);
 	}

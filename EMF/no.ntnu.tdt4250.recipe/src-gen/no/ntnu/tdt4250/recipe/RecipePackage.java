@@ -68,31 +68,22 @@ public interface RecipePackage extends EPackage {
 	int PAGE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Section</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Instructions</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE__SECTION = 0;
+	int PAGE__INSTRUCTIONS = 0;
 
 	/**
-	 * The feature id for the '<em><b>Instructions</b></em>' reference.
+	 * The feature id for the '<em><b>Ingredients</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE__INSTRUCTIONS = 1;
-
-	/**
-	 * The feature id for the '<em><b>Ingredients</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAGE__INGREDIENTS = 2;
+	int PAGE__INGREDIENTS = 1;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' containment reference.
@@ -101,7 +92,7 @@ public interface RecipePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE__HEADER = 3;
+	int PAGE__HEADER = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -110,7 +101,16 @@ public interface RecipePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE__NAME = 4;
+	int PAGE__NAME = 3;
+
+	/**
+	 * The feature id for the '<em><b>Nutrients</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAGE__NUTRIENTS = 4;
 
 	/**
 	 * The number of structural features of the '<em>Page</em>' class.
@@ -632,21 +632,10 @@ public interface RecipePackage extends EPackage {
 	EClass getPage();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link no.ntnu.tdt4250.recipe.Page#getSection <em>Section</em>}'.
+	 * Returns the meta object for the containment reference '{@link no.ntnu.tdt4250.recipe.Page#getInstructions <em>Instructions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Section</em>'.
-	 * @see no.ntnu.tdt4250.recipe.Page#getSection()
-	 * @see #getPage()
-	 * @generated
-	 */
-	EReference getPage_Section();
-
-	/**
-	 * Returns the meta object for the reference '{@link no.ntnu.tdt4250.recipe.Page#getInstructions <em>Instructions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Instructions</em>'.
+	 * @return the meta object for the containment reference '<em>Instructions</em>'.
 	 * @see no.ntnu.tdt4250.recipe.Page#getInstructions()
 	 * @see #getPage()
 	 * @generated
@@ -654,10 +643,10 @@ public interface RecipePackage extends EPackage {
 	EReference getPage_Instructions();
 
 	/**
-	 * Returns the meta object for the reference '{@link no.ntnu.tdt4250.recipe.Page#getIngredients <em>Ingredients</em>}'.
+	 * Returns the meta object for the containment reference '{@link no.ntnu.tdt4250.recipe.Page#getIngredients <em>Ingredients</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Ingredients</em>'.
+	 * @return the meta object for the containment reference '<em>Ingredients</em>'.
 	 * @see no.ntnu.tdt4250.recipe.Page#getIngredients()
 	 * @see #getPage()
 	 * @generated
@@ -685,6 +674,17 @@ public interface RecipePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getPage_Name();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link no.ntnu.tdt4250.recipe.Page#getNutrients <em>Nutrients</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Nutrients</em>'.
+	 * @see no.ntnu.tdt4250.recipe.Page#getNutrients()
+	 * @see #getPage()
+	 * @generated
+	 */
+	EReference getPage_Nutrients();
 
 	/**
 	 * Returns the meta object for class '{@link no.ntnu.tdt4250.recipe.Macronutrients <em>Macronutrients</em>}'.
@@ -970,15 +970,7 @@ public interface RecipePackage extends EPackage {
 		EClass PAGE = eINSTANCE.getPage();
 
 		/**
-		 * The meta object literal for the '<em><b>Section</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PAGE__SECTION = eINSTANCE.getPage_Section();
-
-		/**
-		 * The meta object literal for the '<em><b>Instructions</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Instructions</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -986,7 +978,7 @@ public interface RecipePackage extends EPackage {
 		EReference PAGE__INSTRUCTIONS = eINSTANCE.getPage_Instructions();
 
 		/**
-		 * The meta object literal for the '<em><b>Ingredients</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Ingredients</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1008,6 +1000,14 @@ public interface RecipePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PAGE__NAME = eINSTANCE.getPage_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Nutrients</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PAGE__NUTRIENTS = eINSTANCE.getPage_Nutrients();
 
 		/**
 		 * The meta object literal for the '{@link no.ntnu.tdt4250.recipe.impl.MacronutrientsImpl <em>Macronutrients</em>}' class.

@@ -56,27 +56,13 @@ public class PageItemProvider extends ItemProviderAdapter implements IEditingDom
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSectionPropertyDescriptor(object);
 			addInstructionsPropertyDescriptor(object);
 			addIngredientsPropertyDescriptor(object);
 			addHeaderPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
+			addNutrientsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Section feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSectionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Page_section_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Page_section_feature", "_UI_Page_type"),
-						RecipePackage.Literals.PAGE__SECTION, true, false, true, null, null, null));
 	}
 
 	/**
@@ -139,6 +125,20 @@ public class PageItemProvider extends ItemProviderAdapter implements IEditingDom
 	}
 
 	/**
+	 * This adds a property descriptor for the Nutrients feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNutrientsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Page_nutrients_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Page_nutrients_feature", "_UI_Page_type"),
+						RecipePackage.Literals.PAGE__NUTRIENTS, true, false, true, null, null, null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -150,8 +150,10 @@ public class PageItemProvider extends ItemProviderAdapter implements IEditingDom
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RecipePackage.Literals.PAGE__SECTION);
+			childrenFeatures.add(RecipePackage.Literals.PAGE__INSTRUCTIONS);
+			childrenFeatures.add(RecipePackage.Literals.PAGE__INGREDIENTS);
 			childrenFeatures.add(RecipePackage.Literals.PAGE__HEADER);
+			childrenFeatures.add(RecipePackage.Literals.PAGE__NUTRIENTS);
 		}
 		return childrenFeatures;
 	}
@@ -218,8 +220,10 @@ public class PageItemProvider extends ItemProviderAdapter implements IEditingDom
 		case RecipePackage.PAGE__NAME:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case RecipePackage.PAGE__SECTION:
+		case RecipePackage.PAGE__INSTRUCTIONS:
+		case RecipePackage.PAGE__INGREDIENTS:
 		case RecipePackage.PAGE__HEADER:
+		case RecipePackage.PAGE__NUTRIENTS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -237,17 +241,17 @@ public class PageItemProvider extends ItemProviderAdapter implements IEditingDom
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(RecipePackage.Literals.PAGE__SECTION,
-				RecipeFactory.eINSTANCE.createIngredients()));
-
-		newChildDescriptors.add(createChildParameter(RecipePackage.Literals.PAGE__SECTION,
+		newChildDescriptors.add(createChildParameter(RecipePackage.Literals.PAGE__INSTRUCTIONS,
 				RecipeFactory.eINSTANCE.createInstructions()));
 
-		newChildDescriptors.add(
-				createChildParameter(RecipePackage.Literals.PAGE__SECTION, RecipeFactory.eINSTANCE.createNutrients()));
+		newChildDescriptors.add(createChildParameter(RecipePackage.Literals.PAGE__INGREDIENTS,
+				RecipeFactory.eINSTANCE.createIngredients()));
 
 		newChildDescriptors
 				.add(createChildParameter(RecipePackage.Literals.PAGE__HEADER, RecipeFactory.eINSTANCE.createHeader()));
+
+		newChildDescriptors.add(createChildParameter(RecipePackage.Literals.PAGE__NUTRIENTS,
+				RecipeFactory.eINSTANCE.createNutrients()));
 	}
 
 	/**

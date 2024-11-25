@@ -229,7 +229,7 @@ public class RecipePackageImpl extends EPackageImpl implements RecipePackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getPage_Section() {
+	public EReference getPage_Instructions() {
 		return (EReference) pageEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -239,7 +239,7 @@ public class RecipePackageImpl extends EPackageImpl implements RecipePackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getPage_Instructions() {
+	public EReference getPage_Ingredients() {
 		return (EReference) pageEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -249,7 +249,7 @@ public class RecipePackageImpl extends EPackageImpl implements RecipePackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getPage_Ingredients() {
+	public EReference getPage_Header() {
 		return (EReference) pageEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -259,8 +259,8 @@ public class RecipePackageImpl extends EPackageImpl implements RecipePackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getPage_Header() {
-		return (EReference) pageEClass.getEStructuralFeatures().get(3);
+	public EAttribute getPage_Name() {
+		return (EAttribute) pageEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -269,8 +269,8 @@ public class RecipePackageImpl extends EPackageImpl implements RecipePackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getPage_Name() {
-		return (EAttribute) pageEClass.getEStructuralFeatures().get(4);
+	public EReference getPage_Nutrients() {
+		return (EReference) pageEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -544,11 +544,11 @@ public class RecipePackageImpl extends EPackageImpl implements RecipePackage {
 
 		// Create classes and their features
 		pageEClass = createEClass(PAGE);
-		createEReference(pageEClass, PAGE__SECTION);
 		createEReference(pageEClass, PAGE__INSTRUCTIONS);
 		createEReference(pageEClass, PAGE__INGREDIENTS);
 		createEReference(pageEClass, PAGE__HEADER);
 		createEAttribute(pageEClass, PAGE__NAME);
+		createEReference(pageEClass, PAGE__NUTRIENTS);
 
 		macronutrientsEClass = createEClass(MACRONUTRIENTS);
 
@@ -627,20 +627,20 @@ public class RecipePackageImpl extends EPackageImpl implements RecipePackage {
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(pageEClass, Page.class, "Page", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPage_Section(), this.getSection(), null, "section", null, 0, -1, Page.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
 		initEReference(getPage_Instructions(), this.getInstructions(), null, "instructions", null, 1, 1, Page.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPage_Ingredients(), this.getIngredients(), null, "ingredients", null, 1, 1, Page.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPage_Header(), this.getHeader(), null, "header", null, 1, 1, Page.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 		initEAttribute(getPage_Name(), ecorePackage.getEString(), "name", null, 1, 1, Page.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPage_Nutrients(), this.getNutrients(), null, "nutrients", null, 0, 1, Page.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(macronutrientsEClass, Macronutrients.class, "Macronutrients", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

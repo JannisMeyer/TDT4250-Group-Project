@@ -8,13 +8,13 @@ import com.google.inject.Injector;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import no.ntnu.tdt4250.recipe.dsl.RecipeDSLRuntimeModule;
+import no.ntnu.tdt4250.recipe.dsl.ui.RecipeDSLUiModule;
 import org.apache.log4j.Logger;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.xtext.ui.shared.SharedStateModule;
 import org.eclipse.xtext.util.Modules2;
 import org.osgi.framework.BundleContext;
-import org.xtext.example.mydsl.RecipeRuntimeModule;
-import org.xtext.example.mydsl.ui.RecipeUiModule;
 
 /**
  * This class was generated. Customizations should only happen in a newly
@@ -23,7 +23,7 @@ import org.xtext.example.mydsl.ui.RecipeUiModule;
 public class DslActivator extends AbstractUIPlugin {
 
 	public static final String PLUGIN_ID = "no.ntnu.tdt4250.recipe.dsl.ui";
-	public static final String ORG_XTEXT_EXAMPLE_MYDSL_RECIPE = "org.xtext.example.mydsl.Recipe";
+	public static final String NO_NTNU_TDT4250_RECIPE_DSL_RECIPEDSL = "no.ntnu.tdt4250.recipe.dsl.RecipeDSL";
 	
 	private static final Logger logger = Logger.getLogger(DslActivator.class);
 	
@@ -73,15 +73,15 @@ public class DslActivator extends AbstractUIPlugin {
 	}
 	
 	protected com.google.inject.Module getRuntimeModule(String grammar) {
-		if (ORG_XTEXT_EXAMPLE_MYDSL_RECIPE.equals(grammar)) {
-			return new RecipeRuntimeModule();
+		if (NO_NTNU_TDT4250_RECIPE_DSL_RECIPEDSL.equals(grammar)) {
+			return new RecipeDSLRuntimeModule();
 		}
 		throw new IllegalArgumentException(grammar);
 	}
 	
 	protected com.google.inject.Module getUiModule(String grammar) {
-		if (ORG_XTEXT_EXAMPLE_MYDSL_RECIPE.equals(grammar)) {
-			return new RecipeUiModule(this);
+		if (NO_NTNU_TDT4250_RECIPE_DSL_RECIPEDSL.equals(grammar)) {
+			return new RecipeDSLUiModule(this);
 		}
 		throw new IllegalArgumentException(grammar);
 	}

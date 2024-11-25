@@ -10,17 +10,16 @@ Require-Bundle: no.ntnu.tdt4250.recipe,
  org.eclipse.xtext,
  org.eclipse.xtext.xbase,
  org.eclipse.equinox.common;bundle-version="3.16.0",
- org.apache.commons.logging;bundle-version="1.2.0",
  org.eclipse.xtext.xbase.lib;bundle-version="2.36.0",
  org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
 Bundle-RequiredExecutionEnvironment: JavaSE-21
-Export-Package: org.xtext.example.mydsl.parser.antlr.internal,
- org.xtext.example.mydsl.scoping,
- org.xtext.example.mydsl.services,
- org.xtext.example.mydsl.generator,
- org.xtext.example.mydsl.validation,
- org.xtext.example.mydsl,
- org.xtext.example.mydsl.formatting2,
- org.xtext.example.mydsl.serializer,
- org.xtext.example.mydsl.parser.antlr
+Export-Package: no.ntnu.tdt4250.recipe.dsl.parser.antlr.internal,
+ no.ntnu.tdt4250.recipe.dsl.validation,
+ no.ntnu.tdt4250.recipe.dsl.generator,
+ no.ntnu.tdt4250.recipe.dsl,
+ no.ntnu.tdt4250.recipe.dsl.serializer,
+ no.ntnu.tdt4250.recipe.dsl.parser.antlr,
+ no.ntnu.tdt4250.recipe.dsl.formatting2,
+ no.ntnu.tdt4250.recipe.dsl.services,
+ no.ntnu.tdt4250.recipe.dsl.scoping
 Import-Package: org.apache.log4j

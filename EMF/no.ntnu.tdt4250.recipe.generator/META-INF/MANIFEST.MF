@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Generator
+Bundle-SymbolicName: no.ntnu.tdt4250.recipe.generator
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: no.ntnu.tdt4250.recipe,
+ org.eclipse.xtend.lib,
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.common,
+ org.eclipse.emf.ecore.xmi;bundle-version="2.38.0",
+ com.google.guava,
+ com.google.inject,
+ no.ntnu.tdt4250.recipe.dsl;bundle-version="1.0.0",
+ org.eclipse.xtext;bundle-version="2.36.0"
+Automatic-Module-Name: no.ntnu.tdt4250.recipe.generator
+Bundle-RequiredExecutionEnvironment: JavaSE-21

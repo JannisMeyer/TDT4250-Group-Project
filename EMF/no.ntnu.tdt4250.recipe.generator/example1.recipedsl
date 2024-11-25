@@ -1,0 +1,12 @@
+Page "Example" {
+	instructions Instructions {
+		orderNumber 1
+	}
+	ingredients Ingredients{
+		orderNumber 2
+	}
+	header Header {
+		basicinformation BasicInformation
+		recipetitle Title
+	}
+}

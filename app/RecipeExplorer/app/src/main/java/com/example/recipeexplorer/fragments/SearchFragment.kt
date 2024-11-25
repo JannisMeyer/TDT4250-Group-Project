@@ -7,21 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.example.recipeexplorer.R
 import com.example.recipeexplorer.databinding.FragmentSearchBinding
 import com.example.recipeexplorer.querying.FetchedRecipes
-import com.example.recipeexplorer.querying.Recipe
 import fetchRecipes
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import mainPLSSS
-import okhttp3.internal.wait
-import java.net.URL
+
 //import com.example.recipeexplorer.fragments.A
 
 class SearchFragment : Fragment() {
@@ -42,59 +37,42 @@ class SearchFragment : Fragment() {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
         // setup search button logic
-        binding.searchButton.setOnClickListener {
+        override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+            super.onViewCreated(view, savedInstanceState)
 
-            // TODO: call method which fetched recipes from spoonacular
+            // setup search button logic
+            binding.searchButton.setOnClickListener {
 
+                lifecycleScope.launch {
+                    val maxReadyTime = 30
+                    val calories = 500
+                    val dietType = "vegetarian"
+                    val servings = 4
+                    val sortingType = "popularity"
+                    val nr = 2 // Number of recipes to fetch
 
-            lifecycleScope.launch {
-                val maxReadyTime = 30
-                val calories = 500
-                val dietType = "vegetarian"
-                val servings = 4
-                val sortingType = "popularity"
-                val nr = 2 // Number of recipes to fetch
+                    // Fetch recipes on the IO dispatcher
+                    fetchedRecipes?.recipes = withContext(Dispatchers.IO) {
+                        fetchRecipes(
+                            maxReadyTime,
+                            calories,
+                            dietType,
+                            servings,
+                            sortingType,
+                            nr
+                        )
+                    }.toMutableList()
+                    Log.d("t", "Fetched Recipes: $fetchedRecipes")
 
-                // Fetch recipes on the IO dispatcher
-                fetchedRecipes?.recipes = withContext(Dispatchers.IO) {
-                    fetchRecipes(
-                        maxReadyTime,
-                        calories,
-                        dietType,
-                        servings,
-                        sortingType,
-                        nr
-                    )
-                }.toMutableList()
-                Log.d("t", "Fetched Recipes: $fetchedRecipes")
+                    // After fetching, navigate to ResultsFragment
+                    val newFragment = ResultsFragment()
 
-            }
-            val sampleRecipes: MutableList<Recipe> = mutableListOf(
-                Recipe(
-                    id = 1,
-                    type = "Main Course",
-                    title = "Spaghetti Bolognese",
-                    //TODO:
-                    image = "R.drawable.ic_launcher_background",
-                    ingredientsMetric = listOf("200g spaghetti", "100g minced beef", "50ml tomato sauce"),
-                    ingredientsImperial = listOf("7oz spaghetti", "3.5oz minced beef", "1.7fl oz tomato sauce"),
-                    instructions = "Boil spaghetti. Cook minced beef. Mix with tomato sauce. Serve hot.",
-                    portions = 2,
-                    preparationTime = 30,
-                    calories = 400,
-                    macroNutrientsAmount = listOf("20g protein", "10g fat", "50g carbs"),
-                    vitaminsAmount = listOf("10mg vitamin C", "50mg calcium"),
-                    macroNutrientsPercentage = listOf("20%", "10%", "50%"),
-                    vitaminsPercentage = listOf("5%", "10%")
-                )
-            )
-
-            // without it Result is empty,
-            Thread.sleep(4000)
+                    parentFragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, newFragment)
+                        .addToBackStack(null)
+                        .commit()
+                }
 
 
             // launch results fragment (fragments are not launched via intents but rather via

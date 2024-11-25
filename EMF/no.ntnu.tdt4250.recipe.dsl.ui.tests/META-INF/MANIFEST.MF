@@ -17,4 +17,4 @@ Require-Bundle: no.ntnu.tdt4250.recipe.dsl.ui,
 Import-Package: org.junit.jupiter.api;version="[5.1.0,6.0.0)",
  org.junit.jupiter.api.extension;version="[5.1.0,6.0.0)"
 Bundle-RequiredExecutionEnvironment: JavaSE-21
-Export-Package: org.xtext.example.mydsl.ui.tests;x-internal=true
+Export-Package: no.ntnu.tdt4250.recipe.dsl.ui.tests;x-internal=true

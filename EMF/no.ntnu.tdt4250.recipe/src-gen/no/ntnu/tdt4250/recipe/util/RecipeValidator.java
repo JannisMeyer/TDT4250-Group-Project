@@ -3,7 +3,6 @@
 package no.ntnu.tdt4250.recipe.util;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import no.ntnu.tdt4250.recipe.*;
@@ -11,7 +10,7 @@ import no.ntnu.tdt4250.recipe.*;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
-
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.EObjectValidator;
@@ -167,12 +166,17 @@ public class RecipeValidator extends EObjectValidator {
 	public boolean validatePage_UniqueOrderNumbers(Page page, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
 		boolean valid = true;
-		List<Section> sections = page.getSection();
-
 		Set<Integer> seen = new HashSet<>();
-		for (Section section : sections) {
-			if (!seen.add(section.getOrderNumber())) {
-				valid = false;
+
+		// Get all EObjects that are direct children of page
+		for (EObject child : page.eContents()) {
+			// Check if it's a Section
+			if (child instanceof Section) {
+				Section section = (Section) child;
+				if (!seen.add(section.getOrderNumber())) {
+					valid = false;
+					break;
+				}
 			}
 		}
 
@@ -196,12 +200,9 @@ public class RecipeValidator extends EObjectValidator {
 	 */
 	public boolean validatePage_ExactlyOneIngredients(Page page, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
-		
-		boolean valid = page.eContents()
-		        .stream()
-		        .filter(content -> content instanceof Ingredients)
-		        .count() == 1;
-		
+
+		boolean valid = page.eContents().stream().filter(content -> content instanceof Ingredients).count() == 1;
+
 		if (!valid) {
 			if (diagnostics != null) {
 				diagnostics.add(
@@ -222,11 +223,8 @@ public class RecipeValidator extends EObjectValidator {
 	 */
 	public boolean validatePage_ExactlyOneInstructions(Page page, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
-		boolean valid = page.eContents()
-		        .stream()
-		        .filter(content -> content instanceof Instructions)
-		        .count() == 1;
-		
+		boolean valid = page.eContents().stream().filter(content -> content instanceof Instructions).count() == 1;
+
 		if (!valid) {
 			if (diagnostics != null) {
 				diagnostics.add(
@@ -246,12 +244,9 @@ public class RecipeValidator extends EObjectValidator {
 	 * @generated NOT
 	 */
 	public boolean validatePage_MaxOneNutrients(Page page, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		
-		boolean valid = page.eContents()
-		        .stream()
-		        .filter(content -> content instanceof Ingredients)
-		        .count() <= 1;
-		
+
+		boolean valid = page.eContents().stream().filter(content -> content instanceof Ingredients).count() <= 1;
+
 		if (!valid) {
 			if (diagnostics != null) {
 				diagnostics.add(

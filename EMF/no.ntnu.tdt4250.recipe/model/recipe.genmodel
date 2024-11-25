@@ -23,11 +23,11 @@
       <genEnumLiterals ecoreEnumLiteral="recipe.ecore#//Vitamin/VITAMIN_K"/>
     </genEnums>
     <genClasses ecoreClass="recipe.ecore#//Page">
-      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference recipe.ecore#//Page/section"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference recipe.ecore#//Page/instructions"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference recipe.ecore#//Page/ingredients"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference recipe.ecore#//Page/instructions"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference recipe.ecore#//Page/ingredients"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference recipe.ecore#//Page/header"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute recipe.ecore#//Page/name"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference recipe.ecore#//Page/nutrients"/>
     </genClasses>
     <genClasses ecoreClass="recipe.ecore#//Macronutrients"/>
     <genClasses ecoreClass="recipe.ecore#//Ingredients">

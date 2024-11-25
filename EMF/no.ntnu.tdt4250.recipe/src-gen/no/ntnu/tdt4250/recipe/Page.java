@@ -2,8 +2,6 @@
  */
 package no.ntnu.tdt4250.recipe;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,11 +13,11 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link no.ntnu.tdt4250.recipe.Page#getSection <em>Section</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.recipe.Page#getInstructions <em>Instructions</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.recipe.Page#getIngredients <em>Ingredients</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.recipe.Page#getHeader <em>Header</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.recipe.Page#getName <em>Name</em>}</li>
+ *   <li>{@link no.ntnu.tdt4250.recipe.Page#getNutrients <em>Nutrients</em>}</li>
  * </ul>
  *
  * @see no.ntnu.tdt4250.recipe.RecipePackage#getPage()
@@ -28,56 +26,44 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Page extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Section</b></em>' containment reference list.
-	 * The list contents are of type {@link no.ntnu.tdt4250.recipe.Section}.
+	 * Returns the value of the '<em><b>Instructions</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Section</em>' containment reference list.
-	 * @see no.ntnu.tdt4250.recipe.RecipePackage#getPage_Section()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Section> getSection();
-
-	/**
-	 * Returns the value of the '<em><b>Instructions</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Instructions</em>' reference.
+	 * @return the value of the '<em>Instructions</em>' containment reference.
 	 * @see #setInstructions(Instructions)
 	 * @see no.ntnu.tdt4250.recipe.RecipePackage#getPage_Instructions()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	Instructions getInstructions();
 
 	/**
-	 * Sets the value of the '{@link no.ntnu.tdt4250.recipe.Page#getInstructions <em>Instructions</em>}' reference.
+	 * Sets the value of the '{@link no.ntnu.tdt4250.recipe.Page#getInstructions <em>Instructions</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Instructions</em>' reference.
+	 * @param value the new value of the '<em>Instructions</em>' containment reference.
 	 * @see #getInstructions()
 	 * @generated
 	 */
 	void setInstructions(Instructions value);
 
 	/**
-	 * Returns the value of the '<em><b>Ingredients</b></em>' reference.
+	 * Returns the value of the '<em><b>Ingredients</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Ingredients</em>' reference.
+	 * @return the value of the '<em>Ingredients</em>' containment reference.
 	 * @see #setIngredients(Ingredients)
 	 * @see no.ntnu.tdt4250.recipe.RecipePackage#getPage_Ingredients()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	Ingredients getIngredients();
 
 	/**
-	 * Sets the value of the '{@link no.ntnu.tdt4250.recipe.Page#getIngredients <em>Ingredients</em>}' reference.
+	 * Sets the value of the '{@link no.ntnu.tdt4250.recipe.Page#getIngredients <em>Ingredients</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Ingredients</em>' reference.
+	 * @param value the new value of the '<em>Ingredients</em>' containment reference.
 	 * @see #getIngredients()
 	 * @generated
 	 */
@@ -126,5 +112,27 @@ public interface Page extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Nutrients</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Nutrients</em>' containment reference.
+	 * @see #setNutrients(Nutrients)
+	 * @see no.ntnu.tdt4250.recipe.RecipePackage#getPage_Nutrients()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Nutrients getNutrients();
+
+	/**
+	 * Sets the value of the '{@link no.ntnu.tdt4250.recipe.Page#getNutrients <em>Nutrients</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Nutrients</em>' containment reference.
+	 * @see #getNutrients()
+	 * @generated
+	 */
+	void setNutrients(Nutrients value);
 
 } // Page

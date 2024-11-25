@@ -68,7 +68,8 @@ val client = OkHttpClient()
 val json = Json { ignoreUnknownKeys = true }
 
 // Replace with your actual API key
-val apiKey = "3e4cbd540c674e369b64deff2fcb5d3c"
+//3e4cbd540c674e369b64deff2fcb5d3c
+val apiKey = "8b95563fe6c84ce990610ca3e673a9ea"
 
 suspend fun getRecipeIDs(
     maxReadyTime: Int?,

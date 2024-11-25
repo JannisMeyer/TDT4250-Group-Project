@@ -23,7 +23,7 @@ class SearchFragment : Fragment() {
 
     private var _binding: FragmentSearchBinding? = null
     private val binding get() = _binding!!
-    private var searchParameters : MutableList<String>? = null
+    private var searchParameters : MutableList<String>? = mutableListOf()
     var fetchedRecipes = FetchedRecipes.getInstance()
 
 
@@ -114,6 +114,7 @@ class SearchFragment : Fragment() {
         }
 
         // setup type spinner logic
+        typeSpinner?.setSelection(0)
         if (typeSpinner != null) {
             typeSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(
@@ -133,6 +134,7 @@ class SearchFragment : Fragment() {
         }
 
         // setup diet spinner logic
+        dietSpinner?.setSelection(0)
         if (dietSpinner != null) {
             dietSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(
@@ -143,6 +145,8 @@ class SearchFragment : Fragment() {
                 ) {
                     // add selected option to search parameters
                     searchParameters?.add(parent?.getItemAtPosition(position).toString())
+                    Log.d("t", "item: ${parent?.getItemAtPosition(position).toString()}")
+                    Log.d("t", "search parameters: $searchParameters")
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>?) {

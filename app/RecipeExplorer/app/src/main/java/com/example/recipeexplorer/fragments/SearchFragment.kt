@@ -48,9 +48,6 @@ class SearchFragment : Fragment() {
         // setup search button logic
         binding.searchButton.setOnClickListener {
 
-            // TODO: call method which fetched recipes from spoonacular
-
-
             lifecycleScope.launch {
                 val maxReadyTime = 30
                 val calories = 500

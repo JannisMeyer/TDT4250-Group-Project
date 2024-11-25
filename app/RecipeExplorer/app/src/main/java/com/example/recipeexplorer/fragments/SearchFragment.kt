@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.example.recipeexplorer.R
@@ -18,15 +19,12 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-//import com.example.recipeexplorer.fragments.A
-
 class SearchFragment : Fragment() {
 
     private var _binding: FragmentSearchBinding? = null
     private val binding get() = _binding!!
     private var searchParameters : MutableList<String>? = mutableListOf()
     private lateinit var diet : String
-    private lateinit var type : String
     private var fetchedRecipes = FetchedRecipes.getInstance()
 
 
@@ -40,12 +38,49 @@ class SearchFragment : Fragment() {
         return binding.root
     }
 
-        // setup search button logic
-        override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-            super.onViewCreated(view, savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-            // setup search button logic
-            binding.searchButton.setOnClickListener { button ->
+        // setup search button logic
+        binding.searchButton.setOnClickListener { button ->
+
+            val maxReadyTime = _binding?.inputPreparationTime?.text.toString().toIntOrNull()
+            val calories = _binding?.inputCalories?.text.toString().toIntOrNull()
+            val dietType = diet
+            val servings = _binding?.inputServings?.text.toString().toIntOrNull()
+            val sortingType = "popularity"
+            val nr = _binding?.inputNumberOfRecipes?.text.toString()
+                .toIntOrNull() // Number of recipes to fetch
+
+            var validInput = true
+
+            if (maxReadyTime != null) {
+                if (maxReadyTime > 250 || maxReadyTime < 5) {
+                    validInput = false
+                    Toast.makeText(context, "Invalid Preparation Time!", Toast.LENGTH_SHORT)
+                        .show()
+                }
+            }
+            if (calories != null) {
+                if (calories > 4000 || calories < 5) {
+                    validInput = false
+                    Toast.makeText(context, "Invalid Calories!", Toast.LENGTH_SHORT).show()
+                }
+            }
+            if (servings != null) {
+                if (servings > 20 || servings < 1) {
+                    validInput = false
+                    Toast.makeText(context, "Invalid Number of Servings!", Toast.LENGTH_SHORT)
+                        .show()
+                }
+            }
+            if (nr == null || nr > 20 || nr < 1) {
+                validInput = false
+                Toast.makeText(context, "Invalid Number of Recipes!", Toast.LENGTH_SHORT)
+                    .show()
+            }
+
+            if (validInput && nr != null) {
 
                 // show loading animation
                 binding.progressBar.visibility = View.VISIBLE
@@ -54,13 +89,6 @@ class SearchFragment : Fragment() {
                 thisButton.isEnabled = false
 
                 lifecycleScope.launch {
-                    val maxReadyTime = 30
-                    val calories = 500
-                    var dietType = "vegetarian"
-                    val servings = 4
-                    val sortingType = "popularity"
-                    val nr = 2 // Number of recipes to fetch
-                    dietType = diet
 
                     // Fetch recipes on the IO dispatcher
                     fetchedRecipes?.recipes = withContext(Dispatchers.IO) {
@@ -83,23 +111,11 @@ class SearchFragment : Fragment() {
                         .addToBackStack(null)
                         .commit()
                 }
+            }
         }
 
-        // get spinners from binding
-        val typeSpinner = _binding?.typeSpinner
+        // get diet spinner
         val dietSpinner = _binding?.dietSpinner
-
-        // setup type spinner
-        val typeAdapter = ArrayAdapter(
-            requireContext(),
-            android.R.layout.simple_spinner_item,
-            listOf("main dish", "salad", "cake")
-        )
-        typeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-
-        if (typeSpinner != null) {
-            typeSpinner.adapter = typeAdapter
-        }
 
         // setup diet spinner
         val dietAdapter = ArrayAdapter(
@@ -113,10 +129,10 @@ class SearchFragment : Fragment() {
             dietSpinner.adapter = dietAdapter
         }
 
-        // setup type spinner logic
-        typeSpinner?.setSelection(0)
-        if (typeSpinner != null) {
-            typeSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+        // setup diet spinner logic
+        dietSpinner?.setSelection(0)
+        if (dietSpinner != null) {
+            dietSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(
                     parent: AdapterView<*>?,
                     view: View?,
@@ -133,26 +149,6 @@ class SearchFragment : Fragment() {
                 }
             }
         }
-
-        // setup diet spinner logic
-        dietSpinner?.setSelection(0)
-        if (dietSpinner != null) {
-            dietSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-                override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?,
-                    position: Int,
-                    id: Long
-                ) {
-                    // add selected option to search parameters
-                    searchParameters?.add(parent?.getItemAtPosition(position).toString())
-                    type = parent?.getItemAtPosition(position).toString()
-                }
-
-                override fun onNothingSelected(parent: AdapterView<*>?) {
-                    // handle no selection
-                }
-            }
-        }
     }
 }
+

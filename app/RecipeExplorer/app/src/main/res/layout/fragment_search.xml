@@ -22,38 +22,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- TextView for type selection label -->
-    <TextView
-        android:id="@+id/textViewTypeDropdownMenu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/search_fragment_type_text"
-        android:textSize="24sp"
-        android:padding="16dp"
-        android:background="#B0B0B0"
-        app:layout_constraintTop_toBottomOf="@+id/searchHeadline"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <!-- dropdown menu for type selection -->
-    <Spinner
-        android:id="@+id/typeSpinner"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTypeDropdownMenu"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
     <!-- TextView for diet selection label -->
     <TextView
         android:id="@+id/textViewDietDropdownMenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/search_fragment_diet_text"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:padding="16dp"
         android:background="@color/grey"
-        app:layout_constraintTop_toBottomOf="@+id/typeSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/searchHeadline"
         app:layout_constraintStart_toStartOf="parent" />
 
     <!-- dropdown menu for diet selection -->
@@ -66,12 +44,101 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- TextView for preparation time -->
+    <TextView
+        android:id="@+id/headlinePreparationTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/search_fragment_preparation_time_text"
+        android:textSize="20sp"
+        android:padding="16dp"
+        android:background="@color/grey"
+        app:layout_constraintTop_toBottomOf="@+id/dietSpinner"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Input for preparation time -->
+    <EditText
+        android:id="@+id/inputPreparationTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/search_fragment_preparation_time_hint"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@+id/headlinePreparationTime"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- headline for calories -->
+    <TextView
+        android:id="@+id/headlineCalories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/search_fragment_calories_headline"
+        android:textSize="20sp"
+        android:padding="16dp"
+        android:background="@color/grey"
+        app:layout_constraintTop_toBottomOf="@+id/inputPreparationTime"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- input for calories -->
+    <EditText
+        android:id="@+id/inputCalories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/search_fragment_calories_hint"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@+id/headlineCalories"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- headline for servings -->
+    <TextView
+        android:id="@+id/headlineServings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/search_fragment_servings_headline"
+        android:textSize="20sp"
+        android:padding="16dp"
+        android:background="@color/grey"
+        app:layout_constraintTop_toBottomOf="@+id/inputCalories"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Input for servings -->
+    <EditText
+        android:id="@+id/inputServings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/search_fragment_servings_hint"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@+id/headlineServings"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- headline for number of recipes -->
+    <TextView
+        android:id="@+id/headlineNumberOfRecipes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/search_fragment_number_of_recipes_headline"
+        android:textSize="20sp"
+        android:padding="16dp"
+        android:background="@color/grey"
+        app:layout_constraintTop_toBottomOf="@+id/inputServings"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- input for number of recipes -->
+    <EditText
+        android:id="@+id/inputNumberOfRecipes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/search_fragment_number_of_recipes_hint"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@+id/headlineNumberOfRecipes"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
     <!-- search button -->
     <Button
         android:id="@+id/searchButton"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="52dp"
+        android:layout_marginBottom="40dp"
         android:text="@string/search_button_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

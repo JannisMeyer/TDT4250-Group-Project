@@ -99,7 +99,7 @@ Available vitamin options:
 
 ## Constraints
 1. OrderNumbers are between 1 and 3, and have to be unique
-2. The nutrient section has to contain at least 1 of the subsections **MacroNutrients** or **Vitamins**
+2. The nutrient section has to contain at least 1 of the subsections *MacroNutrients* or *Vitamins*
 3. The vitamin section has to contain minimum 3 and a maximum 5 vitamins
 
 

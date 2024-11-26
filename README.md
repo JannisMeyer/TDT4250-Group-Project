@@ -2,7 +2,12 @@
 ## Description
 This is a modelling project using EMF to model and generate code for an android application. The app is called **RecipeExplorer** and lets you explore recipes based on different filtering-criterea. What is modelled and generated is the detailed recipe page that appears when you click on a search-result. This page contains different information about the recipe. The metamodel and dsl-syntax enables you to customize the appearance of the page with regards to what information is displayed and where.
 
-We have used ecore for making the metamodel, xtext for defining a syntax, and xtend for generating code (both kotlin and xml).
+We have used **ecore** for making the metamodel, **xtext** for defining a concrete syntax, and **xtend** for generating code (both kotlin and xml).
+
+The generated code concists of 3 files:
+* `fragment_detailed_result_generated.xml`: UI-file similar to HTML. Defines the UI of the recipe details page.
+* `DetailedResultFragmentGenerated.kt`: Logic for the UI-file. 
+* `API_GET_Data_Generated.kt`: API-logic. Which vitamins to show is defined here.
 
 ## Project structure
 The project is divided in two; one folder for the EMF files, and one containing the android application. 

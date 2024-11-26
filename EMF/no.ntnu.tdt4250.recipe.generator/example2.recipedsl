@@ -1,0 +1,21 @@
+Page "example2" {
+	header Header {
+		basicinformation BasicInformation
+		recipetitle Title
+		image Image
+	}
+	ingredients Ingredients {
+		orderNumber 1
+	}
+	instructions Instructions {
+		orderNumber 2
+	}
+	nutrients Nutrients {
+		orderNumber 3
+		vitamins Vitamins {
+			Vitamin {
+				VITAMIN_B1, VITAMIN_A,  VITAMIN_C
+			}
+		}
+	}
+}

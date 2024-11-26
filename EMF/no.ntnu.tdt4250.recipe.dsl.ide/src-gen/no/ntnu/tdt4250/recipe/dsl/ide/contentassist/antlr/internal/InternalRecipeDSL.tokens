@@ -24,10 +24,10 @@
 'Vitamin'=47
 'Vitamins'=46
 'basicinformation'=33
-'header'=25
+'header'=26
 'image'=35
-'ingredients'=24
-'instructions'=23
+'ingredients'=25
+'instructions'=24
 'macronutrients'=39
 'nutrients'=27
 'orderNumber'=29
@@ -36,7 +36,7 @@
 'unittoggle'=31
 'vitamins'=38
 '{'=22
-'}'=26
+'}'=23
 RULE_ANY_OTHER=10
 RULE_ID=5
 RULE_INT=6

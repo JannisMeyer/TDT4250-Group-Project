@@ -104,7 +104,7 @@ public class RecipeDSLSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Header returns Header
 	 *
 	 * Constraint:
-	 *     (basicinformation=BasicInformation recipetitle=Title image=Image?)
+	 *     (basicinformation=BasicInformation | recipetitle=Title | image=Image)+
 	 * </pre>
 	 */
 	protected void sequence_Header(ISerializationContext context, Header semanticObject) {
@@ -132,7 +132,7 @@ public class RecipeDSLSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Ingredients returns Ingredients
 	 *
 	 * Constraint:
-	 *     (orderNumber=EInt unittoggle=UnitOfMeasure?)
+	 *     (orderNumber=EInt | unittoggle=UnitOfMeasure)+
 	 * </pre>
 	 */
 	protected void sequence_Ingredients(ISerializationContext context, Ingredients semanticObject) {
@@ -180,7 +180,7 @@ public class RecipeDSLSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Nutrients returns Nutrients
 	 *
 	 * Constraint:
-	 *     (orderNumber=EInt percentagetoggle=PercentageAmountToggle? vitamins=Vitamins? macronutrients=Macronutrients?)
+	 *     (orderNumber=EInt | percentagetoggle=PercentageAmountToggle | vitamins=Vitamins | macronutrients=Macronutrients)+
 	 * </pre>
 	 */
 	protected void sequence_Nutrients(ISerializationContext context, Nutrients semanticObject) {
@@ -194,7 +194,7 @@ public class RecipeDSLSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Page returns Page
 	 *
 	 * Constraint:
-	 *     (name=EString instructions=Instructions ingredients=Ingredients header=Header nutrients=Nutrients?)
+	 *     (name=EString (instructions=Instructions | ingredients=Ingredients | header=Header | nutrients=Nutrients)*)
 	 * </pre>
 	 */
 	protected void sequence_Page(ISerializationContext context, Page semanticObject) {

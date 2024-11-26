@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- ConstraintLayout to hold the screen -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.recipeexplorer.MainActivity">
+
+    <!-- TextView for screen headline -->
+    <TextView
+        android:id="@+id/searchHeadline"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textSize="40sp"
+        android:text="@string/search_fragment_headline_text"
+        android:background="@color/green"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- TextView for diet selection label -->
+    <TextView
+        android:id="@+id/textViewDietDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/search_fragment_diet_text"
+        android:textSize="20sp"
+        android:padding="16dp"
+        android:background="@color/grey"
+        app:layout_constraintTop_toBottomOf="@+id/searchHeadline"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- dropdown menu for diet selection -->
+    <Spinner
+        android:id="@+id/dietSpinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDietDropdownMenu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- TextView for preparation time -->
+    <TextView
+        android:id="@+id/headlinePreparationTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/search_fragment_preparation_time_text"
+        android:textSize="20sp"
+        android:padding="16dp"
+        android:background="@color/grey"
+        app:layout_constraintTop_toBottomOf="@+id/dietSpinner"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Input for preparation time -->
+    <EditText
+        android:id="@+id/inputPreparationTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/search_fragment_preparation_time_hint"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@+id/headlinePreparationTime"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- headline for calories -->
+    <TextView
+        android:id="@+id/headlineCalories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/search_fragment_calories_headline"
+        android:textSize="20sp"
+        android:padding="16dp"
+        android:background="@color/grey"
+        app:layout_constraintTop_toBottomOf="@+id/inputPreparationTime"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- input for calories -->
+    <EditText
+        android:id="@+id/inputCalories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/search_fragment_calories_hint"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@+id/headlineCalories"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- headline for servings -->
+    <TextView
+        android:id="@+id/headlineServings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/search_fragment_servings_headline"
+        android:textSize="20sp"
+        android:padding="16dp"
+        android:background="@color/grey"
+        app:layout_constraintTop_toBottomOf="@+id/inputCalories"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Input for servings -->
+    <EditText
+        android:id="@+id/inputServings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/search_fragment_servings_hint"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@+id/headlineServings"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- headline for number of recipes -->
+    <TextView
+        android:id="@+id/headlineNumberOfRecipes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/search_fragment_number_of_recipes_headline"
+        android:textSize="20sp"
+        android:padding="16dp"
+        android:background="@color/grey"
+        app:layout_constraintTop_toBottomOf="@+id/inputServings"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- input for number of recipes -->
+    <EditText
+        android:id="@+id/inputNumberOfRecipes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/search_fragment_number_of_recipes_hint"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@+id/headlineNumberOfRecipes"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <!-- search button -->
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="40dp"
+        android:text="@string/search_button_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:indeterminateTint="@color/grey"
+        app:layout_constraintTop_toTopOf="@+id/searchButton"
+        app:layout_constraintBottom_toBottomOf="@+id/searchButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

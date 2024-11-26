@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Outer flame -->
+    <path
+        android:fillColor="#FF4D4D"
+        android:pathData="M12,2C12,2 5.5,8.5 5.5,14.5C5.5,18.92 8.42,22 12,22C15.58,22 18.5,18.92 18.5,14.5C18.5,8.5 12,2 12,2Z"/>
+
+    <!-- Inner flame (lighter color) -->
+    <path
+        android:fillColor="#FFA726"
+        android:fillAlpha="0.3"
+        android:pathData="M12,4C12,4 7.5,9.5 7.5,14.5C7.5,17.92 9.42,20 12,20C14.58,20 16.5,17.92 16.5,14.5C16.5,9.5 12,4 12,4Z"/>
+
+    <!-- Center highlight -->
+    <path
+        android:fillColor="#FFE082"
+        android:fillAlpha="0.5"
+        android:pathData="M12,7C12,7 9.5,11.5 9.5,14.5C9.5,16.42 10.42,18 12,18C13.58,18 14.5,16.42 14.5,14.5C14.5,11.5 12,7 12,7Z"/>
+</vector>

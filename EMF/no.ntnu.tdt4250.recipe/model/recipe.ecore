@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="recipe" nsURI="http://www.example.org/recipe" nsPrefix="recipe">
+  <eClassifiers xsi:type="ecore:EClass" name="Page">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="UniqueOrderNumbers ExactlyOneIngredients ExactlyOneInstructions MaxOneNutrients"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instructions" lowerBound="1"
+        eType="#//Instructions" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ingredients" lowerBound="1"
+        eType="#//Ingredients" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="header" lowerBound="1"
+        eType="#//Header" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nutrients" eType="#//Nutrients"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Macronutrients">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="protein, carbohydrates, fat"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Ingredients" eSuperTypes="#//Section">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="unittoggle" eType="#//UnitOfMeasure"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Instructions" eSuperTypes="#//Section"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Image"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BasicInformation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UnitOfMeasure" eSuperTypes="#//ToggleButton"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Section" abstract="true" interface="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="ValidOrderNumberRange"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="orderNumber" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Where on the page it should go"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ToggleButton" abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PercentageAmountToggle" eSuperTypes="#//ToggleButton"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Vitamins">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Vitamin" lowerBound="3"
+        upperBound="5" eType="#//Vitamin"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Nutrients" eSuperTypes="#//Section">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="MustContainAtLeastOne"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="percentagetoggle" eType="#//PercentageAmountToggle"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vitamins" eType="#//Vitamins"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="macronutrients" eType="#//Macronutrients"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Vitamin">
+    <eLiterals name="VITAMIN_A"/>
+    <eLiterals name="VITAMIN_B1" value="1"/>
+    <eLiterals name="VITAMIN_B2" value="2"/>
+    <eLiterals name="VITAMIN_B3" value="3"/>
+    <eLiterals name="VITAMIN_B5" value="4"/>
+    <eLiterals name="VITAMIN_B6" value="5"/>
+    <eLiterals name="VITAMIN_B12" value="6"/>
+    <eLiterals name="VITAMIN_C" value="7"/>
+    <eLiterals name="VITAMIN_E" value="8"/>
+    <eLiterals name="VITAMIN_K" value="9"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Header">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="basicinformation" lowerBound="1"
+        eType="#//BasicInformation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="recipetitle" lowerBound="1"
+        eType="#//Title" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="image" eType="#//Image"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Title">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stretch" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" changeable="false"
+        volatile="true" transient="true" defaultValueLiteral="false" derived="true"/>
+  </eClassifiers>
+</ecore:EPackage>

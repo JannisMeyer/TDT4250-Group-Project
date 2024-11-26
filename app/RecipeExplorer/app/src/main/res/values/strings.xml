@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">RecipeFinder</string>
+    <string name="search_button_text">Search</string>
+    <string name="search_fragment_headline_text">Search for Recipes</string>
+    <string name="search_fragment_type_text">Type</string>
+    <string name="search_fragment_diet_text">Diet</string>
+    <string name="search_fragment_preparation_time_text">Ready in Minutes</string>
+    <string name="search_fragment_preparation_time_hint">Minutes</string>
+    <string name="search_fragment_calories_headline">Maximum Calories</string>
+    <string name="search_fragment_calories_hint">Calories</string>
+    <string name="search_fragment_servings_headline">Servings</string>
+    <string name="search_fragment_servings_hint">Servings</string>
+    <string name="search_fragment_number_of_recipes_headline">Number of Recipes</string>
+    <string name="search_fragment_number_of_recipes_hint">Number</string>
+    <string name="results_fragment_headline_text">Results</string>
+    <string name="default_title">Recipe</string>
+    <string name="default_calories">Calories: 500</string>
+    <string name="default_preparation_time">30 Minutes</string>
+    <string name="default_ingredients">Ingredient 1\nIngredient 2\nIngredient 3</string>
+    <string name="default_instructions">bla bla bla</string>
+    <string name="default_macro_nutrients">Carbs: 100g\nFat: 30g\nProtein: 30mg\nFiber: 10g</string>
+    <string name="default_vitamins">Vitamin C: 20mg\nPotassium: 20mg\nCalcium: 20mg</string>
+    <string name="ingredients_headline">Ingredients</string>
+    <string name="ingredients_switch_text_imperial">US</string>
+    <string name="ingredients_switch_text_metric">Metric</string>
+    <string name="instructions_headline">Instructions</string>
+    <string name="macro_nutrients_headline">Macros</string>
+    <string name="vitamins_headline">Vitamins</string>
+    <string name="nutrient_switch_text_amount">Amount</string>
+    <string name="nutrient_switch_text_percentage">Daily Percentage</string>
+    <string name="nutrients_title_text">Nutrients</string>
+</resources>

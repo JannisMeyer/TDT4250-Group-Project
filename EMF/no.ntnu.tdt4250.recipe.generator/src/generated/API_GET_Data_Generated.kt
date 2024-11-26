@@ -261,29 +261,29 @@ fun convertToRecipe(recipeInfo: RecipeInformation): Recipe {
     val calories = recipeInfo.nutrients.find { it.name.equals("Calories", ignoreCase = true) }?.amount?.toInt() ?: 0
 
     val macroNutrientsNames = listOf("Protein", "Fat", "Carbohydrates")
-
     val vitaminsNames = listOf(
-        "Vitamin A",
-        "Vitamin B1",
-        "Vitamin B2",
-        "Vitamin B3",
-        "Vitamin B5",
-        "Vitamin B6",
-        "Vitamin B12",
-        "Vitamin C",
-        "Vitamin E",
-        "Vitamin K"
+	            "Vitamin A", 
+	            "Vitamin B12", 
+	            "Vitamin C"
     )
 
     val macroNutrientsAmount = recipeInfo.nutrients.filter { it.name in macroNutrientsNames }
         .map { "${it.amount}${it.unit} ${it.name}" }
-    val vitaminsAmount = recipeInfo.nutrients.filter { it.name in vitaminsNames }
-        .map { "${it.amount}${it.unit} ${it.name}" }
+    val vitaminsAmount = if (vitaminsNames.isEmpty()) {
+        emptyList()
+    } else {
+        recipeInfo.nutrients.filter { it.name in vitaminsNames }
+            .map { "${it.amount}${it.unit} ${it.name}" }
+    }
 
     val macroNutrientsPercentage = recipeInfo.nutrients.filter { it.name in macroNutrientsNames }
         .map { "${it.percentOfDailyNeeds}% ${it.name}" }
-    val vitaminsPercentage = recipeInfo.nutrients.filter { it.name in vitaminsNames }
-        .map { "${it.percentOfDailyNeeds}% ${it.name}" }
+    val vitaminsPercentage = if (vitaminsNames.isEmpty()) {
+        emptyList()
+    } else {
+        recipeInfo.nutrients.filter { it.name in vitaminsNames }
+            .map { "${it.percentOfDailyNeeds}% ${it.name}" }
+    }
 
     return Recipe(
         id = id,

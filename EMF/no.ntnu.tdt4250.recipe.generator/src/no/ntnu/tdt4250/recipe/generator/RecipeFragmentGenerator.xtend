@@ -125,25 +125,7 @@ class RecipeFragmentGenerator {
 			binding.macroNutrients.text = shownRecipe?.macroNutrientsAmount?.joinToString(separator = "\n")
 		«ENDIF»
 		«IF nutrients.vitamins !== null»
-			val vitaminsList = listOf(«FOR v : nutrients.vitamins.vitamin SEPARATOR ', '»"«v»"«ENDFOR»)
-			binding.vitamins.text = shownRecipe?.vitaminsAmount
-			    ?.filter { vitaminString -> 
-			        vitaminsList.any { vitaminEnum ->
-			            val transformedVitamin = "Vitamin " + 
-                            vitaminEnum.replace("VITAMIN_", "")
-                                .split("_")
-                                .joinToString(" ") { word ->
-                                    when {
-                                        // Handle cases like B12 where we don't want to split the number
-                                        word.matches(Regex("[A-Z]\\d+")) -> word
-                                        // For regular words, capitalize first letter
-                                        else -> word.lowercase().replaceFirstChar { it.uppercase() }
-                                    }
-                                }
-                        vitaminString.contains(transformedVitamin, ignoreCase = true)
-			        }
-			    }
-			    ?.joinToString(separator = "\n")
+			binding.vitamins.text = shownRecipe?.vitaminsAmount?.joinToString(separator = "\n")
 		«ENDIF»
 	'''
 

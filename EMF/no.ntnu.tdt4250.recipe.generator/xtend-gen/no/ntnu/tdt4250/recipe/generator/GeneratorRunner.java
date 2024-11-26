@@ -30,6 +30,7 @@ public class GeneratorRunner {
     final Page page = GeneratorRunner.loadModel(model, injector);
     final RecipeLayoutGenerator layoutGenerator = new RecipeLayoutGenerator();
     final RecipeFragmentGenerator fragmentGenerator = new RecipeFragmentGenerator();
+    final APIGenerator apiGenerator = new APIGenerator();
     String _string = layoutGenerator.generateLayout(page).toString();
     StringConcatenation _builder = new StringConcatenation();
     _builder.append(folder);
@@ -40,6 +41,11 @@ public class GeneratorRunner {
     _builder_1.append(folder);
     _builder_1.append("/DetailedResultFragmentGenerated.kt");
     GeneratorRunner.writeText(_string_1, _builder_1.toString());
+    String _string_2 = apiGenerator.generateKotlinFile(page).toString();
+    StringConcatenation _builder_2 = new StringConcatenation();
+    _builder_2.append(folder);
+    _builder_2.append("/API_GET_Data_Generated.kt");
+    GeneratorRunner.writeText(_string_2, _builder_2.toString());
   }
 
   public static String writeText(final String text, final String filePath) {

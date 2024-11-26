@@ -18,14 +18,6 @@ class GeneratorRunner {
     	def static void main(String[] args) {
 	
 		val Injector injector = new RecipeDSLStandaloneSetup().createInjectorAndDoEMFRegistration()
-		// We could also assume that the model the first argument of the java program, 
-		// and that the output folder is the second
-		// Parameters can be configured in the run configuration for Java
-		//
-		// val model = args.get(0)
-		// val folder = args.get(1)
-	
-		// We hardcode them here, but you can uncomment the code above otherwise
 		val model = "standard.recipedsl"
 		val folder = "src/generated"
 	
@@ -35,6 +27,7 @@ class GeneratorRunner {
 		val page = loadModel(model, injector)
 		val layoutGenerator = new RecipeLayoutGenerator()
 		val fragmentGenerator = new RecipeFragmentGenerator()
+		val apiGenerator = new APIGenerator()
 		
 		writeText(
 			layoutGenerator.generateLayout(page).toString,
@@ -44,6 +37,11 @@ class GeneratorRunner {
 		writeText(
 			fragmentGenerator.generateFragment(page).toString,
 			'''«folder»/DetailedResultFragmentGenerated.kt'''			
+		)
+		
+		writeText(
+			apiGenerator.generateKotlinFile(page).toString,
+			'''«folder»/API_GET_Data_Generated.kt'''
 		)
 			
 	}

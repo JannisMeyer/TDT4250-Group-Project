@@ -13,7 +13,6 @@ import no.ntnu.tdt4250.recipe.Page;
 import no.ntnu.tdt4250.recipe.PercentageAmountToggle;
 import no.ntnu.tdt4250.recipe.Section;
 import no.ntnu.tdt4250.recipe.UnitOfMeasure;
-import no.ntnu.tdt4250.recipe.Vitamin;
 import no.ntnu.tdt4250.recipe.Vitamins;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
@@ -302,75 +301,7 @@ public class RecipeFragmentGenerator {
       Vitamins _vitamins = nutrients.getVitamins();
       boolean _tripleNotEquals_1 = (_vitamins != null);
       if (_tripleNotEquals_1) {
-        _builder.append("val vitaminsList = listOf(");
-        {
-          EList<Vitamin> _vitamin = nutrients.getVitamins().getVitamin();
-          boolean _hasElements = false;
-          for(final Vitamin v : _vitamin) {
-            if (!_hasElements) {
-              _hasElements = true;
-            } else {
-              _builder.appendImmediate(", ", "");
-            }
-            _builder.append("\"");
-            _builder.append(v);
-            _builder.append("\"");
-          }
-        }
-        _builder.append(")");
-        _builder.newLineIfNotEmpty();
-        _builder.append("binding.vitamins.text = shownRecipe?.vitaminsAmount");
-        _builder.newLine();
-        _builder.append("    ");
-        _builder.append("?.filter { vitaminString -> ");
-        _builder.newLine();
-        _builder.append("        ");
-        _builder.append("vitaminsList.any { vitaminEnum ->");
-        _builder.newLine();
-        _builder.append("            ");
-        _builder.append("val transformedVitamin = \"Vitamin \" + ");
-        _builder.newLine();
-        _builder.append("                            ");
-        _builder.append("vitaminEnum.replace(\"VITAMIN_\", \"\")");
-        _builder.newLine();
-        _builder.append("                                ");
-        _builder.append(".split(\"_\")");
-        _builder.newLine();
-        _builder.append("                                ");
-        _builder.append(".joinToString(\" \") { word ->");
-        _builder.newLine();
-        _builder.append("                                    ");
-        _builder.append("when {");
-        _builder.newLine();
-        _builder.append("                                        ");
-        _builder.append("// Handle cases like B12 where we don\'t want to split the number");
-        _builder.newLine();
-        _builder.append("                                        ");
-        _builder.append("word.matches(Regex(\"[A-Z]\\\\d+\")) -> word");
-        _builder.newLine();
-        _builder.append("                                        ");
-        _builder.append("// For regular words, capitalize first letter");
-        _builder.newLine();
-        _builder.append("                                        ");
-        _builder.append("else -> word.lowercase().replaceFirstChar { it.uppercase() }");
-        _builder.newLine();
-        _builder.append("                                    ");
-        _builder.append("}");
-        _builder.newLine();
-        _builder.append("                                ");
-        _builder.append("}");
-        _builder.newLine();
-        _builder.append("                        ");
-        _builder.append("vitaminString.contains(transformedVitamin, ignoreCase = true)");
-        _builder.newLine();
-        _builder.append("        ");
-        _builder.append("}");
-        _builder.newLine();
-        _builder.append("    ");
-        _builder.append("}");
-        _builder.newLine();
-        _builder.append("    ");
-        _builder.append("?.joinToString(separator = \"\\n\")");
+        _builder.append("binding.vitamins.text = shownRecipe?.vitaminsAmount?.joinToString(separator = \"\\n\")");
         _builder.newLine();
       }
     }

@@ -61,25 +61,7 @@ class DetailedResultFragmentGenerated : Fragment() {
     binding.textViewIngredients.text = shownRecipe?.ingredientsMetric?.joinToString(separator = "\n")
     binding.instructions.text = shownRecipe?.instructions?.let { formatInstructions(it) }
     binding.macroNutrients.text = shownRecipe?.macroNutrientsAmount?.joinToString(separator = "\n")
-    val vitaminsList = listOf("VITAMIN_A", "VITAMIN_B12", "VITAMIN_C")
-    binding.vitamins.text = shownRecipe?.vitaminsAmount
-        ?.filter { vitaminString -> 
-            vitaminsList.any { vitaminEnum ->
-                val transformedVitamin = "Vitamin " + 
-                                vitaminEnum.replace("VITAMIN_", "")
-                                    .split("_")
-                                    .joinToString(" ") { word ->
-                                        when {
-                                            // Handle cases like B12 where we don't want to split the number
-                                            word.matches(Regex("[A-Z]\\d+")) -> word
-                                            // For regular words, capitalize first letter
-                                            else -> word.lowercase().replaceFirstChar { it.uppercase() }
-                                        }
-                                    }
-                            vitaminString.contains(transformedVitamin, ignoreCase = true)
-            }
-        }
-        ?.joinToString(separator = "\n")
+    binding.vitamins.text = shownRecipe?.vitaminsAmount?.joinToString(separator = "\n")
     }
 
     private fun formatInstructions(htmlInstructions: String): Spanned {

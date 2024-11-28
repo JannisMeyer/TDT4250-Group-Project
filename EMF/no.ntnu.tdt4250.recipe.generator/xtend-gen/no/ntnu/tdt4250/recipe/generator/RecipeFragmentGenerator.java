@@ -399,12 +399,24 @@ public class RecipeFragmentGenerator {
         _builder.append("        ");
         _builder.append("binding.nutrientSwitch.text = getString(R.string.nutrient_switch_text_percentage)");
         _builder.newLine();
-        _builder.append("        ");
-        _builder.append("binding.macroNutrients.text = shownRecipe?.macroNutrientsPercentage?.joinToString(separator = \"\\n\")");
-        _builder.newLine();
-        _builder.append("        ");
-        _builder.append("binding.vitamins.text = shownRecipe?.vitaminsPercentage?.joinToString(separator = \"\\n\")");
-        _builder.newLine();
+        {
+          Macronutrients _macronutrients = nutrients.getMacronutrients();
+          boolean _tripleNotEquals_1 = (_macronutrients != null);
+          if (_tripleNotEquals_1) {
+            _builder.append("        ");
+            _builder.append("binding.macroNutrients.text = shownRecipe?.macroNutrientsPercentage?.joinToString(separator = \"\\n\")");
+            _builder.newLine();
+          }
+        }
+        {
+          Vitamins _vitamins = nutrients.getVitamins();
+          boolean _tripleNotEquals_2 = (_vitamins != null);
+          if (_tripleNotEquals_2) {
+            _builder.append("        ");
+            _builder.append("binding.vitamins.text = shownRecipe?.vitaminsPercentage?.joinToString(separator = \"\\n\")");
+            _builder.newLine();
+          }
+        }
         _builder.append("    ");
         _builder.append("}");
         _builder.newLine();
@@ -414,12 +426,24 @@ public class RecipeFragmentGenerator {
         _builder.append("        ");
         _builder.append("binding.nutrientSwitch.text = getString(R.string.nutrient_switch_text_amount)");
         _builder.newLine();
-        _builder.append("        ");
-        _builder.append("binding.macroNutrients.text = shownRecipe?.macroNutrientsAmount?.joinToString(separator = \"\\n\")");
-        _builder.newLine();
-        _builder.append("        ");
-        _builder.append("binding.vitamins.text = shownRecipe?.vitaminsAmount?.joinToString(separator = \"\\n\")");
-        _builder.newLine();
+        {
+          Macronutrients _macronutrients_1 = nutrients.getMacronutrients();
+          boolean _tripleNotEquals_3 = (_macronutrients_1 != null);
+          if (_tripleNotEquals_3) {
+            _builder.append("        ");
+            _builder.append("binding.macroNutrients.text = shownRecipe?.macroNutrientsAmount?.joinToString(separator = \"\\n\")");
+            _builder.newLine();
+          }
+        }
+        {
+          Vitamins _vitamins_1 = nutrients.getVitamins();
+          boolean _tripleNotEquals_4 = (_vitamins_1 != null);
+          if (_tripleNotEquals_4) {
+            _builder.append("        ");
+            _builder.append("binding.vitamins.text = shownRecipe?.vitaminsAmount?.joinToString(separator = \"\\n\")");
+            _builder.newLine();
+          }
+        }
         _builder.append("    ");
         _builder.append("}");
         _builder.newLine();

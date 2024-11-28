@@ -492,7 +492,7 @@ public class RecipeLayoutGenerator {
     _builder.append("android:layout_weight=\"1\"");
     _builder.newLine();
     _builder.append("            ");
-    _builder.append("android:textSize=\"18sp\"");
+    _builder.append("android:textSize=\"20sp\"");
     _builder.newLine();
     _builder.append("            ");
     _builder.append("android:textStyle=\"bold\"");
@@ -598,7 +598,7 @@ public class RecipeLayoutGenerator {
     _builder.append("android:layout_height=\"wrap_content\"");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("android:textSize=\"18sp\"");
+    _builder.append("android:textSize=\"20sp\"");
     _builder.newLine();
     _builder.append("        ");
     _builder.append("android:textStyle=\"bold\"");

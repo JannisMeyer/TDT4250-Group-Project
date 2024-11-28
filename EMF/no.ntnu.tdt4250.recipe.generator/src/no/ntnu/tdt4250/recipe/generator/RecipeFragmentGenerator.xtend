@@ -165,13 +165,21 @@ class RecipeFragmentGenerator {
 			binding.nutrientSwitch.setOnCheckedChangeListener { _, isChecked ->
 			    if (isChecked) {
 			        binding.nutrientSwitch.text = getString(R.string.nutrient_switch_text_percentage)
+			        «IF nutrients.macronutrients !== null»
 			        binding.macroNutrients.text = shownRecipe?.macroNutrientsPercentage?.joinToString(separator = "\n")
+			        «ENDIF»
+			        «IF nutrients.vitamins !== null»
 			        binding.vitamins.text = shownRecipe?.vitaminsPercentage?.joinToString(separator = "\n")
+			        «ENDIF»
 			    }
 			    else {
 			        binding.nutrientSwitch.text = getString(R.string.nutrient_switch_text_amount)
+			        «IF nutrients.macronutrients !== null»
 			        binding.macroNutrients.text = shownRecipe?.macroNutrientsAmount?.joinToString(separator = "\n")
+			        «ENDIF»
+			        «IF nutrients.vitamins !== null»
 			        binding.vitamins.text = shownRecipe?.vitaminsAmount?.joinToString(separator = "\n")
+			        «ENDIF»
 			    }
 			}
 		«ENDIF»

@@ -23,7 +23,7 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 public class GeneratorRunner {
   public static void main(final String[] args) {
     final Injector injector = new RecipeDSLStandaloneSetup().createInjectorAndDoEMFRegistration();
-    final String model = "fullRecipe.recipedsl";
+    final String model = "onlyVitamins.recipedsl";
     final String folder = "src/generated";
     GeneratorRunner.registerMetamodel();
     GeneratorRunner.registerResourceFactory(injector);

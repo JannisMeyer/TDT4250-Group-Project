@@ -157,7 +157,7 @@ class RecipeLayoutGenerator {
 		            android:layout_width="0dp"
 		            android:layout_height="wrap_content"
 		            android:layout_weight="1"
-		            android:textSize="18sp"
+		            android:textSize="20sp"
 		            android:textStyle="bold"
 		            android:text="@string/ingredients_headline"/>
 		        
@@ -194,7 +194,7 @@ class RecipeLayoutGenerator {
 		        android:id="@+id/instructionsHeadline"
 		        android:layout_width="match_parent"
 		        android:layout_height="wrap_content"
-		        android:textSize="18sp"
+		        android:textSize="20sp"
 		        android:textStyle="bold"
 		        android:text="@string/instructions_headline"/>
 		    

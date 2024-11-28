@@ -51,11 +51,17 @@ class DetailedResultFragmentGenerated : Fragment() {
 
     private fun setupUI() {
     binding.recipeTitle.text = shownRecipe?.title
+    binding.recipeImage.load(shownRecipe?.image) {
+        placeholder(R.drawable.loading_animation)
+        error(R.drawable.error_image)
+        crossfade(true)
+    }
     binding.recipePreparationTime.text = "${shownRecipe?.preparationTime} min"
     binding.calories.text = "${shownRecipe?.calories} kcal"
-    binding.vitamins.text = shownRecipe?.vitaminsAmount?.joinToString(separator = "\n")
-    binding.textViewIngredients.text = shownRecipe?.ingredientsMetric?.joinToString(separator = "\n")
     binding.instructions.text = shownRecipe?.instructions?.let { formatInstructions(it) }
+    binding.textViewIngredients.text = shownRecipe?.ingredientsMetric?.joinToString(separator = "\n")
+    binding.macroNutrients.text = shownRecipe?.macroNutrientsAmount?.joinToString(separator = "\n")
+    binding.vitamins.text = shownRecipe?.vitaminsAmount?.joinToString(separator = "\n")
     }
 
     private fun formatInstructions(htmlInstructions: String): Spanned {
@@ -84,10 +90,12 @@ private fun setupSwitches() {
    binding.nutrientSwitch.setOnCheckedChangeListener { _, isChecked ->
        if (isChecked) {
            binding.nutrientSwitch.text = getString(R.string.nutrient_switch_text_percentage)
+           binding.macroNutrients.text = shownRecipe?.macroNutrientsPercentage?.joinToString(separator = "\n")
            binding.vitamins.text = shownRecipe?.vitaminsPercentage?.joinToString(separator = "\n")
        }
        else {
            binding.nutrientSwitch.text = getString(R.string.nutrient_switch_text_amount)
+           binding.macroNutrients.text = shownRecipe?.macroNutrientsAmount?.joinToString(separator = "\n")
            binding.vitamins.text = shownRecipe?.vitaminsAmount?.joinToString(separator = "\n")
        }
    }

@@ -18,11 +18,17 @@
             android:orientation="horizontal"
             android:padding="16dp">
             
+            <ImageView
+                android:id="@+id/recipeImage"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/ic_launcher_foreground"/>
             <TextView
                 android:id="@+id/recipeTitle"
                 android:layout_width="0dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
+                android:layout_marginStart="16dp"
                 android:gravity="center"
                 android:autoSizeTextType="uniform"
                 android:autoSizeMinTextSize="12sp"
@@ -101,6 +107,68 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             
+            <!-- Instructions Section -->
+            <LinearLayout
+                android:id="@+id/instructionsSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+                
+                <TextView
+                    android:id="@+id/instructionsHeadline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:text="@string/instructions_headline"/>
+                
+                <TextView
+                    android:id="@+id/instructions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textSize="16sp"
+                    android:text="@string/default_instructions"/>
+            </LinearLayout>
+            <!-- Ingredients Section -->
+            <LinearLayout
+                android:id="@+id/ingredientsSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    
+                    <TextView
+                        android:id="@+id/ingredientsHeadline"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:text="@string/ingredients_headline"/>
+                    
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/unitSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:checked="false"
+                        android:text="@string/ingredients_switch_text_metric"/>
+                </LinearLayout>
+                
+                <TextView
+                    android:id="@+id/textViewIngredients"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textSize="16sp"
+                    android:text="@string/default_ingredients"/>
+            </LinearLayout>
             <!-- Nutrients Section -->
             <LinearLayout
                 android:id="@+id/nutrientsSection"
@@ -132,6 +200,29 @@
                         android:text="@string/nutrient_switch_text_amount"/>
                 </LinearLayout>
             
+            <!-- Macros Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+            		
+            <TextView
+                android:id="@+id/macroNutrientsHeadline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:text="@string/macro_nutrients_headline"/>
+            		
+            <TextView
+                android:id="@+id/macroNutrients"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textSize="16sp"
+                android:text="@string/default_macro_nutrients"/>
+            </LinearLayout>
             
             <!-- Vitamins Section -->
             <LinearLayout
@@ -156,68 +247,6 @@
                 android:textSize="16sp"
                 android:text="@string/default_vitamins"/>
             </LinearLayout>
-            </LinearLayout>
-            <!-- Ingredients Section -->
-            <LinearLayout
-                android:id="@+id/ingredientsSection"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-                
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    
-                    <TextView
-                        android:id="@+id/ingredientsHeadline"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:text="@string/ingredients_headline"/>
-                    
-                    <androidx.appcompat.widget.SwitchCompat
-                        android:id="@+id/unitSwitch"
-                        android:layout_width="wrap_content"
-                        android:layout_height="48dp"
-                        android:checked="false"
-                        android:text="@string/ingredients_switch_text_metric"/>
-                </LinearLayout>
-                
-                <TextView
-                    android:id="@+id/textViewIngredients"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:textSize="16sp"
-                    android:text="@string/default_ingredients"/>
-            </LinearLayout>
-            <!-- Instructions Section -->
-            <LinearLayout
-                android:id="@+id/instructionsSection"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-                
-                <TextView
-                    android:id="@+id/instructionsHeadline"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:text="@string/instructions_headline"/>
-                
-                <TextView
-                    android:id="@+id/instructions"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:textSize="16sp"
-                    android:text="@string/default_instructions"/>
             </LinearLayout>
             
         </LinearLayout>

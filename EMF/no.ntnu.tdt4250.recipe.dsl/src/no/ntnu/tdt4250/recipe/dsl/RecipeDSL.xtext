@@ -82,9 +82,11 @@ PercentageAmountToggle returns PercentageAmountToggle:
 
 Vitamins returns Vitamins:
     {Vitamins}
-    'Vitamins' 
-    '{' Vitamin+=Vitamin ( "," Vitamin+=Vitamin)* '}';
-
+    'Vitamins'
+    '{'
+        'vitamin' '{' Vitamin+=Vitamin ( "," Vitamin+=Vitamin)* '}'
+    '}';
+    
 Macronutrients returns Macronutrients:
     {Macronutrients}
     'Macronutrients';

@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Page'", "'{'", "'}'", "'Instructions'", "'orderNumber'", "'Ingredients'", "'Header'", "'Nutrients'", "'-'", "'UnitOfMeasureToggle'", "'BasicInformation'", "'Title'", "'Image'", "'PercentageAmountToggle'", "'Vitamins'", "','", "'Macronutrients'", "'VITAMIN_A'", "'VITAMIN_B1'", "'VITAMIN_B2'", "'VITAMIN_B3'", "'VITAMIN_B5'", "'VITAMIN_B6'", "'VITAMIN_B12'", "'VITAMIN_C'", "'VITAMIN_E'", "'VITAMIN_K'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Page'", "'{'", "'}'", "'Instructions'", "'orderNumber'", "'Ingredients'", "'Header'", "'Nutrients'", "'-'", "'UnitOfMeasureToggle'", "'BasicInformation'", "'Title'", "'Image'", "'PercentageAmountToggle'", "'Vitamins'", "'vitamin'", "','", "'Macronutrients'", "'VITAMIN_A'", "'VITAMIN_B1'", "'VITAMIN_B2'", "'VITAMIN_B3'", "'VITAMIN_B5'", "'VITAMIN_B6'", "'VITAMIN_B12'", "'VITAMIN_C'", "'VITAMIN_E'", "'VITAMIN_K'"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -30,6 +30,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
     public static final int T__15=15;
     public static final int T__37=37;
     public static final int T__16=16;
+    public static final int T__38=38;
     public static final int T__17=17;
     public static final int T__18=18;
     public static final int T__11=11;
@@ -1437,7 +1438,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
                 else if ( LA4_0 == 25 && getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 2) ) {
                     alt4=3;
                 }
-                else if ( LA4_0 == 27 && getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 3) ) {
+                else if ( LA4_0 == 28 && getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 3) ) {
                     alt4=4;
                 }
 
@@ -2364,28 +2365,31 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVitamins"
-    // InternalRecipeDSL.g:897:1: ruleVitamins returns [EObject current=null] : ( () otherlv_1= 'Vitamins' otherlv_2= '{' ( (lv_Vitamin_3_0= ruleVitamin ) ) (otherlv_4= ',' ( (lv_Vitamin_5_0= ruleVitamin ) ) )* otherlv_6= '}' ) ;
+    // InternalRecipeDSL.g:897:1: ruleVitamins returns [EObject current=null] : ( () otherlv_1= 'Vitamins' otherlv_2= '{' otherlv_3= 'vitamin' otherlv_4= '{' ( (lv_Vitamin_5_0= ruleVitamin ) ) (otherlv_6= ',' ( (lv_Vitamin_7_0= ruleVitamin ) ) )* otherlv_8= '}' otherlv_9= '}' ) ;
     public final EObject ruleVitamins() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
         Token otherlv_2=null;
+        Token otherlv_3=null;
         Token otherlv_4=null;
         Token otherlv_6=null;
-        Enumerator lv_Vitamin_3_0 = null;
-
+        Token otherlv_8=null;
+        Token otherlv_9=null;
         Enumerator lv_Vitamin_5_0 = null;
+
+        Enumerator lv_Vitamin_7_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalRecipeDSL.g:903:2: ( ( () otherlv_1= 'Vitamins' otherlv_2= '{' ( (lv_Vitamin_3_0= ruleVitamin ) ) (otherlv_4= ',' ( (lv_Vitamin_5_0= ruleVitamin ) ) )* otherlv_6= '}' ) )
-            // InternalRecipeDSL.g:904:2: ( () otherlv_1= 'Vitamins' otherlv_2= '{' ( (lv_Vitamin_3_0= ruleVitamin ) ) (otherlv_4= ',' ( (lv_Vitamin_5_0= ruleVitamin ) ) )* otherlv_6= '}' )
+            // InternalRecipeDSL.g:903:2: ( ( () otherlv_1= 'Vitamins' otherlv_2= '{' otherlv_3= 'vitamin' otherlv_4= '{' ( (lv_Vitamin_5_0= ruleVitamin ) ) (otherlv_6= ',' ( (lv_Vitamin_7_0= ruleVitamin ) ) )* otherlv_8= '}' otherlv_9= '}' ) )
+            // InternalRecipeDSL.g:904:2: ( () otherlv_1= 'Vitamins' otherlv_2= '{' otherlv_3= 'vitamin' otherlv_4= '{' ( (lv_Vitamin_5_0= ruleVitamin ) ) (otherlv_6= ',' ( (lv_Vitamin_7_0= ruleVitamin ) ) )* otherlv_8= '}' otherlv_9= '}' )
             {
-            // InternalRecipeDSL.g:904:2: ( () otherlv_1= 'Vitamins' otherlv_2= '{' ( (lv_Vitamin_3_0= ruleVitamin ) ) (otherlv_4= ',' ( (lv_Vitamin_5_0= ruleVitamin ) ) )* otherlv_6= '}' )
-            // InternalRecipeDSL.g:905:3: () otherlv_1= 'Vitamins' otherlv_2= '{' ( (lv_Vitamin_3_0= ruleVitamin ) ) (otherlv_4= ',' ( (lv_Vitamin_5_0= ruleVitamin ) ) )* otherlv_6= '}'
+            // InternalRecipeDSL.g:904:2: ( () otherlv_1= 'Vitamins' otherlv_2= '{' otherlv_3= 'vitamin' otherlv_4= '{' ( (lv_Vitamin_5_0= ruleVitamin ) ) (otherlv_6= ',' ( (lv_Vitamin_7_0= ruleVitamin ) ) )* otherlv_8= '}' otherlv_9= '}' )
+            // InternalRecipeDSL.g:905:3: () otherlv_1= 'Vitamins' otherlv_2= '{' otherlv_3= 'vitamin' otherlv_4= '{' ( (lv_Vitamin_5_0= ruleVitamin ) ) (otherlv_6= ',' ( (lv_Vitamin_7_0= ruleVitamin ) ) )* otherlv_8= '}' otherlv_9= '}'
             {
             // InternalRecipeDSL.g:905:3: ()
             // InternalRecipeDSL.g:906:4: 
@@ -2406,17 +2410,25 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getVitaminsAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalRecipeDSL.g:920:3: ( (lv_Vitamin_3_0= ruleVitamin ) )
-            // InternalRecipeDSL.g:921:4: (lv_Vitamin_3_0= ruleVitamin )
+            otherlv_3=(Token)match(input,26,FOLLOW_3); 
+
+            			newLeafNode(otherlv_3, grammarAccess.getVitaminsAccess().getVitaminKeyword_3());
+            		
+            otherlv_4=(Token)match(input,12,FOLLOW_17); 
+
+            			newLeafNode(otherlv_4, grammarAccess.getVitaminsAccess().getLeftCurlyBracketKeyword_4());
+            		
+            // InternalRecipeDSL.g:928:3: ( (lv_Vitamin_5_0= ruleVitamin ) )
+            // InternalRecipeDSL.g:929:4: (lv_Vitamin_5_0= ruleVitamin )
             {
-            // InternalRecipeDSL.g:921:4: (lv_Vitamin_3_0= ruleVitamin )
-            // InternalRecipeDSL.g:922:5: lv_Vitamin_3_0= ruleVitamin
+            // InternalRecipeDSL.g:929:4: (lv_Vitamin_5_0= ruleVitamin )
+            // InternalRecipeDSL.g:930:5: lv_Vitamin_5_0= ruleVitamin
             {
 
-            					newCompositeNode(grammarAccess.getVitaminsAccess().getVitaminVitaminEnumRuleCall_3_0());
+            					newCompositeNode(grammarAccess.getVitaminsAccess().getVitaminVitaminEnumRuleCall_5_0());
             				
-            pushFollow(FOLLOW_17);
-            lv_Vitamin_3_0=ruleVitamin();
+            pushFollow(FOLLOW_18);
+            lv_Vitamin_5_0=ruleVitamin();
 
             state._fsp--;
 
@@ -2427,7 +2439,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
             					add(
             						current,
             						"Vitamin",
-            						lv_Vitamin_3_0,
+            						lv_Vitamin_5_0,
             						"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Vitamin");
             					afterParserOrEnumRuleCall();
             				
@@ -2437,36 +2449,36 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRecipeDSL.g:939:3: (otherlv_4= ',' ( (lv_Vitamin_5_0= ruleVitamin ) ) )*
+            // InternalRecipeDSL.g:947:3: (otherlv_6= ',' ( (lv_Vitamin_7_0= ruleVitamin ) ) )*
             loop6:
             do {
                 int alt6=2;
                 int LA6_0 = input.LA(1);
 
-                if ( (LA6_0==26) ) {
+                if ( (LA6_0==27) ) {
                     alt6=1;
                 }
 
 
                 switch (alt6) {
             	case 1 :
-            	    // InternalRecipeDSL.g:940:4: otherlv_4= ',' ( (lv_Vitamin_5_0= ruleVitamin ) )
+            	    // InternalRecipeDSL.g:948:4: otherlv_6= ',' ( (lv_Vitamin_7_0= ruleVitamin ) )
             	    {
-            	    otherlv_4=(Token)match(input,26,FOLLOW_16); 
+            	    otherlv_6=(Token)match(input,27,FOLLOW_17); 
 
-            	    				newLeafNode(otherlv_4, grammarAccess.getVitaminsAccess().getCommaKeyword_4_0());
+            	    				newLeafNode(otherlv_6, grammarAccess.getVitaminsAccess().getCommaKeyword_6_0());
             	    			
-            	    // InternalRecipeDSL.g:944:4: ( (lv_Vitamin_5_0= ruleVitamin ) )
-            	    // InternalRecipeDSL.g:945:5: (lv_Vitamin_5_0= ruleVitamin )
+            	    // InternalRecipeDSL.g:952:4: ( (lv_Vitamin_7_0= ruleVitamin ) )
+            	    // InternalRecipeDSL.g:953:5: (lv_Vitamin_7_0= ruleVitamin )
             	    {
-            	    // InternalRecipeDSL.g:945:5: (lv_Vitamin_5_0= ruleVitamin )
-            	    // InternalRecipeDSL.g:946:6: lv_Vitamin_5_0= ruleVitamin
+            	    // InternalRecipeDSL.g:953:5: (lv_Vitamin_7_0= ruleVitamin )
+            	    // InternalRecipeDSL.g:954:6: lv_Vitamin_7_0= ruleVitamin
             	    {
 
-            	    						newCompositeNode(grammarAccess.getVitaminsAccess().getVitaminVitaminEnumRuleCall_4_1_0());
+            	    						newCompositeNode(grammarAccess.getVitaminsAccess().getVitaminVitaminEnumRuleCall_6_1_0());
             	    					
-            	    pushFollow(FOLLOW_17);
-            	    lv_Vitamin_5_0=ruleVitamin();
+            	    pushFollow(FOLLOW_18);
+            	    lv_Vitamin_7_0=ruleVitamin();
 
             	    state._fsp--;
 
@@ -2477,7 +2489,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
             	    						add(
             	    							current,
             	    							"Vitamin",
-            	    							lv_Vitamin_5_0,
+            	    							lv_Vitamin_7_0,
             	    							"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Vitamin");
             	    						afterParserOrEnumRuleCall();
             	    					
@@ -2496,9 +2508,13 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_6=(Token)match(input,13,FOLLOW_2); 
+            otherlv_8=(Token)match(input,13,FOLLOW_8); 
 
-            			newLeafNode(otherlv_6, grammarAccess.getVitaminsAccess().getRightCurlyBracketKeyword_5());
+            			newLeafNode(otherlv_8, grammarAccess.getVitaminsAccess().getRightCurlyBracketKeyword_7());
+            		
+            otherlv_9=(Token)match(input,13,FOLLOW_2); 
+
+            			newLeafNode(otherlv_9, grammarAccess.getVitaminsAccess().getRightCurlyBracketKeyword_8());
             		
 
             }
@@ -2523,7 +2539,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMacronutrients"
-    // InternalRecipeDSL.g:972:1: entryRuleMacronutrients returns [EObject current=null] : iv_ruleMacronutrients= ruleMacronutrients EOF ;
+    // InternalRecipeDSL.g:984:1: entryRuleMacronutrients returns [EObject current=null] : iv_ruleMacronutrients= ruleMacronutrients EOF ;
     public final EObject entryRuleMacronutrients() throws RecognitionException {
         EObject current = null;
 
@@ -2531,8 +2547,8 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRecipeDSL.g:972:55: (iv_ruleMacronutrients= ruleMacronutrients EOF )
-            // InternalRecipeDSL.g:973:2: iv_ruleMacronutrients= ruleMacronutrients EOF
+            // InternalRecipeDSL.g:984:55: (iv_ruleMacronutrients= ruleMacronutrients EOF )
+            // InternalRecipeDSL.g:985:2: iv_ruleMacronutrients= ruleMacronutrients EOF
             {
              newCompositeNode(grammarAccess.getMacronutrientsRule()); 
             pushFollow(FOLLOW_1);
@@ -2559,7 +2575,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMacronutrients"
-    // InternalRecipeDSL.g:979:1: ruleMacronutrients returns [EObject current=null] : ( () otherlv_1= 'Macronutrients' ) ;
+    // InternalRecipeDSL.g:991:1: ruleMacronutrients returns [EObject current=null] : ( () otherlv_1= 'Macronutrients' ) ;
     public final EObject ruleMacronutrients() throws RecognitionException {
         EObject current = null;
 
@@ -2569,14 +2585,14 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRecipeDSL.g:985:2: ( ( () otherlv_1= 'Macronutrients' ) )
-            // InternalRecipeDSL.g:986:2: ( () otherlv_1= 'Macronutrients' )
+            // InternalRecipeDSL.g:997:2: ( ( () otherlv_1= 'Macronutrients' ) )
+            // InternalRecipeDSL.g:998:2: ( () otherlv_1= 'Macronutrients' )
             {
-            // InternalRecipeDSL.g:986:2: ( () otherlv_1= 'Macronutrients' )
-            // InternalRecipeDSL.g:987:3: () otherlv_1= 'Macronutrients'
+            // InternalRecipeDSL.g:998:2: ( () otherlv_1= 'Macronutrients' )
+            // InternalRecipeDSL.g:999:3: () otherlv_1= 'Macronutrients'
             {
-            // InternalRecipeDSL.g:987:3: ()
-            // InternalRecipeDSL.g:988:4: 
+            // InternalRecipeDSL.g:999:3: ()
+            // InternalRecipeDSL.g:1000:4: 
             {
 
             				current = forceCreateModelElement(
@@ -2586,7 +2602,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,27,FOLLOW_2); 
+            otherlv_1=(Token)match(input,28,FOLLOW_2); 
 
             			newLeafNode(otherlv_1, grammarAccess.getMacronutrientsAccess().getMacronutrientsKeyword_1());
             		
@@ -2613,7 +2629,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVitamin"
-    // InternalRecipeDSL.g:1002:1: ruleVitamin returns [Enumerator current=null] : ( (enumLiteral_0= 'VITAMIN_A' ) | (enumLiteral_1= 'VITAMIN_B1' ) | (enumLiteral_2= 'VITAMIN_B2' ) | (enumLiteral_3= 'VITAMIN_B3' ) | (enumLiteral_4= 'VITAMIN_B5' ) | (enumLiteral_5= 'VITAMIN_B6' ) | (enumLiteral_6= 'VITAMIN_B12' ) | (enumLiteral_7= 'VITAMIN_C' ) | (enumLiteral_8= 'VITAMIN_E' ) | (enumLiteral_9= 'VITAMIN_K' ) ) ;
+    // InternalRecipeDSL.g:1014:1: ruleVitamin returns [Enumerator current=null] : ( (enumLiteral_0= 'VITAMIN_A' ) | (enumLiteral_1= 'VITAMIN_B1' ) | (enumLiteral_2= 'VITAMIN_B2' ) | (enumLiteral_3= 'VITAMIN_B3' ) | (enumLiteral_4= 'VITAMIN_B5' ) | (enumLiteral_5= 'VITAMIN_B6' ) | (enumLiteral_6= 'VITAMIN_B12' ) | (enumLiteral_7= 'VITAMIN_C' ) | (enumLiteral_8= 'VITAMIN_E' ) | (enumLiteral_9= 'VITAMIN_K' ) ) ;
     public final Enumerator ruleVitamin() throws RecognitionException {
         Enumerator current = null;
 
@@ -2632,58 +2648,58 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRecipeDSL.g:1008:2: ( ( (enumLiteral_0= 'VITAMIN_A' ) | (enumLiteral_1= 'VITAMIN_B1' ) | (enumLiteral_2= 'VITAMIN_B2' ) | (enumLiteral_3= 'VITAMIN_B3' ) | (enumLiteral_4= 'VITAMIN_B5' ) | (enumLiteral_5= 'VITAMIN_B6' ) | (enumLiteral_6= 'VITAMIN_B12' ) | (enumLiteral_7= 'VITAMIN_C' ) | (enumLiteral_8= 'VITAMIN_E' ) | (enumLiteral_9= 'VITAMIN_K' ) ) )
-            // InternalRecipeDSL.g:1009:2: ( (enumLiteral_0= 'VITAMIN_A' ) | (enumLiteral_1= 'VITAMIN_B1' ) | (enumLiteral_2= 'VITAMIN_B2' ) | (enumLiteral_3= 'VITAMIN_B3' ) | (enumLiteral_4= 'VITAMIN_B5' ) | (enumLiteral_5= 'VITAMIN_B6' ) | (enumLiteral_6= 'VITAMIN_B12' ) | (enumLiteral_7= 'VITAMIN_C' ) | (enumLiteral_8= 'VITAMIN_E' ) | (enumLiteral_9= 'VITAMIN_K' ) )
+            // InternalRecipeDSL.g:1020:2: ( ( (enumLiteral_0= 'VITAMIN_A' ) | (enumLiteral_1= 'VITAMIN_B1' ) | (enumLiteral_2= 'VITAMIN_B2' ) | (enumLiteral_3= 'VITAMIN_B3' ) | (enumLiteral_4= 'VITAMIN_B5' ) | (enumLiteral_5= 'VITAMIN_B6' ) | (enumLiteral_6= 'VITAMIN_B12' ) | (enumLiteral_7= 'VITAMIN_C' ) | (enumLiteral_8= 'VITAMIN_E' ) | (enumLiteral_9= 'VITAMIN_K' ) ) )
+            // InternalRecipeDSL.g:1021:2: ( (enumLiteral_0= 'VITAMIN_A' ) | (enumLiteral_1= 'VITAMIN_B1' ) | (enumLiteral_2= 'VITAMIN_B2' ) | (enumLiteral_3= 'VITAMIN_B3' ) | (enumLiteral_4= 'VITAMIN_B5' ) | (enumLiteral_5= 'VITAMIN_B6' ) | (enumLiteral_6= 'VITAMIN_B12' ) | (enumLiteral_7= 'VITAMIN_C' ) | (enumLiteral_8= 'VITAMIN_E' ) | (enumLiteral_9= 'VITAMIN_K' ) )
             {
-            // InternalRecipeDSL.g:1009:2: ( (enumLiteral_0= 'VITAMIN_A' ) | (enumLiteral_1= 'VITAMIN_B1' ) | (enumLiteral_2= 'VITAMIN_B2' ) | (enumLiteral_3= 'VITAMIN_B3' ) | (enumLiteral_4= 'VITAMIN_B5' ) | (enumLiteral_5= 'VITAMIN_B6' ) | (enumLiteral_6= 'VITAMIN_B12' ) | (enumLiteral_7= 'VITAMIN_C' ) | (enumLiteral_8= 'VITAMIN_E' ) | (enumLiteral_9= 'VITAMIN_K' ) )
+            // InternalRecipeDSL.g:1021:2: ( (enumLiteral_0= 'VITAMIN_A' ) | (enumLiteral_1= 'VITAMIN_B1' ) | (enumLiteral_2= 'VITAMIN_B2' ) | (enumLiteral_3= 'VITAMIN_B3' ) | (enumLiteral_4= 'VITAMIN_B5' ) | (enumLiteral_5= 'VITAMIN_B6' ) | (enumLiteral_6= 'VITAMIN_B12' ) | (enumLiteral_7= 'VITAMIN_C' ) | (enumLiteral_8= 'VITAMIN_E' ) | (enumLiteral_9= 'VITAMIN_K' ) )
             int alt7=10;
             switch ( input.LA(1) ) {
-            case 28:
+            case 29:
                 {
                 alt7=1;
                 }
                 break;
-            case 29:
+            case 30:
                 {
                 alt7=2;
                 }
                 break;
-            case 30:
+            case 31:
                 {
                 alt7=3;
                 }
                 break;
-            case 31:
+            case 32:
                 {
                 alt7=4;
                 }
                 break;
-            case 32:
+            case 33:
                 {
                 alt7=5;
                 }
                 break;
-            case 33:
+            case 34:
                 {
                 alt7=6;
                 }
                 break;
-            case 34:
+            case 35:
                 {
                 alt7=7;
                 }
                 break;
-            case 35:
+            case 36:
                 {
                 alt7=8;
                 }
                 break;
-            case 36:
+            case 37:
                 {
                 alt7=9;
                 }
                 break;
-            case 37:
+            case 38:
                 {
                 alt7=10;
                 }
@@ -2697,12 +2713,12 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
             switch (alt7) {
                 case 1 :
-                    // InternalRecipeDSL.g:1010:3: (enumLiteral_0= 'VITAMIN_A' )
+                    // InternalRecipeDSL.g:1022:3: (enumLiteral_0= 'VITAMIN_A' )
                     {
-                    // InternalRecipeDSL.g:1010:3: (enumLiteral_0= 'VITAMIN_A' )
-                    // InternalRecipeDSL.g:1011:4: enumLiteral_0= 'VITAMIN_A'
+                    // InternalRecipeDSL.g:1022:3: (enumLiteral_0= 'VITAMIN_A' )
+                    // InternalRecipeDSL.g:1023:4: enumLiteral_0= 'VITAMIN_A'
                     {
-                    enumLiteral_0=(Token)match(input,28,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,29,FOLLOW_2); 
 
                     				current = grammarAccess.getVitaminAccess().getVITAMIN_AEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getVitaminAccess().getVITAMIN_AEnumLiteralDeclaration_0());
@@ -2714,12 +2730,12 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalRecipeDSL.g:1018:3: (enumLiteral_1= 'VITAMIN_B1' )
+                    // InternalRecipeDSL.g:1030:3: (enumLiteral_1= 'VITAMIN_B1' )
                     {
-                    // InternalRecipeDSL.g:1018:3: (enumLiteral_1= 'VITAMIN_B1' )
-                    // InternalRecipeDSL.g:1019:4: enumLiteral_1= 'VITAMIN_B1'
+                    // InternalRecipeDSL.g:1030:3: (enumLiteral_1= 'VITAMIN_B1' )
+                    // InternalRecipeDSL.g:1031:4: enumLiteral_1= 'VITAMIN_B1'
                     {
-                    enumLiteral_1=(Token)match(input,29,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,30,FOLLOW_2); 
 
                     				current = grammarAccess.getVitaminAccess().getVITAMIN_B1EnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getVitaminAccess().getVITAMIN_B1EnumLiteralDeclaration_1());
@@ -2731,12 +2747,12 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalRecipeDSL.g:1026:3: (enumLiteral_2= 'VITAMIN_B2' )
+                    // InternalRecipeDSL.g:1038:3: (enumLiteral_2= 'VITAMIN_B2' )
                     {
-                    // InternalRecipeDSL.g:1026:3: (enumLiteral_2= 'VITAMIN_B2' )
-                    // InternalRecipeDSL.g:1027:4: enumLiteral_2= 'VITAMIN_B2'
+                    // InternalRecipeDSL.g:1038:3: (enumLiteral_2= 'VITAMIN_B2' )
+                    // InternalRecipeDSL.g:1039:4: enumLiteral_2= 'VITAMIN_B2'
                     {
-                    enumLiteral_2=(Token)match(input,30,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,31,FOLLOW_2); 
 
                     				current = grammarAccess.getVitaminAccess().getVITAMIN_B2EnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getVitaminAccess().getVITAMIN_B2EnumLiteralDeclaration_2());
@@ -2748,12 +2764,12 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalRecipeDSL.g:1034:3: (enumLiteral_3= 'VITAMIN_B3' )
+                    // InternalRecipeDSL.g:1046:3: (enumLiteral_3= 'VITAMIN_B3' )
                     {
-                    // InternalRecipeDSL.g:1034:3: (enumLiteral_3= 'VITAMIN_B3' )
-                    // InternalRecipeDSL.g:1035:4: enumLiteral_3= 'VITAMIN_B3'
+                    // InternalRecipeDSL.g:1046:3: (enumLiteral_3= 'VITAMIN_B3' )
+                    // InternalRecipeDSL.g:1047:4: enumLiteral_3= 'VITAMIN_B3'
                     {
-                    enumLiteral_3=(Token)match(input,31,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,32,FOLLOW_2); 
 
                     				current = grammarAccess.getVitaminAccess().getVITAMIN_B3EnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getVitaminAccess().getVITAMIN_B3EnumLiteralDeclaration_3());
@@ -2765,12 +2781,12 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalRecipeDSL.g:1042:3: (enumLiteral_4= 'VITAMIN_B5' )
+                    // InternalRecipeDSL.g:1054:3: (enumLiteral_4= 'VITAMIN_B5' )
                     {
-                    // InternalRecipeDSL.g:1042:3: (enumLiteral_4= 'VITAMIN_B5' )
-                    // InternalRecipeDSL.g:1043:4: enumLiteral_4= 'VITAMIN_B5'
+                    // InternalRecipeDSL.g:1054:3: (enumLiteral_4= 'VITAMIN_B5' )
+                    // InternalRecipeDSL.g:1055:4: enumLiteral_4= 'VITAMIN_B5'
                     {
-                    enumLiteral_4=(Token)match(input,32,FOLLOW_2); 
+                    enumLiteral_4=(Token)match(input,33,FOLLOW_2); 
 
                     				current = grammarAccess.getVitaminAccess().getVITAMIN_B5EnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_4, grammarAccess.getVitaminAccess().getVITAMIN_B5EnumLiteralDeclaration_4());
@@ -2782,12 +2798,12 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalRecipeDSL.g:1050:3: (enumLiteral_5= 'VITAMIN_B6' )
+                    // InternalRecipeDSL.g:1062:3: (enumLiteral_5= 'VITAMIN_B6' )
                     {
-                    // InternalRecipeDSL.g:1050:3: (enumLiteral_5= 'VITAMIN_B6' )
-                    // InternalRecipeDSL.g:1051:4: enumLiteral_5= 'VITAMIN_B6'
+                    // InternalRecipeDSL.g:1062:3: (enumLiteral_5= 'VITAMIN_B6' )
+                    // InternalRecipeDSL.g:1063:4: enumLiteral_5= 'VITAMIN_B6'
                     {
-                    enumLiteral_5=(Token)match(input,33,FOLLOW_2); 
+                    enumLiteral_5=(Token)match(input,34,FOLLOW_2); 
 
                     				current = grammarAccess.getVitaminAccess().getVITAMIN_B6EnumLiteralDeclaration_5().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_5, grammarAccess.getVitaminAccess().getVITAMIN_B6EnumLiteralDeclaration_5());
@@ -2799,12 +2815,12 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalRecipeDSL.g:1058:3: (enumLiteral_6= 'VITAMIN_B12' )
+                    // InternalRecipeDSL.g:1070:3: (enumLiteral_6= 'VITAMIN_B12' )
                     {
-                    // InternalRecipeDSL.g:1058:3: (enumLiteral_6= 'VITAMIN_B12' )
-                    // InternalRecipeDSL.g:1059:4: enumLiteral_6= 'VITAMIN_B12'
+                    // InternalRecipeDSL.g:1070:3: (enumLiteral_6= 'VITAMIN_B12' )
+                    // InternalRecipeDSL.g:1071:4: enumLiteral_6= 'VITAMIN_B12'
                     {
-                    enumLiteral_6=(Token)match(input,34,FOLLOW_2); 
+                    enumLiteral_6=(Token)match(input,35,FOLLOW_2); 
 
                     				current = grammarAccess.getVitaminAccess().getVITAMIN_B12EnumLiteralDeclaration_6().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_6, grammarAccess.getVitaminAccess().getVITAMIN_B12EnumLiteralDeclaration_6());
@@ -2816,12 +2832,12 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalRecipeDSL.g:1066:3: (enumLiteral_7= 'VITAMIN_C' )
+                    // InternalRecipeDSL.g:1078:3: (enumLiteral_7= 'VITAMIN_C' )
                     {
-                    // InternalRecipeDSL.g:1066:3: (enumLiteral_7= 'VITAMIN_C' )
-                    // InternalRecipeDSL.g:1067:4: enumLiteral_7= 'VITAMIN_C'
+                    // InternalRecipeDSL.g:1078:3: (enumLiteral_7= 'VITAMIN_C' )
+                    // InternalRecipeDSL.g:1079:4: enumLiteral_7= 'VITAMIN_C'
                     {
-                    enumLiteral_7=(Token)match(input,35,FOLLOW_2); 
+                    enumLiteral_7=(Token)match(input,36,FOLLOW_2); 
 
                     				current = grammarAccess.getVitaminAccess().getVITAMIN_CEnumLiteralDeclaration_7().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_7, grammarAccess.getVitaminAccess().getVITAMIN_CEnumLiteralDeclaration_7());
@@ -2833,12 +2849,12 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // InternalRecipeDSL.g:1074:3: (enumLiteral_8= 'VITAMIN_E' )
+                    // InternalRecipeDSL.g:1086:3: (enumLiteral_8= 'VITAMIN_E' )
                     {
-                    // InternalRecipeDSL.g:1074:3: (enumLiteral_8= 'VITAMIN_E' )
-                    // InternalRecipeDSL.g:1075:4: enumLiteral_8= 'VITAMIN_E'
+                    // InternalRecipeDSL.g:1086:3: (enumLiteral_8= 'VITAMIN_E' )
+                    // InternalRecipeDSL.g:1087:4: enumLiteral_8= 'VITAMIN_E'
                     {
-                    enumLiteral_8=(Token)match(input,36,FOLLOW_2); 
+                    enumLiteral_8=(Token)match(input,37,FOLLOW_2); 
 
                     				current = grammarAccess.getVitaminAccess().getVITAMIN_EEnumLiteralDeclaration_8().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_8, grammarAccess.getVitaminAccess().getVITAMIN_EEnumLiteralDeclaration_8());
@@ -2850,12 +2866,12 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // InternalRecipeDSL.g:1082:3: (enumLiteral_9= 'VITAMIN_K' )
+                    // InternalRecipeDSL.g:1094:3: (enumLiteral_9= 'VITAMIN_K' )
                     {
-                    // InternalRecipeDSL.g:1082:3: (enumLiteral_9= 'VITAMIN_K' )
-                    // InternalRecipeDSL.g:1083:4: enumLiteral_9= 'VITAMIN_K'
+                    // InternalRecipeDSL.g:1094:3: (enumLiteral_9= 'VITAMIN_K' )
+                    // InternalRecipeDSL.g:1095:4: enumLiteral_9= 'VITAMIN_K'
                     {
-                    enumLiteral_9=(Token)match(input,37,FOLLOW_2); 
+                    enumLiteral_9=(Token)match(input,38,FOLLOW_2); 
 
                     				current = grammarAccess.getVitaminAccess().getVITAMIN_KEnumLiteralDeclaration_9().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_9, grammarAccess.getVitaminAccess().getVITAMIN_KEnumLiteralDeclaration_9());
@@ -2904,10 +2920,11 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x000000000010A000L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000E00000L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000E02000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x000000000B008000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x000000000B00A000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000013008000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x000000001300A000L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000003FF0000000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000004002000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000007FE0000000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000008002000L});
 
 }

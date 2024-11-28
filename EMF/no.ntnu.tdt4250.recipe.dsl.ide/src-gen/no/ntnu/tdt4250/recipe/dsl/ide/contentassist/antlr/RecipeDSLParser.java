@@ -47,7 +47,7 @@ public class RecipeDSLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getImageAccess().getGroup(), "rule__Image__Group__0");
 			builder.put(grammarAccess.getPercentageAmountToggleAccess().getGroup(), "rule__PercentageAmountToggle__Group__0");
 			builder.put(grammarAccess.getVitaminsAccess().getGroup(), "rule__Vitamins__Group__0");
-			builder.put(grammarAccess.getVitaminsAccess().getGroup_4(), "rule__Vitamins__Group_4__0");
+			builder.put(grammarAccess.getVitaminsAccess().getGroup_6(), "rule__Vitamins__Group_6__0");
 			builder.put(grammarAccess.getMacronutrientsAccess().getGroup(), "rule__Macronutrients__Group__0");
 			builder.put(grammarAccess.getPageAccess().getInstructionsAssignment_2_0(), "rule__Page__InstructionsAssignment_2_0");
 			builder.put(grammarAccess.getPageAccess().getIngredientsAssignment_2_1(), "rule__Page__IngredientsAssignment_2_1");
@@ -63,8 +63,8 @@ public class RecipeDSLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getNutrientsAccess().getPercentagetoggleAssignment_3_1(), "rule__Nutrients__PercentagetoggleAssignment_3_1");
 			builder.put(grammarAccess.getNutrientsAccess().getVitaminsAssignment_3_2(), "rule__Nutrients__VitaminsAssignment_3_2");
 			builder.put(grammarAccess.getNutrientsAccess().getMacronutrientsAssignment_3_3(), "rule__Nutrients__MacronutrientsAssignment_3_3");
-			builder.put(grammarAccess.getVitaminsAccess().getVitaminAssignment_3(), "rule__Vitamins__VitaminAssignment_3");
-			builder.put(grammarAccess.getVitaminsAccess().getVitaminAssignment_4_1(), "rule__Vitamins__VitaminAssignment_4_1");
+			builder.put(grammarAccess.getVitaminsAccess().getVitaminAssignment_5(), "rule__Vitamins__VitaminAssignment_5");
+			builder.put(grammarAccess.getVitaminsAccess().getVitaminAssignment_6_1(), "rule__Vitamins__VitaminAssignment_6_1");
 			builder.put(grammarAccess.getPageAccess().getUnorderedGroup_2(), "rule__Page__UnorderedGroup_2");
 			builder.put(grammarAccess.getIngredientsAccess().getUnorderedGroup_3(), "rule__Ingredients__UnorderedGroup_3");
 			builder.put(grammarAccess.getHeaderAccess().getUnorderedGroup_3(), "rule__Header__UnorderedGroup_3");

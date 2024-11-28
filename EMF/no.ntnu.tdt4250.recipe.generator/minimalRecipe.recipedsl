@@ -1,0 +1,12 @@
+Page {
+	Instructions {
+		orderNumber 1
+	}
+	Ingredients {
+		orderNumber 2
+	}
+	Header {
+		Title
+		BasicInformation
+	}
+}

@@ -13,8 +13,10 @@ Page {
 	}
 	Nutrients {
 		orderNumber 3
+		Vitamins {
+			vitamin {VITAMIN_A, VITAMIN_B1, VITAMIN_B3, VITAMIN_B5, VITAMIN_B6}
+		}
 		PercentageAmountToggle
 		Macronutrients
-		Vitamins {VITAMIN_A, VITAMIN_B1, VITAMIN_B3, VITAMIN_B5, VITAMIN_B6}
 	}
 }

@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'VITAMIN_A'", "'VITAMIN_B1'", "'VITAMIN_B2'", "'VITAMIN_B3'", "'VITAMIN_B5'", "'VITAMIN_B6'", "'VITAMIN_B12'", "'VITAMIN_C'", "'VITAMIN_E'", "'VITAMIN_K'", "'Page'", "'{'", "'}'", "'Instructions'", "'orderNumber'", "'Ingredients'", "'Header'", "'Nutrients'", "'-'", "'UnitOfMeasureToggle'", "'BasicInformation'", "'Title'", "'Image'", "'PercentageAmountToggle'", "'Vitamins'", "','", "'Macronutrients'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'VITAMIN_A'", "'VITAMIN_B1'", "'VITAMIN_B2'", "'VITAMIN_B3'", "'VITAMIN_B5'", "'VITAMIN_B6'", "'VITAMIN_B12'", "'VITAMIN_C'", "'VITAMIN_E'", "'VITAMIN_K'", "'Page'", "'{'", "'}'", "'Instructions'", "'orderNumber'", "'Ingredients'", "'Header'", "'Nutrients'", "'-'", "'UnitOfMeasureToggle'", "'BasicInformation'", "'Title'", "'Image'", "'PercentageAmountToggle'", "'Vitamins'", "'vitamin'", "','", "'Macronutrients'"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -30,6 +30,7 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
     public static final int T__15=15;
     public static final int T__37=37;
     public static final int T__16=16;
+    public static final int T__38=38;
     public static final int T__17=17;
     public static final int T__18=18;
     public static final int T__11=11;
@@ -4770,7 +4771,7 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
             // InternalRecipeDSL.g:1654:1: ( rule__Vitamins__Group__3__Impl rule__Vitamins__Group__4 )
             // InternalRecipeDSL.g:1655:2: rule__Vitamins__Group__3__Impl rule__Vitamins__Group__4
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_3);
             rule__Vitamins__Group__3__Impl();
 
             state._fsp--;
@@ -4799,31 +4800,21 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Vitamins__Group__3__Impl"
-    // InternalRecipeDSL.g:1662:1: rule__Vitamins__Group__3__Impl : ( ( rule__Vitamins__VitaminAssignment_3 ) ) ;
+    // InternalRecipeDSL.g:1662:1: rule__Vitamins__Group__3__Impl : ( 'vitamin' ) ;
     public final void rule__Vitamins__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:1666:1: ( ( ( rule__Vitamins__VitaminAssignment_3 ) ) )
-            // InternalRecipeDSL.g:1667:1: ( ( rule__Vitamins__VitaminAssignment_3 ) )
+            // InternalRecipeDSL.g:1666:1: ( ( 'vitamin' ) )
+            // InternalRecipeDSL.g:1667:1: ( 'vitamin' )
             {
-            // InternalRecipeDSL.g:1667:1: ( ( rule__Vitamins__VitaminAssignment_3 ) )
-            // InternalRecipeDSL.g:1668:2: ( rule__Vitamins__VitaminAssignment_3 )
+            // InternalRecipeDSL.g:1667:1: ( 'vitamin' )
+            // InternalRecipeDSL.g:1668:2: 'vitamin'
             {
-             before(grammarAccess.getVitaminsAccess().getVitaminAssignment_3()); 
-            // InternalRecipeDSL.g:1669:2: ( rule__Vitamins__VitaminAssignment_3 )
-            // InternalRecipeDSL.g:1669:3: rule__Vitamins__VitaminAssignment_3
-            {
-            pushFollow(FOLLOW_2);
-            rule__Vitamins__VitaminAssignment_3();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getVitaminsAccess().getVitaminAssignment_3()); 
+             before(grammarAccess.getVitaminsAccess().getVitaminKeyword_3()); 
+            match(input,36,FOLLOW_2); 
+             after(grammarAccess.getVitaminsAccess().getVitaminKeyword_3()); 
 
             }
 
@@ -4884,49 +4875,21 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Vitamins__Group__4__Impl"
-    // InternalRecipeDSL.g:1689:1: rule__Vitamins__Group__4__Impl : ( ( rule__Vitamins__Group_4__0 )* ) ;
+    // InternalRecipeDSL.g:1689:1: rule__Vitamins__Group__4__Impl : ( '{' ) ;
     public final void rule__Vitamins__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:1693:1: ( ( ( rule__Vitamins__Group_4__0 )* ) )
-            // InternalRecipeDSL.g:1694:1: ( ( rule__Vitamins__Group_4__0 )* )
+            // InternalRecipeDSL.g:1693:1: ( ( '{' ) )
+            // InternalRecipeDSL.g:1694:1: ( '{' )
             {
-            // InternalRecipeDSL.g:1694:1: ( ( rule__Vitamins__Group_4__0 )* )
-            // InternalRecipeDSL.g:1695:2: ( rule__Vitamins__Group_4__0 )*
+            // InternalRecipeDSL.g:1694:1: ( '{' )
+            // InternalRecipeDSL.g:1695:2: '{'
             {
-             before(grammarAccess.getVitaminsAccess().getGroup_4()); 
-            // InternalRecipeDSL.g:1696:2: ( rule__Vitamins__Group_4__0 )*
-            loop3:
-            do {
-                int alt3=2;
-                int LA3_0 = input.LA(1);
-
-                if ( (LA3_0==36) ) {
-                    alt3=1;
-                }
-
-
-                switch (alt3) {
-            	case 1 :
-            	    // InternalRecipeDSL.g:1696:3: rule__Vitamins__Group_4__0
-            	    {
-            	    pushFollow(FOLLOW_20);
-            	    rule__Vitamins__Group_4__0();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop3;
-                }
-            } while (true);
-
-             after(grammarAccess.getVitaminsAccess().getGroup_4()); 
+             before(grammarAccess.getVitaminsAccess().getLeftCurlyBracketKeyword_4()); 
+            match(input,22,FOLLOW_2); 
+             after(grammarAccess.getVitaminsAccess().getLeftCurlyBracketKeyword_4()); 
 
             }
 
@@ -4949,17 +4912,22 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Vitamins__Group__5"
-    // InternalRecipeDSL.g:1704:1: rule__Vitamins__Group__5 : rule__Vitamins__Group__5__Impl ;
+    // InternalRecipeDSL.g:1704:1: rule__Vitamins__Group__5 : rule__Vitamins__Group__5__Impl rule__Vitamins__Group__6 ;
     public final void rule__Vitamins__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:1708:1: ( rule__Vitamins__Group__5__Impl )
-            // InternalRecipeDSL.g:1709:2: rule__Vitamins__Group__5__Impl
+            // InternalRecipeDSL.g:1708:1: ( rule__Vitamins__Group__5__Impl rule__Vitamins__Group__6 )
+            // InternalRecipeDSL.g:1709:2: rule__Vitamins__Group__5__Impl rule__Vitamins__Group__6
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_20);
             rule__Vitamins__Group__5__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Vitamins__Group__6();
 
             state._fsp--;
 
@@ -4982,21 +4950,31 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Vitamins__Group__5__Impl"
-    // InternalRecipeDSL.g:1715:1: rule__Vitamins__Group__5__Impl : ( '}' ) ;
+    // InternalRecipeDSL.g:1716:1: rule__Vitamins__Group__5__Impl : ( ( rule__Vitamins__VitaminAssignment_5 ) ) ;
     public final void rule__Vitamins__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:1719:1: ( ( '}' ) )
-            // InternalRecipeDSL.g:1720:1: ( '}' )
+            // InternalRecipeDSL.g:1720:1: ( ( ( rule__Vitamins__VitaminAssignment_5 ) ) )
+            // InternalRecipeDSL.g:1721:1: ( ( rule__Vitamins__VitaminAssignment_5 ) )
             {
-            // InternalRecipeDSL.g:1720:1: ( '}' )
-            // InternalRecipeDSL.g:1721:2: '}'
+            // InternalRecipeDSL.g:1721:1: ( ( rule__Vitamins__VitaminAssignment_5 ) )
+            // InternalRecipeDSL.g:1722:2: ( rule__Vitamins__VitaminAssignment_5 )
             {
-             before(grammarAccess.getVitaminsAccess().getRightCurlyBracketKeyword_5()); 
-            match(input,23,FOLLOW_2); 
-             after(grammarAccess.getVitaminsAccess().getRightCurlyBracketKeyword_5()); 
+             before(grammarAccess.getVitaminsAccess().getVitaminAssignment_5()); 
+            // InternalRecipeDSL.g:1723:2: ( rule__Vitamins__VitaminAssignment_5 )
+            // InternalRecipeDSL.g:1723:3: rule__Vitamins__VitaminAssignment_5
+            {
+            pushFollow(FOLLOW_2);
+            rule__Vitamins__VitaminAssignment_5();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getVitaminsAccess().getVitaminAssignment_5()); 
 
             }
 
@@ -5018,23 +4996,23 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
     // $ANTLR end "rule__Vitamins__Group__5__Impl"
 
 
-    // $ANTLR start "rule__Vitamins__Group_4__0"
-    // InternalRecipeDSL.g:1731:1: rule__Vitamins__Group_4__0 : rule__Vitamins__Group_4__0__Impl rule__Vitamins__Group_4__1 ;
-    public final void rule__Vitamins__Group_4__0() throws RecognitionException {
+    // $ANTLR start "rule__Vitamins__Group__6"
+    // InternalRecipeDSL.g:1731:1: rule__Vitamins__Group__6 : rule__Vitamins__Group__6__Impl rule__Vitamins__Group__7 ;
+    public final void rule__Vitamins__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:1735:1: ( rule__Vitamins__Group_4__0__Impl rule__Vitamins__Group_4__1 )
-            // InternalRecipeDSL.g:1736:2: rule__Vitamins__Group_4__0__Impl rule__Vitamins__Group_4__1
+            // InternalRecipeDSL.g:1735:1: ( rule__Vitamins__Group__6__Impl rule__Vitamins__Group__7 )
+            // InternalRecipeDSL.g:1736:2: rule__Vitamins__Group__6__Impl rule__Vitamins__Group__7
             {
-            pushFollow(FOLLOW_18);
-            rule__Vitamins__Group_4__0__Impl();
+            pushFollow(FOLLOW_20);
+            rule__Vitamins__Group__6__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Vitamins__Group_4__1();
+            rule__Vitamins__Group__7();
 
             state._fsp--;
 
@@ -5053,25 +5031,53 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__Vitamins__Group_4__0"
+    // $ANTLR end "rule__Vitamins__Group__6"
 
 
-    // $ANTLR start "rule__Vitamins__Group_4__0__Impl"
-    // InternalRecipeDSL.g:1743:1: rule__Vitamins__Group_4__0__Impl : ( ',' ) ;
-    public final void rule__Vitamins__Group_4__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Vitamins__Group__6__Impl"
+    // InternalRecipeDSL.g:1743:1: rule__Vitamins__Group__6__Impl : ( ( rule__Vitamins__Group_6__0 )* ) ;
+    public final void rule__Vitamins__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:1747:1: ( ( ',' ) )
-            // InternalRecipeDSL.g:1748:1: ( ',' )
+            // InternalRecipeDSL.g:1747:1: ( ( ( rule__Vitamins__Group_6__0 )* ) )
+            // InternalRecipeDSL.g:1748:1: ( ( rule__Vitamins__Group_6__0 )* )
             {
-            // InternalRecipeDSL.g:1748:1: ( ',' )
-            // InternalRecipeDSL.g:1749:2: ','
+            // InternalRecipeDSL.g:1748:1: ( ( rule__Vitamins__Group_6__0 )* )
+            // InternalRecipeDSL.g:1749:2: ( rule__Vitamins__Group_6__0 )*
             {
-             before(grammarAccess.getVitaminsAccess().getCommaKeyword_4_0()); 
-            match(input,36,FOLLOW_2); 
-             after(grammarAccess.getVitaminsAccess().getCommaKeyword_4_0()); 
+             before(grammarAccess.getVitaminsAccess().getGroup_6()); 
+            // InternalRecipeDSL.g:1750:2: ( rule__Vitamins__Group_6__0 )*
+            loop3:
+            do {
+                int alt3=2;
+                int LA3_0 = input.LA(1);
+
+                if ( (LA3_0==37) ) {
+                    alt3=1;
+                }
+
+
+                switch (alt3) {
+            	case 1 :
+            	    // InternalRecipeDSL.g:1750:3: rule__Vitamins__Group_6__0
+            	    {
+            	    pushFollow(FOLLOW_21);
+            	    rule__Vitamins__Group_6__0();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop3;
+                }
+            } while (true);
+
+             after(grammarAccess.getVitaminsAccess().getGroup_6()); 
 
             }
 
@@ -5090,21 +5096,96 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__Vitamins__Group_4__0__Impl"
+    // $ANTLR end "rule__Vitamins__Group__6__Impl"
 
 
-    // $ANTLR start "rule__Vitamins__Group_4__1"
-    // InternalRecipeDSL.g:1758:1: rule__Vitamins__Group_4__1 : rule__Vitamins__Group_4__1__Impl ;
-    public final void rule__Vitamins__Group_4__1() throws RecognitionException {
+    // $ANTLR start "rule__Vitamins__Group__7"
+    // InternalRecipeDSL.g:1758:1: rule__Vitamins__Group__7 : rule__Vitamins__Group__7__Impl rule__Vitamins__Group__8 ;
+    public final void rule__Vitamins__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:1762:1: ( rule__Vitamins__Group_4__1__Impl )
-            // InternalRecipeDSL.g:1763:2: rule__Vitamins__Group_4__1__Impl
+            // InternalRecipeDSL.g:1762:1: ( rule__Vitamins__Group__7__Impl rule__Vitamins__Group__8 )
+            // InternalRecipeDSL.g:1763:2: rule__Vitamins__Group__7__Impl rule__Vitamins__Group__8
+            {
+            pushFollow(FOLLOW_5);
+            rule__Vitamins__Group__7__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Vitamins__Group__8();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Vitamins__Group__7"
+
+
+    // $ANTLR start "rule__Vitamins__Group__7__Impl"
+    // InternalRecipeDSL.g:1770:1: rule__Vitamins__Group__7__Impl : ( '}' ) ;
+    public final void rule__Vitamins__Group__7__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalRecipeDSL.g:1774:1: ( ( '}' ) )
+            // InternalRecipeDSL.g:1775:1: ( '}' )
+            {
+            // InternalRecipeDSL.g:1775:1: ( '}' )
+            // InternalRecipeDSL.g:1776:2: '}'
+            {
+             before(grammarAccess.getVitaminsAccess().getRightCurlyBracketKeyword_7()); 
+            match(input,23,FOLLOW_2); 
+             after(grammarAccess.getVitaminsAccess().getRightCurlyBracketKeyword_7()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Vitamins__Group__7__Impl"
+
+
+    // $ANTLR start "rule__Vitamins__Group__8"
+    // InternalRecipeDSL.g:1785:1: rule__Vitamins__Group__8 : rule__Vitamins__Group__8__Impl ;
+    public final void rule__Vitamins__Group__8() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalRecipeDSL.g:1789:1: ( rule__Vitamins__Group__8__Impl )
+            // InternalRecipeDSL.g:1790:2: rule__Vitamins__Group__8__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Vitamins__Group_4__1__Impl();
+            rule__Vitamins__Group__8__Impl();
 
             state._fsp--;
 
@@ -5123,35 +5204,25 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__Vitamins__Group_4__1"
+    // $ANTLR end "rule__Vitamins__Group__8"
 
 
-    // $ANTLR start "rule__Vitamins__Group_4__1__Impl"
-    // InternalRecipeDSL.g:1769:1: rule__Vitamins__Group_4__1__Impl : ( ( rule__Vitamins__VitaminAssignment_4_1 ) ) ;
-    public final void rule__Vitamins__Group_4__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Vitamins__Group__8__Impl"
+    // InternalRecipeDSL.g:1796:1: rule__Vitamins__Group__8__Impl : ( '}' ) ;
+    public final void rule__Vitamins__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:1773:1: ( ( ( rule__Vitamins__VitaminAssignment_4_1 ) ) )
-            // InternalRecipeDSL.g:1774:1: ( ( rule__Vitamins__VitaminAssignment_4_1 ) )
+            // InternalRecipeDSL.g:1800:1: ( ( '}' ) )
+            // InternalRecipeDSL.g:1801:1: ( '}' )
             {
-            // InternalRecipeDSL.g:1774:1: ( ( rule__Vitamins__VitaminAssignment_4_1 ) )
-            // InternalRecipeDSL.g:1775:2: ( rule__Vitamins__VitaminAssignment_4_1 )
+            // InternalRecipeDSL.g:1801:1: ( '}' )
+            // InternalRecipeDSL.g:1802:2: '}'
             {
-             before(grammarAccess.getVitaminsAccess().getVitaminAssignment_4_1()); 
-            // InternalRecipeDSL.g:1776:2: ( rule__Vitamins__VitaminAssignment_4_1 )
-            // InternalRecipeDSL.g:1776:3: rule__Vitamins__VitaminAssignment_4_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__Vitamins__VitaminAssignment_4_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getVitaminsAccess().getVitaminAssignment_4_1()); 
+             before(grammarAccess.getVitaminsAccess().getRightCurlyBracketKeyword_8()); 
+            match(input,23,FOLLOW_2); 
+             after(grammarAccess.getVitaminsAccess().getRightCurlyBracketKeyword_8()); 
 
             }
 
@@ -5170,18 +5241,173 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__Vitamins__Group_4__1__Impl"
+    // $ANTLR end "rule__Vitamins__Group__8__Impl"
+
+
+    // $ANTLR start "rule__Vitamins__Group_6__0"
+    // InternalRecipeDSL.g:1812:1: rule__Vitamins__Group_6__0 : rule__Vitamins__Group_6__0__Impl rule__Vitamins__Group_6__1 ;
+    public final void rule__Vitamins__Group_6__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalRecipeDSL.g:1816:1: ( rule__Vitamins__Group_6__0__Impl rule__Vitamins__Group_6__1 )
+            // InternalRecipeDSL.g:1817:2: rule__Vitamins__Group_6__0__Impl rule__Vitamins__Group_6__1
+            {
+            pushFollow(FOLLOW_19);
+            rule__Vitamins__Group_6__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Vitamins__Group_6__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Vitamins__Group_6__0"
+
+
+    // $ANTLR start "rule__Vitamins__Group_6__0__Impl"
+    // InternalRecipeDSL.g:1824:1: rule__Vitamins__Group_6__0__Impl : ( ',' ) ;
+    public final void rule__Vitamins__Group_6__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalRecipeDSL.g:1828:1: ( ( ',' ) )
+            // InternalRecipeDSL.g:1829:1: ( ',' )
+            {
+            // InternalRecipeDSL.g:1829:1: ( ',' )
+            // InternalRecipeDSL.g:1830:2: ','
+            {
+             before(grammarAccess.getVitaminsAccess().getCommaKeyword_6_0()); 
+            match(input,37,FOLLOW_2); 
+             after(grammarAccess.getVitaminsAccess().getCommaKeyword_6_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Vitamins__Group_6__0__Impl"
+
+
+    // $ANTLR start "rule__Vitamins__Group_6__1"
+    // InternalRecipeDSL.g:1839:1: rule__Vitamins__Group_6__1 : rule__Vitamins__Group_6__1__Impl ;
+    public final void rule__Vitamins__Group_6__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalRecipeDSL.g:1843:1: ( rule__Vitamins__Group_6__1__Impl )
+            // InternalRecipeDSL.g:1844:2: rule__Vitamins__Group_6__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Vitamins__Group_6__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Vitamins__Group_6__1"
+
+
+    // $ANTLR start "rule__Vitamins__Group_6__1__Impl"
+    // InternalRecipeDSL.g:1850:1: rule__Vitamins__Group_6__1__Impl : ( ( rule__Vitamins__VitaminAssignment_6_1 ) ) ;
+    public final void rule__Vitamins__Group_6__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalRecipeDSL.g:1854:1: ( ( ( rule__Vitamins__VitaminAssignment_6_1 ) ) )
+            // InternalRecipeDSL.g:1855:1: ( ( rule__Vitamins__VitaminAssignment_6_1 ) )
+            {
+            // InternalRecipeDSL.g:1855:1: ( ( rule__Vitamins__VitaminAssignment_6_1 ) )
+            // InternalRecipeDSL.g:1856:2: ( rule__Vitamins__VitaminAssignment_6_1 )
+            {
+             before(grammarAccess.getVitaminsAccess().getVitaminAssignment_6_1()); 
+            // InternalRecipeDSL.g:1857:2: ( rule__Vitamins__VitaminAssignment_6_1 )
+            // InternalRecipeDSL.g:1857:3: rule__Vitamins__VitaminAssignment_6_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__Vitamins__VitaminAssignment_6_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getVitaminsAccess().getVitaminAssignment_6_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Vitamins__Group_6__1__Impl"
 
 
     // $ANTLR start "rule__Macronutrients__Group__0"
-    // InternalRecipeDSL.g:1785:1: rule__Macronutrients__Group__0 : rule__Macronutrients__Group__0__Impl rule__Macronutrients__Group__1 ;
+    // InternalRecipeDSL.g:1866:1: rule__Macronutrients__Group__0 : rule__Macronutrients__Group__0__Impl rule__Macronutrients__Group__1 ;
     public final void rule__Macronutrients__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:1789:1: ( rule__Macronutrients__Group__0__Impl rule__Macronutrients__Group__1 )
-            // InternalRecipeDSL.g:1790:2: rule__Macronutrients__Group__0__Impl rule__Macronutrients__Group__1
+            // InternalRecipeDSL.g:1870:1: ( rule__Macronutrients__Group__0__Impl rule__Macronutrients__Group__1 )
+            // InternalRecipeDSL.g:1871:2: rule__Macronutrients__Group__0__Impl rule__Macronutrients__Group__1
             {
             pushFollow(FOLLOW_13);
             rule__Macronutrients__Group__0__Impl();
@@ -5212,21 +5438,21 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Macronutrients__Group__0__Impl"
-    // InternalRecipeDSL.g:1797:1: rule__Macronutrients__Group__0__Impl : ( () ) ;
+    // InternalRecipeDSL.g:1878:1: rule__Macronutrients__Group__0__Impl : ( () ) ;
     public final void rule__Macronutrients__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:1801:1: ( ( () ) )
-            // InternalRecipeDSL.g:1802:1: ( () )
+            // InternalRecipeDSL.g:1882:1: ( ( () ) )
+            // InternalRecipeDSL.g:1883:1: ( () )
             {
-            // InternalRecipeDSL.g:1802:1: ( () )
-            // InternalRecipeDSL.g:1803:2: ()
+            // InternalRecipeDSL.g:1883:1: ( () )
+            // InternalRecipeDSL.g:1884:2: ()
             {
              before(grammarAccess.getMacronutrientsAccess().getMacronutrientsAction_0()); 
-            // InternalRecipeDSL.g:1804:2: ()
-            // InternalRecipeDSL.g:1804:3: 
+            // InternalRecipeDSL.g:1885:2: ()
+            // InternalRecipeDSL.g:1885:3: 
             {
             }
 
@@ -5249,14 +5475,14 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Macronutrients__Group__1"
-    // InternalRecipeDSL.g:1812:1: rule__Macronutrients__Group__1 : rule__Macronutrients__Group__1__Impl ;
+    // InternalRecipeDSL.g:1893:1: rule__Macronutrients__Group__1 : rule__Macronutrients__Group__1__Impl ;
     public final void rule__Macronutrients__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:1816:1: ( rule__Macronutrients__Group__1__Impl )
-            // InternalRecipeDSL.g:1817:2: rule__Macronutrients__Group__1__Impl
+            // InternalRecipeDSL.g:1897:1: ( rule__Macronutrients__Group__1__Impl )
+            // InternalRecipeDSL.g:1898:2: rule__Macronutrients__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Macronutrients__Group__1__Impl();
@@ -5282,20 +5508,20 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Macronutrients__Group__1__Impl"
-    // InternalRecipeDSL.g:1823:1: rule__Macronutrients__Group__1__Impl : ( 'Macronutrients' ) ;
+    // InternalRecipeDSL.g:1904:1: rule__Macronutrients__Group__1__Impl : ( 'Macronutrients' ) ;
     public final void rule__Macronutrients__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:1827:1: ( ( 'Macronutrients' ) )
-            // InternalRecipeDSL.g:1828:1: ( 'Macronutrients' )
+            // InternalRecipeDSL.g:1908:1: ( ( 'Macronutrients' ) )
+            // InternalRecipeDSL.g:1909:1: ( 'Macronutrients' )
             {
-            // InternalRecipeDSL.g:1828:1: ( 'Macronutrients' )
-            // InternalRecipeDSL.g:1829:2: 'Macronutrients'
+            // InternalRecipeDSL.g:1909:1: ( 'Macronutrients' )
+            // InternalRecipeDSL.g:1910:2: 'Macronutrients'
             {
              before(grammarAccess.getMacronutrientsAccess().getMacronutrientsKeyword_1()); 
-            match(input,37,FOLLOW_2); 
+            match(input,38,FOLLOW_2); 
              after(grammarAccess.getMacronutrientsAccess().getMacronutrientsKeyword_1()); 
 
             }
@@ -5319,15 +5545,15 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Page__UnorderedGroup_2"
-    // InternalRecipeDSL.g:1839:1: rule__Page__UnorderedGroup_2 : rule__Page__UnorderedGroup_2__0 {...}?;
+    // InternalRecipeDSL.g:1920:1: rule__Page__UnorderedGroup_2 : rule__Page__UnorderedGroup_2__0 {...}?;
     public final void rule__Page__UnorderedGroup_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         		getUnorderedGroupHelper().enter(grammarAccess.getPageAccess().getUnorderedGroup_2());
         	
         try {
-            // InternalRecipeDSL.g:1844:1: ( rule__Page__UnorderedGroup_2__0 {...}?)
-            // InternalRecipeDSL.g:1845:2: rule__Page__UnorderedGroup_2__0 {...}?
+            // InternalRecipeDSL.g:1925:1: ( rule__Page__UnorderedGroup_2__0 {...}?)
+            // InternalRecipeDSL.g:1926:2: rule__Page__UnorderedGroup_2__0 {...}?
             {
             pushFollow(FOLLOW_2);
             rule__Page__UnorderedGroup_2__0();
@@ -5357,17 +5583,17 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Page__UnorderedGroup_2__Impl"
-    // InternalRecipeDSL.g:1853:1: rule__Page__UnorderedGroup_2__Impl : ( ({...}? => ( ( ( rule__Page__InstructionsAssignment_2_0 ) ) ) ) | ({...}? => ( ( ( rule__Page__IngredientsAssignment_2_1 ) ) ) ) | ({...}? => ( ( ( rule__Page__HeaderAssignment_2_2 ) ) ) ) | ({...}? => ( ( ( rule__Page__NutrientsAssignment_2_3 ) ) ) ) ) ;
+    // InternalRecipeDSL.g:1934:1: rule__Page__UnorderedGroup_2__Impl : ( ({...}? => ( ( ( rule__Page__InstructionsAssignment_2_0 ) ) ) ) | ({...}? => ( ( ( rule__Page__IngredientsAssignment_2_1 ) ) ) ) | ({...}? => ( ( ( rule__Page__HeaderAssignment_2_2 ) ) ) ) | ({...}? => ( ( ( rule__Page__NutrientsAssignment_2_3 ) ) ) ) ) ;
     public final void rule__Page__UnorderedGroup_2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         		boolean selected = false;
         	
         try {
-            // InternalRecipeDSL.g:1858:1: ( ( ({...}? => ( ( ( rule__Page__InstructionsAssignment_2_0 ) ) ) ) | ({...}? => ( ( ( rule__Page__IngredientsAssignment_2_1 ) ) ) ) | ({...}? => ( ( ( rule__Page__HeaderAssignment_2_2 ) ) ) ) | ({...}? => ( ( ( rule__Page__NutrientsAssignment_2_3 ) ) ) ) ) )
-            // InternalRecipeDSL.g:1859:3: ( ({...}? => ( ( ( rule__Page__InstructionsAssignment_2_0 ) ) ) ) | ({...}? => ( ( ( rule__Page__IngredientsAssignment_2_1 ) ) ) ) | ({...}? => ( ( ( rule__Page__HeaderAssignment_2_2 ) ) ) ) | ({...}? => ( ( ( rule__Page__NutrientsAssignment_2_3 ) ) ) ) )
+            // InternalRecipeDSL.g:1939:1: ( ( ({...}? => ( ( ( rule__Page__InstructionsAssignment_2_0 ) ) ) ) | ({...}? => ( ( ( rule__Page__IngredientsAssignment_2_1 ) ) ) ) | ({...}? => ( ( ( rule__Page__HeaderAssignment_2_2 ) ) ) ) | ({...}? => ( ( ( rule__Page__NutrientsAssignment_2_3 ) ) ) ) ) )
+            // InternalRecipeDSL.g:1940:3: ( ({...}? => ( ( ( rule__Page__InstructionsAssignment_2_0 ) ) ) ) | ({...}? => ( ( ( rule__Page__IngredientsAssignment_2_1 ) ) ) ) | ({...}? => ( ( ( rule__Page__HeaderAssignment_2_2 ) ) ) ) | ({...}? => ( ( ( rule__Page__NutrientsAssignment_2_3 ) ) ) ) )
             {
-            // InternalRecipeDSL.g:1859:3: ( ({...}? => ( ( ( rule__Page__InstructionsAssignment_2_0 ) ) ) ) | ({...}? => ( ( ( rule__Page__IngredientsAssignment_2_1 ) ) ) ) | ({...}? => ( ( ( rule__Page__HeaderAssignment_2_2 ) ) ) ) | ({...}? => ( ( ( rule__Page__NutrientsAssignment_2_3 ) ) ) ) )
+            // InternalRecipeDSL.g:1940:3: ( ({...}? => ( ( ( rule__Page__InstructionsAssignment_2_0 ) ) ) ) | ({...}? => ( ( ( rule__Page__IngredientsAssignment_2_1 ) ) ) ) | ({...}? => ( ( ( rule__Page__HeaderAssignment_2_2 ) ) ) ) | ({...}? => ( ( ( rule__Page__NutrientsAssignment_2_3 ) ) ) ) )
             int alt4=4;
             int LA4_0 = input.LA(1);
 
@@ -5391,16 +5617,16 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
             }
             switch (alt4) {
                 case 1 :
-                    // InternalRecipeDSL.g:1860:3: ({...}? => ( ( ( rule__Page__InstructionsAssignment_2_0 ) ) ) )
+                    // InternalRecipeDSL.g:1941:3: ({...}? => ( ( ( rule__Page__InstructionsAssignment_2_0 ) ) ) )
                     {
-                    // InternalRecipeDSL.g:1860:3: ({...}? => ( ( ( rule__Page__InstructionsAssignment_2_0 ) ) ) )
-                    // InternalRecipeDSL.g:1861:4: {...}? => ( ( ( rule__Page__InstructionsAssignment_2_0 ) ) )
+                    // InternalRecipeDSL.g:1941:3: ({...}? => ( ( ( rule__Page__InstructionsAssignment_2_0 ) ) ) )
+                    // InternalRecipeDSL.g:1942:4: {...}? => ( ( ( rule__Page__InstructionsAssignment_2_0 ) ) )
                     {
                     if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_2(), 0) ) {
                         throw new FailedPredicateException(input, "rule__Page__UnorderedGroup_2__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_2(), 0)");
                     }
-                    // InternalRecipeDSL.g:1861:100: ( ( ( rule__Page__InstructionsAssignment_2_0 ) ) )
-                    // InternalRecipeDSL.g:1862:5: ( ( rule__Page__InstructionsAssignment_2_0 ) )
+                    // InternalRecipeDSL.g:1942:100: ( ( ( rule__Page__InstructionsAssignment_2_0 ) ) )
+                    // InternalRecipeDSL.g:1943:5: ( ( rule__Page__InstructionsAssignment_2_0 ) )
                     {
 
                     					getUnorderedGroupHelper().select(grammarAccess.getPageAccess().getUnorderedGroup_2(), 0);
@@ -5408,12 +5634,12 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
                     					selected = true;
                     				
-                    // InternalRecipeDSL.g:1868:5: ( ( rule__Page__InstructionsAssignment_2_0 ) )
-                    // InternalRecipeDSL.g:1869:6: ( rule__Page__InstructionsAssignment_2_0 )
+                    // InternalRecipeDSL.g:1949:5: ( ( rule__Page__InstructionsAssignment_2_0 ) )
+                    // InternalRecipeDSL.g:1950:6: ( rule__Page__InstructionsAssignment_2_0 )
                     {
                      before(grammarAccess.getPageAccess().getInstructionsAssignment_2_0()); 
-                    // InternalRecipeDSL.g:1870:6: ( rule__Page__InstructionsAssignment_2_0 )
-                    // InternalRecipeDSL.g:1870:7: rule__Page__InstructionsAssignment_2_0
+                    // InternalRecipeDSL.g:1951:6: ( rule__Page__InstructionsAssignment_2_0 )
+                    // InternalRecipeDSL.g:1951:7: rule__Page__InstructionsAssignment_2_0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Page__InstructionsAssignment_2_0();
@@ -5437,16 +5663,16 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
                     }
                     break;
                 case 2 :
-                    // InternalRecipeDSL.g:1875:3: ({...}? => ( ( ( rule__Page__IngredientsAssignment_2_1 ) ) ) )
+                    // InternalRecipeDSL.g:1956:3: ({...}? => ( ( ( rule__Page__IngredientsAssignment_2_1 ) ) ) )
                     {
-                    // InternalRecipeDSL.g:1875:3: ({...}? => ( ( ( rule__Page__IngredientsAssignment_2_1 ) ) ) )
-                    // InternalRecipeDSL.g:1876:4: {...}? => ( ( ( rule__Page__IngredientsAssignment_2_1 ) ) )
+                    // InternalRecipeDSL.g:1956:3: ({...}? => ( ( ( rule__Page__IngredientsAssignment_2_1 ) ) ) )
+                    // InternalRecipeDSL.g:1957:4: {...}? => ( ( ( rule__Page__IngredientsAssignment_2_1 ) ) )
                     {
                     if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_2(), 1) ) {
                         throw new FailedPredicateException(input, "rule__Page__UnorderedGroup_2__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_2(), 1)");
                     }
-                    // InternalRecipeDSL.g:1876:100: ( ( ( rule__Page__IngredientsAssignment_2_1 ) ) )
-                    // InternalRecipeDSL.g:1877:5: ( ( rule__Page__IngredientsAssignment_2_1 ) )
+                    // InternalRecipeDSL.g:1957:100: ( ( ( rule__Page__IngredientsAssignment_2_1 ) ) )
+                    // InternalRecipeDSL.g:1958:5: ( ( rule__Page__IngredientsAssignment_2_1 ) )
                     {
 
                     					getUnorderedGroupHelper().select(grammarAccess.getPageAccess().getUnorderedGroup_2(), 1);
@@ -5454,12 +5680,12 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
                     					selected = true;
                     				
-                    // InternalRecipeDSL.g:1883:5: ( ( rule__Page__IngredientsAssignment_2_1 ) )
-                    // InternalRecipeDSL.g:1884:6: ( rule__Page__IngredientsAssignment_2_1 )
+                    // InternalRecipeDSL.g:1964:5: ( ( rule__Page__IngredientsAssignment_2_1 ) )
+                    // InternalRecipeDSL.g:1965:6: ( rule__Page__IngredientsAssignment_2_1 )
                     {
                      before(grammarAccess.getPageAccess().getIngredientsAssignment_2_1()); 
-                    // InternalRecipeDSL.g:1885:6: ( rule__Page__IngredientsAssignment_2_1 )
-                    // InternalRecipeDSL.g:1885:7: rule__Page__IngredientsAssignment_2_1
+                    // InternalRecipeDSL.g:1966:6: ( rule__Page__IngredientsAssignment_2_1 )
+                    // InternalRecipeDSL.g:1966:7: rule__Page__IngredientsAssignment_2_1
                     {
                     pushFollow(FOLLOW_2);
                     rule__Page__IngredientsAssignment_2_1();
@@ -5483,16 +5709,16 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
                     }
                     break;
                 case 3 :
-                    // InternalRecipeDSL.g:1890:3: ({...}? => ( ( ( rule__Page__HeaderAssignment_2_2 ) ) ) )
+                    // InternalRecipeDSL.g:1971:3: ({...}? => ( ( ( rule__Page__HeaderAssignment_2_2 ) ) ) )
                     {
-                    // InternalRecipeDSL.g:1890:3: ({...}? => ( ( ( rule__Page__HeaderAssignment_2_2 ) ) ) )
-                    // InternalRecipeDSL.g:1891:4: {...}? => ( ( ( rule__Page__HeaderAssignment_2_2 ) ) )
+                    // InternalRecipeDSL.g:1971:3: ({...}? => ( ( ( rule__Page__HeaderAssignment_2_2 ) ) ) )
+                    // InternalRecipeDSL.g:1972:4: {...}? => ( ( ( rule__Page__HeaderAssignment_2_2 ) ) )
                     {
                     if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_2(), 2) ) {
                         throw new FailedPredicateException(input, "rule__Page__UnorderedGroup_2__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_2(), 2)");
                     }
-                    // InternalRecipeDSL.g:1891:100: ( ( ( rule__Page__HeaderAssignment_2_2 ) ) )
-                    // InternalRecipeDSL.g:1892:5: ( ( rule__Page__HeaderAssignment_2_2 ) )
+                    // InternalRecipeDSL.g:1972:100: ( ( ( rule__Page__HeaderAssignment_2_2 ) ) )
+                    // InternalRecipeDSL.g:1973:5: ( ( rule__Page__HeaderAssignment_2_2 ) )
                     {
 
                     					getUnorderedGroupHelper().select(grammarAccess.getPageAccess().getUnorderedGroup_2(), 2);
@@ -5500,12 +5726,12 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
                     					selected = true;
                     				
-                    // InternalRecipeDSL.g:1898:5: ( ( rule__Page__HeaderAssignment_2_2 ) )
-                    // InternalRecipeDSL.g:1899:6: ( rule__Page__HeaderAssignment_2_2 )
+                    // InternalRecipeDSL.g:1979:5: ( ( rule__Page__HeaderAssignment_2_2 ) )
+                    // InternalRecipeDSL.g:1980:6: ( rule__Page__HeaderAssignment_2_2 )
                     {
                      before(grammarAccess.getPageAccess().getHeaderAssignment_2_2()); 
-                    // InternalRecipeDSL.g:1900:6: ( rule__Page__HeaderAssignment_2_2 )
-                    // InternalRecipeDSL.g:1900:7: rule__Page__HeaderAssignment_2_2
+                    // InternalRecipeDSL.g:1981:6: ( rule__Page__HeaderAssignment_2_2 )
+                    // InternalRecipeDSL.g:1981:7: rule__Page__HeaderAssignment_2_2
                     {
                     pushFollow(FOLLOW_2);
                     rule__Page__HeaderAssignment_2_2();
@@ -5529,16 +5755,16 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
                     }
                     break;
                 case 4 :
-                    // InternalRecipeDSL.g:1905:3: ({...}? => ( ( ( rule__Page__NutrientsAssignment_2_3 ) ) ) )
+                    // InternalRecipeDSL.g:1986:3: ({...}? => ( ( ( rule__Page__NutrientsAssignment_2_3 ) ) ) )
                     {
-                    // InternalRecipeDSL.g:1905:3: ({...}? => ( ( ( rule__Page__NutrientsAssignment_2_3 ) ) ) )
-                    // InternalRecipeDSL.g:1906:4: {...}? => ( ( ( rule__Page__NutrientsAssignment_2_3 ) ) )
+                    // InternalRecipeDSL.g:1986:3: ({...}? => ( ( ( rule__Page__NutrientsAssignment_2_3 ) ) ) )
+                    // InternalRecipeDSL.g:1987:4: {...}? => ( ( ( rule__Page__NutrientsAssignment_2_3 ) ) )
                     {
                     if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_2(), 3) ) {
                         throw new FailedPredicateException(input, "rule__Page__UnorderedGroup_2__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_2(), 3)");
                     }
-                    // InternalRecipeDSL.g:1906:100: ( ( ( rule__Page__NutrientsAssignment_2_3 ) ) )
-                    // InternalRecipeDSL.g:1907:5: ( ( rule__Page__NutrientsAssignment_2_3 ) )
+                    // InternalRecipeDSL.g:1987:100: ( ( ( rule__Page__NutrientsAssignment_2_3 ) ) )
+                    // InternalRecipeDSL.g:1988:5: ( ( rule__Page__NutrientsAssignment_2_3 ) )
                     {
 
                     					getUnorderedGroupHelper().select(grammarAccess.getPageAccess().getUnorderedGroup_2(), 3);
@@ -5546,12 +5772,12 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
                     					selected = true;
                     				
-                    // InternalRecipeDSL.g:1913:5: ( ( rule__Page__NutrientsAssignment_2_3 ) )
-                    // InternalRecipeDSL.g:1914:6: ( rule__Page__NutrientsAssignment_2_3 )
+                    // InternalRecipeDSL.g:1994:5: ( ( rule__Page__NutrientsAssignment_2_3 ) )
+                    // InternalRecipeDSL.g:1995:6: ( rule__Page__NutrientsAssignment_2_3 )
                     {
                      before(grammarAccess.getPageAccess().getNutrientsAssignment_2_3()); 
-                    // InternalRecipeDSL.g:1915:6: ( rule__Page__NutrientsAssignment_2_3 )
-                    // InternalRecipeDSL.g:1915:7: rule__Page__NutrientsAssignment_2_3
+                    // InternalRecipeDSL.g:1996:6: ( rule__Page__NutrientsAssignment_2_3 )
+                    // InternalRecipeDSL.g:1996:7: rule__Page__NutrientsAssignment_2_3
                     {
                     pushFollow(FOLLOW_2);
                     rule__Page__NutrientsAssignment_2_3();
@@ -5598,21 +5824,21 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Page__UnorderedGroup_2__0"
-    // InternalRecipeDSL.g:1928:1: rule__Page__UnorderedGroup_2__0 : rule__Page__UnorderedGroup_2__Impl ( rule__Page__UnorderedGroup_2__1 )? ;
+    // InternalRecipeDSL.g:2009:1: rule__Page__UnorderedGroup_2__0 : rule__Page__UnorderedGroup_2__Impl ( rule__Page__UnorderedGroup_2__1 )? ;
     public final void rule__Page__UnorderedGroup_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:1932:1: ( rule__Page__UnorderedGroup_2__Impl ( rule__Page__UnorderedGroup_2__1 )? )
-            // InternalRecipeDSL.g:1933:2: rule__Page__UnorderedGroup_2__Impl ( rule__Page__UnorderedGroup_2__1 )?
+            // InternalRecipeDSL.g:2013:1: ( rule__Page__UnorderedGroup_2__Impl ( rule__Page__UnorderedGroup_2__1 )? )
+            // InternalRecipeDSL.g:2014:2: rule__Page__UnorderedGroup_2__Impl ( rule__Page__UnorderedGroup_2__1 )?
             {
-            pushFollow(FOLLOW_21);
+            pushFollow(FOLLOW_22);
             rule__Page__UnorderedGroup_2__Impl();
 
             state._fsp--;
 
-            // InternalRecipeDSL.g:1934:2: ( rule__Page__UnorderedGroup_2__1 )?
+            // InternalRecipeDSL.g:2015:2: ( rule__Page__UnorderedGroup_2__1 )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -5630,7 +5856,7 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
             }
             switch (alt5) {
                 case 1 :
-                    // InternalRecipeDSL.g:1934:2: rule__Page__UnorderedGroup_2__1
+                    // InternalRecipeDSL.g:2015:2: rule__Page__UnorderedGroup_2__1
                     {
                     pushFollow(FOLLOW_2);
                     rule__Page__UnorderedGroup_2__1();
@@ -5662,21 +5888,21 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Page__UnorderedGroup_2__1"
-    // InternalRecipeDSL.g:1940:1: rule__Page__UnorderedGroup_2__1 : rule__Page__UnorderedGroup_2__Impl ( rule__Page__UnorderedGroup_2__2 )? ;
+    // InternalRecipeDSL.g:2021:1: rule__Page__UnorderedGroup_2__1 : rule__Page__UnorderedGroup_2__Impl ( rule__Page__UnorderedGroup_2__2 )? ;
     public final void rule__Page__UnorderedGroup_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:1944:1: ( rule__Page__UnorderedGroup_2__Impl ( rule__Page__UnorderedGroup_2__2 )? )
-            // InternalRecipeDSL.g:1945:2: rule__Page__UnorderedGroup_2__Impl ( rule__Page__UnorderedGroup_2__2 )?
+            // InternalRecipeDSL.g:2025:1: ( rule__Page__UnorderedGroup_2__Impl ( rule__Page__UnorderedGroup_2__2 )? )
+            // InternalRecipeDSL.g:2026:2: rule__Page__UnorderedGroup_2__Impl ( rule__Page__UnorderedGroup_2__2 )?
             {
-            pushFollow(FOLLOW_21);
+            pushFollow(FOLLOW_22);
             rule__Page__UnorderedGroup_2__Impl();
 
             state._fsp--;
 
-            // InternalRecipeDSL.g:1946:2: ( rule__Page__UnorderedGroup_2__2 )?
+            // InternalRecipeDSL.g:2027:2: ( rule__Page__UnorderedGroup_2__2 )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -5694,7 +5920,7 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
             }
             switch (alt6) {
                 case 1 :
-                    // InternalRecipeDSL.g:1946:2: rule__Page__UnorderedGroup_2__2
+                    // InternalRecipeDSL.g:2027:2: rule__Page__UnorderedGroup_2__2
                     {
                     pushFollow(FOLLOW_2);
                     rule__Page__UnorderedGroup_2__2();
@@ -5726,21 +5952,21 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Page__UnorderedGroup_2__2"
-    // InternalRecipeDSL.g:1952:1: rule__Page__UnorderedGroup_2__2 : rule__Page__UnorderedGroup_2__Impl ( rule__Page__UnorderedGroup_2__3 )? ;
+    // InternalRecipeDSL.g:2033:1: rule__Page__UnorderedGroup_2__2 : rule__Page__UnorderedGroup_2__Impl ( rule__Page__UnorderedGroup_2__3 )? ;
     public final void rule__Page__UnorderedGroup_2__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:1956:1: ( rule__Page__UnorderedGroup_2__Impl ( rule__Page__UnorderedGroup_2__3 )? )
-            // InternalRecipeDSL.g:1957:2: rule__Page__UnorderedGroup_2__Impl ( rule__Page__UnorderedGroup_2__3 )?
+            // InternalRecipeDSL.g:2037:1: ( rule__Page__UnorderedGroup_2__Impl ( rule__Page__UnorderedGroup_2__3 )? )
+            // InternalRecipeDSL.g:2038:2: rule__Page__UnorderedGroup_2__Impl ( rule__Page__UnorderedGroup_2__3 )?
             {
-            pushFollow(FOLLOW_21);
+            pushFollow(FOLLOW_22);
             rule__Page__UnorderedGroup_2__Impl();
 
             state._fsp--;
 
-            // InternalRecipeDSL.g:1958:2: ( rule__Page__UnorderedGroup_2__3 )?
+            // InternalRecipeDSL.g:2039:2: ( rule__Page__UnorderedGroup_2__3 )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -5758,7 +5984,7 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
             }
             switch (alt7) {
                 case 1 :
-                    // InternalRecipeDSL.g:1958:2: rule__Page__UnorderedGroup_2__3
+                    // InternalRecipeDSL.g:2039:2: rule__Page__UnorderedGroup_2__3
                     {
                     pushFollow(FOLLOW_2);
                     rule__Page__UnorderedGroup_2__3();
@@ -5790,14 +6016,14 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Page__UnorderedGroup_2__3"
-    // InternalRecipeDSL.g:1964:1: rule__Page__UnorderedGroup_2__3 : rule__Page__UnorderedGroup_2__Impl ;
+    // InternalRecipeDSL.g:2045:1: rule__Page__UnorderedGroup_2__3 : rule__Page__UnorderedGroup_2__Impl ;
     public final void rule__Page__UnorderedGroup_2__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:1968:1: ( rule__Page__UnorderedGroup_2__Impl )
-            // InternalRecipeDSL.g:1969:2: rule__Page__UnorderedGroup_2__Impl
+            // InternalRecipeDSL.g:2049:1: ( rule__Page__UnorderedGroup_2__Impl )
+            // InternalRecipeDSL.g:2050:2: rule__Page__UnorderedGroup_2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Page__UnorderedGroup_2__Impl();
@@ -5823,15 +6049,15 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Ingredients__UnorderedGroup_3"
-    // InternalRecipeDSL.g:1976:1: rule__Ingredients__UnorderedGroup_3 : rule__Ingredients__UnorderedGroup_3__0 {...}?;
+    // InternalRecipeDSL.g:2057:1: rule__Ingredients__UnorderedGroup_3 : rule__Ingredients__UnorderedGroup_3__0 {...}?;
     public final void rule__Ingredients__UnorderedGroup_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         		getUnorderedGroupHelper().enter(grammarAccess.getIngredientsAccess().getUnorderedGroup_3());
         	
         try {
-            // InternalRecipeDSL.g:1981:1: ( rule__Ingredients__UnorderedGroup_3__0 {...}?)
-            // InternalRecipeDSL.g:1982:2: rule__Ingredients__UnorderedGroup_3__0 {...}?
+            // InternalRecipeDSL.g:2062:1: ( rule__Ingredients__UnorderedGroup_3__0 {...}?)
+            // InternalRecipeDSL.g:2063:2: rule__Ingredients__UnorderedGroup_3__0 {...}?
             {
             pushFollow(FOLLOW_2);
             rule__Ingredients__UnorderedGroup_3__0();
@@ -5861,17 +6087,17 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Ingredients__UnorderedGroup_3__Impl"
-    // InternalRecipeDSL.g:1990:1: rule__Ingredients__UnorderedGroup_3__Impl : ( ({...}? => ( ( ( rule__Ingredients__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__Ingredients__UnittoggleAssignment_3_1 ) ) ) ) ) ;
+    // InternalRecipeDSL.g:2071:1: rule__Ingredients__UnorderedGroup_3__Impl : ( ({...}? => ( ( ( rule__Ingredients__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__Ingredients__UnittoggleAssignment_3_1 ) ) ) ) ) ;
     public final void rule__Ingredients__UnorderedGroup_3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         		boolean selected = false;
         	
         try {
-            // InternalRecipeDSL.g:1995:1: ( ( ({...}? => ( ( ( rule__Ingredients__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__Ingredients__UnittoggleAssignment_3_1 ) ) ) ) ) )
-            // InternalRecipeDSL.g:1996:3: ( ({...}? => ( ( ( rule__Ingredients__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__Ingredients__UnittoggleAssignment_3_1 ) ) ) ) )
+            // InternalRecipeDSL.g:2076:1: ( ( ({...}? => ( ( ( rule__Ingredients__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__Ingredients__UnittoggleAssignment_3_1 ) ) ) ) ) )
+            // InternalRecipeDSL.g:2077:3: ( ({...}? => ( ( ( rule__Ingredients__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__Ingredients__UnittoggleAssignment_3_1 ) ) ) ) )
             {
-            // InternalRecipeDSL.g:1996:3: ( ({...}? => ( ( ( rule__Ingredients__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__Ingredients__UnittoggleAssignment_3_1 ) ) ) ) )
+            // InternalRecipeDSL.g:2077:3: ( ({...}? => ( ( ( rule__Ingredients__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__Ingredients__UnittoggleAssignment_3_1 ) ) ) ) )
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -5889,16 +6115,16 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
             }
             switch (alt8) {
                 case 1 :
-                    // InternalRecipeDSL.g:1997:3: ({...}? => ( ( ( rule__Ingredients__Group_3_0__0 ) ) ) )
+                    // InternalRecipeDSL.g:2078:3: ({...}? => ( ( ( rule__Ingredients__Group_3_0__0 ) ) ) )
                     {
-                    // InternalRecipeDSL.g:1997:3: ({...}? => ( ( ( rule__Ingredients__Group_3_0__0 ) ) ) )
-                    // InternalRecipeDSL.g:1998:4: {...}? => ( ( ( rule__Ingredients__Group_3_0__0 ) ) )
+                    // InternalRecipeDSL.g:2078:3: ({...}? => ( ( ( rule__Ingredients__Group_3_0__0 ) ) ) )
+                    // InternalRecipeDSL.g:2079:4: {...}? => ( ( ( rule__Ingredients__Group_3_0__0 ) ) )
                     {
                     if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getIngredientsAccess().getUnorderedGroup_3(), 0) ) {
                         throw new FailedPredicateException(input, "rule__Ingredients__UnorderedGroup_3__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getIngredientsAccess().getUnorderedGroup_3(), 0)");
                     }
-                    // InternalRecipeDSL.g:1998:107: ( ( ( rule__Ingredients__Group_3_0__0 ) ) )
-                    // InternalRecipeDSL.g:1999:5: ( ( rule__Ingredients__Group_3_0__0 ) )
+                    // InternalRecipeDSL.g:2079:107: ( ( ( rule__Ingredients__Group_3_0__0 ) ) )
+                    // InternalRecipeDSL.g:2080:5: ( ( rule__Ingredients__Group_3_0__0 ) )
                     {
 
                     					getUnorderedGroupHelper().select(grammarAccess.getIngredientsAccess().getUnorderedGroup_3(), 0);
@@ -5906,12 +6132,12 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
                     					selected = true;
                     				
-                    // InternalRecipeDSL.g:2005:5: ( ( rule__Ingredients__Group_3_0__0 ) )
-                    // InternalRecipeDSL.g:2006:6: ( rule__Ingredients__Group_3_0__0 )
+                    // InternalRecipeDSL.g:2086:5: ( ( rule__Ingredients__Group_3_0__0 ) )
+                    // InternalRecipeDSL.g:2087:6: ( rule__Ingredients__Group_3_0__0 )
                     {
                      before(grammarAccess.getIngredientsAccess().getGroup_3_0()); 
-                    // InternalRecipeDSL.g:2007:6: ( rule__Ingredients__Group_3_0__0 )
-                    // InternalRecipeDSL.g:2007:7: rule__Ingredients__Group_3_0__0
+                    // InternalRecipeDSL.g:2088:6: ( rule__Ingredients__Group_3_0__0 )
+                    // InternalRecipeDSL.g:2088:7: rule__Ingredients__Group_3_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Ingredients__Group_3_0__0();
@@ -5935,16 +6161,16 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
                     }
                     break;
                 case 2 :
-                    // InternalRecipeDSL.g:2012:3: ({...}? => ( ( ( rule__Ingredients__UnittoggleAssignment_3_1 ) ) ) )
+                    // InternalRecipeDSL.g:2093:3: ({...}? => ( ( ( rule__Ingredients__UnittoggleAssignment_3_1 ) ) ) )
                     {
-                    // InternalRecipeDSL.g:2012:3: ({...}? => ( ( ( rule__Ingredients__UnittoggleAssignment_3_1 ) ) ) )
-                    // InternalRecipeDSL.g:2013:4: {...}? => ( ( ( rule__Ingredients__UnittoggleAssignment_3_1 ) ) )
+                    // InternalRecipeDSL.g:2093:3: ({...}? => ( ( ( rule__Ingredients__UnittoggleAssignment_3_1 ) ) ) )
+                    // InternalRecipeDSL.g:2094:4: {...}? => ( ( ( rule__Ingredients__UnittoggleAssignment_3_1 ) ) )
                     {
                     if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getIngredientsAccess().getUnorderedGroup_3(), 1) ) {
                         throw new FailedPredicateException(input, "rule__Ingredients__UnorderedGroup_3__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getIngredientsAccess().getUnorderedGroup_3(), 1)");
                     }
-                    // InternalRecipeDSL.g:2013:107: ( ( ( rule__Ingredients__UnittoggleAssignment_3_1 ) ) )
-                    // InternalRecipeDSL.g:2014:5: ( ( rule__Ingredients__UnittoggleAssignment_3_1 ) )
+                    // InternalRecipeDSL.g:2094:107: ( ( ( rule__Ingredients__UnittoggleAssignment_3_1 ) ) )
+                    // InternalRecipeDSL.g:2095:5: ( ( rule__Ingredients__UnittoggleAssignment_3_1 ) )
                     {
 
                     					getUnorderedGroupHelper().select(grammarAccess.getIngredientsAccess().getUnorderedGroup_3(), 1);
@@ -5952,12 +6178,12 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
                     					selected = true;
                     				
-                    // InternalRecipeDSL.g:2020:5: ( ( rule__Ingredients__UnittoggleAssignment_3_1 ) )
-                    // InternalRecipeDSL.g:2021:6: ( rule__Ingredients__UnittoggleAssignment_3_1 )
+                    // InternalRecipeDSL.g:2101:5: ( ( rule__Ingredients__UnittoggleAssignment_3_1 ) )
+                    // InternalRecipeDSL.g:2102:6: ( rule__Ingredients__UnittoggleAssignment_3_1 )
                     {
                      before(grammarAccess.getIngredientsAccess().getUnittoggleAssignment_3_1()); 
-                    // InternalRecipeDSL.g:2022:6: ( rule__Ingredients__UnittoggleAssignment_3_1 )
-                    // InternalRecipeDSL.g:2022:7: rule__Ingredients__UnittoggleAssignment_3_1
+                    // InternalRecipeDSL.g:2103:6: ( rule__Ingredients__UnittoggleAssignment_3_1 )
+                    // InternalRecipeDSL.g:2103:7: rule__Ingredients__UnittoggleAssignment_3_1
                     {
                     pushFollow(FOLLOW_2);
                     rule__Ingredients__UnittoggleAssignment_3_1();
@@ -6004,21 +6230,21 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Ingredients__UnorderedGroup_3__0"
-    // InternalRecipeDSL.g:2035:1: rule__Ingredients__UnorderedGroup_3__0 : rule__Ingredients__UnorderedGroup_3__Impl ( rule__Ingredients__UnorderedGroup_3__1 )? ;
+    // InternalRecipeDSL.g:2116:1: rule__Ingredients__UnorderedGroup_3__0 : rule__Ingredients__UnorderedGroup_3__Impl ( rule__Ingredients__UnorderedGroup_3__1 )? ;
     public final void rule__Ingredients__UnorderedGroup_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:2039:1: ( rule__Ingredients__UnorderedGroup_3__Impl ( rule__Ingredients__UnorderedGroup_3__1 )? )
-            // InternalRecipeDSL.g:2040:2: rule__Ingredients__UnorderedGroup_3__Impl ( rule__Ingredients__UnorderedGroup_3__1 )?
+            // InternalRecipeDSL.g:2120:1: ( rule__Ingredients__UnorderedGroup_3__Impl ( rule__Ingredients__UnorderedGroup_3__1 )? )
+            // InternalRecipeDSL.g:2121:2: rule__Ingredients__UnorderedGroup_3__Impl ( rule__Ingredients__UnorderedGroup_3__1 )?
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_23);
             rule__Ingredients__UnorderedGroup_3__Impl();
 
             state._fsp--;
 
-            // InternalRecipeDSL.g:2041:2: ( rule__Ingredients__UnorderedGroup_3__1 )?
+            // InternalRecipeDSL.g:2122:2: ( rule__Ingredients__UnorderedGroup_3__1 )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -6030,7 +6256,7 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
             }
             switch (alt9) {
                 case 1 :
-                    // InternalRecipeDSL.g:2041:2: rule__Ingredients__UnorderedGroup_3__1
+                    // InternalRecipeDSL.g:2122:2: rule__Ingredients__UnorderedGroup_3__1
                     {
                     pushFollow(FOLLOW_2);
                     rule__Ingredients__UnorderedGroup_3__1();
@@ -6062,14 +6288,14 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Ingredients__UnorderedGroup_3__1"
-    // InternalRecipeDSL.g:2047:1: rule__Ingredients__UnorderedGroup_3__1 : rule__Ingredients__UnorderedGroup_3__Impl ;
+    // InternalRecipeDSL.g:2128:1: rule__Ingredients__UnorderedGroup_3__1 : rule__Ingredients__UnorderedGroup_3__Impl ;
     public final void rule__Ingredients__UnorderedGroup_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:2051:1: ( rule__Ingredients__UnorderedGroup_3__Impl )
-            // InternalRecipeDSL.g:2052:2: rule__Ingredients__UnorderedGroup_3__Impl
+            // InternalRecipeDSL.g:2132:1: ( rule__Ingredients__UnorderedGroup_3__Impl )
+            // InternalRecipeDSL.g:2133:2: rule__Ingredients__UnorderedGroup_3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Ingredients__UnorderedGroup_3__Impl();
@@ -6095,15 +6321,15 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Header__UnorderedGroup_3"
-    // InternalRecipeDSL.g:2059:1: rule__Header__UnorderedGroup_3 : rule__Header__UnorderedGroup_3__0 {...}?;
+    // InternalRecipeDSL.g:2140:1: rule__Header__UnorderedGroup_3 : rule__Header__UnorderedGroup_3__0 {...}?;
     public final void rule__Header__UnorderedGroup_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         		getUnorderedGroupHelper().enter(grammarAccess.getHeaderAccess().getUnorderedGroup_3());
         	
         try {
-            // InternalRecipeDSL.g:2064:1: ( rule__Header__UnorderedGroup_3__0 {...}?)
-            // InternalRecipeDSL.g:2065:2: rule__Header__UnorderedGroup_3__0 {...}?
+            // InternalRecipeDSL.g:2145:1: ( rule__Header__UnorderedGroup_3__0 {...}?)
+            // InternalRecipeDSL.g:2146:2: rule__Header__UnorderedGroup_3__0 {...}?
             {
             pushFollow(FOLLOW_2);
             rule__Header__UnorderedGroup_3__0();
@@ -6133,17 +6359,17 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Header__UnorderedGroup_3__Impl"
-    // InternalRecipeDSL.g:2073:1: rule__Header__UnorderedGroup_3__Impl : ( ({...}? => ( ( ( rule__Header__BasicinformationAssignment_3_0 ) ) ) ) | ({...}? => ( ( ( rule__Header__RecipetitleAssignment_3_1 ) ) ) ) | ({...}? => ( ( ( rule__Header__ImageAssignment_3_2 ) ) ) ) ) ;
+    // InternalRecipeDSL.g:2154:1: rule__Header__UnorderedGroup_3__Impl : ( ({...}? => ( ( ( rule__Header__BasicinformationAssignment_3_0 ) ) ) ) | ({...}? => ( ( ( rule__Header__RecipetitleAssignment_3_1 ) ) ) ) | ({...}? => ( ( ( rule__Header__ImageAssignment_3_2 ) ) ) ) ) ;
     public final void rule__Header__UnorderedGroup_3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         		boolean selected = false;
         	
         try {
-            // InternalRecipeDSL.g:2078:1: ( ( ({...}? => ( ( ( rule__Header__BasicinformationAssignment_3_0 ) ) ) ) | ({...}? => ( ( ( rule__Header__RecipetitleAssignment_3_1 ) ) ) ) | ({...}? => ( ( ( rule__Header__ImageAssignment_3_2 ) ) ) ) ) )
-            // InternalRecipeDSL.g:2079:3: ( ({...}? => ( ( ( rule__Header__BasicinformationAssignment_3_0 ) ) ) ) | ({...}? => ( ( ( rule__Header__RecipetitleAssignment_3_1 ) ) ) ) | ({...}? => ( ( ( rule__Header__ImageAssignment_3_2 ) ) ) ) )
+            // InternalRecipeDSL.g:2159:1: ( ( ({...}? => ( ( ( rule__Header__BasicinformationAssignment_3_0 ) ) ) ) | ({...}? => ( ( ( rule__Header__RecipetitleAssignment_3_1 ) ) ) ) | ({...}? => ( ( ( rule__Header__ImageAssignment_3_2 ) ) ) ) ) )
+            // InternalRecipeDSL.g:2160:3: ( ({...}? => ( ( ( rule__Header__BasicinformationAssignment_3_0 ) ) ) ) | ({...}? => ( ( ( rule__Header__RecipetitleAssignment_3_1 ) ) ) ) | ({...}? => ( ( ( rule__Header__ImageAssignment_3_2 ) ) ) ) )
             {
-            // InternalRecipeDSL.g:2079:3: ( ({...}? => ( ( ( rule__Header__BasicinformationAssignment_3_0 ) ) ) ) | ({...}? => ( ( ( rule__Header__RecipetitleAssignment_3_1 ) ) ) ) | ({...}? => ( ( ( rule__Header__ImageAssignment_3_2 ) ) ) ) )
+            // InternalRecipeDSL.g:2160:3: ( ({...}? => ( ( ( rule__Header__BasicinformationAssignment_3_0 ) ) ) ) | ({...}? => ( ( ( rule__Header__RecipetitleAssignment_3_1 ) ) ) ) | ({...}? => ( ( ( rule__Header__ImageAssignment_3_2 ) ) ) ) )
             int alt10=3;
             int LA10_0 = input.LA(1);
 
@@ -6164,16 +6390,16 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
             }
             switch (alt10) {
                 case 1 :
-                    // InternalRecipeDSL.g:2080:3: ({...}? => ( ( ( rule__Header__BasicinformationAssignment_3_0 ) ) ) )
+                    // InternalRecipeDSL.g:2161:3: ({...}? => ( ( ( rule__Header__BasicinformationAssignment_3_0 ) ) ) )
                     {
-                    // InternalRecipeDSL.g:2080:3: ({...}? => ( ( ( rule__Header__BasicinformationAssignment_3_0 ) ) ) )
-                    // InternalRecipeDSL.g:2081:4: {...}? => ( ( ( rule__Header__BasicinformationAssignment_3_0 ) ) )
+                    // InternalRecipeDSL.g:2161:3: ({...}? => ( ( ( rule__Header__BasicinformationAssignment_3_0 ) ) ) )
+                    // InternalRecipeDSL.g:2162:4: {...}? => ( ( ( rule__Header__BasicinformationAssignment_3_0 ) ) )
                     {
                     if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getHeaderAccess().getUnorderedGroup_3(), 0) ) {
                         throw new FailedPredicateException(input, "rule__Header__UnorderedGroup_3__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getHeaderAccess().getUnorderedGroup_3(), 0)");
                     }
-                    // InternalRecipeDSL.g:2081:102: ( ( ( rule__Header__BasicinformationAssignment_3_0 ) ) )
-                    // InternalRecipeDSL.g:2082:5: ( ( rule__Header__BasicinformationAssignment_3_0 ) )
+                    // InternalRecipeDSL.g:2162:102: ( ( ( rule__Header__BasicinformationAssignment_3_0 ) ) )
+                    // InternalRecipeDSL.g:2163:5: ( ( rule__Header__BasicinformationAssignment_3_0 ) )
                     {
 
                     					getUnorderedGroupHelper().select(grammarAccess.getHeaderAccess().getUnorderedGroup_3(), 0);
@@ -6181,12 +6407,12 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
                     					selected = true;
                     				
-                    // InternalRecipeDSL.g:2088:5: ( ( rule__Header__BasicinformationAssignment_3_0 ) )
-                    // InternalRecipeDSL.g:2089:6: ( rule__Header__BasicinformationAssignment_3_0 )
+                    // InternalRecipeDSL.g:2169:5: ( ( rule__Header__BasicinformationAssignment_3_0 ) )
+                    // InternalRecipeDSL.g:2170:6: ( rule__Header__BasicinformationAssignment_3_0 )
                     {
                      before(grammarAccess.getHeaderAccess().getBasicinformationAssignment_3_0()); 
-                    // InternalRecipeDSL.g:2090:6: ( rule__Header__BasicinformationAssignment_3_0 )
-                    // InternalRecipeDSL.g:2090:7: rule__Header__BasicinformationAssignment_3_0
+                    // InternalRecipeDSL.g:2171:6: ( rule__Header__BasicinformationAssignment_3_0 )
+                    // InternalRecipeDSL.g:2171:7: rule__Header__BasicinformationAssignment_3_0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Header__BasicinformationAssignment_3_0();
@@ -6210,16 +6436,16 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
                     }
                     break;
                 case 2 :
-                    // InternalRecipeDSL.g:2095:3: ({...}? => ( ( ( rule__Header__RecipetitleAssignment_3_1 ) ) ) )
+                    // InternalRecipeDSL.g:2176:3: ({...}? => ( ( ( rule__Header__RecipetitleAssignment_3_1 ) ) ) )
                     {
-                    // InternalRecipeDSL.g:2095:3: ({...}? => ( ( ( rule__Header__RecipetitleAssignment_3_1 ) ) ) )
-                    // InternalRecipeDSL.g:2096:4: {...}? => ( ( ( rule__Header__RecipetitleAssignment_3_1 ) ) )
+                    // InternalRecipeDSL.g:2176:3: ({...}? => ( ( ( rule__Header__RecipetitleAssignment_3_1 ) ) ) )
+                    // InternalRecipeDSL.g:2177:4: {...}? => ( ( ( rule__Header__RecipetitleAssignment_3_1 ) ) )
                     {
                     if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getHeaderAccess().getUnorderedGroup_3(), 1) ) {
                         throw new FailedPredicateException(input, "rule__Header__UnorderedGroup_3__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getHeaderAccess().getUnorderedGroup_3(), 1)");
                     }
-                    // InternalRecipeDSL.g:2096:102: ( ( ( rule__Header__RecipetitleAssignment_3_1 ) ) )
-                    // InternalRecipeDSL.g:2097:5: ( ( rule__Header__RecipetitleAssignment_3_1 ) )
+                    // InternalRecipeDSL.g:2177:102: ( ( ( rule__Header__RecipetitleAssignment_3_1 ) ) )
+                    // InternalRecipeDSL.g:2178:5: ( ( rule__Header__RecipetitleAssignment_3_1 ) )
                     {
 
                     					getUnorderedGroupHelper().select(grammarAccess.getHeaderAccess().getUnorderedGroup_3(), 1);
@@ -6227,12 +6453,12 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
                     					selected = true;
                     				
-                    // InternalRecipeDSL.g:2103:5: ( ( rule__Header__RecipetitleAssignment_3_1 ) )
-                    // InternalRecipeDSL.g:2104:6: ( rule__Header__RecipetitleAssignment_3_1 )
+                    // InternalRecipeDSL.g:2184:5: ( ( rule__Header__RecipetitleAssignment_3_1 ) )
+                    // InternalRecipeDSL.g:2185:6: ( rule__Header__RecipetitleAssignment_3_1 )
                     {
                      before(grammarAccess.getHeaderAccess().getRecipetitleAssignment_3_1()); 
-                    // InternalRecipeDSL.g:2105:6: ( rule__Header__RecipetitleAssignment_3_1 )
-                    // InternalRecipeDSL.g:2105:7: rule__Header__RecipetitleAssignment_3_1
+                    // InternalRecipeDSL.g:2186:6: ( rule__Header__RecipetitleAssignment_3_1 )
+                    // InternalRecipeDSL.g:2186:7: rule__Header__RecipetitleAssignment_3_1
                     {
                     pushFollow(FOLLOW_2);
                     rule__Header__RecipetitleAssignment_3_1();
@@ -6256,16 +6482,16 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
                     }
                     break;
                 case 3 :
-                    // InternalRecipeDSL.g:2110:3: ({...}? => ( ( ( rule__Header__ImageAssignment_3_2 ) ) ) )
+                    // InternalRecipeDSL.g:2191:3: ({...}? => ( ( ( rule__Header__ImageAssignment_3_2 ) ) ) )
                     {
-                    // InternalRecipeDSL.g:2110:3: ({...}? => ( ( ( rule__Header__ImageAssignment_3_2 ) ) ) )
-                    // InternalRecipeDSL.g:2111:4: {...}? => ( ( ( rule__Header__ImageAssignment_3_2 ) ) )
+                    // InternalRecipeDSL.g:2191:3: ({...}? => ( ( ( rule__Header__ImageAssignment_3_2 ) ) ) )
+                    // InternalRecipeDSL.g:2192:4: {...}? => ( ( ( rule__Header__ImageAssignment_3_2 ) ) )
                     {
                     if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getHeaderAccess().getUnorderedGroup_3(), 2) ) {
                         throw new FailedPredicateException(input, "rule__Header__UnorderedGroup_3__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getHeaderAccess().getUnorderedGroup_3(), 2)");
                     }
-                    // InternalRecipeDSL.g:2111:102: ( ( ( rule__Header__ImageAssignment_3_2 ) ) )
-                    // InternalRecipeDSL.g:2112:5: ( ( rule__Header__ImageAssignment_3_2 ) )
+                    // InternalRecipeDSL.g:2192:102: ( ( ( rule__Header__ImageAssignment_3_2 ) ) )
+                    // InternalRecipeDSL.g:2193:5: ( ( rule__Header__ImageAssignment_3_2 ) )
                     {
 
                     					getUnorderedGroupHelper().select(grammarAccess.getHeaderAccess().getUnorderedGroup_3(), 2);
@@ -6273,12 +6499,12 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
                     					selected = true;
                     				
-                    // InternalRecipeDSL.g:2118:5: ( ( rule__Header__ImageAssignment_3_2 ) )
-                    // InternalRecipeDSL.g:2119:6: ( rule__Header__ImageAssignment_3_2 )
+                    // InternalRecipeDSL.g:2199:5: ( ( rule__Header__ImageAssignment_3_2 ) )
+                    // InternalRecipeDSL.g:2200:6: ( rule__Header__ImageAssignment_3_2 )
                     {
                      before(grammarAccess.getHeaderAccess().getImageAssignment_3_2()); 
-                    // InternalRecipeDSL.g:2120:6: ( rule__Header__ImageAssignment_3_2 )
-                    // InternalRecipeDSL.g:2120:7: rule__Header__ImageAssignment_3_2
+                    // InternalRecipeDSL.g:2201:6: ( rule__Header__ImageAssignment_3_2 )
+                    // InternalRecipeDSL.g:2201:7: rule__Header__ImageAssignment_3_2
                     {
                     pushFollow(FOLLOW_2);
                     rule__Header__ImageAssignment_3_2();
@@ -6325,21 +6551,21 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Header__UnorderedGroup_3__0"
-    // InternalRecipeDSL.g:2133:1: rule__Header__UnorderedGroup_3__0 : rule__Header__UnorderedGroup_3__Impl ( rule__Header__UnorderedGroup_3__1 )? ;
+    // InternalRecipeDSL.g:2214:1: rule__Header__UnorderedGroup_3__0 : rule__Header__UnorderedGroup_3__Impl ( rule__Header__UnorderedGroup_3__1 )? ;
     public final void rule__Header__UnorderedGroup_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:2137:1: ( rule__Header__UnorderedGroup_3__Impl ( rule__Header__UnorderedGroup_3__1 )? )
-            // InternalRecipeDSL.g:2138:2: rule__Header__UnorderedGroup_3__Impl ( rule__Header__UnorderedGroup_3__1 )?
+            // InternalRecipeDSL.g:2218:1: ( rule__Header__UnorderedGroup_3__Impl ( rule__Header__UnorderedGroup_3__1 )? )
+            // InternalRecipeDSL.g:2219:2: rule__Header__UnorderedGroup_3__Impl ( rule__Header__UnorderedGroup_3__1 )?
             {
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_24);
             rule__Header__UnorderedGroup_3__Impl();
 
             state._fsp--;
 
-            // InternalRecipeDSL.g:2139:2: ( rule__Header__UnorderedGroup_3__1 )?
+            // InternalRecipeDSL.g:2220:2: ( rule__Header__UnorderedGroup_3__1 )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -6354,7 +6580,7 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
             }
             switch (alt11) {
                 case 1 :
-                    // InternalRecipeDSL.g:2139:2: rule__Header__UnorderedGroup_3__1
+                    // InternalRecipeDSL.g:2220:2: rule__Header__UnorderedGroup_3__1
                     {
                     pushFollow(FOLLOW_2);
                     rule__Header__UnorderedGroup_3__1();
@@ -6386,21 +6612,21 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Header__UnorderedGroup_3__1"
-    // InternalRecipeDSL.g:2145:1: rule__Header__UnorderedGroup_3__1 : rule__Header__UnorderedGroup_3__Impl ( rule__Header__UnorderedGroup_3__2 )? ;
+    // InternalRecipeDSL.g:2226:1: rule__Header__UnorderedGroup_3__1 : rule__Header__UnorderedGroup_3__Impl ( rule__Header__UnorderedGroup_3__2 )? ;
     public final void rule__Header__UnorderedGroup_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:2149:1: ( rule__Header__UnorderedGroup_3__Impl ( rule__Header__UnorderedGroup_3__2 )? )
-            // InternalRecipeDSL.g:2150:2: rule__Header__UnorderedGroup_3__Impl ( rule__Header__UnorderedGroup_3__2 )?
+            // InternalRecipeDSL.g:2230:1: ( rule__Header__UnorderedGroup_3__Impl ( rule__Header__UnorderedGroup_3__2 )? )
+            // InternalRecipeDSL.g:2231:2: rule__Header__UnorderedGroup_3__Impl ( rule__Header__UnorderedGroup_3__2 )?
             {
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_24);
             rule__Header__UnorderedGroup_3__Impl();
 
             state._fsp--;
 
-            // InternalRecipeDSL.g:2151:2: ( rule__Header__UnorderedGroup_3__2 )?
+            // InternalRecipeDSL.g:2232:2: ( rule__Header__UnorderedGroup_3__2 )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -6415,7 +6641,7 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
             }
             switch (alt12) {
                 case 1 :
-                    // InternalRecipeDSL.g:2151:2: rule__Header__UnorderedGroup_3__2
+                    // InternalRecipeDSL.g:2232:2: rule__Header__UnorderedGroup_3__2
                     {
                     pushFollow(FOLLOW_2);
                     rule__Header__UnorderedGroup_3__2();
@@ -6447,14 +6673,14 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Header__UnorderedGroup_3__2"
-    // InternalRecipeDSL.g:2157:1: rule__Header__UnorderedGroup_3__2 : rule__Header__UnorderedGroup_3__Impl ;
+    // InternalRecipeDSL.g:2238:1: rule__Header__UnorderedGroup_3__2 : rule__Header__UnorderedGroup_3__Impl ;
     public final void rule__Header__UnorderedGroup_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:2161:1: ( rule__Header__UnorderedGroup_3__Impl )
-            // InternalRecipeDSL.g:2162:2: rule__Header__UnorderedGroup_3__Impl
+            // InternalRecipeDSL.g:2242:1: ( rule__Header__UnorderedGroup_3__Impl )
+            // InternalRecipeDSL.g:2243:2: rule__Header__UnorderedGroup_3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Header__UnorderedGroup_3__Impl();
@@ -6480,15 +6706,15 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Nutrients__UnorderedGroup_3"
-    // InternalRecipeDSL.g:2169:1: rule__Nutrients__UnorderedGroup_3 : rule__Nutrients__UnorderedGroup_3__0 {...}?;
+    // InternalRecipeDSL.g:2250:1: rule__Nutrients__UnorderedGroup_3 : rule__Nutrients__UnorderedGroup_3__0 {...}?;
     public final void rule__Nutrients__UnorderedGroup_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         		getUnorderedGroupHelper().enter(grammarAccess.getNutrientsAccess().getUnorderedGroup_3());
         	
         try {
-            // InternalRecipeDSL.g:2174:1: ( rule__Nutrients__UnorderedGroup_3__0 {...}?)
-            // InternalRecipeDSL.g:2175:2: rule__Nutrients__UnorderedGroup_3__0 {...}?
+            // InternalRecipeDSL.g:2255:1: ( rule__Nutrients__UnorderedGroup_3__0 {...}?)
+            // InternalRecipeDSL.g:2256:2: rule__Nutrients__UnorderedGroup_3__0 {...}?
             {
             pushFollow(FOLLOW_2);
             rule__Nutrients__UnorderedGroup_3__0();
@@ -6518,17 +6744,17 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Nutrients__UnorderedGroup_3__Impl"
-    // InternalRecipeDSL.g:2183:1: rule__Nutrients__UnorderedGroup_3__Impl : ( ({...}? => ( ( ( rule__Nutrients__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__Nutrients__PercentagetoggleAssignment_3_1 ) ) ) ) | ({...}? => ( ( ( rule__Nutrients__VitaminsAssignment_3_2 ) ) ) ) | ({...}? => ( ( ( rule__Nutrients__MacronutrientsAssignment_3_3 ) ) ) ) ) ;
+    // InternalRecipeDSL.g:2264:1: rule__Nutrients__UnorderedGroup_3__Impl : ( ({...}? => ( ( ( rule__Nutrients__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__Nutrients__PercentagetoggleAssignment_3_1 ) ) ) ) | ({...}? => ( ( ( rule__Nutrients__VitaminsAssignment_3_2 ) ) ) ) | ({...}? => ( ( ( rule__Nutrients__MacronutrientsAssignment_3_3 ) ) ) ) ) ;
     public final void rule__Nutrients__UnorderedGroup_3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         		boolean selected = false;
         	
         try {
-            // InternalRecipeDSL.g:2188:1: ( ( ({...}? => ( ( ( rule__Nutrients__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__Nutrients__PercentagetoggleAssignment_3_1 ) ) ) ) | ({...}? => ( ( ( rule__Nutrients__VitaminsAssignment_3_2 ) ) ) ) | ({...}? => ( ( ( rule__Nutrients__MacronutrientsAssignment_3_3 ) ) ) ) ) )
-            // InternalRecipeDSL.g:2189:3: ( ({...}? => ( ( ( rule__Nutrients__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__Nutrients__PercentagetoggleAssignment_3_1 ) ) ) ) | ({...}? => ( ( ( rule__Nutrients__VitaminsAssignment_3_2 ) ) ) ) | ({...}? => ( ( ( rule__Nutrients__MacronutrientsAssignment_3_3 ) ) ) ) )
+            // InternalRecipeDSL.g:2269:1: ( ( ({...}? => ( ( ( rule__Nutrients__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__Nutrients__PercentagetoggleAssignment_3_1 ) ) ) ) | ({...}? => ( ( ( rule__Nutrients__VitaminsAssignment_3_2 ) ) ) ) | ({...}? => ( ( ( rule__Nutrients__MacronutrientsAssignment_3_3 ) ) ) ) ) )
+            // InternalRecipeDSL.g:2270:3: ( ({...}? => ( ( ( rule__Nutrients__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__Nutrients__PercentagetoggleAssignment_3_1 ) ) ) ) | ({...}? => ( ( ( rule__Nutrients__VitaminsAssignment_3_2 ) ) ) ) | ({...}? => ( ( ( rule__Nutrients__MacronutrientsAssignment_3_3 ) ) ) ) )
             {
-            // InternalRecipeDSL.g:2189:3: ( ({...}? => ( ( ( rule__Nutrients__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__Nutrients__PercentagetoggleAssignment_3_1 ) ) ) ) | ({...}? => ( ( ( rule__Nutrients__VitaminsAssignment_3_2 ) ) ) ) | ({...}? => ( ( ( rule__Nutrients__MacronutrientsAssignment_3_3 ) ) ) ) )
+            // InternalRecipeDSL.g:2270:3: ( ({...}? => ( ( ( rule__Nutrients__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__Nutrients__PercentagetoggleAssignment_3_1 ) ) ) ) | ({...}? => ( ( ( rule__Nutrients__VitaminsAssignment_3_2 ) ) ) ) | ({...}? => ( ( ( rule__Nutrients__MacronutrientsAssignment_3_3 ) ) ) ) )
             int alt13=4;
             int LA13_0 = input.LA(1);
 
@@ -6541,7 +6767,7 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
             else if ( LA13_0 == 35 && getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 2) ) {
                 alt13=3;
             }
-            else if ( LA13_0 == 37 && getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 3) ) {
+            else if ( LA13_0 == 38 && getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 3) ) {
                 alt13=4;
             }
             else {
@@ -6552,16 +6778,16 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
             }
             switch (alt13) {
                 case 1 :
-                    // InternalRecipeDSL.g:2190:3: ({...}? => ( ( ( rule__Nutrients__Group_3_0__0 ) ) ) )
+                    // InternalRecipeDSL.g:2271:3: ({...}? => ( ( ( rule__Nutrients__Group_3_0__0 ) ) ) )
                     {
-                    // InternalRecipeDSL.g:2190:3: ({...}? => ( ( ( rule__Nutrients__Group_3_0__0 ) ) ) )
-                    // InternalRecipeDSL.g:2191:4: {...}? => ( ( ( rule__Nutrients__Group_3_0__0 ) ) )
+                    // InternalRecipeDSL.g:2271:3: ({...}? => ( ( ( rule__Nutrients__Group_3_0__0 ) ) ) )
+                    // InternalRecipeDSL.g:2272:4: {...}? => ( ( ( rule__Nutrients__Group_3_0__0 ) ) )
                     {
                     if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 0) ) {
                         throw new FailedPredicateException(input, "rule__Nutrients__UnorderedGroup_3__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 0)");
                     }
-                    // InternalRecipeDSL.g:2191:105: ( ( ( rule__Nutrients__Group_3_0__0 ) ) )
-                    // InternalRecipeDSL.g:2192:5: ( ( rule__Nutrients__Group_3_0__0 ) )
+                    // InternalRecipeDSL.g:2272:105: ( ( ( rule__Nutrients__Group_3_0__0 ) ) )
+                    // InternalRecipeDSL.g:2273:5: ( ( rule__Nutrients__Group_3_0__0 ) )
                     {
 
                     					getUnorderedGroupHelper().select(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 0);
@@ -6569,12 +6795,12 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
                     					selected = true;
                     				
-                    // InternalRecipeDSL.g:2198:5: ( ( rule__Nutrients__Group_3_0__0 ) )
-                    // InternalRecipeDSL.g:2199:6: ( rule__Nutrients__Group_3_0__0 )
+                    // InternalRecipeDSL.g:2279:5: ( ( rule__Nutrients__Group_3_0__0 ) )
+                    // InternalRecipeDSL.g:2280:6: ( rule__Nutrients__Group_3_0__0 )
                     {
                      before(grammarAccess.getNutrientsAccess().getGroup_3_0()); 
-                    // InternalRecipeDSL.g:2200:6: ( rule__Nutrients__Group_3_0__0 )
-                    // InternalRecipeDSL.g:2200:7: rule__Nutrients__Group_3_0__0
+                    // InternalRecipeDSL.g:2281:6: ( rule__Nutrients__Group_3_0__0 )
+                    // InternalRecipeDSL.g:2281:7: rule__Nutrients__Group_3_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Nutrients__Group_3_0__0();
@@ -6598,16 +6824,16 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
                     }
                     break;
                 case 2 :
-                    // InternalRecipeDSL.g:2205:3: ({...}? => ( ( ( rule__Nutrients__PercentagetoggleAssignment_3_1 ) ) ) )
+                    // InternalRecipeDSL.g:2286:3: ({...}? => ( ( ( rule__Nutrients__PercentagetoggleAssignment_3_1 ) ) ) )
                     {
-                    // InternalRecipeDSL.g:2205:3: ({...}? => ( ( ( rule__Nutrients__PercentagetoggleAssignment_3_1 ) ) ) )
-                    // InternalRecipeDSL.g:2206:4: {...}? => ( ( ( rule__Nutrients__PercentagetoggleAssignment_3_1 ) ) )
+                    // InternalRecipeDSL.g:2286:3: ({...}? => ( ( ( rule__Nutrients__PercentagetoggleAssignment_3_1 ) ) ) )
+                    // InternalRecipeDSL.g:2287:4: {...}? => ( ( ( rule__Nutrients__PercentagetoggleAssignment_3_1 ) ) )
                     {
                     if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 1) ) {
                         throw new FailedPredicateException(input, "rule__Nutrients__UnorderedGroup_3__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 1)");
                     }
-                    // InternalRecipeDSL.g:2206:105: ( ( ( rule__Nutrients__PercentagetoggleAssignment_3_1 ) ) )
-                    // InternalRecipeDSL.g:2207:5: ( ( rule__Nutrients__PercentagetoggleAssignment_3_1 ) )
+                    // InternalRecipeDSL.g:2287:105: ( ( ( rule__Nutrients__PercentagetoggleAssignment_3_1 ) ) )
+                    // InternalRecipeDSL.g:2288:5: ( ( rule__Nutrients__PercentagetoggleAssignment_3_1 ) )
                     {
 
                     					getUnorderedGroupHelper().select(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 1);
@@ -6615,12 +6841,12 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
                     					selected = true;
                     				
-                    // InternalRecipeDSL.g:2213:5: ( ( rule__Nutrients__PercentagetoggleAssignment_3_1 ) )
-                    // InternalRecipeDSL.g:2214:6: ( rule__Nutrients__PercentagetoggleAssignment_3_1 )
+                    // InternalRecipeDSL.g:2294:5: ( ( rule__Nutrients__PercentagetoggleAssignment_3_1 ) )
+                    // InternalRecipeDSL.g:2295:6: ( rule__Nutrients__PercentagetoggleAssignment_3_1 )
                     {
                      before(grammarAccess.getNutrientsAccess().getPercentagetoggleAssignment_3_1()); 
-                    // InternalRecipeDSL.g:2215:6: ( rule__Nutrients__PercentagetoggleAssignment_3_1 )
-                    // InternalRecipeDSL.g:2215:7: rule__Nutrients__PercentagetoggleAssignment_3_1
+                    // InternalRecipeDSL.g:2296:6: ( rule__Nutrients__PercentagetoggleAssignment_3_1 )
+                    // InternalRecipeDSL.g:2296:7: rule__Nutrients__PercentagetoggleAssignment_3_1
                     {
                     pushFollow(FOLLOW_2);
                     rule__Nutrients__PercentagetoggleAssignment_3_1();
@@ -6644,16 +6870,16 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
                     }
                     break;
                 case 3 :
-                    // InternalRecipeDSL.g:2220:3: ({...}? => ( ( ( rule__Nutrients__VitaminsAssignment_3_2 ) ) ) )
+                    // InternalRecipeDSL.g:2301:3: ({...}? => ( ( ( rule__Nutrients__VitaminsAssignment_3_2 ) ) ) )
                     {
-                    // InternalRecipeDSL.g:2220:3: ({...}? => ( ( ( rule__Nutrients__VitaminsAssignment_3_2 ) ) ) )
-                    // InternalRecipeDSL.g:2221:4: {...}? => ( ( ( rule__Nutrients__VitaminsAssignment_3_2 ) ) )
+                    // InternalRecipeDSL.g:2301:3: ({...}? => ( ( ( rule__Nutrients__VitaminsAssignment_3_2 ) ) ) )
+                    // InternalRecipeDSL.g:2302:4: {...}? => ( ( ( rule__Nutrients__VitaminsAssignment_3_2 ) ) )
                     {
                     if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 2) ) {
                         throw new FailedPredicateException(input, "rule__Nutrients__UnorderedGroup_3__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 2)");
                     }
-                    // InternalRecipeDSL.g:2221:105: ( ( ( rule__Nutrients__VitaminsAssignment_3_2 ) ) )
-                    // InternalRecipeDSL.g:2222:5: ( ( rule__Nutrients__VitaminsAssignment_3_2 ) )
+                    // InternalRecipeDSL.g:2302:105: ( ( ( rule__Nutrients__VitaminsAssignment_3_2 ) ) )
+                    // InternalRecipeDSL.g:2303:5: ( ( rule__Nutrients__VitaminsAssignment_3_2 ) )
                     {
 
                     					getUnorderedGroupHelper().select(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 2);
@@ -6661,12 +6887,12 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
                     					selected = true;
                     				
-                    // InternalRecipeDSL.g:2228:5: ( ( rule__Nutrients__VitaminsAssignment_3_2 ) )
-                    // InternalRecipeDSL.g:2229:6: ( rule__Nutrients__VitaminsAssignment_3_2 )
+                    // InternalRecipeDSL.g:2309:5: ( ( rule__Nutrients__VitaminsAssignment_3_2 ) )
+                    // InternalRecipeDSL.g:2310:6: ( rule__Nutrients__VitaminsAssignment_3_2 )
                     {
                      before(grammarAccess.getNutrientsAccess().getVitaminsAssignment_3_2()); 
-                    // InternalRecipeDSL.g:2230:6: ( rule__Nutrients__VitaminsAssignment_3_2 )
-                    // InternalRecipeDSL.g:2230:7: rule__Nutrients__VitaminsAssignment_3_2
+                    // InternalRecipeDSL.g:2311:6: ( rule__Nutrients__VitaminsAssignment_3_2 )
+                    // InternalRecipeDSL.g:2311:7: rule__Nutrients__VitaminsAssignment_3_2
                     {
                     pushFollow(FOLLOW_2);
                     rule__Nutrients__VitaminsAssignment_3_2();
@@ -6690,16 +6916,16 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
                     }
                     break;
                 case 4 :
-                    // InternalRecipeDSL.g:2235:3: ({...}? => ( ( ( rule__Nutrients__MacronutrientsAssignment_3_3 ) ) ) )
+                    // InternalRecipeDSL.g:2316:3: ({...}? => ( ( ( rule__Nutrients__MacronutrientsAssignment_3_3 ) ) ) )
                     {
-                    // InternalRecipeDSL.g:2235:3: ({...}? => ( ( ( rule__Nutrients__MacronutrientsAssignment_3_3 ) ) ) )
-                    // InternalRecipeDSL.g:2236:4: {...}? => ( ( ( rule__Nutrients__MacronutrientsAssignment_3_3 ) ) )
+                    // InternalRecipeDSL.g:2316:3: ({...}? => ( ( ( rule__Nutrients__MacronutrientsAssignment_3_3 ) ) ) )
+                    // InternalRecipeDSL.g:2317:4: {...}? => ( ( ( rule__Nutrients__MacronutrientsAssignment_3_3 ) ) )
                     {
                     if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 3) ) {
                         throw new FailedPredicateException(input, "rule__Nutrients__UnorderedGroup_3__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 3)");
                     }
-                    // InternalRecipeDSL.g:2236:105: ( ( ( rule__Nutrients__MacronutrientsAssignment_3_3 ) ) )
-                    // InternalRecipeDSL.g:2237:5: ( ( rule__Nutrients__MacronutrientsAssignment_3_3 ) )
+                    // InternalRecipeDSL.g:2317:105: ( ( ( rule__Nutrients__MacronutrientsAssignment_3_3 ) ) )
+                    // InternalRecipeDSL.g:2318:5: ( ( rule__Nutrients__MacronutrientsAssignment_3_3 ) )
                     {
 
                     					getUnorderedGroupHelper().select(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 3);
@@ -6707,12 +6933,12 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
                     					selected = true;
                     				
-                    // InternalRecipeDSL.g:2243:5: ( ( rule__Nutrients__MacronutrientsAssignment_3_3 ) )
-                    // InternalRecipeDSL.g:2244:6: ( rule__Nutrients__MacronutrientsAssignment_3_3 )
+                    // InternalRecipeDSL.g:2324:5: ( ( rule__Nutrients__MacronutrientsAssignment_3_3 ) )
+                    // InternalRecipeDSL.g:2325:6: ( rule__Nutrients__MacronutrientsAssignment_3_3 )
                     {
                      before(grammarAccess.getNutrientsAccess().getMacronutrientsAssignment_3_3()); 
-                    // InternalRecipeDSL.g:2245:6: ( rule__Nutrients__MacronutrientsAssignment_3_3 )
-                    // InternalRecipeDSL.g:2245:7: rule__Nutrients__MacronutrientsAssignment_3_3
+                    // InternalRecipeDSL.g:2326:6: ( rule__Nutrients__MacronutrientsAssignment_3_3 )
+                    // InternalRecipeDSL.g:2326:7: rule__Nutrients__MacronutrientsAssignment_3_3
                     {
                     pushFollow(FOLLOW_2);
                     rule__Nutrients__MacronutrientsAssignment_3_3();
@@ -6759,21 +6985,21 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Nutrients__UnorderedGroup_3__0"
-    // InternalRecipeDSL.g:2258:1: rule__Nutrients__UnorderedGroup_3__0 : rule__Nutrients__UnorderedGroup_3__Impl ( rule__Nutrients__UnorderedGroup_3__1 )? ;
+    // InternalRecipeDSL.g:2339:1: rule__Nutrients__UnorderedGroup_3__0 : rule__Nutrients__UnorderedGroup_3__Impl ( rule__Nutrients__UnorderedGroup_3__1 )? ;
     public final void rule__Nutrients__UnorderedGroup_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:2262:1: ( rule__Nutrients__UnorderedGroup_3__Impl ( rule__Nutrients__UnorderedGroup_3__1 )? )
-            // InternalRecipeDSL.g:2263:2: rule__Nutrients__UnorderedGroup_3__Impl ( rule__Nutrients__UnorderedGroup_3__1 )?
+            // InternalRecipeDSL.g:2343:1: ( rule__Nutrients__UnorderedGroup_3__Impl ( rule__Nutrients__UnorderedGroup_3__1 )? )
+            // InternalRecipeDSL.g:2344:2: rule__Nutrients__UnorderedGroup_3__Impl ( rule__Nutrients__UnorderedGroup_3__1 )?
             {
-            pushFollow(FOLLOW_24);
+            pushFollow(FOLLOW_25);
             rule__Nutrients__UnorderedGroup_3__Impl();
 
             state._fsp--;
 
-            // InternalRecipeDSL.g:2264:2: ( rule__Nutrients__UnorderedGroup_3__1 )?
+            // InternalRecipeDSL.g:2345:2: ( rule__Nutrients__UnorderedGroup_3__1 )?
             int alt14=2;
             int LA14_0 = input.LA(1);
 
@@ -6786,12 +7012,12 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
             else if ( LA14_0 == 35 && getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 2) ) {
                 alt14=1;
             }
-            else if ( LA14_0 == 37 && getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 3) ) {
+            else if ( LA14_0 == 38 && getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 3) ) {
                 alt14=1;
             }
             switch (alt14) {
                 case 1 :
-                    // InternalRecipeDSL.g:2264:2: rule__Nutrients__UnorderedGroup_3__1
+                    // InternalRecipeDSL.g:2345:2: rule__Nutrients__UnorderedGroup_3__1
                     {
                     pushFollow(FOLLOW_2);
                     rule__Nutrients__UnorderedGroup_3__1();
@@ -6823,21 +7049,21 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Nutrients__UnorderedGroup_3__1"
-    // InternalRecipeDSL.g:2270:1: rule__Nutrients__UnorderedGroup_3__1 : rule__Nutrients__UnorderedGroup_3__Impl ( rule__Nutrients__UnorderedGroup_3__2 )? ;
+    // InternalRecipeDSL.g:2351:1: rule__Nutrients__UnorderedGroup_3__1 : rule__Nutrients__UnorderedGroup_3__Impl ( rule__Nutrients__UnorderedGroup_3__2 )? ;
     public final void rule__Nutrients__UnorderedGroup_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:2274:1: ( rule__Nutrients__UnorderedGroup_3__Impl ( rule__Nutrients__UnorderedGroup_3__2 )? )
-            // InternalRecipeDSL.g:2275:2: rule__Nutrients__UnorderedGroup_3__Impl ( rule__Nutrients__UnorderedGroup_3__2 )?
+            // InternalRecipeDSL.g:2355:1: ( rule__Nutrients__UnorderedGroup_3__Impl ( rule__Nutrients__UnorderedGroup_3__2 )? )
+            // InternalRecipeDSL.g:2356:2: rule__Nutrients__UnorderedGroup_3__Impl ( rule__Nutrients__UnorderedGroup_3__2 )?
             {
-            pushFollow(FOLLOW_24);
+            pushFollow(FOLLOW_25);
             rule__Nutrients__UnorderedGroup_3__Impl();
 
             state._fsp--;
 
-            // InternalRecipeDSL.g:2276:2: ( rule__Nutrients__UnorderedGroup_3__2 )?
+            // InternalRecipeDSL.g:2357:2: ( rule__Nutrients__UnorderedGroup_3__2 )?
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -6850,12 +7076,12 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
             else if ( LA15_0 == 35 && getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 2) ) {
                 alt15=1;
             }
-            else if ( LA15_0 == 37 && getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 3) ) {
+            else if ( LA15_0 == 38 && getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 3) ) {
                 alt15=1;
             }
             switch (alt15) {
                 case 1 :
-                    // InternalRecipeDSL.g:2276:2: rule__Nutrients__UnorderedGroup_3__2
+                    // InternalRecipeDSL.g:2357:2: rule__Nutrients__UnorderedGroup_3__2
                     {
                     pushFollow(FOLLOW_2);
                     rule__Nutrients__UnorderedGroup_3__2();
@@ -6887,21 +7113,21 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Nutrients__UnorderedGroup_3__2"
-    // InternalRecipeDSL.g:2282:1: rule__Nutrients__UnorderedGroup_3__2 : rule__Nutrients__UnorderedGroup_3__Impl ( rule__Nutrients__UnorderedGroup_3__3 )? ;
+    // InternalRecipeDSL.g:2363:1: rule__Nutrients__UnorderedGroup_3__2 : rule__Nutrients__UnorderedGroup_3__Impl ( rule__Nutrients__UnorderedGroup_3__3 )? ;
     public final void rule__Nutrients__UnorderedGroup_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:2286:1: ( rule__Nutrients__UnorderedGroup_3__Impl ( rule__Nutrients__UnorderedGroup_3__3 )? )
-            // InternalRecipeDSL.g:2287:2: rule__Nutrients__UnorderedGroup_3__Impl ( rule__Nutrients__UnorderedGroup_3__3 )?
+            // InternalRecipeDSL.g:2367:1: ( rule__Nutrients__UnorderedGroup_3__Impl ( rule__Nutrients__UnorderedGroup_3__3 )? )
+            // InternalRecipeDSL.g:2368:2: rule__Nutrients__UnorderedGroup_3__Impl ( rule__Nutrients__UnorderedGroup_3__3 )?
             {
-            pushFollow(FOLLOW_24);
+            pushFollow(FOLLOW_25);
             rule__Nutrients__UnorderedGroup_3__Impl();
 
             state._fsp--;
 
-            // InternalRecipeDSL.g:2288:2: ( rule__Nutrients__UnorderedGroup_3__3 )?
+            // InternalRecipeDSL.g:2369:2: ( rule__Nutrients__UnorderedGroup_3__3 )?
             int alt16=2;
             int LA16_0 = input.LA(1);
 
@@ -6914,12 +7140,12 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
             else if ( LA16_0 == 35 && getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 2) ) {
                 alt16=1;
             }
-            else if ( LA16_0 == 37 && getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 3) ) {
+            else if ( LA16_0 == 38 && getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 3) ) {
                 alt16=1;
             }
             switch (alt16) {
                 case 1 :
-                    // InternalRecipeDSL.g:2288:2: rule__Nutrients__UnorderedGroup_3__3
+                    // InternalRecipeDSL.g:2369:2: rule__Nutrients__UnorderedGroup_3__3
                     {
                     pushFollow(FOLLOW_2);
                     rule__Nutrients__UnorderedGroup_3__3();
@@ -6951,14 +7177,14 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Nutrients__UnorderedGroup_3__3"
-    // InternalRecipeDSL.g:2294:1: rule__Nutrients__UnorderedGroup_3__3 : rule__Nutrients__UnorderedGroup_3__Impl ;
+    // InternalRecipeDSL.g:2375:1: rule__Nutrients__UnorderedGroup_3__3 : rule__Nutrients__UnorderedGroup_3__Impl ;
     public final void rule__Nutrients__UnorderedGroup_3__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:2298:1: ( rule__Nutrients__UnorderedGroup_3__Impl )
-            // InternalRecipeDSL.g:2299:2: rule__Nutrients__UnorderedGroup_3__Impl
+            // InternalRecipeDSL.g:2379:1: ( rule__Nutrients__UnorderedGroup_3__Impl )
+            // InternalRecipeDSL.g:2380:2: rule__Nutrients__UnorderedGroup_3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Nutrients__UnorderedGroup_3__Impl();
@@ -6984,17 +7210,17 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Page__InstructionsAssignment_2_0"
-    // InternalRecipeDSL.g:2306:1: rule__Page__InstructionsAssignment_2_0 : ( ruleInstructions ) ;
+    // InternalRecipeDSL.g:2387:1: rule__Page__InstructionsAssignment_2_0 : ( ruleInstructions ) ;
     public final void rule__Page__InstructionsAssignment_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:2310:1: ( ( ruleInstructions ) )
-            // InternalRecipeDSL.g:2311:2: ( ruleInstructions )
+            // InternalRecipeDSL.g:2391:1: ( ( ruleInstructions ) )
+            // InternalRecipeDSL.g:2392:2: ( ruleInstructions )
             {
-            // InternalRecipeDSL.g:2311:2: ( ruleInstructions )
-            // InternalRecipeDSL.g:2312:3: ruleInstructions
+            // InternalRecipeDSL.g:2392:2: ( ruleInstructions )
+            // InternalRecipeDSL.g:2393:3: ruleInstructions
             {
              before(grammarAccess.getPageAccess().getInstructionsInstructionsParserRuleCall_2_0_0()); 
             pushFollow(FOLLOW_2);
@@ -7025,17 +7251,17 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Page__IngredientsAssignment_2_1"
-    // InternalRecipeDSL.g:2321:1: rule__Page__IngredientsAssignment_2_1 : ( ruleIngredients ) ;
+    // InternalRecipeDSL.g:2402:1: rule__Page__IngredientsAssignment_2_1 : ( ruleIngredients ) ;
     public final void rule__Page__IngredientsAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:2325:1: ( ( ruleIngredients ) )
-            // InternalRecipeDSL.g:2326:2: ( ruleIngredients )
+            // InternalRecipeDSL.g:2406:1: ( ( ruleIngredients ) )
+            // InternalRecipeDSL.g:2407:2: ( ruleIngredients )
             {
-            // InternalRecipeDSL.g:2326:2: ( ruleIngredients )
-            // InternalRecipeDSL.g:2327:3: ruleIngredients
+            // InternalRecipeDSL.g:2407:2: ( ruleIngredients )
+            // InternalRecipeDSL.g:2408:3: ruleIngredients
             {
              before(grammarAccess.getPageAccess().getIngredientsIngredientsParserRuleCall_2_1_0()); 
             pushFollow(FOLLOW_2);
@@ -7066,17 +7292,17 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Page__HeaderAssignment_2_2"
-    // InternalRecipeDSL.g:2336:1: rule__Page__HeaderAssignment_2_2 : ( ruleHeader ) ;
+    // InternalRecipeDSL.g:2417:1: rule__Page__HeaderAssignment_2_2 : ( ruleHeader ) ;
     public final void rule__Page__HeaderAssignment_2_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:2340:1: ( ( ruleHeader ) )
-            // InternalRecipeDSL.g:2341:2: ( ruleHeader )
+            // InternalRecipeDSL.g:2421:1: ( ( ruleHeader ) )
+            // InternalRecipeDSL.g:2422:2: ( ruleHeader )
             {
-            // InternalRecipeDSL.g:2341:2: ( ruleHeader )
-            // InternalRecipeDSL.g:2342:3: ruleHeader
+            // InternalRecipeDSL.g:2422:2: ( ruleHeader )
+            // InternalRecipeDSL.g:2423:3: ruleHeader
             {
              before(grammarAccess.getPageAccess().getHeaderHeaderParserRuleCall_2_2_0()); 
             pushFollow(FOLLOW_2);
@@ -7107,17 +7333,17 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Page__NutrientsAssignment_2_3"
-    // InternalRecipeDSL.g:2351:1: rule__Page__NutrientsAssignment_2_3 : ( ruleNutrients ) ;
+    // InternalRecipeDSL.g:2432:1: rule__Page__NutrientsAssignment_2_3 : ( ruleNutrients ) ;
     public final void rule__Page__NutrientsAssignment_2_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:2355:1: ( ( ruleNutrients ) )
-            // InternalRecipeDSL.g:2356:2: ( ruleNutrients )
+            // InternalRecipeDSL.g:2436:1: ( ( ruleNutrients ) )
+            // InternalRecipeDSL.g:2437:2: ( ruleNutrients )
             {
-            // InternalRecipeDSL.g:2356:2: ( ruleNutrients )
-            // InternalRecipeDSL.g:2357:3: ruleNutrients
+            // InternalRecipeDSL.g:2437:2: ( ruleNutrients )
+            // InternalRecipeDSL.g:2438:3: ruleNutrients
             {
              before(grammarAccess.getPageAccess().getNutrientsNutrientsParserRuleCall_2_3_0()); 
             pushFollow(FOLLOW_2);
@@ -7148,17 +7374,17 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Instructions__OrderNumberAssignment_4"
-    // InternalRecipeDSL.g:2366:1: rule__Instructions__OrderNumberAssignment_4 : ( ruleEInt ) ;
+    // InternalRecipeDSL.g:2447:1: rule__Instructions__OrderNumberAssignment_4 : ( ruleEInt ) ;
     public final void rule__Instructions__OrderNumberAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:2370:1: ( ( ruleEInt ) )
-            // InternalRecipeDSL.g:2371:2: ( ruleEInt )
+            // InternalRecipeDSL.g:2451:1: ( ( ruleEInt ) )
+            // InternalRecipeDSL.g:2452:2: ( ruleEInt )
             {
-            // InternalRecipeDSL.g:2371:2: ( ruleEInt )
-            // InternalRecipeDSL.g:2372:3: ruleEInt
+            // InternalRecipeDSL.g:2452:2: ( ruleEInt )
+            // InternalRecipeDSL.g:2453:3: ruleEInt
             {
              before(grammarAccess.getInstructionsAccess().getOrderNumberEIntParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -7189,17 +7415,17 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Ingredients__OrderNumberAssignment_3_0_1"
-    // InternalRecipeDSL.g:2381:1: rule__Ingredients__OrderNumberAssignment_3_0_1 : ( ruleEInt ) ;
+    // InternalRecipeDSL.g:2462:1: rule__Ingredients__OrderNumberAssignment_3_0_1 : ( ruleEInt ) ;
     public final void rule__Ingredients__OrderNumberAssignment_3_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:2385:1: ( ( ruleEInt ) )
-            // InternalRecipeDSL.g:2386:2: ( ruleEInt )
+            // InternalRecipeDSL.g:2466:1: ( ( ruleEInt ) )
+            // InternalRecipeDSL.g:2467:2: ( ruleEInt )
             {
-            // InternalRecipeDSL.g:2386:2: ( ruleEInt )
-            // InternalRecipeDSL.g:2387:3: ruleEInt
+            // InternalRecipeDSL.g:2467:2: ( ruleEInt )
+            // InternalRecipeDSL.g:2468:3: ruleEInt
             {
              before(grammarAccess.getIngredientsAccess().getOrderNumberEIntParserRuleCall_3_0_1_0()); 
             pushFollow(FOLLOW_2);
@@ -7230,17 +7456,17 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Ingredients__UnittoggleAssignment_3_1"
-    // InternalRecipeDSL.g:2396:1: rule__Ingredients__UnittoggleAssignment_3_1 : ( ruleUnitOfMeasure ) ;
+    // InternalRecipeDSL.g:2477:1: rule__Ingredients__UnittoggleAssignment_3_1 : ( ruleUnitOfMeasure ) ;
     public final void rule__Ingredients__UnittoggleAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:2400:1: ( ( ruleUnitOfMeasure ) )
-            // InternalRecipeDSL.g:2401:2: ( ruleUnitOfMeasure )
+            // InternalRecipeDSL.g:2481:1: ( ( ruleUnitOfMeasure ) )
+            // InternalRecipeDSL.g:2482:2: ( ruleUnitOfMeasure )
             {
-            // InternalRecipeDSL.g:2401:2: ( ruleUnitOfMeasure )
-            // InternalRecipeDSL.g:2402:3: ruleUnitOfMeasure
+            // InternalRecipeDSL.g:2482:2: ( ruleUnitOfMeasure )
+            // InternalRecipeDSL.g:2483:3: ruleUnitOfMeasure
             {
              before(grammarAccess.getIngredientsAccess().getUnittoggleUnitOfMeasureParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -7271,17 +7497,17 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Header__BasicinformationAssignment_3_0"
-    // InternalRecipeDSL.g:2411:1: rule__Header__BasicinformationAssignment_3_0 : ( ruleBasicInformation ) ;
+    // InternalRecipeDSL.g:2492:1: rule__Header__BasicinformationAssignment_3_0 : ( ruleBasicInformation ) ;
     public final void rule__Header__BasicinformationAssignment_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:2415:1: ( ( ruleBasicInformation ) )
-            // InternalRecipeDSL.g:2416:2: ( ruleBasicInformation )
+            // InternalRecipeDSL.g:2496:1: ( ( ruleBasicInformation ) )
+            // InternalRecipeDSL.g:2497:2: ( ruleBasicInformation )
             {
-            // InternalRecipeDSL.g:2416:2: ( ruleBasicInformation )
-            // InternalRecipeDSL.g:2417:3: ruleBasicInformation
+            // InternalRecipeDSL.g:2497:2: ( ruleBasicInformation )
+            // InternalRecipeDSL.g:2498:3: ruleBasicInformation
             {
              before(grammarAccess.getHeaderAccess().getBasicinformationBasicInformationParserRuleCall_3_0_0()); 
             pushFollow(FOLLOW_2);
@@ -7312,17 +7538,17 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Header__RecipetitleAssignment_3_1"
-    // InternalRecipeDSL.g:2426:1: rule__Header__RecipetitleAssignment_3_1 : ( ruleTitle ) ;
+    // InternalRecipeDSL.g:2507:1: rule__Header__RecipetitleAssignment_3_1 : ( ruleTitle ) ;
     public final void rule__Header__RecipetitleAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:2430:1: ( ( ruleTitle ) )
-            // InternalRecipeDSL.g:2431:2: ( ruleTitle )
+            // InternalRecipeDSL.g:2511:1: ( ( ruleTitle ) )
+            // InternalRecipeDSL.g:2512:2: ( ruleTitle )
             {
-            // InternalRecipeDSL.g:2431:2: ( ruleTitle )
-            // InternalRecipeDSL.g:2432:3: ruleTitle
+            // InternalRecipeDSL.g:2512:2: ( ruleTitle )
+            // InternalRecipeDSL.g:2513:3: ruleTitle
             {
              before(grammarAccess.getHeaderAccess().getRecipetitleTitleParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -7353,17 +7579,17 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Header__ImageAssignment_3_2"
-    // InternalRecipeDSL.g:2441:1: rule__Header__ImageAssignment_3_2 : ( ruleImage ) ;
+    // InternalRecipeDSL.g:2522:1: rule__Header__ImageAssignment_3_2 : ( ruleImage ) ;
     public final void rule__Header__ImageAssignment_3_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:2445:1: ( ( ruleImage ) )
-            // InternalRecipeDSL.g:2446:2: ( ruleImage )
+            // InternalRecipeDSL.g:2526:1: ( ( ruleImage ) )
+            // InternalRecipeDSL.g:2527:2: ( ruleImage )
             {
-            // InternalRecipeDSL.g:2446:2: ( ruleImage )
-            // InternalRecipeDSL.g:2447:3: ruleImage
+            // InternalRecipeDSL.g:2527:2: ( ruleImage )
+            // InternalRecipeDSL.g:2528:3: ruleImage
             {
              before(grammarAccess.getHeaderAccess().getImageImageParserRuleCall_3_2_0()); 
             pushFollow(FOLLOW_2);
@@ -7394,17 +7620,17 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Nutrients__OrderNumberAssignment_3_0_1"
-    // InternalRecipeDSL.g:2456:1: rule__Nutrients__OrderNumberAssignment_3_0_1 : ( ruleEInt ) ;
+    // InternalRecipeDSL.g:2537:1: rule__Nutrients__OrderNumberAssignment_3_0_1 : ( ruleEInt ) ;
     public final void rule__Nutrients__OrderNumberAssignment_3_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:2460:1: ( ( ruleEInt ) )
-            // InternalRecipeDSL.g:2461:2: ( ruleEInt )
+            // InternalRecipeDSL.g:2541:1: ( ( ruleEInt ) )
+            // InternalRecipeDSL.g:2542:2: ( ruleEInt )
             {
-            // InternalRecipeDSL.g:2461:2: ( ruleEInt )
-            // InternalRecipeDSL.g:2462:3: ruleEInt
+            // InternalRecipeDSL.g:2542:2: ( ruleEInt )
+            // InternalRecipeDSL.g:2543:3: ruleEInt
             {
              before(grammarAccess.getNutrientsAccess().getOrderNumberEIntParserRuleCall_3_0_1_0()); 
             pushFollow(FOLLOW_2);
@@ -7435,17 +7661,17 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Nutrients__PercentagetoggleAssignment_3_1"
-    // InternalRecipeDSL.g:2471:1: rule__Nutrients__PercentagetoggleAssignment_3_1 : ( rulePercentageAmountToggle ) ;
+    // InternalRecipeDSL.g:2552:1: rule__Nutrients__PercentagetoggleAssignment_3_1 : ( rulePercentageAmountToggle ) ;
     public final void rule__Nutrients__PercentagetoggleAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:2475:1: ( ( rulePercentageAmountToggle ) )
-            // InternalRecipeDSL.g:2476:2: ( rulePercentageAmountToggle )
+            // InternalRecipeDSL.g:2556:1: ( ( rulePercentageAmountToggle ) )
+            // InternalRecipeDSL.g:2557:2: ( rulePercentageAmountToggle )
             {
-            // InternalRecipeDSL.g:2476:2: ( rulePercentageAmountToggle )
-            // InternalRecipeDSL.g:2477:3: rulePercentageAmountToggle
+            // InternalRecipeDSL.g:2557:2: ( rulePercentageAmountToggle )
+            // InternalRecipeDSL.g:2558:3: rulePercentageAmountToggle
             {
              before(grammarAccess.getNutrientsAccess().getPercentagetogglePercentageAmountToggleParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -7476,17 +7702,17 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Nutrients__VitaminsAssignment_3_2"
-    // InternalRecipeDSL.g:2486:1: rule__Nutrients__VitaminsAssignment_3_2 : ( ruleVitamins ) ;
+    // InternalRecipeDSL.g:2567:1: rule__Nutrients__VitaminsAssignment_3_2 : ( ruleVitamins ) ;
     public final void rule__Nutrients__VitaminsAssignment_3_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:2490:1: ( ( ruleVitamins ) )
-            // InternalRecipeDSL.g:2491:2: ( ruleVitamins )
+            // InternalRecipeDSL.g:2571:1: ( ( ruleVitamins ) )
+            // InternalRecipeDSL.g:2572:2: ( ruleVitamins )
             {
-            // InternalRecipeDSL.g:2491:2: ( ruleVitamins )
-            // InternalRecipeDSL.g:2492:3: ruleVitamins
+            // InternalRecipeDSL.g:2572:2: ( ruleVitamins )
+            // InternalRecipeDSL.g:2573:3: ruleVitamins
             {
              before(grammarAccess.getNutrientsAccess().getVitaminsVitaminsParserRuleCall_3_2_0()); 
             pushFollow(FOLLOW_2);
@@ -7517,17 +7743,17 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Nutrients__MacronutrientsAssignment_3_3"
-    // InternalRecipeDSL.g:2501:1: rule__Nutrients__MacronutrientsAssignment_3_3 : ( ruleMacronutrients ) ;
+    // InternalRecipeDSL.g:2582:1: rule__Nutrients__MacronutrientsAssignment_3_3 : ( ruleMacronutrients ) ;
     public final void rule__Nutrients__MacronutrientsAssignment_3_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:2505:1: ( ( ruleMacronutrients ) )
-            // InternalRecipeDSL.g:2506:2: ( ruleMacronutrients )
+            // InternalRecipeDSL.g:2586:1: ( ( ruleMacronutrients ) )
+            // InternalRecipeDSL.g:2587:2: ( ruleMacronutrients )
             {
-            // InternalRecipeDSL.g:2506:2: ( ruleMacronutrients )
-            // InternalRecipeDSL.g:2507:3: ruleMacronutrients
+            // InternalRecipeDSL.g:2587:2: ( ruleMacronutrients )
+            // InternalRecipeDSL.g:2588:3: ruleMacronutrients
             {
              before(grammarAccess.getNutrientsAccess().getMacronutrientsMacronutrientsParserRuleCall_3_3_0()); 
             pushFollow(FOLLOW_2);
@@ -7557,26 +7783,26 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
     // $ANTLR end "rule__Nutrients__MacronutrientsAssignment_3_3"
 
 
-    // $ANTLR start "rule__Vitamins__VitaminAssignment_3"
-    // InternalRecipeDSL.g:2516:1: rule__Vitamins__VitaminAssignment_3 : ( ruleVitamin ) ;
-    public final void rule__Vitamins__VitaminAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__Vitamins__VitaminAssignment_5"
+    // InternalRecipeDSL.g:2597:1: rule__Vitamins__VitaminAssignment_5 : ( ruleVitamin ) ;
+    public final void rule__Vitamins__VitaminAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:2520:1: ( ( ruleVitamin ) )
-            // InternalRecipeDSL.g:2521:2: ( ruleVitamin )
+            // InternalRecipeDSL.g:2601:1: ( ( ruleVitamin ) )
+            // InternalRecipeDSL.g:2602:2: ( ruleVitamin )
             {
-            // InternalRecipeDSL.g:2521:2: ( ruleVitamin )
-            // InternalRecipeDSL.g:2522:3: ruleVitamin
+            // InternalRecipeDSL.g:2602:2: ( ruleVitamin )
+            // InternalRecipeDSL.g:2603:3: ruleVitamin
             {
-             before(grammarAccess.getVitaminsAccess().getVitaminVitaminEnumRuleCall_3_0()); 
+             before(grammarAccess.getVitaminsAccess().getVitaminVitaminEnumRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
             ruleVitamin();
 
             state._fsp--;
 
-             after(grammarAccess.getVitaminsAccess().getVitaminVitaminEnumRuleCall_3_0()); 
+             after(grammarAccess.getVitaminsAccess().getVitaminVitaminEnumRuleCall_5_0()); 
 
             }
 
@@ -7595,29 +7821,29 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__Vitamins__VitaminAssignment_3"
+    // $ANTLR end "rule__Vitamins__VitaminAssignment_5"
 
 
-    // $ANTLR start "rule__Vitamins__VitaminAssignment_4_1"
-    // InternalRecipeDSL.g:2531:1: rule__Vitamins__VitaminAssignment_4_1 : ( ruleVitamin ) ;
-    public final void rule__Vitamins__VitaminAssignment_4_1() throws RecognitionException {
+    // $ANTLR start "rule__Vitamins__VitaminAssignment_6_1"
+    // InternalRecipeDSL.g:2612:1: rule__Vitamins__VitaminAssignment_6_1 : ( ruleVitamin ) ;
+    public final void rule__Vitamins__VitaminAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRecipeDSL.g:2535:1: ( ( ruleVitamin ) )
-            // InternalRecipeDSL.g:2536:2: ( ruleVitamin )
+            // InternalRecipeDSL.g:2616:1: ( ( ruleVitamin ) )
+            // InternalRecipeDSL.g:2617:2: ( ruleVitamin )
             {
-            // InternalRecipeDSL.g:2536:2: ( ruleVitamin )
-            // InternalRecipeDSL.g:2537:3: ruleVitamin
+            // InternalRecipeDSL.g:2617:2: ( ruleVitamin )
+            // InternalRecipeDSL.g:2618:3: ruleVitamin
             {
-             before(grammarAccess.getVitaminsAccess().getVitaminVitaminEnumRuleCall_4_1_0()); 
+             before(grammarAccess.getVitaminsAccess().getVitaminVitaminEnumRuleCall_6_1_0()); 
             pushFollow(FOLLOW_2);
             ruleVitamin();
 
             state._fsp--;
 
-             after(grammarAccess.getVitaminsAccess().getVitaminVitaminEnumRuleCall_4_1_0()); 
+             after(grammarAccess.getVitaminsAccess().getVitaminVitaminEnumRuleCall_6_1_0()); 
 
             }
 
@@ -7636,7 +7862,7 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__Vitamins__VitaminAssignment_4_1"
+    // $ANTLR end "rule__Vitamins__VitaminAssignment_6_1"
 
     // Delegated rules
 
@@ -7655,17 +7881,18 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000042000000L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000008000000L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000380000000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000002C02000000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000004C02000000L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000080000000L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000100000000L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000400000000L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x00000000001FF800L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000001000800000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000001000000002L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x000000001D000002L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000042000002L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000380000002L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000002C02000002L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x00000000001FF800L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000002000800000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000002000000002L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x000000001D000002L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000042000002L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000380000002L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000004C02000002L});
 
 }

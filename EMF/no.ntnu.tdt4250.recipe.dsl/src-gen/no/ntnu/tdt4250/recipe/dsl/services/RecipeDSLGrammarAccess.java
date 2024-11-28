@@ -543,23 +543,30 @@ public class RecipeDSLGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Action cVitaminsAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cVitaminsKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cVitaminAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cVitaminVitaminEnumRuleCall_3_0 = (RuleCall)cVitaminAssignment_3.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cCommaKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cVitaminAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cVitaminVitaminEnumRuleCall_4_1_0 = (RuleCall)cVitaminAssignment_4_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cVitaminKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cVitaminAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cVitaminVitaminEnumRuleCall_5_0 = (RuleCall)cVitaminAssignment_5.eContents().get(0);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cCommaKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cVitaminAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cVitaminVitaminEnumRuleCall_6_1_0 = (RuleCall)cVitaminAssignment_6_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//Vitamins returns Vitamins:
 		//    {Vitamins}
 		//    'Vitamins'
-		//    '{' Vitamin+=Vitamin ( "," Vitamin+=Vitamin)* '}';
+		//    '{'
+		//        'vitamin' '{' Vitamin+=Vitamin ( "," Vitamin+=Vitamin)* '}'
+		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Vitamins}
 		//'Vitamins'
-		//'{' Vitamin+=Vitamin ( "," Vitamin+=Vitamin)* '}'
+		//'{'
+		//    'vitamin' '{' Vitamin+=Vitamin ( "," Vitamin+=Vitamin)* '}'
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//{Vitamins}
@@ -571,26 +578,35 @@ public class RecipeDSLGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
+		//'vitamin'
+		public Keyword getVitaminKeyword_3() { return cVitaminKeyword_3; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
+		
 		//Vitamin+=Vitamin
-		public Assignment getVitaminAssignment_3() { return cVitaminAssignment_3; }
+		public Assignment getVitaminAssignment_5() { return cVitaminAssignment_5; }
 		
 		//Vitamin
-		public RuleCall getVitaminVitaminEnumRuleCall_3_0() { return cVitaminVitaminEnumRuleCall_3_0; }
+		public RuleCall getVitaminVitaminEnumRuleCall_5_0() { return cVitaminVitaminEnumRuleCall_5_0; }
 		
 		//( "," Vitamin+=Vitamin)*
-		public Group getGroup_4() { return cGroup_4; }
+		public Group getGroup_6() { return cGroup_6; }
 		
 		//","
-		public Keyword getCommaKeyword_4_0() { return cCommaKeyword_4_0; }
+		public Keyword getCommaKeyword_6_0() { return cCommaKeyword_6_0; }
 		
 		//Vitamin+=Vitamin
-		public Assignment getVitaminAssignment_4_1() { return cVitaminAssignment_4_1; }
+		public Assignment getVitaminAssignment_6_1() { return cVitaminAssignment_6_1; }
 		
 		//Vitamin
-		public RuleCall getVitaminVitaminEnumRuleCall_4_1_0() { return cVitaminVitaminEnumRuleCall_4_1_0; }
+		public RuleCall getVitaminVitaminEnumRuleCall_6_1_0() { return cVitaminVitaminEnumRuleCall_6_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
 	}
 	public class MacronutrientsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Macronutrients");
@@ -957,7 +973,9 @@ public class RecipeDSLGrammarAccess extends AbstractElementFinder.AbstractGramma
 	//Vitamins returns Vitamins:
 	//    {Vitamins}
 	//    'Vitamins'
-	//    '{' Vitamin+=Vitamin ( "," Vitamin+=Vitamin)* '}';
+	//    '{'
+	//        'vitamin' '{' Vitamin+=Vitamin ( "," Vitamin+=Vitamin)* '}'
+	//    '}';
 	public VitaminsElements getVitaminsAccess() {
 		return pVitamins;
 	}

@@ -1,0 +1,24 @@
+Page {
+	Instructions {
+		orderNumber 3
+	}
+	Ingredients {
+		UnitOfMeasureToggle
+		orderNumber 2
+	}
+	Header {
+		Title
+		BasicInformation
+	}
+	Nutrients {
+		PercentageAmountToggle
+		orderNumber 1
+		Vitamins {
+			vitamin {
+				VITAMIN_A,
+				VITAMIN_B1,
+				VITAMIN_C
+			}
+		}
+	}
+}

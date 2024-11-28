@@ -917,12 +917,20 @@ ruleVitamins returns [EObject current=null]
 		{
 			newLeafNode(otherlv_2, grammarAccess.getVitaminsAccess().getLeftCurlyBracketKeyword_2());
 		}
+		otherlv_3='vitamin'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getVitaminsAccess().getVitaminKeyword_3());
+		}
+		otherlv_4='{'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getVitaminsAccess().getLeftCurlyBracketKeyword_4());
+		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getVitaminsAccess().getVitaminVitaminEnumRuleCall_3_0());
+					newCompositeNode(grammarAccess.getVitaminsAccess().getVitaminVitaminEnumRuleCall_5_0());
 				}
-				lv_Vitamin_3_0=ruleVitamin
+				lv_Vitamin_5_0=ruleVitamin
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getVitaminsRule());
@@ -930,23 +938,23 @@ ruleVitamins returns [EObject current=null]
 					add(
 						$current,
 						"Vitamin",
-						lv_Vitamin_3_0,
+						lv_Vitamin_5_0,
 						"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Vitamin");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_4=','
+			otherlv_6=','
 			{
-				newLeafNode(otherlv_4, grammarAccess.getVitaminsAccess().getCommaKeyword_4_0());
+				newLeafNode(otherlv_6, grammarAccess.getVitaminsAccess().getCommaKeyword_6_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getVitaminsAccess().getVitaminVitaminEnumRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getVitaminsAccess().getVitaminVitaminEnumRuleCall_6_1_0());
 					}
-					lv_Vitamin_5_0=ruleVitamin
+					lv_Vitamin_7_0=ruleVitamin
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getVitaminsRule());
@@ -954,16 +962,20 @@ ruleVitamins returns [EObject current=null]
 						add(
 							$current,
 							"Vitamin",
-							lv_Vitamin_5_0,
+							lv_Vitamin_7_0,
 							"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Vitamin");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)*
-		otherlv_6='}'
+		otherlv_8='}'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getVitaminsAccess().getRightCurlyBracketKeyword_5());
+			newLeafNode(otherlv_8, grammarAccess.getVitaminsAccess().getRightCurlyBracketKeyword_7());
+		}
+		otherlv_9='}'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getVitaminsAccess().getRightCurlyBracketKeyword_8());
 		}
 	)
 ;

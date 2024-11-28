@@ -12,7 +12,7 @@ import no.ntnu.tdt4250.recipe.Nutrients;
 import no.ntnu.tdt4250.recipe.Page;
 import no.ntnu.tdt4250.recipe.PercentageAmountToggle;
 import no.ntnu.tdt4250.recipe.Section;
-import no.ntnu.tdt4250.recipe.UnitOfMeasure;
+import no.ntnu.tdt4250.recipe.UnitOfMeasureToggle;
 import no.ntnu.tdt4250.recipe.Vitamins;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
@@ -204,7 +204,7 @@ public class RecipeFragmentGenerator {
       boolean _matched = false;
       if (child instanceof Ingredients) {
         _matched=true;
-        UnitOfMeasure _unittoggle = ((Ingredients)child).getUnittoggle();
+        UnitOfMeasureToggle _unittoggle = ((Ingredients)child).getUnittoggle();
         boolean _tripleNotEquals = (_unittoggle != null);
         if (_tripleNotEquals) {
           return true;
@@ -333,7 +333,7 @@ public class RecipeFragmentGenerator {
     boolean _matched = false;
     if (section instanceof Ingredients) {
       _matched=true;
-      UnitOfMeasure _unittoggle = ((Ingredients)section).getUnittoggle();
+      UnitOfMeasureToggle _unittoggle = ((Ingredients)section).getUnittoggle();
       return (_unittoggle != null);
     }
     if (!_matched) {
@@ -349,7 +349,7 @@ public class RecipeFragmentGenerator {
   protected CharSequence _generateSwitchSetup(final Ingredients ingredients) {
     StringConcatenation _builder = new StringConcatenation();
     {
-      UnitOfMeasure _unittoggle = ingredients.getUnittoggle();
+      UnitOfMeasureToggle _unittoggle = ingredients.getUnittoggle();
       boolean _tripleNotEquals = (_unittoggle != null);
       if (_tripleNotEquals) {
         _builder.append("binding.unitSwitch.setOnCheckedChangeListener { _, isChecked ->");

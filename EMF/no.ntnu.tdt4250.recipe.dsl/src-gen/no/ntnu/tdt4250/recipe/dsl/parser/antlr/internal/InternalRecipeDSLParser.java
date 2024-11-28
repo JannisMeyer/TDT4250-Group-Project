@@ -22,22 +22,35 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Page'", "'{'", "'instructions'", "'ingredients'", "'header'", "'nutrients'", "'}'", "'Instructions'", "'orderNumber'", "'Ingredients'", "'unittoggle'", "'Header'", "'basicinformation'", "'recipetitle'", "'image'", "'Nutrients'", "'percentagetoggle'", "'vitamins'", "'macronutrients'", "'-'", "'UnitOfMeasure'", "'BasicInformation'", "'Title'", "'Image'", "'PercentageAmountToggle'", "'Vitamins'", "'Vitamin'", "','", "'Macronutrients'", "'VITAMIN_A'", "'VITAMIN_B1'", "'VITAMIN_B2'", "'VITAMIN_B3'", "'VITAMIN_B5'", "'VITAMIN_B6'", "'VITAMIN_B12'", "'VITAMIN_C'", "'VITAMIN_E'", "'VITAMIN_K'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Page'", "'{'", "'}'", "'Instructions'", "'orderNumber'", "'Ingredients'", "'Header'", "'Nutrients'", "'-'", "'UnitOfMeasureToggle'", "'BasicInformation'", "'Title'", "'Image'", "'PercentageAmountToggle'", "'Vitamins'", "','", "'Macronutrients'", "'VITAMIN_A'", "'VITAMIN_B1'", "'VITAMIN_B2'", "'VITAMIN_B3'", "'VITAMIN_B5'", "'VITAMIN_B6'", "'VITAMIN_B12'", "'VITAMIN_C'", "'VITAMIN_E'", "'VITAMIN_K'"
     };
+    public static final int RULE_STRING=6;
+    public static final int RULE_SL_COMMENT=8;
     public static final int T__19=19;
     public static final int T__15=15;
+    public static final int T__37=37;
     public static final int T__16=16;
     public static final int T__17=17;
     public static final int T__18=18;
     public static final int T__11=11;
+    public static final int T__33=33;
     public static final int T__12=12;
+    public static final int T__34=34;
     public static final int T__13=13;
+    public static final int T__35=35;
     public static final int T__14=14;
+    public static final int T__36=36;
+    public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
     public static final int RULE_ID=5;
+    public static final int RULE_WS=9;
+    public static final int RULE_ANY_OTHER=10;
     public static final int T__26=26;
     public static final int T__27=27;
     public static final int T__28=28;
-    public static final int RULE_INT=6;
+    public static final int RULE_INT=4;
     public static final int T__29=29;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=7;
@@ -46,31 +59,6 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
     public static final int T__25=25;
     public static final int T__20=20;
     public static final int T__21=21;
-    public static final int RULE_STRING=4;
-    public static final int RULE_SL_COMMENT=8;
-    public static final int T__37=37;
-    public static final int T__38=38;
-    public static final int T__39=39;
-    public static final int T__33=33;
-    public static final int T__34=34;
-    public static final int T__35=35;
-    public static final int T__36=36;
-    public static final int EOF=-1;
-    public static final int T__30=30;
-    public static final int T__31=31;
-    public static final int T__32=32;
-    public static final int RULE_WS=9;
-    public static final int RULE_ANY_OTHER=10;
-    public static final int T__48=48;
-    public static final int T__49=49;
-    public static final int T__44=44;
-    public static final int T__45=45;
-    public static final int T__46=46;
-    public static final int T__47=47;
-    public static final int T__40=40;
-    public static final int T__41=41;
-    public static final int T__42=42;
-    public static final int T__43=43;
 
     // delegates
     // delegators
@@ -148,167 +136,120 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePage"
-    // InternalRecipeDSL.g:72:1: rulePage returns [EObject current=null] : (otherlv_0= 'Page' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'instructions' ( (lv_instructions_5_0= ruleInstructions ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'ingredients' ( (lv_ingredients_7_0= ruleIngredients ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'header' ( (lv_header_9_0= ruleHeader ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'nutrients' ( (lv_nutrients_11_0= ruleNutrients ) ) ) ) ) ) )+ {...}?) ) ) otherlv_12= '}' ) ;
+    // InternalRecipeDSL.g:72:1: rulePage returns [EObject current=null] : (otherlv_0= 'Page' otherlv_1= '{' ( ( ( ( ({...}? => ( ({...}? => ( (lv_instructions_3_0= ruleInstructions ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_ingredients_4_0= ruleIngredients ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_header_5_0= ruleHeader ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_nutrients_6_0= ruleNutrients ) ) ) ) ) )+ {...}?) ) ) otherlv_7= '}' ) ;
     public final EObject rulePage() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token otherlv_2=null;
-        Token otherlv_4=null;
-        Token otherlv_6=null;
-        Token otherlv_8=null;
-        Token otherlv_10=null;
-        Token otherlv_12=null;
-        AntlrDatatypeRuleToken lv_name_1_0 = null;
+        Token otherlv_1=null;
+        Token otherlv_7=null;
+        EObject lv_instructions_3_0 = null;
 
-        EObject lv_instructions_5_0 = null;
+        EObject lv_ingredients_4_0 = null;
 
-        EObject lv_ingredients_7_0 = null;
+        EObject lv_header_5_0 = null;
 
-        EObject lv_header_9_0 = null;
-
-        EObject lv_nutrients_11_0 = null;
+        EObject lv_nutrients_6_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalRecipeDSL.g:78:2: ( (otherlv_0= 'Page' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'instructions' ( (lv_instructions_5_0= ruleInstructions ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'ingredients' ( (lv_ingredients_7_0= ruleIngredients ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'header' ( (lv_header_9_0= ruleHeader ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'nutrients' ( (lv_nutrients_11_0= ruleNutrients ) ) ) ) ) ) )+ {...}?) ) ) otherlv_12= '}' ) )
-            // InternalRecipeDSL.g:79:2: (otherlv_0= 'Page' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'instructions' ( (lv_instructions_5_0= ruleInstructions ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'ingredients' ( (lv_ingredients_7_0= ruleIngredients ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'header' ( (lv_header_9_0= ruleHeader ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'nutrients' ( (lv_nutrients_11_0= ruleNutrients ) ) ) ) ) ) )+ {...}?) ) ) otherlv_12= '}' )
+            // InternalRecipeDSL.g:78:2: ( (otherlv_0= 'Page' otherlv_1= '{' ( ( ( ( ({...}? => ( ({...}? => ( (lv_instructions_3_0= ruleInstructions ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_ingredients_4_0= ruleIngredients ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_header_5_0= ruleHeader ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_nutrients_6_0= ruleNutrients ) ) ) ) ) )+ {...}?) ) ) otherlv_7= '}' ) )
+            // InternalRecipeDSL.g:79:2: (otherlv_0= 'Page' otherlv_1= '{' ( ( ( ( ({...}? => ( ({...}? => ( (lv_instructions_3_0= ruleInstructions ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_ingredients_4_0= ruleIngredients ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_header_5_0= ruleHeader ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_nutrients_6_0= ruleNutrients ) ) ) ) ) )+ {...}?) ) ) otherlv_7= '}' )
             {
-            // InternalRecipeDSL.g:79:2: (otherlv_0= 'Page' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'instructions' ( (lv_instructions_5_0= ruleInstructions ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'ingredients' ( (lv_ingredients_7_0= ruleIngredients ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'header' ( (lv_header_9_0= ruleHeader ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'nutrients' ( (lv_nutrients_11_0= ruleNutrients ) ) ) ) ) ) )+ {...}?) ) ) otherlv_12= '}' )
-            // InternalRecipeDSL.g:80:3: otherlv_0= 'Page' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'instructions' ( (lv_instructions_5_0= ruleInstructions ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'ingredients' ( (lv_ingredients_7_0= ruleIngredients ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'header' ( (lv_header_9_0= ruleHeader ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'nutrients' ( (lv_nutrients_11_0= ruleNutrients ) ) ) ) ) ) )+ {...}?) ) ) otherlv_12= '}'
+            // InternalRecipeDSL.g:79:2: (otherlv_0= 'Page' otherlv_1= '{' ( ( ( ( ({...}? => ( ({...}? => ( (lv_instructions_3_0= ruleInstructions ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_ingredients_4_0= ruleIngredients ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_header_5_0= ruleHeader ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_nutrients_6_0= ruleNutrients ) ) ) ) ) )+ {...}?) ) ) otherlv_7= '}' )
+            // InternalRecipeDSL.g:80:3: otherlv_0= 'Page' otherlv_1= '{' ( ( ( ( ({...}? => ( ({...}? => ( (lv_instructions_3_0= ruleInstructions ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_ingredients_4_0= ruleIngredients ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_header_5_0= ruleHeader ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_nutrients_6_0= ruleNutrients ) ) ) ) ) )+ {...}?) ) ) otherlv_7= '}'
             {
             otherlv_0=(Token)match(input,11,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getPageAccess().getPageKeyword_0());
             		
-            // InternalRecipeDSL.g:84:3: ( (lv_name_1_0= ruleEString ) )
-            // InternalRecipeDSL.g:85:4: (lv_name_1_0= ruleEString )
-            {
-            // InternalRecipeDSL.g:85:4: (lv_name_1_0= ruleEString )
-            // InternalRecipeDSL.g:86:5: lv_name_1_0= ruleEString
-            {
+            otherlv_1=(Token)match(input,12,FOLLOW_4); 
 
-            					newCompositeNode(grammarAccess.getPageAccess().getNameEStringParserRuleCall_1_0());
-            				
-            pushFollow(FOLLOW_4);
-            lv_name_1_0=ruleEString();
-
-            state._fsp--;
-
-
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getPageRule());
-            					}
-            					set(
-            						current,
-            						"name",
-            						lv_name_1_0,
-            						"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.EString");
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
-
-
-            }
-
-            otherlv_2=(Token)match(input,12,FOLLOW_5); 
-
-            			newLeafNode(otherlv_2, grammarAccess.getPageAccess().getLeftCurlyBracketKeyword_2());
+            			newLeafNode(otherlv_1, grammarAccess.getPageAccess().getLeftCurlyBracketKeyword_1());
             		
-            // InternalRecipeDSL.g:107:3: ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'instructions' ( (lv_instructions_5_0= ruleInstructions ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'ingredients' ( (lv_ingredients_7_0= ruleIngredients ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'header' ( (lv_header_9_0= ruleHeader ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'nutrients' ( (lv_nutrients_11_0= ruleNutrients ) ) ) ) ) ) )+ {...}?) ) )
-            // InternalRecipeDSL.g:108:4: ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'instructions' ( (lv_instructions_5_0= ruleInstructions ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'ingredients' ( (lv_ingredients_7_0= ruleIngredients ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'header' ( (lv_header_9_0= ruleHeader ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'nutrients' ( (lv_nutrients_11_0= ruleNutrients ) ) ) ) ) ) )+ {...}?) )
+            // InternalRecipeDSL.g:88:3: ( ( ( ( ({...}? => ( ({...}? => ( (lv_instructions_3_0= ruleInstructions ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_ingredients_4_0= ruleIngredients ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_header_5_0= ruleHeader ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_nutrients_6_0= ruleNutrients ) ) ) ) ) )+ {...}?) ) )
+            // InternalRecipeDSL.g:89:4: ( ( ( ({...}? => ( ({...}? => ( (lv_instructions_3_0= ruleInstructions ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_ingredients_4_0= ruleIngredients ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_header_5_0= ruleHeader ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_nutrients_6_0= ruleNutrients ) ) ) ) ) )+ {...}?) )
             {
-            // InternalRecipeDSL.g:108:4: ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'instructions' ( (lv_instructions_5_0= ruleInstructions ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'ingredients' ( (lv_ingredients_7_0= ruleIngredients ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'header' ( (lv_header_9_0= ruleHeader ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'nutrients' ( (lv_nutrients_11_0= ruleNutrients ) ) ) ) ) ) )+ {...}?) )
-            // InternalRecipeDSL.g:109:5: ( ( ({...}? => ( ({...}? => (otherlv_4= 'instructions' ( (lv_instructions_5_0= ruleInstructions ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'ingredients' ( (lv_ingredients_7_0= ruleIngredients ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'header' ( (lv_header_9_0= ruleHeader ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'nutrients' ( (lv_nutrients_11_0= ruleNutrients ) ) ) ) ) ) )+ {...}?)
+            // InternalRecipeDSL.g:89:4: ( ( ( ({...}? => ( ({...}? => ( (lv_instructions_3_0= ruleInstructions ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_ingredients_4_0= ruleIngredients ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_header_5_0= ruleHeader ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_nutrients_6_0= ruleNutrients ) ) ) ) ) )+ {...}?) )
+            // InternalRecipeDSL.g:90:5: ( ( ({...}? => ( ({...}? => ( (lv_instructions_3_0= ruleInstructions ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_ingredients_4_0= ruleIngredients ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_header_5_0= ruleHeader ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_nutrients_6_0= ruleNutrients ) ) ) ) ) )+ {...}?)
             {
              
-            				  getUnorderedGroupHelper().enter(grammarAccess.getPageAccess().getUnorderedGroup_3());
+            				  getUnorderedGroupHelper().enter(grammarAccess.getPageAccess().getUnorderedGroup_2());
             				
-            // InternalRecipeDSL.g:112:5: ( ( ({...}? => ( ({...}? => (otherlv_4= 'instructions' ( (lv_instructions_5_0= ruleInstructions ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'ingredients' ( (lv_ingredients_7_0= ruleIngredients ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'header' ( (lv_header_9_0= ruleHeader ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'nutrients' ( (lv_nutrients_11_0= ruleNutrients ) ) ) ) ) ) )+ {...}?)
-            // InternalRecipeDSL.g:113:6: ( ({...}? => ( ({...}? => (otherlv_4= 'instructions' ( (lv_instructions_5_0= ruleInstructions ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'ingredients' ( (lv_ingredients_7_0= ruleIngredients ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'header' ( (lv_header_9_0= ruleHeader ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'nutrients' ( (lv_nutrients_11_0= ruleNutrients ) ) ) ) ) ) )+ {...}?
+            // InternalRecipeDSL.g:93:5: ( ( ({...}? => ( ({...}? => ( (lv_instructions_3_0= ruleInstructions ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_ingredients_4_0= ruleIngredients ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_header_5_0= ruleHeader ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_nutrients_6_0= ruleNutrients ) ) ) ) ) )+ {...}?)
+            // InternalRecipeDSL.g:94:6: ( ({...}? => ( ({...}? => ( (lv_instructions_3_0= ruleInstructions ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_ingredients_4_0= ruleIngredients ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_header_5_0= ruleHeader ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_nutrients_6_0= ruleNutrients ) ) ) ) ) )+ {...}?
             {
-            // InternalRecipeDSL.g:113:6: ( ({...}? => ( ({...}? => (otherlv_4= 'instructions' ( (lv_instructions_5_0= ruleInstructions ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'ingredients' ( (lv_ingredients_7_0= ruleIngredients ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'header' ( (lv_header_9_0= ruleHeader ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'nutrients' ( (lv_nutrients_11_0= ruleNutrients ) ) ) ) ) ) )+
+            // InternalRecipeDSL.g:94:6: ( ({...}? => ( ({...}? => ( (lv_instructions_3_0= ruleInstructions ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_ingredients_4_0= ruleIngredients ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_header_5_0= ruleHeader ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_nutrients_6_0= ruleNutrients ) ) ) ) ) )+
             int cnt1=0;
             loop1:
             do {
                 int alt1=5;
                 int LA1_0 = input.LA(1);
 
-                if ( LA1_0 == 13 && getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_3(), 0) ) {
+                if ( LA1_0 == 14 && getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_2(), 0) ) {
                     alt1=1;
                 }
-                else if ( LA1_0 == 14 && getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_3(), 1) ) {
+                else if ( LA1_0 == 16 && getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_2(), 1) ) {
                     alt1=2;
                 }
-                else if ( LA1_0 == 15 && getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_3(), 2) ) {
+                else if ( LA1_0 == 17 && getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_2(), 2) ) {
                     alt1=3;
                 }
-                else if ( LA1_0 == 16 && getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_3(), 3) ) {
+                else if ( LA1_0 == 18 && getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_2(), 3) ) {
                     alt1=4;
                 }
 
 
                 switch (alt1) {
             	case 1 :
-            	    // InternalRecipeDSL.g:114:4: ({...}? => ( ({...}? => (otherlv_4= 'instructions' ( (lv_instructions_5_0= ruleInstructions ) ) ) ) ) )
+            	    // InternalRecipeDSL.g:95:4: ({...}? => ( ({...}? => ( (lv_instructions_3_0= ruleInstructions ) ) ) ) )
             	    {
-            	    // InternalRecipeDSL.g:114:4: ({...}? => ( ({...}? => (otherlv_4= 'instructions' ( (lv_instructions_5_0= ruleInstructions ) ) ) ) ) )
-            	    // InternalRecipeDSL.g:115:5: {...}? => ( ({...}? => (otherlv_4= 'instructions' ( (lv_instructions_5_0= ruleInstructions ) ) ) ) )
+            	    // InternalRecipeDSL.g:95:4: ({...}? => ( ({...}? => ( (lv_instructions_3_0= ruleInstructions ) ) ) ) )
+            	    // InternalRecipeDSL.g:96:5: {...}? => ( ({...}? => ( (lv_instructions_3_0= ruleInstructions ) ) ) )
             	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_3(), 0) ) {
-            	        throw new FailedPredicateException(input, "rulePage", "getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_3(), 0)");
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_2(), 0) ) {
+            	        throw new FailedPredicateException(input, "rulePage", "getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_2(), 0)");
             	    }
-            	    // InternalRecipeDSL.g:115:101: ( ({...}? => (otherlv_4= 'instructions' ( (lv_instructions_5_0= ruleInstructions ) ) ) ) )
-            	    // InternalRecipeDSL.g:116:6: ({...}? => (otherlv_4= 'instructions' ( (lv_instructions_5_0= ruleInstructions ) ) ) )
+            	    // InternalRecipeDSL.g:96:101: ( ({...}? => ( (lv_instructions_3_0= ruleInstructions ) ) ) )
+            	    // InternalRecipeDSL.g:97:6: ({...}? => ( (lv_instructions_3_0= ruleInstructions ) ) )
             	    {
 
-            	    						getUnorderedGroupHelper().select(grammarAccess.getPageAccess().getUnorderedGroup_3(), 0);
+            	    						getUnorderedGroupHelper().select(grammarAccess.getPageAccess().getUnorderedGroup_2(), 0);
             	    					
-            	    // InternalRecipeDSL.g:119:9: ({...}? => (otherlv_4= 'instructions' ( (lv_instructions_5_0= ruleInstructions ) ) ) )
-            	    // InternalRecipeDSL.g:119:10: {...}? => (otherlv_4= 'instructions' ( (lv_instructions_5_0= ruleInstructions ) ) )
+            	    // InternalRecipeDSL.g:100:9: ({...}? => ( (lv_instructions_3_0= ruleInstructions ) ) )
+            	    // InternalRecipeDSL.g:100:10: {...}? => ( (lv_instructions_3_0= ruleInstructions ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "rulePage", "true");
             	    }
-            	    // InternalRecipeDSL.g:119:19: (otherlv_4= 'instructions' ( (lv_instructions_5_0= ruleInstructions ) ) )
-            	    // InternalRecipeDSL.g:119:20: otherlv_4= 'instructions' ( (lv_instructions_5_0= ruleInstructions ) )
+            	    // InternalRecipeDSL.g:100:19: ( (lv_instructions_3_0= ruleInstructions ) )
+            	    // InternalRecipeDSL.g:100:20: (lv_instructions_3_0= ruleInstructions )
             	    {
-            	    otherlv_4=(Token)match(input,13,FOLLOW_6); 
-
-            	    									newLeafNode(otherlv_4, grammarAccess.getPageAccess().getInstructionsKeyword_3_0_0());
-            	    								
-            	    // InternalRecipeDSL.g:123:9: ( (lv_instructions_5_0= ruleInstructions ) )
-            	    // InternalRecipeDSL.g:124:10: (lv_instructions_5_0= ruleInstructions )
-            	    {
-            	    // InternalRecipeDSL.g:124:10: (lv_instructions_5_0= ruleInstructions )
-            	    // InternalRecipeDSL.g:125:11: lv_instructions_5_0= ruleInstructions
+            	    // InternalRecipeDSL.g:100:20: (lv_instructions_3_0= ruleInstructions )
+            	    // InternalRecipeDSL.g:101:10: lv_instructions_3_0= ruleInstructions
             	    {
 
-            	    											newCompositeNode(grammarAccess.getPageAccess().getInstructionsInstructionsParserRuleCall_3_0_1_0());
-            	    										
-            	    pushFollow(FOLLOW_7);
-            	    lv_instructions_5_0=ruleInstructions();
+            	    										newCompositeNode(grammarAccess.getPageAccess().getInstructionsInstructionsParserRuleCall_2_0_0());
+            	    									
+            	    pushFollow(FOLLOW_5);
+            	    lv_instructions_3_0=ruleInstructions();
 
             	    state._fsp--;
 
 
-            	    											if (current==null) {
-            	    												current = createModelElementForParent(grammarAccess.getPageRule());
-            	    											}
-            	    											set(
-            	    												current,
-            	    												"instructions",
-            	    												lv_instructions_5_0,
-            	    												"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Instructions");
-            	    											afterParserOrEnumRuleCall();
-            	    										
-
-            	    }
-
+            	    										if (current==null) {
+            	    											current = createModelElementForParent(grammarAccess.getPageRule());
+            	    										}
+            	    										set(
+            	    											current,
+            	    											"instructions",
+            	    											lv_instructions_3_0,
+            	    											"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Instructions");
+            	    										afterParserOrEnumRuleCall();
+            	    									
 
             	    }
 
@@ -319,7 +260,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
             	    }
 
             	     
-            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getPageAccess().getUnorderedGroup_3());
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getPageAccess().getUnorderedGroup_2());
             	    					
 
             	    }
@@ -331,61 +272,51 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 2 :
-            	    // InternalRecipeDSL.g:148:4: ({...}? => ( ({...}? => (otherlv_6= 'ingredients' ( (lv_ingredients_7_0= ruleIngredients ) ) ) ) ) )
+            	    // InternalRecipeDSL.g:123:4: ({...}? => ( ({...}? => ( (lv_ingredients_4_0= ruleIngredients ) ) ) ) )
             	    {
-            	    // InternalRecipeDSL.g:148:4: ({...}? => ( ({...}? => (otherlv_6= 'ingredients' ( (lv_ingredients_7_0= ruleIngredients ) ) ) ) ) )
-            	    // InternalRecipeDSL.g:149:5: {...}? => ( ({...}? => (otherlv_6= 'ingredients' ( (lv_ingredients_7_0= ruleIngredients ) ) ) ) )
+            	    // InternalRecipeDSL.g:123:4: ({...}? => ( ({...}? => ( (lv_ingredients_4_0= ruleIngredients ) ) ) ) )
+            	    // InternalRecipeDSL.g:124:5: {...}? => ( ({...}? => ( (lv_ingredients_4_0= ruleIngredients ) ) ) )
             	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_3(), 1) ) {
-            	        throw new FailedPredicateException(input, "rulePage", "getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_3(), 1)");
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_2(), 1) ) {
+            	        throw new FailedPredicateException(input, "rulePage", "getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_2(), 1)");
             	    }
-            	    // InternalRecipeDSL.g:149:101: ( ({...}? => (otherlv_6= 'ingredients' ( (lv_ingredients_7_0= ruleIngredients ) ) ) ) )
-            	    // InternalRecipeDSL.g:150:6: ({...}? => (otherlv_6= 'ingredients' ( (lv_ingredients_7_0= ruleIngredients ) ) ) )
+            	    // InternalRecipeDSL.g:124:101: ( ({...}? => ( (lv_ingredients_4_0= ruleIngredients ) ) ) )
+            	    // InternalRecipeDSL.g:125:6: ({...}? => ( (lv_ingredients_4_0= ruleIngredients ) ) )
             	    {
 
-            	    						getUnorderedGroupHelper().select(grammarAccess.getPageAccess().getUnorderedGroup_3(), 1);
+            	    						getUnorderedGroupHelper().select(grammarAccess.getPageAccess().getUnorderedGroup_2(), 1);
             	    					
-            	    // InternalRecipeDSL.g:153:9: ({...}? => (otherlv_6= 'ingredients' ( (lv_ingredients_7_0= ruleIngredients ) ) ) )
-            	    // InternalRecipeDSL.g:153:10: {...}? => (otherlv_6= 'ingredients' ( (lv_ingredients_7_0= ruleIngredients ) ) )
+            	    // InternalRecipeDSL.g:128:9: ({...}? => ( (lv_ingredients_4_0= ruleIngredients ) ) )
+            	    // InternalRecipeDSL.g:128:10: {...}? => ( (lv_ingredients_4_0= ruleIngredients ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "rulePage", "true");
             	    }
-            	    // InternalRecipeDSL.g:153:19: (otherlv_6= 'ingredients' ( (lv_ingredients_7_0= ruleIngredients ) ) )
-            	    // InternalRecipeDSL.g:153:20: otherlv_6= 'ingredients' ( (lv_ingredients_7_0= ruleIngredients ) )
+            	    // InternalRecipeDSL.g:128:19: ( (lv_ingredients_4_0= ruleIngredients ) )
+            	    // InternalRecipeDSL.g:128:20: (lv_ingredients_4_0= ruleIngredients )
             	    {
-            	    otherlv_6=(Token)match(input,14,FOLLOW_8); 
-
-            	    									newLeafNode(otherlv_6, grammarAccess.getPageAccess().getIngredientsKeyword_3_1_0());
-            	    								
-            	    // InternalRecipeDSL.g:157:9: ( (lv_ingredients_7_0= ruleIngredients ) )
-            	    // InternalRecipeDSL.g:158:10: (lv_ingredients_7_0= ruleIngredients )
-            	    {
-            	    // InternalRecipeDSL.g:158:10: (lv_ingredients_7_0= ruleIngredients )
-            	    // InternalRecipeDSL.g:159:11: lv_ingredients_7_0= ruleIngredients
+            	    // InternalRecipeDSL.g:128:20: (lv_ingredients_4_0= ruleIngredients )
+            	    // InternalRecipeDSL.g:129:10: lv_ingredients_4_0= ruleIngredients
             	    {
 
-            	    											newCompositeNode(grammarAccess.getPageAccess().getIngredientsIngredientsParserRuleCall_3_1_1_0());
-            	    										
-            	    pushFollow(FOLLOW_7);
-            	    lv_ingredients_7_0=ruleIngredients();
+            	    										newCompositeNode(grammarAccess.getPageAccess().getIngredientsIngredientsParserRuleCall_2_1_0());
+            	    									
+            	    pushFollow(FOLLOW_5);
+            	    lv_ingredients_4_0=ruleIngredients();
 
             	    state._fsp--;
 
 
-            	    											if (current==null) {
-            	    												current = createModelElementForParent(grammarAccess.getPageRule());
-            	    											}
-            	    											set(
-            	    												current,
-            	    												"ingredients",
-            	    												lv_ingredients_7_0,
-            	    												"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Ingredients");
-            	    											afterParserOrEnumRuleCall();
-            	    										
-
-            	    }
-
+            	    										if (current==null) {
+            	    											current = createModelElementForParent(grammarAccess.getPageRule());
+            	    										}
+            	    										set(
+            	    											current,
+            	    											"ingredients",
+            	    											lv_ingredients_4_0,
+            	    											"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Ingredients");
+            	    										afterParserOrEnumRuleCall();
+            	    									
 
             	    }
 
@@ -396,7 +327,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
             	    }
 
             	     
-            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getPageAccess().getUnorderedGroup_3());
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getPageAccess().getUnorderedGroup_2());
             	    					
 
             	    }
@@ -408,61 +339,51 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 3 :
-            	    // InternalRecipeDSL.g:182:4: ({...}? => ( ({...}? => (otherlv_8= 'header' ( (lv_header_9_0= ruleHeader ) ) ) ) ) )
+            	    // InternalRecipeDSL.g:151:4: ({...}? => ( ({...}? => ( (lv_header_5_0= ruleHeader ) ) ) ) )
             	    {
-            	    // InternalRecipeDSL.g:182:4: ({...}? => ( ({...}? => (otherlv_8= 'header' ( (lv_header_9_0= ruleHeader ) ) ) ) ) )
-            	    // InternalRecipeDSL.g:183:5: {...}? => ( ({...}? => (otherlv_8= 'header' ( (lv_header_9_0= ruleHeader ) ) ) ) )
+            	    // InternalRecipeDSL.g:151:4: ({...}? => ( ({...}? => ( (lv_header_5_0= ruleHeader ) ) ) ) )
+            	    // InternalRecipeDSL.g:152:5: {...}? => ( ({...}? => ( (lv_header_5_0= ruleHeader ) ) ) )
             	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_3(), 2) ) {
-            	        throw new FailedPredicateException(input, "rulePage", "getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_3(), 2)");
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_2(), 2) ) {
+            	        throw new FailedPredicateException(input, "rulePage", "getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_2(), 2)");
             	    }
-            	    // InternalRecipeDSL.g:183:101: ( ({...}? => (otherlv_8= 'header' ( (lv_header_9_0= ruleHeader ) ) ) ) )
-            	    // InternalRecipeDSL.g:184:6: ({...}? => (otherlv_8= 'header' ( (lv_header_9_0= ruleHeader ) ) ) )
+            	    // InternalRecipeDSL.g:152:101: ( ({...}? => ( (lv_header_5_0= ruleHeader ) ) ) )
+            	    // InternalRecipeDSL.g:153:6: ({...}? => ( (lv_header_5_0= ruleHeader ) ) )
             	    {
 
-            	    						getUnorderedGroupHelper().select(grammarAccess.getPageAccess().getUnorderedGroup_3(), 2);
+            	    						getUnorderedGroupHelper().select(grammarAccess.getPageAccess().getUnorderedGroup_2(), 2);
             	    					
-            	    // InternalRecipeDSL.g:187:9: ({...}? => (otherlv_8= 'header' ( (lv_header_9_0= ruleHeader ) ) ) )
-            	    // InternalRecipeDSL.g:187:10: {...}? => (otherlv_8= 'header' ( (lv_header_9_0= ruleHeader ) ) )
+            	    // InternalRecipeDSL.g:156:9: ({...}? => ( (lv_header_5_0= ruleHeader ) ) )
+            	    // InternalRecipeDSL.g:156:10: {...}? => ( (lv_header_5_0= ruleHeader ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "rulePage", "true");
             	    }
-            	    // InternalRecipeDSL.g:187:19: (otherlv_8= 'header' ( (lv_header_9_0= ruleHeader ) ) )
-            	    // InternalRecipeDSL.g:187:20: otherlv_8= 'header' ( (lv_header_9_0= ruleHeader ) )
+            	    // InternalRecipeDSL.g:156:19: ( (lv_header_5_0= ruleHeader ) )
+            	    // InternalRecipeDSL.g:156:20: (lv_header_5_0= ruleHeader )
             	    {
-            	    otherlv_8=(Token)match(input,15,FOLLOW_9); 
-
-            	    									newLeafNode(otherlv_8, grammarAccess.getPageAccess().getHeaderKeyword_3_2_0());
-            	    								
-            	    // InternalRecipeDSL.g:191:9: ( (lv_header_9_0= ruleHeader ) )
-            	    // InternalRecipeDSL.g:192:10: (lv_header_9_0= ruleHeader )
-            	    {
-            	    // InternalRecipeDSL.g:192:10: (lv_header_9_0= ruleHeader )
-            	    // InternalRecipeDSL.g:193:11: lv_header_9_0= ruleHeader
+            	    // InternalRecipeDSL.g:156:20: (lv_header_5_0= ruleHeader )
+            	    // InternalRecipeDSL.g:157:10: lv_header_5_0= ruleHeader
             	    {
 
-            	    											newCompositeNode(grammarAccess.getPageAccess().getHeaderHeaderParserRuleCall_3_2_1_0());
-            	    										
-            	    pushFollow(FOLLOW_7);
-            	    lv_header_9_0=ruleHeader();
+            	    										newCompositeNode(grammarAccess.getPageAccess().getHeaderHeaderParserRuleCall_2_2_0());
+            	    									
+            	    pushFollow(FOLLOW_5);
+            	    lv_header_5_0=ruleHeader();
 
             	    state._fsp--;
 
 
-            	    											if (current==null) {
-            	    												current = createModelElementForParent(grammarAccess.getPageRule());
-            	    											}
-            	    											set(
-            	    												current,
-            	    												"header",
-            	    												lv_header_9_0,
-            	    												"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Header");
-            	    											afterParserOrEnumRuleCall();
-            	    										
-
-            	    }
-
+            	    										if (current==null) {
+            	    											current = createModelElementForParent(grammarAccess.getPageRule());
+            	    										}
+            	    										set(
+            	    											current,
+            	    											"header",
+            	    											lv_header_5_0,
+            	    											"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Header");
+            	    										afterParserOrEnumRuleCall();
+            	    									
 
             	    }
 
@@ -473,7 +394,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
             	    }
 
             	     
-            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getPageAccess().getUnorderedGroup_3());
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getPageAccess().getUnorderedGroup_2());
             	    					
 
             	    }
@@ -485,61 +406,51 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 4 :
-            	    // InternalRecipeDSL.g:216:4: ({...}? => ( ({...}? => (otherlv_10= 'nutrients' ( (lv_nutrients_11_0= ruleNutrients ) ) ) ) ) )
+            	    // InternalRecipeDSL.g:179:4: ({...}? => ( ({...}? => ( (lv_nutrients_6_0= ruleNutrients ) ) ) ) )
             	    {
-            	    // InternalRecipeDSL.g:216:4: ({...}? => ( ({...}? => (otherlv_10= 'nutrients' ( (lv_nutrients_11_0= ruleNutrients ) ) ) ) ) )
-            	    // InternalRecipeDSL.g:217:5: {...}? => ( ({...}? => (otherlv_10= 'nutrients' ( (lv_nutrients_11_0= ruleNutrients ) ) ) ) )
+            	    // InternalRecipeDSL.g:179:4: ({...}? => ( ({...}? => ( (lv_nutrients_6_0= ruleNutrients ) ) ) ) )
+            	    // InternalRecipeDSL.g:180:5: {...}? => ( ({...}? => ( (lv_nutrients_6_0= ruleNutrients ) ) ) )
             	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_3(), 3) ) {
-            	        throw new FailedPredicateException(input, "rulePage", "getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_3(), 3)");
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_2(), 3) ) {
+            	        throw new FailedPredicateException(input, "rulePage", "getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_2(), 3)");
             	    }
-            	    // InternalRecipeDSL.g:217:101: ( ({...}? => (otherlv_10= 'nutrients' ( (lv_nutrients_11_0= ruleNutrients ) ) ) ) )
-            	    // InternalRecipeDSL.g:218:6: ({...}? => (otherlv_10= 'nutrients' ( (lv_nutrients_11_0= ruleNutrients ) ) ) )
+            	    // InternalRecipeDSL.g:180:101: ( ({...}? => ( (lv_nutrients_6_0= ruleNutrients ) ) ) )
+            	    // InternalRecipeDSL.g:181:6: ({...}? => ( (lv_nutrients_6_0= ruleNutrients ) ) )
             	    {
 
-            	    						getUnorderedGroupHelper().select(grammarAccess.getPageAccess().getUnorderedGroup_3(), 3);
+            	    						getUnorderedGroupHelper().select(grammarAccess.getPageAccess().getUnorderedGroup_2(), 3);
             	    					
-            	    // InternalRecipeDSL.g:221:9: ({...}? => (otherlv_10= 'nutrients' ( (lv_nutrients_11_0= ruleNutrients ) ) ) )
-            	    // InternalRecipeDSL.g:221:10: {...}? => (otherlv_10= 'nutrients' ( (lv_nutrients_11_0= ruleNutrients ) ) )
+            	    // InternalRecipeDSL.g:184:9: ({...}? => ( (lv_nutrients_6_0= ruleNutrients ) ) )
+            	    // InternalRecipeDSL.g:184:10: {...}? => ( (lv_nutrients_6_0= ruleNutrients ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "rulePage", "true");
             	    }
-            	    // InternalRecipeDSL.g:221:19: (otherlv_10= 'nutrients' ( (lv_nutrients_11_0= ruleNutrients ) ) )
-            	    // InternalRecipeDSL.g:221:20: otherlv_10= 'nutrients' ( (lv_nutrients_11_0= ruleNutrients ) )
+            	    // InternalRecipeDSL.g:184:19: ( (lv_nutrients_6_0= ruleNutrients ) )
+            	    // InternalRecipeDSL.g:184:20: (lv_nutrients_6_0= ruleNutrients )
             	    {
-            	    otherlv_10=(Token)match(input,16,FOLLOW_10); 
-
-            	    									newLeafNode(otherlv_10, grammarAccess.getPageAccess().getNutrientsKeyword_3_3_0());
-            	    								
-            	    // InternalRecipeDSL.g:225:9: ( (lv_nutrients_11_0= ruleNutrients ) )
-            	    // InternalRecipeDSL.g:226:10: (lv_nutrients_11_0= ruleNutrients )
-            	    {
-            	    // InternalRecipeDSL.g:226:10: (lv_nutrients_11_0= ruleNutrients )
-            	    // InternalRecipeDSL.g:227:11: lv_nutrients_11_0= ruleNutrients
+            	    // InternalRecipeDSL.g:184:20: (lv_nutrients_6_0= ruleNutrients )
+            	    // InternalRecipeDSL.g:185:10: lv_nutrients_6_0= ruleNutrients
             	    {
 
-            	    											newCompositeNode(grammarAccess.getPageAccess().getNutrientsNutrientsParserRuleCall_3_3_1_0());
-            	    										
-            	    pushFollow(FOLLOW_7);
-            	    lv_nutrients_11_0=ruleNutrients();
+            	    										newCompositeNode(grammarAccess.getPageAccess().getNutrientsNutrientsParserRuleCall_2_3_0());
+            	    									
+            	    pushFollow(FOLLOW_5);
+            	    lv_nutrients_6_0=ruleNutrients();
 
             	    state._fsp--;
 
 
-            	    											if (current==null) {
-            	    												current = createModelElementForParent(grammarAccess.getPageRule());
-            	    											}
-            	    											set(
-            	    												current,
-            	    												"nutrients",
-            	    												lv_nutrients_11_0,
-            	    												"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Nutrients");
-            	    											afterParserOrEnumRuleCall();
-            	    										
-
-            	    }
-
+            	    										if (current==null) {
+            	    											current = createModelElementForParent(grammarAccess.getPageRule());
+            	    										}
+            	    										set(
+            	    											current,
+            	    											"nutrients",
+            	    											lv_nutrients_6_0,
+            	    											"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Nutrients");
+            	    										afterParserOrEnumRuleCall();
+            	    									
 
             	    }
 
@@ -550,7 +461,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
             	    }
 
             	     
-            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getPageAccess().getUnorderedGroup_3());
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getPageAccess().getUnorderedGroup_2());
             	    					
 
             	    }
@@ -571,8 +482,8 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
                 cnt1++;
             } while (true);
 
-            if ( ! getUnorderedGroupHelper().canLeave(grammarAccess.getPageAccess().getUnorderedGroup_3()) ) {
-                throw new FailedPredicateException(input, "rulePage", "getUnorderedGroupHelper().canLeave(grammarAccess.getPageAccess().getUnorderedGroup_3())");
+            if ( ! getUnorderedGroupHelper().canLeave(grammarAccess.getPageAccess().getUnorderedGroup_2()) ) {
+                throw new FailedPredicateException(input, "rulePage", "getUnorderedGroupHelper().canLeave(grammarAccess.getPageAccess().getUnorderedGroup_2())");
             }
 
             }
@@ -581,14 +492,14 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
             }
 
              
-            				  getUnorderedGroupHelper().leave(grammarAccess.getPageAccess().getUnorderedGroup_3());
+            				  getUnorderedGroupHelper().leave(grammarAccess.getPageAccess().getUnorderedGroup_2());
             				
 
             }
 
-            otherlv_12=(Token)match(input,17,FOLLOW_2); 
+            otherlv_7=(Token)match(input,13,FOLLOW_2); 
 
-            			newLeafNode(otherlv_12, grammarAccess.getPageAccess().getRightCurlyBracketKeyword_4());
+            			newLeafNode(otherlv_7, grammarAccess.getPageAccess().getRightCurlyBracketKeyword_3());
             		
 
             }
@@ -613,7 +524,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleInstructions"
-    // InternalRecipeDSL.g:266:1: entryRuleInstructions returns [EObject current=null] : iv_ruleInstructions= ruleInstructions EOF ;
+    // InternalRecipeDSL.g:223:1: entryRuleInstructions returns [EObject current=null] : iv_ruleInstructions= ruleInstructions EOF ;
     public final EObject entryRuleInstructions() throws RecognitionException {
         EObject current = null;
 
@@ -621,8 +532,8 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRecipeDSL.g:266:53: (iv_ruleInstructions= ruleInstructions EOF )
-            // InternalRecipeDSL.g:267:2: iv_ruleInstructions= ruleInstructions EOF
+            // InternalRecipeDSL.g:223:53: (iv_ruleInstructions= ruleInstructions EOF )
+            // InternalRecipeDSL.g:224:2: iv_ruleInstructions= ruleInstructions EOF
             {
              newCompositeNode(grammarAccess.getInstructionsRule()); 
             pushFollow(FOLLOW_1);
@@ -649,50 +560,61 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInstructions"
-    // InternalRecipeDSL.g:273:1: ruleInstructions returns [EObject current=null] : (otherlv_0= 'Instructions' otherlv_1= '{' otherlv_2= 'orderNumber' ( (lv_orderNumber_3_0= ruleEInt ) ) otherlv_4= '}' ) ;
+    // InternalRecipeDSL.g:230:1: ruleInstructions returns [EObject current=null] : ( () otherlv_1= 'Instructions' otherlv_2= '{' otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) otherlv_5= '}' ) ;
     public final EObject ruleInstructions() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_0=null;
         Token otherlv_1=null;
         Token otherlv_2=null;
-        Token otherlv_4=null;
-        AntlrDatatypeRuleToken lv_orderNumber_3_0 = null;
+        Token otherlv_3=null;
+        Token otherlv_5=null;
+        AntlrDatatypeRuleToken lv_orderNumber_4_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalRecipeDSL.g:279:2: ( (otherlv_0= 'Instructions' otherlv_1= '{' otherlv_2= 'orderNumber' ( (lv_orderNumber_3_0= ruleEInt ) ) otherlv_4= '}' ) )
-            // InternalRecipeDSL.g:280:2: (otherlv_0= 'Instructions' otherlv_1= '{' otherlv_2= 'orderNumber' ( (lv_orderNumber_3_0= ruleEInt ) ) otherlv_4= '}' )
+            // InternalRecipeDSL.g:236:2: ( ( () otherlv_1= 'Instructions' otherlv_2= '{' otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) otherlv_5= '}' ) )
+            // InternalRecipeDSL.g:237:2: ( () otherlv_1= 'Instructions' otherlv_2= '{' otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) otherlv_5= '}' )
             {
-            // InternalRecipeDSL.g:280:2: (otherlv_0= 'Instructions' otherlv_1= '{' otherlv_2= 'orderNumber' ( (lv_orderNumber_3_0= ruleEInt ) ) otherlv_4= '}' )
-            // InternalRecipeDSL.g:281:3: otherlv_0= 'Instructions' otherlv_1= '{' otherlv_2= 'orderNumber' ( (lv_orderNumber_3_0= ruleEInt ) ) otherlv_4= '}'
+            // InternalRecipeDSL.g:237:2: ( () otherlv_1= 'Instructions' otherlv_2= '{' otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) otherlv_5= '}' )
+            // InternalRecipeDSL.g:238:3: () otherlv_1= 'Instructions' otherlv_2= '{' otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) otherlv_5= '}'
             {
-            otherlv_0=(Token)match(input,18,FOLLOW_4); 
+            // InternalRecipeDSL.g:238:3: ()
+            // InternalRecipeDSL.g:239:4: 
+            {
 
-            			newLeafNode(otherlv_0, grammarAccess.getInstructionsAccess().getInstructionsKeyword_0());
+            				current = forceCreateModelElement(
+            					grammarAccess.getInstructionsAccess().getInstructionsAction_0(),
+            					current);
+            			
+
+            }
+
+            otherlv_1=(Token)match(input,14,FOLLOW_3); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getInstructionsAccess().getInstructionsKeyword_1());
             		
-            otherlv_1=(Token)match(input,12,FOLLOW_11); 
+            otherlv_2=(Token)match(input,12,FOLLOW_6); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getInstructionsAccess().getLeftCurlyBracketKeyword_1());
+            			newLeafNode(otherlv_2, grammarAccess.getInstructionsAccess().getLeftCurlyBracketKeyword_2());
             		
-            otherlv_2=(Token)match(input,19,FOLLOW_12); 
+            otherlv_3=(Token)match(input,15,FOLLOW_7); 
 
-            			newLeafNode(otherlv_2, grammarAccess.getInstructionsAccess().getOrderNumberKeyword_2());
+            			newLeafNode(otherlv_3, grammarAccess.getInstructionsAccess().getOrderNumberKeyword_3());
             		
-            // InternalRecipeDSL.g:293:3: ( (lv_orderNumber_3_0= ruleEInt ) )
-            // InternalRecipeDSL.g:294:4: (lv_orderNumber_3_0= ruleEInt )
+            // InternalRecipeDSL.g:257:3: ( (lv_orderNumber_4_0= ruleEInt ) )
+            // InternalRecipeDSL.g:258:4: (lv_orderNumber_4_0= ruleEInt )
             {
-            // InternalRecipeDSL.g:294:4: (lv_orderNumber_3_0= ruleEInt )
-            // InternalRecipeDSL.g:295:5: lv_orderNumber_3_0= ruleEInt
+            // InternalRecipeDSL.g:258:4: (lv_orderNumber_4_0= ruleEInt )
+            // InternalRecipeDSL.g:259:5: lv_orderNumber_4_0= ruleEInt
             {
 
-            					newCompositeNode(grammarAccess.getInstructionsAccess().getOrderNumberEIntParserRuleCall_3_0());
+            					newCompositeNode(grammarAccess.getInstructionsAccess().getOrderNumberEIntParserRuleCall_4_0());
             				
-            pushFollow(FOLLOW_13);
-            lv_orderNumber_3_0=ruleEInt();
+            pushFollow(FOLLOW_8);
+            lv_orderNumber_4_0=ruleEInt();
 
             state._fsp--;
 
@@ -703,7 +625,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
             					set(
             						current,
             						"orderNumber",
-            						lv_orderNumber_3_0,
+            						lv_orderNumber_4_0,
             						"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.EInt");
             					afterParserOrEnumRuleCall();
             				
@@ -713,9 +635,9 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,17,FOLLOW_2); 
+            otherlv_5=(Token)match(input,13,FOLLOW_2); 
 
-            			newLeafNode(otherlv_4, grammarAccess.getInstructionsAccess().getRightCurlyBracketKeyword_4());
+            			newLeafNode(otherlv_5, grammarAccess.getInstructionsAccess().getRightCurlyBracketKeyword_5());
             		
 
             }
@@ -740,7 +662,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIngredients"
-    // InternalRecipeDSL.g:320:1: entryRuleIngredients returns [EObject current=null] : iv_ruleIngredients= ruleIngredients EOF ;
+    // InternalRecipeDSL.g:284:1: entryRuleIngredients returns [EObject current=null] : iv_ruleIngredients= ruleIngredients EOF ;
     public final EObject entryRuleIngredients() throws RecognitionException {
         EObject current = null;
 
@@ -748,8 +670,8 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRecipeDSL.g:320:52: (iv_ruleIngredients= ruleIngredients EOF )
-            // InternalRecipeDSL.g:321:2: iv_ruleIngredients= ruleIngredients EOF
+            // InternalRecipeDSL.g:284:52: (iv_ruleIngredients= ruleIngredients EOF )
+            // InternalRecipeDSL.g:285:2: iv_ruleIngredients= ruleIngredients EOF
             {
              newCompositeNode(grammarAccess.getIngredientsRule()); 
             pushFollow(FOLLOW_1);
@@ -776,16 +698,15 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIngredients"
-    // InternalRecipeDSL.g:327:1: ruleIngredients returns [EObject current=null] : (otherlv_0= 'Ingredients' otherlv_1= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_5= 'unittoggle' ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) ) ) ) ) ) )+ {...}?) ) ) otherlv_7= '}' ) ;
+    // InternalRecipeDSL.g:291:1: ruleIngredients returns [EObject current=null] : ( () otherlv_1= 'Ingredients' otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) ) ) ) ) )+ {...}?) ) ) otherlv_7= '}' ) ;
     public final EObject ruleIngredients() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_0=null;
         Token otherlv_1=null;
-        Token otherlv_3=null;
-        Token otherlv_5=null;
+        Token otherlv_2=null;
+        Token otherlv_4=null;
         Token otherlv_7=null;
-        AntlrDatatypeRuleToken lv_orderNumber_4_0 = null;
+        AntlrDatatypeRuleToken lv_orderNumber_5_0 = null;
 
         EObject lv_unittoggle_6_0 = null;
 
@@ -794,87 +715,98 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRecipeDSL.g:333:2: ( (otherlv_0= 'Ingredients' otherlv_1= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_5= 'unittoggle' ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) ) ) ) ) ) )+ {...}?) ) ) otherlv_7= '}' ) )
-            // InternalRecipeDSL.g:334:2: (otherlv_0= 'Ingredients' otherlv_1= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_5= 'unittoggle' ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) ) ) ) ) ) )+ {...}?) ) ) otherlv_7= '}' )
+            // InternalRecipeDSL.g:297:2: ( ( () otherlv_1= 'Ingredients' otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) ) ) ) ) )+ {...}?) ) ) otherlv_7= '}' ) )
+            // InternalRecipeDSL.g:298:2: ( () otherlv_1= 'Ingredients' otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) ) ) ) ) )+ {...}?) ) ) otherlv_7= '}' )
             {
-            // InternalRecipeDSL.g:334:2: (otherlv_0= 'Ingredients' otherlv_1= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_5= 'unittoggle' ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) ) ) ) ) ) )+ {...}?) ) ) otherlv_7= '}' )
-            // InternalRecipeDSL.g:335:3: otherlv_0= 'Ingredients' otherlv_1= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_5= 'unittoggle' ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) ) ) ) ) ) )+ {...}?) ) ) otherlv_7= '}'
+            // InternalRecipeDSL.g:298:2: ( () otherlv_1= 'Ingredients' otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) ) ) ) ) )+ {...}?) ) ) otherlv_7= '}' )
+            // InternalRecipeDSL.g:299:3: () otherlv_1= 'Ingredients' otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) ) ) ) ) )+ {...}?) ) ) otherlv_7= '}'
             {
-            otherlv_0=(Token)match(input,20,FOLLOW_4); 
+            // InternalRecipeDSL.g:299:3: ()
+            // InternalRecipeDSL.g:300:4: 
+            {
 
-            			newLeafNode(otherlv_0, grammarAccess.getIngredientsAccess().getIngredientsKeyword_0());
-            		
-            otherlv_1=(Token)match(input,12,FOLLOW_14); 
+            				current = forceCreateModelElement(
+            					grammarAccess.getIngredientsAccess().getIngredientsAction_0(),
+            					current);
+            			
 
-            			newLeafNode(otherlv_1, grammarAccess.getIngredientsAccess().getLeftCurlyBracketKeyword_1());
+            }
+
+            otherlv_1=(Token)match(input,16,FOLLOW_3); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getIngredientsAccess().getIngredientsKeyword_1());
             		
-            // InternalRecipeDSL.g:343:3: ( ( ( ( ({...}? => ( ({...}? => (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_5= 'unittoggle' ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) ) ) ) ) ) )+ {...}?) ) )
-            // InternalRecipeDSL.g:344:4: ( ( ( ({...}? => ( ({...}? => (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_5= 'unittoggle' ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) ) ) ) ) ) )+ {...}?) )
+            otherlv_2=(Token)match(input,12,FOLLOW_9); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getIngredientsAccess().getLeftCurlyBracketKeyword_2());
+            		
+            // InternalRecipeDSL.g:314:3: ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) ) ) ) ) )+ {...}?) ) )
+            // InternalRecipeDSL.g:315:4: ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) ) ) ) ) )+ {...}?) )
             {
-            // InternalRecipeDSL.g:344:4: ( ( ( ({...}? => ( ({...}? => (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_5= 'unittoggle' ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) ) ) ) ) ) )+ {...}?) )
-            // InternalRecipeDSL.g:345:5: ( ( ({...}? => ( ({...}? => (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_5= 'unittoggle' ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) ) ) ) ) ) )+ {...}?)
+            // InternalRecipeDSL.g:315:4: ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) ) ) ) ) )+ {...}?) )
+            // InternalRecipeDSL.g:316:5: ( ( ({...}? => ( ({...}? => (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) ) ) ) ) )+ {...}?)
             {
              
-            				  getUnorderedGroupHelper().enter(grammarAccess.getIngredientsAccess().getUnorderedGroup_2());
+            				  getUnorderedGroupHelper().enter(grammarAccess.getIngredientsAccess().getUnorderedGroup_3());
             				
-            // InternalRecipeDSL.g:348:5: ( ( ({...}? => ( ({...}? => (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_5= 'unittoggle' ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) ) ) ) ) ) )+ {...}?)
-            // InternalRecipeDSL.g:349:6: ( ({...}? => ( ({...}? => (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_5= 'unittoggle' ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) ) ) ) ) ) )+ {...}?
+            // InternalRecipeDSL.g:319:5: ( ( ({...}? => ( ({...}? => (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) ) ) ) ) )+ {...}?)
+            // InternalRecipeDSL.g:320:6: ( ({...}? => ( ({...}? => (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) ) ) ) ) )+ {...}?
             {
-            // InternalRecipeDSL.g:349:6: ( ({...}? => ( ({...}? => (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_5= 'unittoggle' ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) ) ) ) ) ) )+
+            // InternalRecipeDSL.g:320:6: ( ({...}? => ( ({...}? => (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) ) ) ) ) )+
             int cnt2=0;
             loop2:
             do {
                 int alt2=3;
                 int LA2_0 = input.LA(1);
 
-                if ( LA2_0 == 19 && getUnorderedGroupHelper().canSelect(grammarAccess.getIngredientsAccess().getUnorderedGroup_2(), 0) ) {
+                if ( LA2_0 == 15 && getUnorderedGroupHelper().canSelect(grammarAccess.getIngredientsAccess().getUnorderedGroup_3(), 0) ) {
                     alt2=1;
                 }
-                else if ( LA2_0 == 21 && getUnorderedGroupHelper().canSelect(grammarAccess.getIngredientsAccess().getUnorderedGroup_2(), 1) ) {
+                else if ( LA2_0 == 20 && getUnorderedGroupHelper().canSelect(grammarAccess.getIngredientsAccess().getUnorderedGroup_3(), 1) ) {
                     alt2=2;
                 }
 
 
                 switch (alt2) {
             	case 1 :
-            	    // InternalRecipeDSL.g:350:4: ({...}? => ( ({...}? => (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) ) ) ) )
+            	    // InternalRecipeDSL.g:321:4: ({...}? => ( ({...}? => (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) ) ) ) )
             	    {
-            	    // InternalRecipeDSL.g:350:4: ({...}? => ( ({...}? => (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) ) ) ) )
-            	    // InternalRecipeDSL.g:351:5: {...}? => ( ({...}? => (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) ) ) )
+            	    // InternalRecipeDSL.g:321:4: ({...}? => ( ({...}? => (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) ) ) ) )
+            	    // InternalRecipeDSL.g:322:5: {...}? => ( ({...}? => (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) ) ) )
             	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getIngredientsAccess().getUnorderedGroup_2(), 0) ) {
-            	        throw new FailedPredicateException(input, "ruleIngredients", "getUnorderedGroupHelper().canSelect(grammarAccess.getIngredientsAccess().getUnorderedGroup_2(), 0)");
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getIngredientsAccess().getUnorderedGroup_3(), 0) ) {
+            	        throw new FailedPredicateException(input, "ruleIngredients", "getUnorderedGroupHelper().canSelect(grammarAccess.getIngredientsAccess().getUnorderedGroup_3(), 0)");
             	    }
-            	    // InternalRecipeDSL.g:351:108: ( ({...}? => (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) ) ) )
-            	    // InternalRecipeDSL.g:352:6: ({...}? => (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) ) )
+            	    // InternalRecipeDSL.g:322:108: ( ({...}? => (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) ) ) )
+            	    // InternalRecipeDSL.g:323:6: ({...}? => (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) ) )
             	    {
 
-            	    						getUnorderedGroupHelper().select(grammarAccess.getIngredientsAccess().getUnorderedGroup_2(), 0);
+            	    						getUnorderedGroupHelper().select(grammarAccess.getIngredientsAccess().getUnorderedGroup_3(), 0);
             	    					
-            	    // InternalRecipeDSL.g:355:9: ({...}? => (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) ) )
-            	    // InternalRecipeDSL.g:355:10: {...}? => (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) )
+            	    // InternalRecipeDSL.g:326:9: ({...}? => (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) ) )
+            	    // InternalRecipeDSL.g:326:10: {...}? => (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleIngredients", "true");
             	    }
-            	    // InternalRecipeDSL.g:355:19: (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) )
-            	    // InternalRecipeDSL.g:355:20: otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) )
+            	    // InternalRecipeDSL.g:326:19: (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) )
+            	    // InternalRecipeDSL.g:326:20: otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) )
             	    {
-            	    otherlv_3=(Token)match(input,19,FOLLOW_12); 
+            	    otherlv_4=(Token)match(input,15,FOLLOW_7); 
 
-            	    									newLeafNode(otherlv_3, grammarAccess.getIngredientsAccess().getOrderNumberKeyword_2_0_0());
+            	    									newLeafNode(otherlv_4, grammarAccess.getIngredientsAccess().getOrderNumberKeyword_3_0_0());
             	    								
-            	    // InternalRecipeDSL.g:359:9: ( (lv_orderNumber_4_0= ruleEInt ) )
-            	    // InternalRecipeDSL.g:360:10: (lv_orderNumber_4_0= ruleEInt )
+            	    // InternalRecipeDSL.g:330:9: ( (lv_orderNumber_5_0= ruleEInt ) )
+            	    // InternalRecipeDSL.g:331:10: (lv_orderNumber_5_0= ruleEInt )
             	    {
-            	    // InternalRecipeDSL.g:360:10: (lv_orderNumber_4_0= ruleEInt )
-            	    // InternalRecipeDSL.g:361:11: lv_orderNumber_4_0= ruleEInt
+            	    // InternalRecipeDSL.g:331:10: (lv_orderNumber_5_0= ruleEInt )
+            	    // InternalRecipeDSL.g:332:11: lv_orderNumber_5_0= ruleEInt
             	    {
 
-            	    											newCompositeNode(grammarAccess.getIngredientsAccess().getOrderNumberEIntParserRuleCall_2_0_1_0());
+            	    											newCompositeNode(grammarAccess.getIngredientsAccess().getOrderNumberEIntParserRuleCall_3_0_1_0());
             	    										
-            	    pushFollow(FOLLOW_15);
-            	    lv_orderNumber_4_0=ruleEInt();
+            	    pushFollow(FOLLOW_10);
+            	    lv_orderNumber_5_0=ruleEInt();
 
             	    state._fsp--;
 
@@ -885,7 +817,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
             	    											set(
             	    												current,
             	    												"orderNumber",
-            	    												lv_orderNumber_4_0,
+            	    												lv_orderNumber_5_0,
             	    												"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.EInt");
             	    											afterParserOrEnumRuleCall();
             	    										
@@ -902,7 +834,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
             	    }
 
             	     
-            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getIngredientsAccess().getUnorderedGroup_2());
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getIngredientsAccess().getUnorderedGroup_3());
             	    					
 
             	    }
@@ -914,61 +846,51 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 2 :
-            	    // InternalRecipeDSL.g:384:4: ({...}? => ( ({...}? => (otherlv_5= 'unittoggle' ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) ) ) ) ) )
+            	    // InternalRecipeDSL.g:355:4: ({...}? => ( ({...}? => ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) ) ) ) )
             	    {
-            	    // InternalRecipeDSL.g:384:4: ({...}? => ( ({...}? => (otherlv_5= 'unittoggle' ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) ) ) ) ) )
-            	    // InternalRecipeDSL.g:385:5: {...}? => ( ({...}? => (otherlv_5= 'unittoggle' ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) ) ) ) )
+            	    // InternalRecipeDSL.g:355:4: ({...}? => ( ({...}? => ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) ) ) ) )
+            	    // InternalRecipeDSL.g:356:5: {...}? => ( ({...}? => ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) ) ) )
             	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getIngredientsAccess().getUnorderedGroup_2(), 1) ) {
-            	        throw new FailedPredicateException(input, "ruleIngredients", "getUnorderedGroupHelper().canSelect(grammarAccess.getIngredientsAccess().getUnorderedGroup_2(), 1)");
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getIngredientsAccess().getUnorderedGroup_3(), 1) ) {
+            	        throw new FailedPredicateException(input, "ruleIngredients", "getUnorderedGroupHelper().canSelect(grammarAccess.getIngredientsAccess().getUnorderedGroup_3(), 1)");
             	    }
-            	    // InternalRecipeDSL.g:385:108: ( ({...}? => (otherlv_5= 'unittoggle' ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) ) ) ) )
-            	    // InternalRecipeDSL.g:386:6: ({...}? => (otherlv_5= 'unittoggle' ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) ) ) )
+            	    // InternalRecipeDSL.g:356:108: ( ({...}? => ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) ) ) )
+            	    // InternalRecipeDSL.g:357:6: ({...}? => ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) ) )
             	    {
 
-            	    						getUnorderedGroupHelper().select(grammarAccess.getIngredientsAccess().getUnorderedGroup_2(), 1);
+            	    						getUnorderedGroupHelper().select(grammarAccess.getIngredientsAccess().getUnorderedGroup_3(), 1);
             	    					
-            	    // InternalRecipeDSL.g:389:9: ({...}? => (otherlv_5= 'unittoggle' ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) ) ) )
-            	    // InternalRecipeDSL.g:389:10: {...}? => (otherlv_5= 'unittoggle' ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) ) )
+            	    // InternalRecipeDSL.g:360:9: ({...}? => ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) ) )
+            	    // InternalRecipeDSL.g:360:10: {...}? => ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleIngredients", "true");
             	    }
-            	    // InternalRecipeDSL.g:389:19: (otherlv_5= 'unittoggle' ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) ) )
-            	    // InternalRecipeDSL.g:389:20: otherlv_5= 'unittoggle' ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) )
+            	    // InternalRecipeDSL.g:360:19: ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) )
+            	    // InternalRecipeDSL.g:360:20: (lv_unittoggle_6_0= ruleUnitOfMeasure )
             	    {
-            	    otherlv_5=(Token)match(input,21,FOLLOW_16); 
-
-            	    									newLeafNode(otherlv_5, grammarAccess.getIngredientsAccess().getUnittoggleKeyword_2_1_0());
-            	    								
-            	    // InternalRecipeDSL.g:393:9: ( (lv_unittoggle_6_0= ruleUnitOfMeasure ) )
-            	    // InternalRecipeDSL.g:394:10: (lv_unittoggle_6_0= ruleUnitOfMeasure )
-            	    {
-            	    // InternalRecipeDSL.g:394:10: (lv_unittoggle_6_0= ruleUnitOfMeasure )
-            	    // InternalRecipeDSL.g:395:11: lv_unittoggle_6_0= ruleUnitOfMeasure
+            	    // InternalRecipeDSL.g:360:20: (lv_unittoggle_6_0= ruleUnitOfMeasure )
+            	    // InternalRecipeDSL.g:361:10: lv_unittoggle_6_0= ruleUnitOfMeasure
             	    {
 
-            	    											newCompositeNode(grammarAccess.getIngredientsAccess().getUnittoggleUnitOfMeasureParserRuleCall_2_1_1_0());
-            	    										
-            	    pushFollow(FOLLOW_15);
+            	    										newCompositeNode(grammarAccess.getIngredientsAccess().getUnittoggleUnitOfMeasureParserRuleCall_3_1_0());
+            	    									
+            	    pushFollow(FOLLOW_10);
             	    lv_unittoggle_6_0=ruleUnitOfMeasure();
 
             	    state._fsp--;
 
 
-            	    											if (current==null) {
-            	    												current = createModelElementForParent(grammarAccess.getIngredientsRule());
-            	    											}
-            	    											set(
-            	    												current,
-            	    												"unittoggle",
-            	    												lv_unittoggle_6_0,
-            	    												"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.UnitOfMeasure");
-            	    											afterParserOrEnumRuleCall();
-            	    										
-
-            	    }
-
+            	    										if (current==null) {
+            	    											current = createModelElementForParent(grammarAccess.getIngredientsRule());
+            	    										}
+            	    										set(
+            	    											current,
+            	    											"unittoggle",
+            	    											lv_unittoggle_6_0,
+            	    											"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.UnitOfMeasure");
+            	    										afterParserOrEnumRuleCall();
+            	    									
 
             	    }
 
@@ -979,7 +901,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
             	    }
 
             	     
-            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getIngredientsAccess().getUnorderedGroup_2());
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getIngredientsAccess().getUnorderedGroup_3());
             	    					
 
             	    }
@@ -1000,8 +922,8 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
                 cnt2++;
             } while (true);
 
-            if ( ! getUnorderedGroupHelper().canLeave(grammarAccess.getIngredientsAccess().getUnorderedGroup_2()) ) {
-                throw new FailedPredicateException(input, "ruleIngredients", "getUnorderedGroupHelper().canLeave(grammarAccess.getIngredientsAccess().getUnorderedGroup_2())");
+            if ( ! getUnorderedGroupHelper().canLeave(grammarAccess.getIngredientsAccess().getUnorderedGroup_3()) ) {
+                throw new FailedPredicateException(input, "ruleIngredients", "getUnorderedGroupHelper().canLeave(grammarAccess.getIngredientsAccess().getUnorderedGroup_3())");
             }
 
             }
@@ -1010,14 +932,14 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
             }
 
              
-            				  getUnorderedGroupHelper().leave(grammarAccess.getIngredientsAccess().getUnorderedGroup_2());
+            				  getUnorderedGroupHelper().leave(grammarAccess.getIngredientsAccess().getUnorderedGroup_3());
             				
 
             }
 
-            otherlv_7=(Token)match(input,17,FOLLOW_2); 
+            otherlv_7=(Token)match(input,13,FOLLOW_2); 
 
-            			newLeafNode(otherlv_7, grammarAccess.getIngredientsAccess().getRightCurlyBracketKeyword_3());
+            			newLeafNode(otherlv_7, grammarAccess.getIngredientsAccess().getRightCurlyBracketKeyword_4());
             		
 
             }
@@ -1042,7 +964,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleHeader"
-    // InternalRecipeDSL.g:434:1: entryRuleHeader returns [EObject current=null] : iv_ruleHeader= ruleHeader EOF ;
+    // InternalRecipeDSL.g:399:1: entryRuleHeader returns [EObject current=null] : iv_ruleHeader= ruleHeader EOF ;
     public final EObject entryRuleHeader() throws RecognitionException {
         EObject current = null;
 
@@ -1050,8 +972,8 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRecipeDSL.g:434:47: (iv_ruleHeader= ruleHeader EOF )
-            // InternalRecipeDSL.g:435:2: iv_ruleHeader= ruleHeader EOF
+            // InternalRecipeDSL.g:399:47: (iv_ruleHeader= ruleHeader EOF )
+            // InternalRecipeDSL.g:400:2: iv_ruleHeader= ruleHeader EOF
             {
              newCompositeNode(grammarAccess.getHeaderRule()); 
             pushFollow(FOLLOW_1);
@@ -1078,128 +1000,126 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleHeader"
-    // InternalRecipeDSL.g:441:1: ruleHeader returns [EObject current=null] : (otherlv_0= 'Header' otherlv_1= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_3= 'basicinformation' ( (lv_basicinformation_4_0= ruleBasicInformation ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_5= 'recipetitle' ( (lv_recipetitle_6_0= ruleTitle ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'image' ( (lv_image_8_0= ruleImage ) ) ) ) ) ) )+ {...}?) ) ) otherlv_9= '}' ) ;
+    // InternalRecipeDSL.g:406:1: ruleHeader returns [EObject current=null] : ( () otherlv_1= 'Header' otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => ( (lv_basicinformation_4_0= ruleBasicInformation ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_recipetitle_5_0= ruleTitle ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_image_6_0= ruleImage ) ) ) ) ) )+ {...}?) ) ) otherlv_7= '}' ) ;
     public final EObject ruleHeader() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_0=null;
         Token otherlv_1=null;
-        Token otherlv_3=null;
-        Token otherlv_5=null;
+        Token otherlv_2=null;
         Token otherlv_7=null;
-        Token otherlv_9=null;
         EObject lv_basicinformation_4_0 = null;
 
-        EObject lv_recipetitle_6_0 = null;
+        EObject lv_recipetitle_5_0 = null;
 
-        EObject lv_image_8_0 = null;
+        EObject lv_image_6_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalRecipeDSL.g:447:2: ( (otherlv_0= 'Header' otherlv_1= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_3= 'basicinformation' ( (lv_basicinformation_4_0= ruleBasicInformation ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_5= 'recipetitle' ( (lv_recipetitle_6_0= ruleTitle ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'image' ( (lv_image_8_0= ruleImage ) ) ) ) ) ) )+ {...}?) ) ) otherlv_9= '}' ) )
-            // InternalRecipeDSL.g:448:2: (otherlv_0= 'Header' otherlv_1= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_3= 'basicinformation' ( (lv_basicinformation_4_0= ruleBasicInformation ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_5= 'recipetitle' ( (lv_recipetitle_6_0= ruleTitle ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'image' ( (lv_image_8_0= ruleImage ) ) ) ) ) ) )+ {...}?) ) ) otherlv_9= '}' )
+            // InternalRecipeDSL.g:412:2: ( ( () otherlv_1= 'Header' otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => ( (lv_basicinformation_4_0= ruleBasicInformation ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_recipetitle_5_0= ruleTitle ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_image_6_0= ruleImage ) ) ) ) ) )+ {...}?) ) ) otherlv_7= '}' ) )
+            // InternalRecipeDSL.g:413:2: ( () otherlv_1= 'Header' otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => ( (lv_basicinformation_4_0= ruleBasicInformation ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_recipetitle_5_0= ruleTitle ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_image_6_0= ruleImage ) ) ) ) ) )+ {...}?) ) ) otherlv_7= '}' )
             {
-            // InternalRecipeDSL.g:448:2: (otherlv_0= 'Header' otherlv_1= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_3= 'basicinformation' ( (lv_basicinformation_4_0= ruleBasicInformation ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_5= 'recipetitle' ( (lv_recipetitle_6_0= ruleTitle ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'image' ( (lv_image_8_0= ruleImage ) ) ) ) ) ) )+ {...}?) ) ) otherlv_9= '}' )
-            // InternalRecipeDSL.g:449:3: otherlv_0= 'Header' otherlv_1= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_3= 'basicinformation' ( (lv_basicinformation_4_0= ruleBasicInformation ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_5= 'recipetitle' ( (lv_recipetitle_6_0= ruleTitle ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'image' ( (lv_image_8_0= ruleImage ) ) ) ) ) ) )+ {...}?) ) ) otherlv_9= '}'
+            // InternalRecipeDSL.g:413:2: ( () otherlv_1= 'Header' otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => ( (lv_basicinformation_4_0= ruleBasicInformation ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_recipetitle_5_0= ruleTitle ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_image_6_0= ruleImage ) ) ) ) ) )+ {...}?) ) ) otherlv_7= '}' )
+            // InternalRecipeDSL.g:414:3: () otherlv_1= 'Header' otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => ( (lv_basicinformation_4_0= ruleBasicInformation ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_recipetitle_5_0= ruleTitle ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_image_6_0= ruleImage ) ) ) ) ) )+ {...}?) ) ) otherlv_7= '}'
             {
-            otherlv_0=(Token)match(input,22,FOLLOW_4); 
+            // InternalRecipeDSL.g:414:3: ()
+            // InternalRecipeDSL.g:415:4: 
+            {
 
-            			newLeafNode(otherlv_0, grammarAccess.getHeaderAccess().getHeaderKeyword_0());
-            		
-            otherlv_1=(Token)match(input,12,FOLLOW_17); 
+            				current = forceCreateModelElement(
+            					grammarAccess.getHeaderAccess().getHeaderAction_0(),
+            					current);
+            			
 
-            			newLeafNode(otherlv_1, grammarAccess.getHeaderAccess().getLeftCurlyBracketKeyword_1());
+            }
+
+            otherlv_1=(Token)match(input,17,FOLLOW_3); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getHeaderAccess().getHeaderKeyword_1());
             		
-            // InternalRecipeDSL.g:457:3: ( ( ( ( ({...}? => ( ({...}? => (otherlv_3= 'basicinformation' ( (lv_basicinformation_4_0= ruleBasicInformation ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_5= 'recipetitle' ( (lv_recipetitle_6_0= ruleTitle ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'image' ( (lv_image_8_0= ruleImage ) ) ) ) ) ) )+ {...}?) ) )
-            // InternalRecipeDSL.g:458:4: ( ( ( ({...}? => ( ({...}? => (otherlv_3= 'basicinformation' ( (lv_basicinformation_4_0= ruleBasicInformation ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_5= 'recipetitle' ( (lv_recipetitle_6_0= ruleTitle ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'image' ( (lv_image_8_0= ruleImage ) ) ) ) ) ) )+ {...}?) )
+            otherlv_2=(Token)match(input,12,FOLLOW_11); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getHeaderAccess().getLeftCurlyBracketKeyword_2());
+            		
+            // InternalRecipeDSL.g:429:3: ( ( ( ( ({...}? => ( ({...}? => ( (lv_basicinformation_4_0= ruleBasicInformation ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_recipetitle_5_0= ruleTitle ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_image_6_0= ruleImage ) ) ) ) ) )+ {...}?) ) )
+            // InternalRecipeDSL.g:430:4: ( ( ( ({...}? => ( ({...}? => ( (lv_basicinformation_4_0= ruleBasicInformation ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_recipetitle_5_0= ruleTitle ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_image_6_0= ruleImage ) ) ) ) ) )+ {...}?) )
             {
-            // InternalRecipeDSL.g:458:4: ( ( ( ({...}? => ( ({...}? => (otherlv_3= 'basicinformation' ( (lv_basicinformation_4_0= ruleBasicInformation ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_5= 'recipetitle' ( (lv_recipetitle_6_0= ruleTitle ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'image' ( (lv_image_8_0= ruleImage ) ) ) ) ) ) )+ {...}?) )
-            // InternalRecipeDSL.g:459:5: ( ( ({...}? => ( ({...}? => (otherlv_3= 'basicinformation' ( (lv_basicinformation_4_0= ruleBasicInformation ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_5= 'recipetitle' ( (lv_recipetitle_6_0= ruleTitle ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'image' ( (lv_image_8_0= ruleImage ) ) ) ) ) ) )+ {...}?)
+            // InternalRecipeDSL.g:430:4: ( ( ( ({...}? => ( ({...}? => ( (lv_basicinformation_4_0= ruleBasicInformation ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_recipetitle_5_0= ruleTitle ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_image_6_0= ruleImage ) ) ) ) ) )+ {...}?) )
+            // InternalRecipeDSL.g:431:5: ( ( ({...}? => ( ({...}? => ( (lv_basicinformation_4_0= ruleBasicInformation ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_recipetitle_5_0= ruleTitle ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_image_6_0= ruleImage ) ) ) ) ) )+ {...}?)
             {
              
-            				  getUnorderedGroupHelper().enter(grammarAccess.getHeaderAccess().getUnorderedGroup_2());
+            				  getUnorderedGroupHelper().enter(grammarAccess.getHeaderAccess().getUnorderedGroup_3());
             				
-            // InternalRecipeDSL.g:462:5: ( ( ({...}? => ( ({...}? => (otherlv_3= 'basicinformation' ( (lv_basicinformation_4_0= ruleBasicInformation ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_5= 'recipetitle' ( (lv_recipetitle_6_0= ruleTitle ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'image' ( (lv_image_8_0= ruleImage ) ) ) ) ) ) )+ {...}?)
-            // InternalRecipeDSL.g:463:6: ( ({...}? => ( ({...}? => (otherlv_3= 'basicinformation' ( (lv_basicinformation_4_0= ruleBasicInformation ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_5= 'recipetitle' ( (lv_recipetitle_6_0= ruleTitle ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'image' ( (lv_image_8_0= ruleImage ) ) ) ) ) ) )+ {...}?
+            // InternalRecipeDSL.g:434:5: ( ( ({...}? => ( ({...}? => ( (lv_basicinformation_4_0= ruleBasicInformation ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_recipetitle_5_0= ruleTitle ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_image_6_0= ruleImage ) ) ) ) ) )+ {...}?)
+            // InternalRecipeDSL.g:435:6: ( ({...}? => ( ({...}? => ( (lv_basicinformation_4_0= ruleBasicInformation ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_recipetitle_5_0= ruleTitle ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_image_6_0= ruleImage ) ) ) ) ) )+ {...}?
             {
-            // InternalRecipeDSL.g:463:6: ( ({...}? => ( ({...}? => (otherlv_3= 'basicinformation' ( (lv_basicinformation_4_0= ruleBasicInformation ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_5= 'recipetitle' ( (lv_recipetitle_6_0= ruleTitle ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'image' ( (lv_image_8_0= ruleImage ) ) ) ) ) ) )+
+            // InternalRecipeDSL.g:435:6: ( ({...}? => ( ({...}? => ( (lv_basicinformation_4_0= ruleBasicInformation ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_recipetitle_5_0= ruleTitle ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_image_6_0= ruleImage ) ) ) ) ) )+
             int cnt3=0;
             loop3:
             do {
                 int alt3=4;
                 int LA3_0 = input.LA(1);
 
-                if ( LA3_0 == 23 && getUnorderedGroupHelper().canSelect(grammarAccess.getHeaderAccess().getUnorderedGroup_2(), 0) ) {
+                if ( LA3_0 == 21 && getUnorderedGroupHelper().canSelect(grammarAccess.getHeaderAccess().getUnorderedGroup_3(), 0) ) {
                     alt3=1;
                 }
-                else if ( LA3_0 == 24 && getUnorderedGroupHelper().canSelect(grammarAccess.getHeaderAccess().getUnorderedGroup_2(), 1) ) {
+                else if ( LA3_0 == 22 && getUnorderedGroupHelper().canSelect(grammarAccess.getHeaderAccess().getUnorderedGroup_3(), 1) ) {
                     alt3=2;
                 }
-                else if ( LA3_0 == 25 && getUnorderedGroupHelper().canSelect(grammarAccess.getHeaderAccess().getUnorderedGroup_2(), 2) ) {
+                else if ( LA3_0 == 23 && getUnorderedGroupHelper().canSelect(grammarAccess.getHeaderAccess().getUnorderedGroup_3(), 2) ) {
                     alt3=3;
                 }
 
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalRecipeDSL.g:464:4: ({...}? => ( ({...}? => (otherlv_3= 'basicinformation' ( (lv_basicinformation_4_0= ruleBasicInformation ) ) ) ) ) )
+            	    // InternalRecipeDSL.g:436:4: ({...}? => ( ({...}? => ( (lv_basicinformation_4_0= ruleBasicInformation ) ) ) ) )
             	    {
-            	    // InternalRecipeDSL.g:464:4: ({...}? => ( ({...}? => (otherlv_3= 'basicinformation' ( (lv_basicinformation_4_0= ruleBasicInformation ) ) ) ) ) )
-            	    // InternalRecipeDSL.g:465:5: {...}? => ( ({...}? => (otherlv_3= 'basicinformation' ( (lv_basicinformation_4_0= ruleBasicInformation ) ) ) ) )
+            	    // InternalRecipeDSL.g:436:4: ({...}? => ( ({...}? => ( (lv_basicinformation_4_0= ruleBasicInformation ) ) ) ) )
+            	    // InternalRecipeDSL.g:437:5: {...}? => ( ({...}? => ( (lv_basicinformation_4_0= ruleBasicInformation ) ) ) )
             	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getHeaderAccess().getUnorderedGroup_2(), 0) ) {
-            	        throw new FailedPredicateException(input, "ruleHeader", "getUnorderedGroupHelper().canSelect(grammarAccess.getHeaderAccess().getUnorderedGroup_2(), 0)");
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getHeaderAccess().getUnorderedGroup_3(), 0) ) {
+            	        throw new FailedPredicateException(input, "ruleHeader", "getUnorderedGroupHelper().canSelect(grammarAccess.getHeaderAccess().getUnorderedGroup_3(), 0)");
             	    }
-            	    // InternalRecipeDSL.g:465:103: ( ({...}? => (otherlv_3= 'basicinformation' ( (lv_basicinformation_4_0= ruleBasicInformation ) ) ) ) )
-            	    // InternalRecipeDSL.g:466:6: ({...}? => (otherlv_3= 'basicinformation' ( (lv_basicinformation_4_0= ruleBasicInformation ) ) ) )
+            	    // InternalRecipeDSL.g:437:103: ( ({...}? => ( (lv_basicinformation_4_0= ruleBasicInformation ) ) ) )
+            	    // InternalRecipeDSL.g:438:6: ({...}? => ( (lv_basicinformation_4_0= ruleBasicInformation ) ) )
             	    {
 
-            	    						getUnorderedGroupHelper().select(grammarAccess.getHeaderAccess().getUnorderedGroup_2(), 0);
+            	    						getUnorderedGroupHelper().select(grammarAccess.getHeaderAccess().getUnorderedGroup_3(), 0);
             	    					
-            	    // InternalRecipeDSL.g:469:9: ({...}? => (otherlv_3= 'basicinformation' ( (lv_basicinformation_4_0= ruleBasicInformation ) ) ) )
-            	    // InternalRecipeDSL.g:469:10: {...}? => (otherlv_3= 'basicinformation' ( (lv_basicinformation_4_0= ruleBasicInformation ) ) )
+            	    // InternalRecipeDSL.g:441:9: ({...}? => ( (lv_basicinformation_4_0= ruleBasicInformation ) ) )
+            	    // InternalRecipeDSL.g:441:10: {...}? => ( (lv_basicinformation_4_0= ruleBasicInformation ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleHeader", "true");
             	    }
-            	    // InternalRecipeDSL.g:469:19: (otherlv_3= 'basicinformation' ( (lv_basicinformation_4_0= ruleBasicInformation ) ) )
-            	    // InternalRecipeDSL.g:469:20: otherlv_3= 'basicinformation' ( (lv_basicinformation_4_0= ruleBasicInformation ) )
+            	    // InternalRecipeDSL.g:441:19: ( (lv_basicinformation_4_0= ruleBasicInformation ) )
+            	    // InternalRecipeDSL.g:441:20: (lv_basicinformation_4_0= ruleBasicInformation )
             	    {
-            	    otherlv_3=(Token)match(input,23,FOLLOW_18); 
-
-            	    									newLeafNode(otherlv_3, grammarAccess.getHeaderAccess().getBasicinformationKeyword_2_0_0());
-            	    								
-            	    // InternalRecipeDSL.g:473:9: ( (lv_basicinformation_4_0= ruleBasicInformation ) )
-            	    // InternalRecipeDSL.g:474:10: (lv_basicinformation_4_0= ruleBasicInformation )
-            	    {
-            	    // InternalRecipeDSL.g:474:10: (lv_basicinformation_4_0= ruleBasicInformation )
-            	    // InternalRecipeDSL.g:475:11: lv_basicinformation_4_0= ruleBasicInformation
+            	    // InternalRecipeDSL.g:441:20: (lv_basicinformation_4_0= ruleBasicInformation )
+            	    // InternalRecipeDSL.g:442:10: lv_basicinformation_4_0= ruleBasicInformation
             	    {
 
-            	    											newCompositeNode(grammarAccess.getHeaderAccess().getBasicinformationBasicInformationParserRuleCall_2_0_1_0());
-            	    										
-            	    pushFollow(FOLLOW_19);
+            	    										newCompositeNode(grammarAccess.getHeaderAccess().getBasicinformationBasicInformationParserRuleCall_3_0_0());
+            	    									
+            	    pushFollow(FOLLOW_12);
             	    lv_basicinformation_4_0=ruleBasicInformation();
 
             	    state._fsp--;
 
 
-            	    											if (current==null) {
-            	    												current = createModelElementForParent(grammarAccess.getHeaderRule());
-            	    											}
-            	    											set(
-            	    												current,
-            	    												"basicinformation",
-            	    												lv_basicinformation_4_0,
-            	    												"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.BasicInformation");
-            	    											afterParserOrEnumRuleCall();
-            	    										
-
-            	    }
-
+            	    										if (current==null) {
+            	    											current = createModelElementForParent(grammarAccess.getHeaderRule());
+            	    										}
+            	    										set(
+            	    											current,
+            	    											"basicinformation",
+            	    											lv_basicinformation_4_0,
+            	    											"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.BasicInformation");
+            	    										afterParserOrEnumRuleCall();
+            	    									
 
             	    }
 
@@ -1210,7 +1130,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
             	    }
 
             	     
-            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getHeaderAccess().getUnorderedGroup_2());
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getHeaderAccess().getUnorderedGroup_3());
             	    					
 
             	    }
@@ -1222,61 +1142,51 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 2 :
-            	    // InternalRecipeDSL.g:498:4: ({...}? => ( ({...}? => (otherlv_5= 'recipetitle' ( (lv_recipetitle_6_0= ruleTitle ) ) ) ) ) )
+            	    // InternalRecipeDSL.g:464:4: ({...}? => ( ({...}? => ( (lv_recipetitle_5_0= ruleTitle ) ) ) ) )
             	    {
-            	    // InternalRecipeDSL.g:498:4: ({...}? => ( ({...}? => (otherlv_5= 'recipetitle' ( (lv_recipetitle_6_0= ruleTitle ) ) ) ) ) )
-            	    // InternalRecipeDSL.g:499:5: {...}? => ( ({...}? => (otherlv_5= 'recipetitle' ( (lv_recipetitle_6_0= ruleTitle ) ) ) ) )
+            	    // InternalRecipeDSL.g:464:4: ({...}? => ( ({...}? => ( (lv_recipetitle_5_0= ruleTitle ) ) ) ) )
+            	    // InternalRecipeDSL.g:465:5: {...}? => ( ({...}? => ( (lv_recipetitle_5_0= ruleTitle ) ) ) )
             	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getHeaderAccess().getUnorderedGroup_2(), 1) ) {
-            	        throw new FailedPredicateException(input, "ruleHeader", "getUnorderedGroupHelper().canSelect(grammarAccess.getHeaderAccess().getUnorderedGroup_2(), 1)");
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getHeaderAccess().getUnorderedGroup_3(), 1) ) {
+            	        throw new FailedPredicateException(input, "ruleHeader", "getUnorderedGroupHelper().canSelect(grammarAccess.getHeaderAccess().getUnorderedGroup_3(), 1)");
             	    }
-            	    // InternalRecipeDSL.g:499:103: ( ({...}? => (otherlv_5= 'recipetitle' ( (lv_recipetitle_6_0= ruleTitle ) ) ) ) )
-            	    // InternalRecipeDSL.g:500:6: ({...}? => (otherlv_5= 'recipetitle' ( (lv_recipetitle_6_0= ruleTitle ) ) ) )
+            	    // InternalRecipeDSL.g:465:103: ( ({...}? => ( (lv_recipetitle_5_0= ruleTitle ) ) ) )
+            	    // InternalRecipeDSL.g:466:6: ({...}? => ( (lv_recipetitle_5_0= ruleTitle ) ) )
             	    {
 
-            	    						getUnorderedGroupHelper().select(grammarAccess.getHeaderAccess().getUnorderedGroup_2(), 1);
+            	    						getUnorderedGroupHelper().select(grammarAccess.getHeaderAccess().getUnorderedGroup_3(), 1);
             	    					
-            	    // InternalRecipeDSL.g:503:9: ({...}? => (otherlv_5= 'recipetitle' ( (lv_recipetitle_6_0= ruleTitle ) ) ) )
-            	    // InternalRecipeDSL.g:503:10: {...}? => (otherlv_5= 'recipetitle' ( (lv_recipetitle_6_0= ruleTitle ) ) )
+            	    // InternalRecipeDSL.g:469:9: ({...}? => ( (lv_recipetitle_5_0= ruleTitle ) ) )
+            	    // InternalRecipeDSL.g:469:10: {...}? => ( (lv_recipetitle_5_0= ruleTitle ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleHeader", "true");
             	    }
-            	    // InternalRecipeDSL.g:503:19: (otherlv_5= 'recipetitle' ( (lv_recipetitle_6_0= ruleTitle ) ) )
-            	    // InternalRecipeDSL.g:503:20: otherlv_5= 'recipetitle' ( (lv_recipetitle_6_0= ruleTitle ) )
+            	    // InternalRecipeDSL.g:469:19: ( (lv_recipetitle_5_0= ruleTitle ) )
+            	    // InternalRecipeDSL.g:469:20: (lv_recipetitle_5_0= ruleTitle )
             	    {
-            	    otherlv_5=(Token)match(input,24,FOLLOW_20); 
-
-            	    									newLeafNode(otherlv_5, grammarAccess.getHeaderAccess().getRecipetitleKeyword_2_1_0());
-            	    								
-            	    // InternalRecipeDSL.g:507:9: ( (lv_recipetitle_6_0= ruleTitle ) )
-            	    // InternalRecipeDSL.g:508:10: (lv_recipetitle_6_0= ruleTitle )
-            	    {
-            	    // InternalRecipeDSL.g:508:10: (lv_recipetitle_6_0= ruleTitle )
-            	    // InternalRecipeDSL.g:509:11: lv_recipetitle_6_0= ruleTitle
+            	    // InternalRecipeDSL.g:469:20: (lv_recipetitle_5_0= ruleTitle )
+            	    // InternalRecipeDSL.g:470:10: lv_recipetitle_5_0= ruleTitle
             	    {
 
-            	    											newCompositeNode(grammarAccess.getHeaderAccess().getRecipetitleTitleParserRuleCall_2_1_1_0());
-            	    										
-            	    pushFollow(FOLLOW_19);
-            	    lv_recipetitle_6_0=ruleTitle();
+            	    										newCompositeNode(grammarAccess.getHeaderAccess().getRecipetitleTitleParserRuleCall_3_1_0());
+            	    									
+            	    pushFollow(FOLLOW_12);
+            	    lv_recipetitle_5_0=ruleTitle();
 
             	    state._fsp--;
 
 
-            	    											if (current==null) {
-            	    												current = createModelElementForParent(grammarAccess.getHeaderRule());
-            	    											}
-            	    											set(
-            	    												current,
-            	    												"recipetitle",
-            	    												lv_recipetitle_6_0,
-            	    												"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Title");
-            	    											afterParserOrEnumRuleCall();
-            	    										
-
-            	    }
-
+            	    										if (current==null) {
+            	    											current = createModelElementForParent(grammarAccess.getHeaderRule());
+            	    										}
+            	    										set(
+            	    											current,
+            	    											"recipetitle",
+            	    											lv_recipetitle_5_0,
+            	    											"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Title");
+            	    										afterParserOrEnumRuleCall();
+            	    									
 
             	    }
 
@@ -1287,7 +1197,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
             	    }
 
             	     
-            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getHeaderAccess().getUnorderedGroup_2());
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getHeaderAccess().getUnorderedGroup_3());
             	    					
 
             	    }
@@ -1299,61 +1209,51 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 3 :
-            	    // InternalRecipeDSL.g:532:4: ({...}? => ( ({...}? => (otherlv_7= 'image' ( (lv_image_8_0= ruleImage ) ) ) ) ) )
+            	    // InternalRecipeDSL.g:492:4: ({...}? => ( ({...}? => ( (lv_image_6_0= ruleImage ) ) ) ) )
             	    {
-            	    // InternalRecipeDSL.g:532:4: ({...}? => ( ({...}? => (otherlv_7= 'image' ( (lv_image_8_0= ruleImage ) ) ) ) ) )
-            	    // InternalRecipeDSL.g:533:5: {...}? => ( ({...}? => (otherlv_7= 'image' ( (lv_image_8_0= ruleImage ) ) ) ) )
+            	    // InternalRecipeDSL.g:492:4: ({...}? => ( ({...}? => ( (lv_image_6_0= ruleImage ) ) ) ) )
+            	    // InternalRecipeDSL.g:493:5: {...}? => ( ({...}? => ( (lv_image_6_0= ruleImage ) ) ) )
             	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getHeaderAccess().getUnorderedGroup_2(), 2) ) {
-            	        throw new FailedPredicateException(input, "ruleHeader", "getUnorderedGroupHelper().canSelect(grammarAccess.getHeaderAccess().getUnorderedGroup_2(), 2)");
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getHeaderAccess().getUnorderedGroup_3(), 2) ) {
+            	        throw new FailedPredicateException(input, "ruleHeader", "getUnorderedGroupHelper().canSelect(grammarAccess.getHeaderAccess().getUnorderedGroup_3(), 2)");
             	    }
-            	    // InternalRecipeDSL.g:533:103: ( ({...}? => (otherlv_7= 'image' ( (lv_image_8_0= ruleImage ) ) ) ) )
-            	    // InternalRecipeDSL.g:534:6: ({...}? => (otherlv_7= 'image' ( (lv_image_8_0= ruleImage ) ) ) )
+            	    // InternalRecipeDSL.g:493:103: ( ({...}? => ( (lv_image_6_0= ruleImage ) ) ) )
+            	    // InternalRecipeDSL.g:494:6: ({...}? => ( (lv_image_6_0= ruleImage ) ) )
             	    {
 
-            	    						getUnorderedGroupHelper().select(grammarAccess.getHeaderAccess().getUnorderedGroup_2(), 2);
+            	    						getUnorderedGroupHelper().select(grammarAccess.getHeaderAccess().getUnorderedGroup_3(), 2);
             	    					
-            	    // InternalRecipeDSL.g:537:9: ({...}? => (otherlv_7= 'image' ( (lv_image_8_0= ruleImage ) ) ) )
-            	    // InternalRecipeDSL.g:537:10: {...}? => (otherlv_7= 'image' ( (lv_image_8_0= ruleImage ) ) )
+            	    // InternalRecipeDSL.g:497:9: ({...}? => ( (lv_image_6_0= ruleImage ) ) )
+            	    // InternalRecipeDSL.g:497:10: {...}? => ( (lv_image_6_0= ruleImage ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleHeader", "true");
             	    }
-            	    // InternalRecipeDSL.g:537:19: (otherlv_7= 'image' ( (lv_image_8_0= ruleImage ) ) )
-            	    // InternalRecipeDSL.g:537:20: otherlv_7= 'image' ( (lv_image_8_0= ruleImage ) )
+            	    // InternalRecipeDSL.g:497:19: ( (lv_image_6_0= ruleImage ) )
+            	    // InternalRecipeDSL.g:497:20: (lv_image_6_0= ruleImage )
             	    {
-            	    otherlv_7=(Token)match(input,25,FOLLOW_21); 
-
-            	    									newLeafNode(otherlv_7, grammarAccess.getHeaderAccess().getImageKeyword_2_2_0());
-            	    								
-            	    // InternalRecipeDSL.g:541:9: ( (lv_image_8_0= ruleImage ) )
-            	    // InternalRecipeDSL.g:542:10: (lv_image_8_0= ruleImage )
-            	    {
-            	    // InternalRecipeDSL.g:542:10: (lv_image_8_0= ruleImage )
-            	    // InternalRecipeDSL.g:543:11: lv_image_8_0= ruleImage
+            	    // InternalRecipeDSL.g:497:20: (lv_image_6_0= ruleImage )
+            	    // InternalRecipeDSL.g:498:10: lv_image_6_0= ruleImage
             	    {
 
-            	    											newCompositeNode(grammarAccess.getHeaderAccess().getImageImageParserRuleCall_2_2_1_0());
-            	    										
-            	    pushFollow(FOLLOW_19);
-            	    lv_image_8_0=ruleImage();
+            	    										newCompositeNode(grammarAccess.getHeaderAccess().getImageImageParserRuleCall_3_2_0());
+            	    									
+            	    pushFollow(FOLLOW_12);
+            	    lv_image_6_0=ruleImage();
 
             	    state._fsp--;
 
 
-            	    											if (current==null) {
-            	    												current = createModelElementForParent(grammarAccess.getHeaderRule());
-            	    											}
-            	    											set(
-            	    												current,
-            	    												"image",
-            	    												lv_image_8_0,
-            	    												"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Image");
-            	    											afterParserOrEnumRuleCall();
-            	    										
-
-            	    }
-
+            	    										if (current==null) {
+            	    											current = createModelElementForParent(grammarAccess.getHeaderRule());
+            	    										}
+            	    										set(
+            	    											current,
+            	    											"image",
+            	    											lv_image_6_0,
+            	    											"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Image");
+            	    										afterParserOrEnumRuleCall();
+            	    									
 
             	    }
 
@@ -1364,7 +1264,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
             	    }
 
             	     
-            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getHeaderAccess().getUnorderedGroup_2());
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getHeaderAccess().getUnorderedGroup_3());
             	    					
 
             	    }
@@ -1385,8 +1285,8 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
                 cnt3++;
             } while (true);
 
-            if ( ! getUnorderedGroupHelper().canLeave(grammarAccess.getHeaderAccess().getUnorderedGroup_2()) ) {
-                throw new FailedPredicateException(input, "ruleHeader", "getUnorderedGroupHelper().canLeave(grammarAccess.getHeaderAccess().getUnorderedGroup_2())");
+            if ( ! getUnorderedGroupHelper().canLeave(grammarAccess.getHeaderAccess().getUnorderedGroup_3()) ) {
+                throw new FailedPredicateException(input, "ruleHeader", "getUnorderedGroupHelper().canLeave(grammarAccess.getHeaderAccess().getUnorderedGroup_3())");
             }
 
             }
@@ -1395,14 +1295,14 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
             }
 
              
-            				  getUnorderedGroupHelper().leave(grammarAccess.getHeaderAccess().getUnorderedGroup_2());
+            				  getUnorderedGroupHelper().leave(grammarAccess.getHeaderAccess().getUnorderedGroup_3());
             				
 
             }
 
-            otherlv_9=(Token)match(input,17,FOLLOW_2); 
+            otherlv_7=(Token)match(input,13,FOLLOW_2); 
 
-            			newLeafNode(otherlv_9, grammarAccess.getHeaderAccess().getRightCurlyBracketKeyword_3());
+            			newLeafNode(otherlv_7, grammarAccess.getHeaderAccess().getRightCurlyBracketKeyword_4());
             		
 
             }
@@ -1426,124 +1326,8 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleHeader"
 
 
-    // $ANTLR start "entryRuleEString"
-    // InternalRecipeDSL.g:582:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
-    public final String entryRuleEString() throws RecognitionException {
-        String current = null;
-
-        AntlrDatatypeRuleToken iv_ruleEString = null;
-
-
-        try {
-            // InternalRecipeDSL.g:582:47: (iv_ruleEString= ruleEString EOF )
-            // InternalRecipeDSL.g:583:2: iv_ruleEString= ruleEString EOF
-            {
-             newCompositeNode(grammarAccess.getEStringRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleEString=ruleEString();
-
-            state._fsp--;
-
-             current =iv_ruleEString.getText(); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleEString"
-
-
-    // $ANTLR start "ruleEString"
-    // InternalRecipeDSL.g:589:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
-    public final AntlrDatatypeRuleToken ruleEString() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
-
-        Token this_STRING_0=null;
-        Token this_ID_1=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalRecipeDSL.g:595:2: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
-            // InternalRecipeDSL.g:596:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
-            {
-            // InternalRecipeDSL.g:596:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
-            int alt4=2;
-            int LA4_0 = input.LA(1);
-
-            if ( (LA4_0==RULE_STRING) ) {
-                alt4=1;
-            }
-            else if ( (LA4_0==RULE_ID) ) {
-                alt4=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 4, 0, input);
-
-                throw nvae;
-            }
-            switch (alt4) {
-                case 1 :
-                    // InternalRecipeDSL.g:597:3: this_STRING_0= RULE_STRING
-                    {
-                    this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
-
-                    			current.merge(this_STRING_0);
-                    		
-
-                    			newLeafNode(this_STRING_0, grammarAccess.getEStringAccess().getSTRINGTerminalRuleCall_0());
-                    		
-
-                    }
-                    break;
-                case 2 :
-                    // InternalRecipeDSL.g:605:3: this_ID_1= RULE_ID
-                    {
-                    this_ID_1=(Token)match(input,RULE_ID,FOLLOW_2); 
-
-                    			current.merge(this_ID_1);
-                    		
-
-                    			newLeafNode(this_ID_1, grammarAccess.getEStringAccess().getIDTerminalRuleCall_1());
-                    		
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleEString"
-
-
     // $ANTLR start "entryRuleNutrients"
-    // InternalRecipeDSL.g:616:1: entryRuleNutrients returns [EObject current=null] : iv_ruleNutrients= ruleNutrients EOF ;
+    // InternalRecipeDSL.g:536:1: entryRuleNutrients returns [EObject current=null] : iv_ruleNutrients= ruleNutrients EOF ;
     public final EObject entryRuleNutrients() throws RecognitionException {
         EObject current = null;
 
@@ -1551,8 +1335,8 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRecipeDSL.g:616:50: (iv_ruleNutrients= ruleNutrients EOF )
-            // InternalRecipeDSL.g:617:2: iv_ruleNutrients= ruleNutrients EOF
+            // InternalRecipeDSL.g:536:50: (iv_ruleNutrients= ruleNutrients EOF )
+            // InternalRecipeDSL.g:537:2: iv_ruleNutrients= ruleNutrients EOF
             {
              newCompositeNode(grammarAccess.getNutrientsRule()); 
             pushFollow(FOLLOW_1);
@@ -1579,117 +1363,125 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNutrients"
-    // InternalRecipeDSL.g:623:1: ruleNutrients returns [EObject current=null] : (otherlv_0= 'Nutrients' otherlv_1= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_5= 'percentagetoggle' ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'vitamins' ( (lv_vitamins_8_0= ruleVitamins ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_9= 'macronutrients' ( (lv_macronutrients_10_0= ruleMacronutrients ) ) ) ) ) ) )+ {...}?) ) ) otherlv_11= '}' ) ;
+    // InternalRecipeDSL.g:543:1: ruleNutrients returns [EObject current=null] : ( () otherlv_1= 'Nutrients' otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_vitamins_7_0= ruleVitamins ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_macronutrients_8_0= ruleMacronutrients ) ) ) ) ) )+ {...}?) ) ) otherlv_9= '}' ) ;
     public final EObject ruleNutrients() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_0=null;
         Token otherlv_1=null;
-        Token otherlv_3=null;
-        Token otherlv_5=null;
-        Token otherlv_7=null;
+        Token otherlv_2=null;
+        Token otherlv_4=null;
         Token otherlv_9=null;
-        Token otherlv_11=null;
-        AntlrDatatypeRuleToken lv_orderNumber_4_0 = null;
+        AntlrDatatypeRuleToken lv_orderNumber_5_0 = null;
 
         EObject lv_percentagetoggle_6_0 = null;
 
-        EObject lv_vitamins_8_0 = null;
+        EObject lv_vitamins_7_0 = null;
 
-        EObject lv_macronutrients_10_0 = null;
+        EObject lv_macronutrients_8_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalRecipeDSL.g:629:2: ( (otherlv_0= 'Nutrients' otherlv_1= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_5= 'percentagetoggle' ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'vitamins' ( (lv_vitamins_8_0= ruleVitamins ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_9= 'macronutrients' ( (lv_macronutrients_10_0= ruleMacronutrients ) ) ) ) ) ) )+ {...}?) ) ) otherlv_11= '}' ) )
-            // InternalRecipeDSL.g:630:2: (otherlv_0= 'Nutrients' otherlv_1= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_5= 'percentagetoggle' ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'vitamins' ( (lv_vitamins_8_0= ruleVitamins ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_9= 'macronutrients' ( (lv_macronutrients_10_0= ruleMacronutrients ) ) ) ) ) ) )+ {...}?) ) ) otherlv_11= '}' )
+            // InternalRecipeDSL.g:549:2: ( ( () otherlv_1= 'Nutrients' otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_vitamins_7_0= ruleVitamins ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_macronutrients_8_0= ruleMacronutrients ) ) ) ) ) )+ {...}?) ) ) otherlv_9= '}' ) )
+            // InternalRecipeDSL.g:550:2: ( () otherlv_1= 'Nutrients' otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_vitamins_7_0= ruleVitamins ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_macronutrients_8_0= ruleMacronutrients ) ) ) ) ) )+ {...}?) ) ) otherlv_9= '}' )
             {
-            // InternalRecipeDSL.g:630:2: (otherlv_0= 'Nutrients' otherlv_1= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_5= 'percentagetoggle' ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'vitamins' ( (lv_vitamins_8_0= ruleVitamins ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_9= 'macronutrients' ( (lv_macronutrients_10_0= ruleMacronutrients ) ) ) ) ) ) )+ {...}?) ) ) otherlv_11= '}' )
-            // InternalRecipeDSL.g:631:3: otherlv_0= 'Nutrients' otherlv_1= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_5= 'percentagetoggle' ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'vitamins' ( (lv_vitamins_8_0= ruleVitamins ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_9= 'macronutrients' ( (lv_macronutrients_10_0= ruleMacronutrients ) ) ) ) ) ) )+ {...}?) ) ) otherlv_11= '}'
+            // InternalRecipeDSL.g:550:2: ( () otherlv_1= 'Nutrients' otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_vitamins_7_0= ruleVitamins ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_macronutrients_8_0= ruleMacronutrients ) ) ) ) ) )+ {...}?) ) ) otherlv_9= '}' )
+            // InternalRecipeDSL.g:551:3: () otherlv_1= 'Nutrients' otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_vitamins_7_0= ruleVitamins ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_macronutrients_8_0= ruleMacronutrients ) ) ) ) ) )+ {...}?) ) ) otherlv_9= '}'
             {
-            otherlv_0=(Token)match(input,26,FOLLOW_4); 
+            // InternalRecipeDSL.g:551:3: ()
+            // InternalRecipeDSL.g:552:4: 
+            {
 
-            			newLeafNode(otherlv_0, grammarAccess.getNutrientsAccess().getNutrientsKeyword_0());
-            		
-            otherlv_1=(Token)match(input,12,FOLLOW_22); 
+            				current = forceCreateModelElement(
+            					grammarAccess.getNutrientsAccess().getNutrientsAction_0(),
+            					current);
+            			
 
-            			newLeafNode(otherlv_1, grammarAccess.getNutrientsAccess().getLeftCurlyBracketKeyword_1());
+            }
+
+            otherlv_1=(Token)match(input,18,FOLLOW_3); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getNutrientsAccess().getNutrientsKeyword_1());
             		
-            // InternalRecipeDSL.g:639:3: ( ( ( ( ({...}? => ( ({...}? => (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_5= 'percentagetoggle' ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'vitamins' ( (lv_vitamins_8_0= ruleVitamins ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_9= 'macronutrients' ( (lv_macronutrients_10_0= ruleMacronutrients ) ) ) ) ) ) )+ {...}?) ) )
-            // InternalRecipeDSL.g:640:4: ( ( ( ({...}? => ( ({...}? => (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_5= 'percentagetoggle' ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'vitamins' ( (lv_vitamins_8_0= ruleVitamins ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_9= 'macronutrients' ( (lv_macronutrients_10_0= ruleMacronutrients ) ) ) ) ) ) )+ {...}?) )
+            otherlv_2=(Token)match(input,12,FOLLOW_13); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getNutrientsAccess().getLeftCurlyBracketKeyword_2());
+            		
+            // InternalRecipeDSL.g:566:3: ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_vitamins_7_0= ruleVitamins ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_macronutrients_8_0= ruleMacronutrients ) ) ) ) ) )+ {...}?) ) )
+            // InternalRecipeDSL.g:567:4: ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_vitamins_7_0= ruleVitamins ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_macronutrients_8_0= ruleMacronutrients ) ) ) ) ) )+ {...}?) )
             {
-            // InternalRecipeDSL.g:640:4: ( ( ( ({...}? => ( ({...}? => (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_5= 'percentagetoggle' ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'vitamins' ( (lv_vitamins_8_0= ruleVitamins ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_9= 'macronutrients' ( (lv_macronutrients_10_0= ruleMacronutrients ) ) ) ) ) ) )+ {...}?) )
-            // InternalRecipeDSL.g:641:5: ( ( ({...}? => ( ({...}? => (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_5= 'percentagetoggle' ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'vitamins' ( (lv_vitamins_8_0= ruleVitamins ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_9= 'macronutrients' ( (lv_macronutrients_10_0= ruleMacronutrients ) ) ) ) ) ) )+ {...}?)
+            // InternalRecipeDSL.g:567:4: ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_vitamins_7_0= ruleVitamins ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_macronutrients_8_0= ruleMacronutrients ) ) ) ) ) )+ {...}?) )
+            // InternalRecipeDSL.g:568:5: ( ( ({...}? => ( ({...}? => (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_vitamins_7_0= ruleVitamins ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_macronutrients_8_0= ruleMacronutrients ) ) ) ) ) )+ {...}?)
             {
              
-            				  getUnorderedGroupHelper().enter(grammarAccess.getNutrientsAccess().getUnorderedGroup_2());
+            				  getUnorderedGroupHelper().enter(grammarAccess.getNutrientsAccess().getUnorderedGroup_3());
             				
-            // InternalRecipeDSL.g:644:5: ( ( ({...}? => ( ({...}? => (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_5= 'percentagetoggle' ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'vitamins' ( (lv_vitamins_8_0= ruleVitamins ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_9= 'macronutrients' ( (lv_macronutrients_10_0= ruleMacronutrients ) ) ) ) ) ) )+ {...}?)
-            // InternalRecipeDSL.g:645:6: ( ({...}? => ( ({...}? => (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_5= 'percentagetoggle' ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'vitamins' ( (lv_vitamins_8_0= ruleVitamins ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_9= 'macronutrients' ( (lv_macronutrients_10_0= ruleMacronutrients ) ) ) ) ) ) )+ {...}?
+            // InternalRecipeDSL.g:571:5: ( ( ({...}? => ( ({...}? => (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_vitamins_7_0= ruleVitamins ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_macronutrients_8_0= ruleMacronutrients ) ) ) ) ) )+ {...}?)
+            // InternalRecipeDSL.g:572:6: ( ({...}? => ( ({...}? => (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_vitamins_7_0= ruleVitamins ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_macronutrients_8_0= ruleMacronutrients ) ) ) ) ) )+ {...}?
             {
-            // InternalRecipeDSL.g:645:6: ( ({...}? => ( ({...}? => (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_5= 'percentagetoggle' ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'vitamins' ( (lv_vitamins_8_0= ruleVitamins ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_9= 'macronutrients' ( (lv_macronutrients_10_0= ruleMacronutrients ) ) ) ) ) ) )+
-            int cnt5=0;
-            loop5:
+            // InternalRecipeDSL.g:572:6: ( ({...}? => ( ({...}? => (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_vitamins_7_0= ruleVitamins ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_macronutrients_8_0= ruleMacronutrients ) ) ) ) ) )+
+            int cnt4=0;
+            loop4:
             do {
-                int alt5=5;
-                int LA5_0 = input.LA(1);
+                int alt4=5;
+                int LA4_0 = input.LA(1);
 
-                if ( LA5_0 == 19 && getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_2(), 0) ) {
-                    alt5=1;
+                if ( LA4_0 == 15 && getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 0) ) {
+                    alt4=1;
                 }
-                else if ( LA5_0 == 27 && getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_2(), 1) ) {
-                    alt5=2;
+                else if ( LA4_0 == 24 && getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 1) ) {
+                    alt4=2;
                 }
-                else if ( LA5_0 == 28 && getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_2(), 2) ) {
-                    alt5=3;
+                else if ( LA4_0 == 25 && getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 2) ) {
+                    alt4=3;
                 }
-                else if ( LA5_0 == 29 && getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_2(), 3) ) {
-                    alt5=4;
+                else if ( LA4_0 == 27 && getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 3) ) {
+                    alt4=4;
                 }
 
 
-                switch (alt5) {
+                switch (alt4) {
             	case 1 :
-            	    // InternalRecipeDSL.g:646:4: ({...}? => ( ({...}? => (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) ) ) ) )
+            	    // InternalRecipeDSL.g:573:4: ({...}? => ( ({...}? => (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) ) ) ) )
             	    {
-            	    // InternalRecipeDSL.g:646:4: ({...}? => ( ({...}? => (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) ) ) ) )
-            	    // InternalRecipeDSL.g:647:5: {...}? => ( ({...}? => (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) ) ) )
+            	    // InternalRecipeDSL.g:573:4: ({...}? => ( ({...}? => (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) ) ) ) )
+            	    // InternalRecipeDSL.g:574:5: {...}? => ( ({...}? => (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) ) ) )
             	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_2(), 0) ) {
-            	        throw new FailedPredicateException(input, "ruleNutrients", "getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_2(), 0)");
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 0) ) {
+            	        throw new FailedPredicateException(input, "ruleNutrients", "getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 0)");
             	    }
-            	    // InternalRecipeDSL.g:647:106: ( ({...}? => (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) ) ) )
-            	    // InternalRecipeDSL.g:648:6: ({...}? => (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) ) )
+            	    // InternalRecipeDSL.g:574:106: ( ({...}? => (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) ) ) )
+            	    // InternalRecipeDSL.g:575:6: ({...}? => (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) ) )
             	    {
 
-            	    						getUnorderedGroupHelper().select(grammarAccess.getNutrientsAccess().getUnorderedGroup_2(), 0);
+            	    						getUnorderedGroupHelper().select(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 0);
             	    					
-            	    // InternalRecipeDSL.g:651:9: ({...}? => (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) ) )
-            	    // InternalRecipeDSL.g:651:10: {...}? => (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) )
+            	    // InternalRecipeDSL.g:578:9: ({...}? => (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) ) )
+            	    // InternalRecipeDSL.g:578:10: {...}? => (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleNutrients", "true");
             	    }
-            	    // InternalRecipeDSL.g:651:19: (otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) ) )
-            	    // InternalRecipeDSL.g:651:20: otherlv_3= 'orderNumber' ( (lv_orderNumber_4_0= ruleEInt ) )
+            	    // InternalRecipeDSL.g:578:19: (otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) ) )
+            	    // InternalRecipeDSL.g:578:20: otherlv_4= 'orderNumber' ( (lv_orderNumber_5_0= ruleEInt ) )
             	    {
-            	    otherlv_3=(Token)match(input,19,FOLLOW_12); 
+            	    otherlv_4=(Token)match(input,15,FOLLOW_7); 
 
-            	    									newLeafNode(otherlv_3, grammarAccess.getNutrientsAccess().getOrderNumberKeyword_2_0_0());
+            	    									newLeafNode(otherlv_4, grammarAccess.getNutrientsAccess().getOrderNumberKeyword_3_0_0());
             	    								
-            	    // InternalRecipeDSL.g:655:9: ( (lv_orderNumber_4_0= ruleEInt ) )
-            	    // InternalRecipeDSL.g:656:10: (lv_orderNumber_4_0= ruleEInt )
+            	    // InternalRecipeDSL.g:582:9: ( (lv_orderNumber_5_0= ruleEInt ) )
+            	    // InternalRecipeDSL.g:583:10: (lv_orderNumber_5_0= ruleEInt )
             	    {
-            	    // InternalRecipeDSL.g:656:10: (lv_orderNumber_4_0= ruleEInt )
-            	    // InternalRecipeDSL.g:657:11: lv_orderNumber_4_0= ruleEInt
+            	    // InternalRecipeDSL.g:583:10: (lv_orderNumber_5_0= ruleEInt )
+            	    // InternalRecipeDSL.g:584:11: lv_orderNumber_5_0= ruleEInt
             	    {
 
-            	    											newCompositeNode(grammarAccess.getNutrientsAccess().getOrderNumberEIntParserRuleCall_2_0_1_0());
+            	    											newCompositeNode(grammarAccess.getNutrientsAccess().getOrderNumberEIntParserRuleCall_3_0_1_0());
             	    										
-            	    pushFollow(FOLLOW_23);
-            	    lv_orderNumber_4_0=ruleEInt();
+            	    pushFollow(FOLLOW_14);
+            	    lv_orderNumber_5_0=ruleEInt();
 
             	    state._fsp--;
 
@@ -1700,7 +1492,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
             	    											set(
             	    												current,
             	    												"orderNumber",
-            	    												lv_orderNumber_4_0,
+            	    												lv_orderNumber_5_0,
             	    												"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.EInt");
             	    											afterParserOrEnumRuleCall();
             	    										
@@ -1717,7 +1509,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
             	    }
 
             	     
-            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getNutrientsAccess().getUnorderedGroup_2());
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getNutrientsAccess().getUnorderedGroup_3());
             	    					
 
             	    }
@@ -1729,61 +1521,51 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 2 :
-            	    // InternalRecipeDSL.g:680:4: ({...}? => ( ({...}? => (otherlv_5= 'percentagetoggle' ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) ) ) ) ) )
+            	    // InternalRecipeDSL.g:607:4: ({...}? => ( ({...}? => ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) ) ) ) )
             	    {
-            	    // InternalRecipeDSL.g:680:4: ({...}? => ( ({...}? => (otherlv_5= 'percentagetoggle' ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) ) ) ) ) )
-            	    // InternalRecipeDSL.g:681:5: {...}? => ( ({...}? => (otherlv_5= 'percentagetoggle' ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) ) ) ) )
+            	    // InternalRecipeDSL.g:607:4: ({...}? => ( ({...}? => ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) ) ) ) )
+            	    // InternalRecipeDSL.g:608:5: {...}? => ( ({...}? => ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) ) ) )
             	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_2(), 1) ) {
-            	        throw new FailedPredicateException(input, "ruleNutrients", "getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_2(), 1)");
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 1) ) {
+            	        throw new FailedPredicateException(input, "ruleNutrients", "getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 1)");
             	    }
-            	    // InternalRecipeDSL.g:681:106: ( ({...}? => (otherlv_5= 'percentagetoggle' ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) ) ) ) )
-            	    // InternalRecipeDSL.g:682:6: ({...}? => (otherlv_5= 'percentagetoggle' ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) ) ) )
+            	    // InternalRecipeDSL.g:608:106: ( ({...}? => ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) ) ) )
+            	    // InternalRecipeDSL.g:609:6: ({...}? => ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) ) )
             	    {
 
-            	    						getUnorderedGroupHelper().select(grammarAccess.getNutrientsAccess().getUnorderedGroup_2(), 1);
+            	    						getUnorderedGroupHelper().select(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 1);
             	    					
-            	    // InternalRecipeDSL.g:685:9: ({...}? => (otherlv_5= 'percentagetoggle' ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) ) ) )
-            	    // InternalRecipeDSL.g:685:10: {...}? => (otherlv_5= 'percentagetoggle' ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) ) )
+            	    // InternalRecipeDSL.g:612:9: ({...}? => ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) ) )
+            	    // InternalRecipeDSL.g:612:10: {...}? => ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleNutrients", "true");
             	    }
-            	    // InternalRecipeDSL.g:685:19: (otherlv_5= 'percentagetoggle' ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) ) )
-            	    // InternalRecipeDSL.g:685:20: otherlv_5= 'percentagetoggle' ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) )
+            	    // InternalRecipeDSL.g:612:19: ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) )
+            	    // InternalRecipeDSL.g:612:20: (lv_percentagetoggle_6_0= rulePercentageAmountToggle )
             	    {
-            	    otherlv_5=(Token)match(input,27,FOLLOW_24); 
-
-            	    									newLeafNode(otherlv_5, grammarAccess.getNutrientsAccess().getPercentagetoggleKeyword_2_1_0());
-            	    								
-            	    // InternalRecipeDSL.g:689:9: ( (lv_percentagetoggle_6_0= rulePercentageAmountToggle ) )
-            	    // InternalRecipeDSL.g:690:10: (lv_percentagetoggle_6_0= rulePercentageAmountToggle )
-            	    {
-            	    // InternalRecipeDSL.g:690:10: (lv_percentagetoggle_6_0= rulePercentageAmountToggle )
-            	    // InternalRecipeDSL.g:691:11: lv_percentagetoggle_6_0= rulePercentageAmountToggle
+            	    // InternalRecipeDSL.g:612:20: (lv_percentagetoggle_6_0= rulePercentageAmountToggle )
+            	    // InternalRecipeDSL.g:613:10: lv_percentagetoggle_6_0= rulePercentageAmountToggle
             	    {
 
-            	    											newCompositeNode(grammarAccess.getNutrientsAccess().getPercentagetogglePercentageAmountToggleParserRuleCall_2_1_1_0());
-            	    										
-            	    pushFollow(FOLLOW_23);
+            	    										newCompositeNode(grammarAccess.getNutrientsAccess().getPercentagetogglePercentageAmountToggleParserRuleCall_3_1_0());
+            	    									
+            	    pushFollow(FOLLOW_14);
             	    lv_percentagetoggle_6_0=rulePercentageAmountToggle();
 
             	    state._fsp--;
 
 
-            	    											if (current==null) {
-            	    												current = createModelElementForParent(grammarAccess.getNutrientsRule());
-            	    											}
-            	    											set(
-            	    												current,
-            	    												"percentagetoggle",
-            	    												lv_percentagetoggle_6_0,
-            	    												"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.PercentageAmountToggle");
-            	    											afterParserOrEnumRuleCall();
-            	    										
-
-            	    }
-
+            	    										if (current==null) {
+            	    											current = createModelElementForParent(grammarAccess.getNutrientsRule());
+            	    										}
+            	    										set(
+            	    											current,
+            	    											"percentagetoggle",
+            	    											lv_percentagetoggle_6_0,
+            	    											"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.PercentageAmountToggle");
+            	    										afterParserOrEnumRuleCall();
+            	    									
 
             	    }
 
@@ -1794,7 +1576,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
             	    }
 
             	     
-            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getNutrientsAccess().getUnorderedGroup_2());
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getNutrientsAccess().getUnorderedGroup_3());
             	    					
 
             	    }
@@ -1806,61 +1588,51 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 3 :
-            	    // InternalRecipeDSL.g:714:4: ({...}? => ( ({...}? => (otherlv_7= 'vitamins' ( (lv_vitamins_8_0= ruleVitamins ) ) ) ) ) )
+            	    // InternalRecipeDSL.g:635:4: ({...}? => ( ({...}? => ( (lv_vitamins_7_0= ruleVitamins ) ) ) ) )
             	    {
-            	    // InternalRecipeDSL.g:714:4: ({...}? => ( ({...}? => (otherlv_7= 'vitamins' ( (lv_vitamins_8_0= ruleVitamins ) ) ) ) ) )
-            	    // InternalRecipeDSL.g:715:5: {...}? => ( ({...}? => (otherlv_7= 'vitamins' ( (lv_vitamins_8_0= ruleVitamins ) ) ) ) )
+            	    // InternalRecipeDSL.g:635:4: ({...}? => ( ({...}? => ( (lv_vitamins_7_0= ruleVitamins ) ) ) ) )
+            	    // InternalRecipeDSL.g:636:5: {...}? => ( ({...}? => ( (lv_vitamins_7_0= ruleVitamins ) ) ) )
             	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_2(), 2) ) {
-            	        throw new FailedPredicateException(input, "ruleNutrients", "getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_2(), 2)");
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 2) ) {
+            	        throw new FailedPredicateException(input, "ruleNutrients", "getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 2)");
             	    }
-            	    // InternalRecipeDSL.g:715:106: ( ({...}? => (otherlv_7= 'vitamins' ( (lv_vitamins_8_0= ruleVitamins ) ) ) ) )
-            	    // InternalRecipeDSL.g:716:6: ({...}? => (otherlv_7= 'vitamins' ( (lv_vitamins_8_0= ruleVitamins ) ) ) )
+            	    // InternalRecipeDSL.g:636:106: ( ({...}? => ( (lv_vitamins_7_0= ruleVitamins ) ) ) )
+            	    // InternalRecipeDSL.g:637:6: ({...}? => ( (lv_vitamins_7_0= ruleVitamins ) ) )
             	    {
 
-            	    						getUnorderedGroupHelper().select(grammarAccess.getNutrientsAccess().getUnorderedGroup_2(), 2);
+            	    						getUnorderedGroupHelper().select(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 2);
             	    					
-            	    // InternalRecipeDSL.g:719:9: ({...}? => (otherlv_7= 'vitamins' ( (lv_vitamins_8_0= ruleVitamins ) ) ) )
-            	    // InternalRecipeDSL.g:719:10: {...}? => (otherlv_7= 'vitamins' ( (lv_vitamins_8_0= ruleVitamins ) ) )
+            	    // InternalRecipeDSL.g:640:9: ({...}? => ( (lv_vitamins_7_0= ruleVitamins ) ) )
+            	    // InternalRecipeDSL.g:640:10: {...}? => ( (lv_vitamins_7_0= ruleVitamins ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleNutrients", "true");
             	    }
-            	    // InternalRecipeDSL.g:719:19: (otherlv_7= 'vitamins' ( (lv_vitamins_8_0= ruleVitamins ) ) )
-            	    // InternalRecipeDSL.g:719:20: otherlv_7= 'vitamins' ( (lv_vitamins_8_0= ruleVitamins ) )
+            	    // InternalRecipeDSL.g:640:19: ( (lv_vitamins_7_0= ruleVitamins ) )
+            	    // InternalRecipeDSL.g:640:20: (lv_vitamins_7_0= ruleVitamins )
             	    {
-            	    otherlv_7=(Token)match(input,28,FOLLOW_25); 
-
-            	    									newLeafNode(otherlv_7, grammarAccess.getNutrientsAccess().getVitaminsKeyword_2_2_0());
-            	    								
-            	    // InternalRecipeDSL.g:723:9: ( (lv_vitamins_8_0= ruleVitamins ) )
-            	    // InternalRecipeDSL.g:724:10: (lv_vitamins_8_0= ruleVitamins )
-            	    {
-            	    // InternalRecipeDSL.g:724:10: (lv_vitamins_8_0= ruleVitamins )
-            	    // InternalRecipeDSL.g:725:11: lv_vitamins_8_0= ruleVitamins
+            	    // InternalRecipeDSL.g:640:20: (lv_vitamins_7_0= ruleVitamins )
+            	    // InternalRecipeDSL.g:641:10: lv_vitamins_7_0= ruleVitamins
             	    {
 
-            	    											newCompositeNode(grammarAccess.getNutrientsAccess().getVitaminsVitaminsParserRuleCall_2_2_1_0());
-            	    										
-            	    pushFollow(FOLLOW_23);
-            	    lv_vitamins_8_0=ruleVitamins();
+            	    										newCompositeNode(grammarAccess.getNutrientsAccess().getVitaminsVitaminsParserRuleCall_3_2_0());
+            	    									
+            	    pushFollow(FOLLOW_14);
+            	    lv_vitamins_7_0=ruleVitamins();
 
             	    state._fsp--;
 
 
-            	    											if (current==null) {
-            	    												current = createModelElementForParent(grammarAccess.getNutrientsRule());
-            	    											}
-            	    											set(
-            	    												current,
-            	    												"vitamins",
-            	    												lv_vitamins_8_0,
-            	    												"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Vitamins");
-            	    											afterParserOrEnumRuleCall();
-            	    										
-
-            	    }
-
+            	    										if (current==null) {
+            	    											current = createModelElementForParent(grammarAccess.getNutrientsRule());
+            	    										}
+            	    										set(
+            	    											current,
+            	    											"vitamins",
+            	    											lv_vitamins_7_0,
+            	    											"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Vitamins");
+            	    										afterParserOrEnumRuleCall();
+            	    									
 
             	    }
 
@@ -1871,7 +1643,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
             	    }
 
             	     
-            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getNutrientsAccess().getUnorderedGroup_2());
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getNutrientsAccess().getUnorderedGroup_3());
             	    					
 
             	    }
@@ -1883,61 +1655,51 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 4 :
-            	    // InternalRecipeDSL.g:748:4: ({...}? => ( ({...}? => (otherlv_9= 'macronutrients' ( (lv_macronutrients_10_0= ruleMacronutrients ) ) ) ) ) )
+            	    // InternalRecipeDSL.g:663:4: ({...}? => ( ({...}? => ( (lv_macronutrients_8_0= ruleMacronutrients ) ) ) ) )
             	    {
-            	    // InternalRecipeDSL.g:748:4: ({...}? => ( ({...}? => (otherlv_9= 'macronutrients' ( (lv_macronutrients_10_0= ruleMacronutrients ) ) ) ) ) )
-            	    // InternalRecipeDSL.g:749:5: {...}? => ( ({...}? => (otherlv_9= 'macronutrients' ( (lv_macronutrients_10_0= ruleMacronutrients ) ) ) ) )
+            	    // InternalRecipeDSL.g:663:4: ({...}? => ( ({...}? => ( (lv_macronutrients_8_0= ruleMacronutrients ) ) ) ) )
+            	    // InternalRecipeDSL.g:664:5: {...}? => ( ({...}? => ( (lv_macronutrients_8_0= ruleMacronutrients ) ) ) )
             	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_2(), 3) ) {
-            	        throw new FailedPredicateException(input, "ruleNutrients", "getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_2(), 3)");
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 3) ) {
+            	        throw new FailedPredicateException(input, "ruleNutrients", "getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 3)");
             	    }
-            	    // InternalRecipeDSL.g:749:106: ( ({...}? => (otherlv_9= 'macronutrients' ( (lv_macronutrients_10_0= ruleMacronutrients ) ) ) ) )
-            	    // InternalRecipeDSL.g:750:6: ({...}? => (otherlv_9= 'macronutrients' ( (lv_macronutrients_10_0= ruleMacronutrients ) ) ) )
+            	    // InternalRecipeDSL.g:664:106: ( ({...}? => ( (lv_macronutrients_8_0= ruleMacronutrients ) ) ) )
+            	    // InternalRecipeDSL.g:665:6: ({...}? => ( (lv_macronutrients_8_0= ruleMacronutrients ) ) )
             	    {
 
-            	    						getUnorderedGroupHelper().select(grammarAccess.getNutrientsAccess().getUnorderedGroup_2(), 3);
+            	    						getUnorderedGroupHelper().select(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 3);
             	    					
-            	    // InternalRecipeDSL.g:753:9: ({...}? => (otherlv_9= 'macronutrients' ( (lv_macronutrients_10_0= ruleMacronutrients ) ) ) )
-            	    // InternalRecipeDSL.g:753:10: {...}? => (otherlv_9= 'macronutrients' ( (lv_macronutrients_10_0= ruleMacronutrients ) ) )
+            	    // InternalRecipeDSL.g:668:9: ({...}? => ( (lv_macronutrients_8_0= ruleMacronutrients ) ) )
+            	    // InternalRecipeDSL.g:668:10: {...}? => ( (lv_macronutrients_8_0= ruleMacronutrients ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleNutrients", "true");
             	    }
-            	    // InternalRecipeDSL.g:753:19: (otherlv_9= 'macronutrients' ( (lv_macronutrients_10_0= ruleMacronutrients ) ) )
-            	    // InternalRecipeDSL.g:753:20: otherlv_9= 'macronutrients' ( (lv_macronutrients_10_0= ruleMacronutrients ) )
+            	    // InternalRecipeDSL.g:668:19: ( (lv_macronutrients_8_0= ruleMacronutrients ) )
+            	    // InternalRecipeDSL.g:668:20: (lv_macronutrients_8_0= ruleMacronutrients )
             	    {
-            	    otherlv_9=(Token)match(input,29,FOLLOW_26); 
-
-            	    									newLeafNode(otherlv_9, grammarAccess.getNutrientsAccess().getMacronutrientsKeyword_2_3_0());
-            	    								
-            	    // InternalRecipeDSL.g:757:9: ( (lv_macronutrients_10_0= ruleMacronutrients ) )
-            	    // InternalRecipeDSL.g:758:10: (lv_macronutrients_10_0= ruleMacronutrients )
-            	    {
-            	    // InternalRecipeDSL.g:758:10: (lv_macronutrients_10_0= ruleMacronutrients )
-            	    // InternalRecipeDSL.g:759:11: lv_macronutrients_10_0= ruleMacronutrients
+            	    // InternalRecipeDSL.g:668:20: (lv_macronutrients_8_0= ruleMacronutrients )
+            	    // InternalRecipeDSL.g:669:10: lv_macronutrients_8_0= ruleMacronutrients
             	    {
 
-            	    											newCompositeNode(grammarAccess.getNutrientsAccess().getMacronutrientsMacronutrientsParserRuleCall_2_3_1_0());
-            	    										
-            	    pushFollow(FOLLOW_23);
-            	    lv_macronutrients_10_0=ruleMacronutrients();
+            	    										newCompositeNode(grammarAccess.getNutrientsAccess().getMacronutrientsMacronutrientsParserRuleCall_3_3_0());
+            	    									
+            	    pushFollow(FOLLOW_14);
+            	    lv_macronutrients_8_0=ruleMacronutrients();
 
             	    state._fsp--;
 
 
-            	    											if (current==null) {
-            	    												current = createModelElementForParent(grammarAccess.getNutrientsRule());
-            	    											}
-            	    											set(
-            	    												current,
-            	    												"macronutrients",
-            	    												lv_macronutrients_10_0,
-            	    												"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Macronutrients");
-            	    											afterParserOrEnumRuleCall();
-            	    										
-
-            	    }
-
+            	    										if (current==null) {
+            	    											current = createModelElementForParent(grammarAccess.getNutrientsRule());
+            	    										}
+            	    										set(
+            	    											current,
+            	    											"macronutrients",
+            	    											lv_macronutrients_8_0,
+            	    											"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Macronutrients");
+            	    										afterParserOrEnumRuleCall();
+            	    									
 
             	    }
 
@@ -1948,7 +1710,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
             	    }
 
             	     
-            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getNutrientsAccess().getUnorderedGroup_2());
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getNutrientsAccess().getUnorderedGroup_3());
             	    					
 
             	    }
@@ -1961,16 +1723,16 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt5 >= 1 ) break loop5;
+            	    if ( cnt4 >= 1 ) break loop4;
                         EarlyExitException eee =
-                            new EarlyExitException(5, input);
+                            new EarlyExitException(4, input);
                         throw eee;
                 }
-                cnt5++;
+                cnt4++;
             } while (true);
 
-            if ( ! getUnorderedGroupHelper().canLeave(grammarAccess.getNutrientsAccess().getUnorderedGroup_2()) ) {
-                throw new FailedPredicateException(input, "ruleNutrients", "getUnorderedGroupHelper().canLeave(grammarAccess.getNutrientsAccess().getUnorderedGroup_2())");
+            if ( ! getUnorderedGroupHelper().canLeave(grammarAccess.getNutrientsAccess().getUnorderedGroup_3()) ) {
+                throw new FailedPredicateException(input, "ruleNutrients", "getUnorderedGroupHelper().canLeave(grammarAccess.getNutrientsAccess().getUnorderedGroup_3())");
             }
 
             }
@@ -1979,14 +1741,14 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
             }
 
              
-            				  getUnorderedGroupHelper().leave(grammarAccess.getNutrientsAccess().getUnorderedGroup_2());
+            				  getUnorderedGroupHelper().leave(grammarAccess.getNutrientsAccess().getUnorderedGroup_3());
             				
 
             }
 
-            otherlv_11=(Token)match(input,17,FOLLOW_2); 
+            otherlv_9=(Token)match(input,13,FOLLOW_2); 
 
-            			newLeafNode(otherlv_11, grammarAccess.getNutrientsAccess().getRightCurlyBracketKeyword_3());
+            			newLeafNode(otherlv_9, grammarAccess.getNutrientsAccess().getRightCurlyBracketKeyword_4());
             		
 
             }
@@ -2011,7 +1773,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEInt"
-    // InternalRecipeDSL.g:798:1: entryRuleEInt returns [String current=null] : iv_ruleEInt= ruleEInt EOF ;
+    // InternalRecipeDSL.g:707:1: entryRuleEInt returns [String current=null] : iv_ruleEInt= ruleEInt EOF ;
     public final String entryRuleEInt() throws RecognitionException {
         String current = null;
 
@@ -2019,8 +1781,8 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRecipeDSL.g:798:44: (iv_ruleEInt= ruleEInt EOF )
-            // InternalRecipeDSL.g:799:2: iv_ruleEInt= ruleEInt EOF
+            // InternalRecipeDSL.g:707:44: (iv_ruleEInt= ruleEInt EOF )
+            // InternalRecipeDSL.g:708:2: iv_ruleEInt= ruleEInt EOF
             {
              newCompositeNode(grammarAccess.getEIntRule()); 
             pushFollow(FOLLOW_1);
@@ -2047,7 +1809,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEInt"
-    // InternalRecipeDSL.g:805:1: ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? this_INT_1= RULE_INT ) ;
+    // InternalRecipeDSL.g:714:1: ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? this_INT_1= RULE_INT ) ;
     public final AntlrDatatypeRuleToken ruleEInt() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2058,24 +1820,24 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRecipeDSL.g:811:2: ( ( (kw= '-' )? this_INT_1= RULE_INT ) )
-            // InternalRecipeDSL.g:812:2: ( (kw= '-' )? this_INT_1= RULE_INT )
+            // InternalRecipeDSL.g:720:2: ( ( (kw= '-' )? this_INT_1= RULE_INT ) )
+            // InternalRecipeDSL.g:721:2: ( (kw= '-' )? this_INT_1= RULE_INT )
             {
-            // InternalRecipeDSL.g:812:2: ( (kw= '-' )? this_INT_1= RULE_INT )
-            // InternalRecipeDSL.g:813:3: (kw= '-' )? this_INT_1= RULE_INT
+            // InternalRecipeDSL.g:721:2: ( (kw= '-' )? this_INT_1= RULE_INT )
+            // InternalRecipeDSL.g:722:3: (kw= '-' )? this_INT_1= RULE_INT
             {
-            // InternalRecipeDSL.g:813:3: (kw= '-' )?
-            int alt6=2;
-            int LA6_0 = input.LA(1);
+            // InternalRecipeDSL.g:722:3: (kw= '-' )?
+            int alt5=2;
+            int LA5_0 = input.LA(1);
 
-            if ( (LA6_0==30) ) {
-                alt6=1;
+            if ( (LA5_0==19) ) {
+                alt5=1;
             }
-            switch (alt6) {
+            switch (alt5) {
                 case 1 :
-                    // InternalRecipeDSL.g:814:4: kw= '-'
+                    // InternalRecipeDSL.g:723:4: kw= '-'
                     {
-                    kw=(Token)match(input,30,FOLLOW_27); 
+                    kw=(Token)match(input,19,FOLLOW_15); 
 
                     				current.merge(kw);
                     				newLeafNode(kw, grammarAccess.getEIntAccess().getHyphenMinusKeyword_0());
@@ -2116,7 +1878,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleUnitOfMeasure"
-    // InternalRecipeDSL.g:831:1: entryRuleUnitOfMeasure returns [EObject current=null] : iv_ruleUnitOfMeasure= ruleUnitOfMeasure EOF ;
+    // InternalRecipeDSL.g:740:1: entryRuleUnitOfMeasure returns [EObject current=null] : iv_ruleUnitOfMeasure= ruleUnitOfMeasure EOF ;
     public final EObject entryRuleUnitOfMeasure() throws RecognitionException {
         EObject current = null;
 
@@ -2124,8 +1886,8 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRecipeDSL.g:831:54: (iv_ruleUnitOfMeasure= ruleUnitOfMeasure EOF )
-            // InternalRecipeDSL.g:832:2: iv_ruleUnitOfMeasure= ruleUnitOfMeasure EOF
+            // InternalRecipeDSL.g:740:54: (iv_ruleUnitOfMeasure= ruleUnitOfMeasure EOF )
+            // InternalRecipeDSL.g:741:2: iv_ruleUnitOfMeasure= ruleUnitOfMeasure EOF
             {
              newCompositeNode(grammarAccess.getUnitOfMeasureRule()); 
             pushFollow(FOLLOW_1);
@@ -2152,7 +1914,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUnitOfMeasure"
-    // InternalRecipeDSL.g:838:1: ruleUnitOfMeasure returns [EObject current=null] : ( () otherlv_1= 'UnitOfMeasure' ) ;
+    // InternalRecipeDSL.g:747:1: ruleUnitOfMeasure returns [EObject current=null] : ( () otherlv_1= 'UnitOfMeasureToggle' ) ;
     public final EObject ruleUnitOfMeasure() throws RecognitionException {
         EObject current = null;
 
@@ -2162,26 +1924,26 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRecipeDSL.g:844:2: ( ( () otherlv_1= 'UnitOfMeasure' ) )
-            // InternalRecipeDSL.g:845:2: ( () otherlv_1= 'UnitOfMeasure' )
+            // InternalRecipeDSL.g:753:2: ( ( () otherlv_1= 'UnitOfMeasureToggle' ) )
+            // InternalRecipeDSL.g:754:2: ( () otherlv_1= 'UnitOfMeasureToggle' )
             {
-            // InternalRecipeDSL.g:845:2: ( () otherlv_1= 'UnitOfMeasure' )
-            // InternalRecipeDSL.g:846:3: () otherlv_1= 'UnitOfMeasure'
+            // InternalRecipeDSL.g:754:2: ( () otherlv_1= 'UnitOfMeasureToggle' )
+            // InternalRecipeDSL.g:755:3: () otherlv_1= 'UnitOfMeasureToggle'
             {
-            // InternalRecipeDSL.g:846:3: ()
-            // InternalRecipeDSL.g:847:4: 
+            // InternalRecipeDSL.g:755:3: ()
+            // InternalRecipeDSL.g:756:4: 
             {
 
             				current = forceCreateModelElement(
-            					grammarAccess.getUnitOfMeasureAccess().getUnitOfMeasureAction_0(),
+            					grammarAccess.getUnitOfMeasureAccess().getUnitOfMeasureToggleAction_0(),
             					current);
             			
 
             }
 
-            otherlv_1=(Token)match(input,31,FOLLOW_2); 
+            otherlv_1=(Token)match(input,20,FOLLOW_2); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getUnitOfMeasureAccess().getUnitOfMeasureKeyword_1());
+            			newLeafNode(otherlv_1, grammarAccess.getUnitOfMeasureAccess().getUnitOfMeasureToggleKeyword_1());
             		
 
             }
@@ -2206,7 +1968,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBasicInformation"
-    // InternalRecipeDSL.g:861:1: entryRuleBasicInformation returns [EObject current=null] : iv_ruleBasicInformation= ruleBasicInformation EOF ;
+    // InternalRecipeDSL.g:770:1: entryRuleBasicInformation returns [EObject current=null] : iv_ruleBasicInformation= ruleBasicInformation EOF ;
     public final EObject entryRuleBasicInformation() throws RecognitionException {
         EObject current = null;
 
@@ -2214,8 +1976,8 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRecipeDSL.g:861:57: (iv_ruleBasicInformation= ruleBasicInformation EOF )
-            // InternalRecipeDSL.g:862:2: iv_ruleBasicInformation= ruleBasicInformation EOF
+            // InternalRecipeDSL.g:770:57: (iv_ruleBasicInformation= ruleBasicInformation EOF )
+            // InternalRecipeDSL.g:771:2: iv_ruleBasicInformation= ruleBasicInformation EOF
             {
              newCompositeNode(grammarAccess.getBasicInformationRule()); 
             pushFollow(FOLLOW_1);
@@ -2242,7 +2004,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBasicInformation"
-    // InternalRecipeDSL.g:868:1: ruleBasicInformation returns [EObject current=null] : ( () otherlv_1= 'BasicInformation' ) ;
+    // InternalRecipeDSL.g:777:1: ruleBasicInformation returns [EObject current=null] : ( () otherlv_1= 'BasicInformation' ) ;
     public final EObject ruleBasicInformation() throws RecognitionException {
         EObject current = null;
 
@@ -2252,14 +2014,14 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRecipeDSL.g:874:2: ( ( () otherlv_1= 'BasicInformation' ) )
-            // InternalRecipeDSL.g:875:2: ( () otherlv_1= 'BasicInformation' )
+            // InternalRecipeDSL.g:783:2: ( ( () otherlv_1= 'BasicInformation' ) )
+            // InternalRecipeDSL.g:784:2: ( () otherlv_1= 'BasicInformation' )
             {
-            // InternalRecipeDSL.g:875:2: ( () otherlv_1= 'BasicInformation' )
-            // InternalRecipeDSL.g:876:3: () otherlv_1= 'BasicInformation'
+            // InternalRecipeDSL.g:784:2: ( () otherlv_1= 'BasicInformation' )
+            // InternalRecipeDSL.g:785:3: () otherlv_1= 'BasicInformation'
             {
-            // InternalRecipeDSL.g:876:3: ()
-            // InternalRecipeDSL.g:877:4: 
+            // InternalRecipeDSL.g:785:3: ()
+            // InternalRecipeDSL.g:786:4: 
             {
 
             				current = forceCreateModelElement(
@@ -2269,7 +2031,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,32,FOLLOW_2); 
+            otherlv_1=(Token)match(input,21,FOLLOW_2); 
 
             			newLeafNode(otherlv_1, grammarAccess.getBasicInformationAccess().getBasicInformationKeyword_1());
             		
@@ -2296,7 +2058,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTitle"
-    // InternalRecipeDSL.g:891:1: entryRuleTitle returns [EObject current=null] : iv_ruleTitle= ruleTitle EOF ;
+    // InternalRecipeDSL.g:800:1: entryRuleTitle returns [EObject current=null] : iv_ruleTitle= ruleTitle EOF ;
     public final EObject entryRuleTitle() throws RecognitionException {
         EObject current = null;
 
@@ -2304,8 +2066,8 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRecipeDSL.g:891:46: (iv_ruleTitle= ruleTitle EOF )
-            // InternalRecipeDSL.g:892:2: iv_ruleTitle= ruleTitle EOF
+            // InternalRecipeDSL.g:800:46: (iv_ruleTitle= ruleTitle EOF )
+            // InternalRecipeDSL.g:801:2: iv_ruleTitle= ruleTitle EOF
             {
              newCompositeNode(grammarAccess.getTitleRule()); 
             pushFollow(FOLLOW_1);
@@ -2332,7 +2094,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTitle"
-    // InternalRecipeDSL.g:898:1: ruleTitle returns [EObject current=null] : ( () otherlv_1= 'Title' ) ;
+    // InternalRecipeDSL.g:807:1: ruleTitle returns [EObject current=null] : ( () otherlv_1= 'Title' ) ;
     public final EObject ruleTitle() throws RecognitionException {
         EObject current = null;
 
@@ -2342,14 +2104,14 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRecipeDSL.g:904:2: ( ( () otherlv_1= 'Title' ) )
-            // InternalRecipeDSL.g:905:2: ( () otherlv_1= 'Title' )
+            // InternalRecipeDSL.g:813:2: ( ( () otherlv_1= 'Title' ) )
+            // InternalRecipeDSL.g:814:2: ( () otherlv_1= 'Title' )
             {
-            // InternalRecipeDSL.g:905:2: ( () otherlv_1= 'Title' )
-            // InternalRecipeDSL.g:906:3: () otherlv_1= 'Title'
+            // InternalRecipeDSL.g:814:2: ( () otherlv_1= 'Title' )
+            // InternalRecipeDSL.g:815:3: () otherlv_1= 'Title'
             {
-            // InternalRecipeDSL.g:906:3: ()
-            // InternalRecipeDSL.g:907:4: 
+            // InternalRecipeDSL.g:815:3: ()
+            // InternalRecipeDSL.g:816:4: 
             {
 
             				current = forceCreateModelElement(
@@ -2359,7 +2121,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,33,FOLLOW_2); 
+            otherlv_1=(Token)match(input,22,FOLLOW_2); 
 
             			newLeafNode(otherlv_1, grammarAccess.getTitleAccess().getTitleKeyword_1());
             		
@@ -2386,7 +2148,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleImage"
-    // InternalRecipeDSL.g:921:1: entryRuleImage returns [EObject current=null] : iv_ruleImage= ruleImage EOF ;
+    // InternalRecipeDSL.g:830:1: entryRuleImage returns [EObject current=null] : iv_ruleImage= ruleImage EOF ;
     public final EObject entryRuleImage() throws RecognitionException {
         EObject current = null;
 
@@ -2394,8 +2156,8 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRecipeDSL.g:921:46: (iv_ruleImage= ruleImage EOF )
-            // InternalRecipeDSL.g:922:2: iv_ruleImage= ruleImage EOF
+            // InternalRecipeDSL.g:830:46: (iv_ruleImage= ruleImage EOF )
+            // InternalRecipeDSL.g:831:2: iv_ruleImage= ruleImage EOF
             {
              newCompositeNode(grammarAccess.getImageRule()); 
             pushFollow(FOLLOW_1);
@@ -2422,7 +2184,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleImage"
-    // InternalRecipeDSL.g:928:1: ruleImage returns [EObject current=null] : ( () otherlv_1= 'Image' ) ;
+    // InternalRecipeDSL.g:837:1: ruleImage returns [EObject current=null] : ( () otherlv_1= 'Image' ) ;
     public final EObject ruleImage() throws RecognitionException {
         EObject current = null;
 
@@ -2432,14 +2194,14 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRecipeDSL.g:934:2: ( ( () otherlv_1= 'Image' ) )
-            // InternalRecipeDSL.g:935:2: ( () otherlv_1= 'Image' )
+            // InternalRecipeDSL.g:843:2: ( ( () otherlv_1= 'Image' ) )
+            // InternalRecipeDSL.g:844:2: ( () otherlv_1= 'Image' )
             {
-            // InternalRecipeDSL.g:935:2: ( () otherlv_1= 'Image' )
-            // InternalRecipeDSL.g:936:3: () otherlv_1= 'Image'
+            // InternalRecipeDSL.g:844:2: ( () otherlv_1= 'Image' )
+            // InternalRecipeDSL.g:845:3: () otherlv_1= 'Image'
             {
-            // InternalRecipeDSL.g:936:3: ()
-            // InternalRecipeDSL.g:937:4: 
+            // InternalRecipeDSL.g:845:3: ()
+            // InternalRecipeDSL.g:846:4: 
             {
 
             				current = forceCreateModelElement(
@@ -2449,7 +2211,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,34,FOLLOW_2); 
+            otherlv_1=(Token)match(input,23,FOLLOW_2); 
 
             			newLeafNode(otherlv_1, grammarAccess.getImageAccess().getImageKeyword_1());
             		
@@ -2476,7 +2238,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePercentageAmountToggle"
-    // InternalRecipeDSL.g:951:1: entryRulePercentageAmountToggle returns [EObject current=null] : iv_rulePercentageAmountToggle= rulePercentageAmountToggle EOF ;
+    // InternalRecipeDSL.g:860:1: entryRulePercentageAmountToggle returns [EObject current=null] : iv_rulePercentageAmountToggle= rulePercentageAmountToggle EOF ;
     public final EObject entryRulePercentageAmountToggle() throws RecognitionException {
         EObject current = null;
 
@@ -2484,8 +2246,8 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRecipeDSL.g:951:63: (iv_rulePercentageAmountToggle= rulePercentageAmountToggle EOF )
-            // InternalRecipeDSL.g:952:2: iv_rulePercentageAmountToggle= rulePercentageAmountToggle EOF
+            // InternalRecipeDSL.g:860:63: (iv_rulePercentageAmountToggle= rulePercentageAmountToggle EOF )
+            // InternalRecipeDSL.g:861:2: iv_rulePercentageAmountToggle= rulePercentageAmountToggle EOF
             {
              newCompositeNode(grammarAccess.getPercentageAmountToggleRule()); 
             pushFollow(FOLLOW_1);
@@ -2512,7 +2274,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePercentageAmountToggle"
-    // InternalRecipeDSL.g:958:1: rulePercentageAmountToggle returns [EObject current=null] : ( () otherlv_1= 'PercentageAmountToggle' ) ;
+    // InternalRecipeDSL.g:867:1: rulePercentageAmountToggle returns [EObject current=null] : ( () otherlv_1= 'PercentageAmountToggle' ) ;
     public final EObject rulePercentageAmountToggle() throws RecognitionException {
         EObject current = null;
 
@@ -2522,14 +2284,14 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRecipeDSL.g:964:2: ( ( () otherlv_1= 'PercentageAmountToggle' ) )
-            // InternalRecipeDSL.g:965:2: ( () otherlv_1= 'PercentageAmountToggle' )
+            // InternalRecipeDSL.g:873:2: ( ( () otherlv_1= 'PercentageAmountToggle' ) )
+            // InternalRecipeDSL.g:874:2: ( () otherlv_1= 'PercentageAmountToggle' )
             {
-            // InternalRecipeDSL.g:965:2: ( () otherlv_1= 'PercentageAmountToggle' )
-            // InternalRecipeDSL.g:966:3: () otherlv_1= 'PercentageAmountToggle'
+            // InternalRecipeDSL.g:874:2: ( () otherlv_1= 'PercentageAmountToggle' )
+            // InternalRecipeDSL.g:875:3: () otherlv_1= 'PercentageAmountToggle'
             {
-            // InternalRecipeDSL.g:966:3: ()
-            // InternalRecipeDSL.g:967:4: 
+            // InternalRecipeDSL.g:875:3: ()
+            // InternalRecipeDSL.g:876:4: 
             {
 
             				current = forceCreateModelElement(
@@ -2539,7 +2301,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,35,FOLLOW_2); 
+            otherlv_1=(Token)match(input,24,FOLLOW_2); 
 
             			newLeafNode(otherlv_1, grammarAccess.getPercentageAmountToggleAccess().getPercentageAmountToggleKeyword_1());
             		
@@ -2566,7 +2328,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleVitamins"
-    // InternalRecipeDSL.g:981:1: entryRuleVitamins returns [EObject current=null] : iv_ruleVitamins= ruleVitamins EOF ;
+    // InternalRecipeDSL.g:890:1: entryRuleVitamins returns [EObject current=null] : iv_ruleVitamins= ruleVitamins EOF ;
     public final EObject entryRuleVitamins() throws RecognitionException {
         EObject current = null;
 
@@ -2574,8 +2336,8 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRecipeDSL.g:981:49: (iv_ruleVitamins= ruleVitamins EOF )
-            // InternalRecipeDSL.g:982:2: iv_ruleVitamins= ruleVitamins EOF
+            // InternalRecipeDSL.g:890:49: (iv_ruleVitamins= ruleVitamins EOF )
+            // InternalRecipeDSL.g:891:2: iv_ruleVitamins= ruleVitamins EOF
             {
              newCompositeNode(grammarAccess.getVitaminsRule()); 
             pushFollow(FOLLOW_1);
@@ -2602,59 +2364,59 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVitamins"
-    // InternalRecipeDSL.g:988:1: ruleVitamins returns [EObject current=null] : (otherlv_0= 'Vitamins' otherlv_1= '{' otherlv_2= 'Vitamin' otherlv_3= '{' ( (lv_Vitamin_4_0= ruleVitamin ) ) (otherlv_5= ',' ( (lv_Vitamin_6_0= ruleVitamin ) ) )* otherlv_7= '}' otherlv_8= '}' ) ;
+    // InternalRecipeDSL.g:897:1: ruleVitamins returns [EObject current=null] : ( () otherlv_1= 'Vitamins' otherlv_2= '{' ( (lv_Vitamin_3_0= ruleVitamin ) ) (otherlv_4= ',' ( (lv_Vitamin_5_0= ruleVitamin ) ) )* otherlv_6= '}' ) ;
     public final EObject ruleVitamins() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_0=null;
         Token otherlv_1=null;
         Token otherlv_2=null;
-        Token otherlv_3=null;
-        Token otherlv_5=null;
-        Token otherlv_7=null;
-        Token otherlv_8=null;
-        Enumerator lv_Vitamin_4_0 = null;
+        Token otherlv_4=null;
+        Token otherlv_6=null;
+        Enumerator lv_Vitamin_3_0 = null;
 
-        Enumerator lv_Vitamin_6_0 = null;
+        Enumerator lv_Vitamin_5_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalRecipeDSL.g:994:2: ( (otherlv_0= 'Vitamins' otherlv_1= '{' otherlv_2= 'Vitamin' otherlv_3= '{' ( (lv_Vitamin_4_0= ruleVitamin ) ) (otherlv_5= ',' ( (lv_Vitamin_6_0= ruleVitamin ) ) )* otherlv_7= '}' otherlv_8= '}' ) )
-            // InternalRecipeDSL.g:995:2: (otherlv_0= 'Vitamins' otherlv_1= '{' otherlv_2= 'Vitamin' otherlv_3= '{' ( (lv_Vitamin_4_0= ruleVitamin ) ) (otherlv_5= ',' ( (lv_Vitamin_6_0= ruleVitamin ) ) )* otherlv_7= '}' otherlv_8= '}' )
+            // InternalRecipeDSL.g:903:2: ( ( () otherlv_1= 'Vitamins' otherlv_2= '{' ( (lv_Vitamin_3_0= ruleVitamin ) ) (otherlv_4= ',' ( (lv_Vitamin_5_0= ruleVitamin ) ) )* otherlv_6= '}' ) )
+            // InternalRecipeDSL.g:904:2: ( () otherlv_1= 'Vitamins' otherlv_2= '{' ( (lv_Vitamin_3_0= ruleVitamin ) ) (otherlv_4= ',' ( (lv_Vitamin_5_0= ruleVitamin ) ) )* otherlv_6= '}' )
             {
-            // InternalRecipeDSL.g:995:2: (otherlv_0= 'Vitamins' otherlv_1= '{' otherlv_2= 'Vitamin' otherlv_3= '{' ( (lv_Vitamin_4_0= ruleVitamin ) ) (otherlv_5= ',' ( (lv_Vitamin_6_0= ruleVitamin ) ) )* otherlv_7= '}' otherlv_8= '}' )
-            // InternalRecipeDSL.g:996:3: otherlv_0= 'Vitamins' otherlv_1= '{' otherlv_2= 'Vitamin' otherlv_3= '{' ( (lv_Vitamin_4_0= ruleVitamin ) ) (otherlv_5= ',' ( (lv_Vitamin_6_0= ruleVitamin ) ) )* otherlv_7= '}' otherlv_8= '}'
+            // InternalRecipeDSL.g:904:2: ( () otherlv_1= 'Vitamins' otherlv_2= '{' ( (lv_Vitamin_3_0= ruleVitamin ) ) (otherlv_4= ',' ( (lv_Vitamin_5_0= ruleVitamin ) ) )* otherlv_6= '}' )
+            // InternalRecipeDSL.g:905:3: () otherlv_1= 'Vitamins' otherlv_2= '{' ( (lv_Vitamin_3_0= ruleVitamin ) ) (otherlv_4= ',' ( (lv_Vitamin_5_0= ruleVitamin ) ) )* otherlv_6= '}'
             {
-            otherlv_0=(Token)match(input,36,FOLLOW_4); 
-
-            			newLeafNode(otherlv_0, grammarAccess.getVitaminsAccess().getVitaminsKeyword_0());
-            		
-            otherlv_1=(Token)match(input,12,FOLLOW_28); 
-
-            			newLeafNode(otherlv_1, grammarAccess.getVitaminsAccess().getLeftCurlyBracketKeyword_1());
-            		
-            otherlv_2=(Token)match(input,37,FOLLOW_4); 
-
-            			newLeafNode(otherlv_2, grammarAccess.getVitaminsAccess().getVitaminKeyword_2());
-            		
-            otherlv_3=(Token)match(input,12,FOLLOW_29); 
-
-            			newLeafNode(otherlv_3, grammarAccess.getVitaminsAccess().getLeftCurlyBracketKeyword_3());
-            		
-            // InternalRecipeDSL.g:1012:3: ( (lv_Vitamin_4_0= ruleVitamin ) )
-            // InternalRecipeDSL.g:1013:4: (lv_Vitamin_4_0= ruleVitamin )
-            {
-            // InternalRecipeDSL.g:1013:4: (lv_Vitamin_4_0= ruleVitamin )
-            // InternalRecipeDSL.g:1014:5: lv_Vitamin_4_0= ruleVitamin
+            // InternalRecipeDSL.g:905:3: ()
+            // InternalRecipeDSL.g:906:4: 
             {
 
-            					newCompositeNode(grammarAccess.getVitaminsAccess().getVitaminVitaminEnumRuleCall_4_0());
+            				current = forceCreateModelElement(
+            					grammarAccess.getVitaminsAccess().getVitaminsAction_0(),
+            					current);
+            			
+
+            }
+
+            otherlv_1=(Token)match(input,25,FOLLOW_3); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getVitaminsAccess().getVitaminsKeyword_1());
+            		
+            otherlv_2=(Token)match(input,12,FOLLOW_16); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getVitaminsAccess().getLeftCurlyBracketKeyword_2());
+            		
+            // InternalRecipeDSL.g:920:3: ( (lv_Vitamin_3_0= ruleVitamin ) )
+            // InternalRecipeDSL.g:921:4: (lv_Vitamin_3_0= ruleVitamin )
+            {
+            // InternalRecipeDSL.g:921:4: (lv_Vitamin_3_0= ruleVitamin )
+            // InternalRecipeDSL.g:922:5: lv_Vitamin_3_0= ruleVitamin
+            {
+
+            					newCompositeNode(grammarAccess.getVitaminsAccess().getVitaminVitaminEnumRuleCall_3_0());
             				
-            pushFollow(FOLLOW_30);
-            lv_Vitamin_4_0=ruleVitamin();
+            pushFollow(FOLLOW_17);
+            lv_Vitamin_3_0=ruleVitamin();
 
             state._fsp--;
 
@@ -2665,7 +2427,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
             					add(
             						current,
             						"Vitamin",
-            						lv_Vitamin_4_0,
+            						lv_Vitamin_3_0,
             						"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Vitamin");
             					afterParserOrEnumRuleCall();
             				
@@ -2675,36 +2437,36 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRecipeDSL.g:1031:3: (otherlv_5= ',' ( (lv_Vitamin_6_0= ruleVitamin ) ) )*
-            loop7:
+            // InternalRecipeDSL.g:939:3: (otherlv_4= ',' ( (lv_Vitamin_5_0= ruleVitamin ) ) )*
+            loop6:
             do {
-                int alt7=2;
-                int LA7_0 = input.LA(1);
+                int alt6=2;
+                int LA6_0 = input.LA(1);
 
-                if ( (LA7_0==38) ) {
-                    alt7=1;
+                if ( (LA6_0==26) ) {
+                    alt6=1;
                 }
 
 
-                switch (alt7) {
+                switch (alt6) {
             	case 1 :
-            	    // InternalRecipeDSL.g:1032:4: otherlv_5= ',' ( (lv_Vitamin_6_0= ruleVitamin ) )
+            	    // InternalRecipeDSL.g:940:4: otherlv_4= ',' ( (lv_Vitamin_5_0= ruleVitamin ) )
             	    {
-            	    otherlv_5=(Token)match(input,38,FOLLOW_29); 
+            	    otherlv_4=(Token)match(input,26,FOLLOW_16); 
 
-            	    				newLeafNode(otherlv_5, grammarAccess.getVitaminsAccess().getCommaKeyword_5_0());
+            	    				newLeafNode(otherlv_4, grammarAccess.getVitaminsAccess().getCommaKeyword_4_0());
             	    			
-            	    // InternalRecipeDSL.g:1036:4: ( (lv_Vitamin_6_0= ruleVitamin ) )
-            	    // InternalRecipeDSL.g:1037:5: (lv_Vitamin_6_0= ruleVitamin )
+            	    // InternalRecipeDSL.g:944:4: ( (lv_Vitamin_5_0= ruleVitamin ) )
+            	    // InternalRecipeDSL.g:945:5: (lv_Vitamin_5_0= ruleVitamin )
             	    {
-            	    // InternalRecipeDSL.g:1037:5: (lv_Vitamin_6_0= ruleVitamin )
-            	    // InternalRecipeDSL.g:1038:6: lv_Vitamin_6_0= ruleVitamin
+            	    // InternalRecipeDSL.g:945:5: (lv_Vitamin_5_0= ruleVitamin )
+            	    // InternalRecipeDSL.g:946:6: lv_Vitamin_5_0= ruleVitamin
             	    {
 
-            	    						newCompositeNode(grammarAccess.getVitaminsAccess().getVitaminVitaminEnumRuleCall_5_1_0());
+            	    						newCompositeNode(grammarAccess.getVitaminsAccess().getVitaminVitaminEnumRuleCall_4_1_0());
             	    					
-            	    pushFollow(FOLLOW_30);
-            	    lv_Vitamin_6_0=ruleVitamin();
+            	    pushFollow(FOLLOW_17);
+            	    lv_Vitamin_5_0=ruleVitamin();
 
             	    state._fsp--;
 
@@ -2715,7 +2477,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
             	    						add(
             	    							current,
             	    							"Vitamin",
-            	    							lv_Vitamin_6_0,
+            	    							lv_Vitamin_5_0,
             	    							"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Vitamin");
             	    						afterParserOrEnumRuleCall();
             	    					
@@ -2730,17 +2492,13 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop7;
+            	    break loop6;
                 }
             } while (true);
 
-            otherlv_7=(Token)match(input,17,FOLLOW_13); 
+            otherlv_6=(Token)match(input,13,FOLLOW_2); 
 
-            			newLeafNode(otherlv_7, grammarAccess.getVitaminsAccess().getRightCurlyBracketKeyword_6());
-            		
-            otherlv_8=(Token)match(input,17,FOLLOW_2); 
-
-            			newLeafNode(otherlv_8, grammarAccess.getVitaminsAccess().getRightCurlyBracketKeyword_7());
+            			newLeafNode(otherlv_6, grammarAccess.getVitaminsAccess().getRightCurlyBracketKeyword_5());
             		
 
             }
@@ -2765,7 +2523,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMacronutrients"
-    // InternalRecipeDSL.g:1068:1: entryRuleMacronutrients returns [EObject current=null] : iv_ruleMacronutrients= ruleMacronutrients EOF ;
+    // InternalRecipeDSL.g:972:1: entryRuleMacronutrients returns [EObject current=null] : iv_ruleMacronutrients= ruleMacronutrients EOF ;
     public final EObject entryRuleMacronutrients() throws RecognitionException {
         EObject current = null;
 
@@ -2773,8 +2531,8 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRecipeDSL.g:1068:55: (iv_ruleMacronutrients= ruleMacronutrients EOF )
-            // InternalRecipeDSL.g:1069:2: iv_ruleMacronutrients= ruleMacronutrients EOF
+            // InternalRecipeDSL.g:972:55: (iv_ruleMacronutrients= ruleMacronutrients EOF )
+            // InternalRecipeDSL.g:973:2: iv_ruleMacronutrients= ruleMacronutrients EOF
             {
              newCompositeNode(grammarAccess.getMacronutrientsRule()); 
             pushFollow(FOLLOW_1);
@@ -2801,7 +2559,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMacronutrients"
-    // InternalRecipeDSL.g:1075:1: ruleMacronutrients returns [EObject current=null] : ( () otherlv_1= 'Macronutrients' ) ;
+    // InternalRecipeDSL.g:979:1: ruleMacronutrients returns [EObject current=null] : ( () otherlv_1= 'Macronutrients' ) ;
     public final EObject ruleMacronutrients() throws RecognitionException {
         EObject current = null;
 
@@ -2811,14 +2569,14 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRecipeDSL.g:1081:2: ( ( () otherlv_1= 'Macronutrients' ) )
-            // InternalRecipeDSL.g:1082:2: ( () otherlv_1= 'Macronutrients' )
+            // InternalRecipeDSL.g:985:2: ( ( () otherlv_1= 'Macronutrients' ) )
+            // InternalRecipeDSL.g:986:2: ( () otherlv_1= 'Macronutrients' )
             {
-            // InternalRecipeDSL.g:1082:2: ( () otherlv_1= 'Macronutrients' )
-            // InternalRecipeDSL.g:1083:3: () otherlv_1= 'Macronutrients'
+            // InternalRecipeDSL.g:986:2: ( () otherlv_1= 'Macronutrients' )
+            // InternalRecipeDSL.g:987:3: () otherlv_1= 'Macronutrients'
             {
-            // InternalRecipeDSL.g:1083:3: ()
-            // InternalRecipeDSL.g:1084:4: 
+            // InternalRecipeDSL.g:987:3: ()
+            // InternalRecipeDSL.g:988:4: 
             {
 
             				current = forceCreateModelElement(
@@ -2828,7 +2586,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,39,FOLLOW_2); 
+            otherlv_1=(Token)match(input,27,FOLLOW_2); 
 
             			newLeafNode(otherlv_1, grammarAccess.getMacronutrientsAccess().getMacronutrientsKeyword_1());
             		
@@ -2855,7 +2613,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVitamin"
-    // InternalRecipeDSL.g:1098:1: ruleVitamin returns [Enumerator current=null] : ( (enumLiteral_0= 'VITAMIN_A' ) | (enumLiteral_1= 'VITAMIN_B1' ) | (enumLiteral_2= 'VITAMIN_B2' ) | (enumLiteral_3= 'VITAMIN_B3' ) | (enumLiteral_4= 'VITAMIN_B5' ) | (enumLiteral_5= 'VITAMIN_B6' ) | (enumLiteral_6= 'VITAMIN_B12' ) | (enumLiteral_7= 'VITAMIN_C' ) | (enumLiteral_8= 'VITAMIN_E' ) | (enumLiteral_9= 'VITAMIN_K' ) ) ;
+    // InternalRecipeDSL.g:1002:1: ruleVitamin returns [Enumerator current=null] : ( (enumLiteral_0= 'VITAMIN_A' ) | (enumLiteral_1= 'VITAMIN_B1' ) | (enumLiteral_2= 'VITAMIN_B2' ) | (enumLiteral_3= 'VITAMIN_B3' ) | (enumLiteral_4= 'VITAMIN_B5' ) | (enumLiteral_5= 'VITAMIN_B6' ) | (enumLiteral_6= 'VITAMIN_B12' ) | (enumLiteral_7= 'VITAMIN_C' ) | (enumLiteral_8= 'VITAMIN_E' ) | (enumLiteral_9= 'VITAMIN_K' ) ) ;
     public final Enumerator ruleVitamin() throws RecognitionException {
         Enumerator current = null;
 
@@ -2874,77 +2632,77 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRecipeDSL.g:1104:2: ( ( (enumLiteral_0= 'VITAMIN_A' ) | (enumLiteral_1= 'VITAMIN_B1' ) | (enumLiteral_2= 'VITAMIN_B2' ) | (enumLiteral_3= 'VITAMIN_B3' ) | (enumLiteral_4= 'VITAMIN_B5' ) | (enumLiteral_5= 'VITAMIN_B6' ) | (enumLiteral_6= 'VITAMIN_B12' ) | (enumLiteral_7= 'VITAMIN_C' ) | (enumLiteral_8= 'VITAMIN_E' ) | (enumLiteral_9= 'VITAMIN_K' ) ) )
-            // InternalRecipeDSL.g:1105:2: ( (enumLiteral_0= 'VITAMIN_A' ) | (enumLiteral_1= 'VITAMIN_B1' ) | (enumLiteral_2= 'VITAMIN_B2' ) | (enumLiteral_3= 'VITAMIN_B3' ) | (enumLiteral_4= 'VITAMIN_B5' ) | (enumLiteral_5= 'VITAMIN_B6' ) | (enumLiteral_6= 'VITAMIN_B12' ) | (enumLiteral_7= 'VITAMIN_C' ) | (enumLiteral_8= 'VITAMIN_E' ) | (enumLiteral_9= 'VITAMIN_K' ) )
+            // InternalRecipeDSL.g:1008:2: ( ( (enumLiteral_0= 'VITAMIN_A' ) | (enumLiteral_1= 'VITAMIN_B1' ) | (enumLiteral_2= 'VITAMIN_B2' ) | (enumLiteral_3= 'VITAMIN_B3' ) | (enumLiteral_4= 'VITAMIN_B5' ) | (enumLiteral_5= 'VITAMIN_B6' ) | (enumLiteral_6= 'VITAMIN_B12' ) | (enumLiteral_7= 'VITAMIN_C' ) | (enumLiteral_8= 'VITAMIN_E' ) | (enumLiteral_9= 'VITAMIN_K' ) ) )
+            // InternalRecipeDSL.g:1009:2: ( (enumLiteral_0= 'VITAMIN_A' ) | (enumLiteral_1= 'VITAMIN_B1' ) | (enumLiteral_2= 'VITAMIN_B2' ) | (enumLiteral_3= 'VITAMIN_B3' ) | (enumLiteral_4= 'VITAMIN_B5' ) | (enumLiteral_5= 'VITAMIN_B6' ) | (enumLiteral_6= 'VITAMIN_B12' ) | (enumLiteral_7= 'VITAMIN_C' ) | (enumLiteral_8= 'VITAMIN_E' ) | (enumLiteral_9= 'VITAMIN_K' ) )
             {
-            // InternalRecipeDSL.g:1105:2: ( (enumLiteral_0= 'VITAMIN_A' ) | (enumLiteral_1= 'VITAMIN_B1' ) | (enumLiteral_2= 'VITAMIN_B2' ) | (enumLiteral_3= 'VITAMIN_B3' ) | (enumLiteral_4= 'VITAMIN_B5' ) | (enumLiteral_5= 'VITAMIN_B6' ) | (enumLiteral_6= 'VITAMIN_B12' ) | (enumLiteral_7= 'VITAMIN_C' ) | (enumLiteral_8= 'VITAMIN_E' ) | (enumLiteral_9= 'VITAMIN_K' ) )
-            int alt8=10;
+            // InternalRecipeDSL.g:1009:2: ( (enumLiteral_0= 'VITAMIN_A' ) | (enumLiteral_1= 'VITAMIN_B1' ) | (enumLiteral_2= 'VITAMIN_B2' ) | (enumLiteral_3= 'VITAMIN_B3' ) | (enumLiteral_4= 'VITAMIN_B5' ) | (enumLiteral_5= 'VITAMIN_B6' ) | (enumLiteral_6= 'VITAMIN_B12' ) | (enumLiteral_7= 'VITAMIN_C' ) | (enumLiteral_8= 'VITAMIN_E' ) | (enumLiteral_9= 'VITAMIN_K' ) )
+            int alt7=10;
             switch ( input.LA(1) ) {
-            case 40:
+            case 28:
                 {
-                alt8=1;
+                alt7=1;
                 }
                 break;
-            case 41:
+            case 29:
                 {
-                alt8=2;
+                alt7=2;
                 }
                 break;
-            case 42:
+            case 30:
                 {
-                alt8=3;
+                alt7=3;
                 }
                 break;
-            case 43:
+            case 31:
                 {
-                alt8=4;
+                alt7=4;
                 }
                 break;
-            case 44:
+            case 32:
                 {
-                alt8=5;
+                alt7=5;
                 }
                 break;
-            case 45:
+            case 33:
                 {
-                alt8=6;
+                alt7=6;
                 }
                 break;
-            case 46:
+            case 34:
                 {
-                alt8=7;
+                alt7=7;
                 }
                 break;
-            case 47:
+            case 35:
                 {
-                alt8=8;
+                alt7=8;
                 }
                 break;
-            case 48:
+            case 36:
                 {
-                alt8=9;
+                alt7=9;
                 }
                 break;
-            case 49:
+            case 37:
                 {
-                alt8=10;
+                alt7=10;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 8, 0, input);
+                    new NoViableAltException("", 7, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt8) {
+            switch (alt7) {
                 case 1 :
-                    // InternalRecipeDSL.g:1106:3: (enumLiteral_0= 'VITAMIN_A' )
+                    // InternalRecipeDSL.g:1010:3: (enumLiteral_0= 'VITAMIN_A' )
                     {
-                    // InternalRecipeDSL.g:1106:3: (enumLiteral_0= 'VITAMIN_A' )
-                    // InternalRecipeDSL.g:1107:4: enumLiteral_0= 'VITAMIN_A'
+                    // InternalRecipeDSL.g:1010:3: (enumLiteral_0= 'VITAMIN_A' )
+                    // InternalRecipeDSL.g:1011:4: enumLiteral_0= 'VITAMIN_A'
                     {
-                    enumLiteral_0=(Token)match(input,40,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,28,FOLLOW_2); 
 
                     				current = grammarAccess.getVitaminAccess().getVITAMIN_AEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getVitaminAccess().getVITAMIN_AEnumLiteralDeclaration_0());
@@ -2956,12 +2714,12 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalRecipeDSL.g:1114:3: (enumLiteral_1= 'VITAMIN_B1' )
+                    // InternalRecipeDSL.g:1018:3: (enumLiteral_1= 'VITAMIN_B1' )
                     {
-                    // InternalRecipeDSL.g:1114:3: (enumLiteral_1= 'VITAMIN_B1' )
-                    // InternalRecipeDSL.g:1115:4: enumLiteral_1= 'VITAMIN_B1'
+                    // InternalRecipeDSL.g:1018:3: (enumLiteral_1= 'VITAMIN_B1' )
+                    // InternalRecipeDSL.g:1019:4: enumLiteral_1= 'VITAMIN_B1'
                     {
-                    enumLiteral_1=(Token)match(input,41,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,29,FOLLOW_2); 
 
                     				current = grammarAccess.getVitaminAccess().getVITAMIN_B1EnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getVitaminAccess().getVITAMIN_B1EnumLiteralDeclaration_1());
@@ -2973,12 +2731,12 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalRecipeDSL.g:1122:3: (enumLiteral_2= 'VITAMIN_B2' )
+                    // InternalRecipeDSL.g:1026:3: (enumLiteral_2= 'VITAMIN_B2' )
                     {
-                    // InternalRecipeDSL.g:1122:3: (enumLiteral_2= 'VITAMIN_B2' )
-                    // InternalRecipeDSL.g:1123:4: enumLiteral_2= 'VITAMIN_B2'
+                    // InternalRecipeDSL.g:1026:3: (enumLiteral_2= 'VITAMIN_B2' )
+                    // InternalRecipeDSL.g:1027:4: enumLiteral_2= 'VITAMIN_B2'
                     {
-                    enumLiteral_2=(Token)match(input,42,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,30,FOLLOW_2); 
 
                     				current = grammarAccess.getVitaminAccess().getVITAMIN_B2EnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getVitaminAccess().getVITAMIN_B2EnumLiteralDeclaration_2());
@@ -2990,12 +2748,12 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalRecipeDSL.g:1130:3: (enumLiteral_3= 'VITAMIN_B3' )
+                    // InternalRecipeDSL.g:1034:3: (enumLiteral_3= 'VITAMIN_B3' )
                     {
-                    // InternalRecipeDSL.g:1130:3: (enumLiteral_3= 'VITAMIN_B3' )
-                    // InternalRecipeDSL.g:1131:4: enumLiteral_3= 'VITAMIN_B3'
+                    // InternalRecipeDSL.g:1034:3: (enumLiteral_3= 'VITAMIN_B3' )
+                    // InternalRecipeDSL.g:1035:4: enumLiteral_3= 'VITAMIN_B3'
                     {
-                    enumLiteral_3=(Token)match(input,43,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,31,FOLLOW_2); 
 
                     				current = grammarAccess.getVitaminAccess().getVITAMIN_B3EnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getVitaminAccess().getVITAMIN_B3EnumLiteralDeclaration_3());
@@ -3007,12 +2765,12 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalRecipeDSL.g:1138:3: (enumLiteral_4= 'VITAMIN_B5' )
+                    // InternalRecipeDSL.g:1042:3: (enumLiteral_4= 'VITAMIN_B5' )
                     {
-                    // InternalRecipeDSL.g:1138:3: (enumLiteral_4= 'VITAMIN_B5' )
-                    // InternalRecipeDSL.g:1139:4: enumLiteral_4= 'VITAMIN_B5'
+                    // InternalRecipeDSL.g:1042:3: (enumLiteral_4= 'VITAMIN_B5' )
+                    // InternalRecipeDSL.g:1043:4: enumLiteral_4= 'VITAMIN_B5'
                     {
-                    enumLiteral_4=(Token)match(input,44,FOLLOW_2); 
+                    enumLiteral_4=(Token)match(input,32,FOLLOW_2); 
 
                     				current = grammarAccess.getVitaminAccess().getVITAMIN_B5EnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_4, grammarAccess.getVitaminAccess().getVITAMIN_B5EnumLiteralDeclaration_4());
@@ -3024,12 +2782,12 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalRecipeDSL.g:1146:3: (enumLiteral_5= 'VITAMIN_B6' )
+                    // InternalRecipeDSL.g:1050:3: (enumLiteral_5= 'VITAMIN_B6' )
                     {
-                    // InternalRecipeDSL.g:1146:3: (enumLiteral_5= 'VITAMIN_B6' )
-                    // InternalRecipeDSL.g:1147:4: enumLiteral_5= 'VITAMIN_B6'
+                    // InternalRecipeDSL.g:1050:3: (enumLiteral_5= 'VITAMIN_B6' )
+                    // InternalRecipeDSL.g:1051:4: enumLiteral_5= 'VITAMIN_B6'
                     {
-                    enumLiteral_5=(Token)match(input,45,FOLLOW_2); 
+                    enumLiteral_5=(Token)match(input,33,FOLLOW_2); 
 
                     				current = grammarAccess.getVitaminAccess().getVITAMIN_B6EnumLiteralDeclaration_5().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_5, grammarAccess.getVitaminAccess().getVITAMIN_B6EnumLiteralDeclaration_5());
@@ -3041,12 +2799,12 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalRecipeDSL.g:1154:3: (enumLiteral_6= 'VITAMIN_B12' )
+                    // InternalRecipeDSL.g:1058:3: (enumLiteral_6= 'VITAMIN_B12' )
                     {
-                    // InternalRecipeDSL.g:1154:3: (enumLiteral_6= 'VITAMIN_B12' )
-                    // InternalRecipeDSL.g:1155:4: enumLiteral_6= 'VITAMIN_B12'
+                    // InternalRecipeDSL.g:1058:3: (enumLiteral_6= 'VITAMIN_B12' )
+                    // InternalRecipeDSL.g:1059:4: enumLiteral_6= 'VITAMIN_B12'
                     {
-                    enumLiteral_6=(Token)match(input,46,FOLLOW_2); 
+                    enumLiteral_6=(Token)match(input,34,FOLLOW_2); 
 
                     				current = grammarAccess.getVitaminAccess().getVITAMIN_B12EnumLiteralDeclaration_6().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_6, grammarAccess.getVitaminAccess().getVITAMIN_B12EnumLiteralDeclaration_6());
@@ -3058,12 +2816,12 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalRecipeDSL.g:1162:3: (enumLiteral_7= 'VITAMIN_C' )
+                    // InternalRecipeDSL.g:1066:3: (enumLiteral_7= 'VITAMIN_C' )
                     {
-                    // InternalRecipeDSL.g:1162:3: (enumLiteral_7= 'VITAMIN_C' )
-                    // InternalRecipeDSL.g:1163:4: enumLiteral_7= 'VITAMIN_C'
+                    // InternalRecipeDSL.g:1066:3: (enumLiteral_7= 'VITAMIN_C' )
+                    // InternalRecipeDSL.g:1067:4: enumLiteral_7= 'VITAMIN_C'
                     {
-                    enumLiteral_7=(Token)match(input,47,FOLLOW_2); 
+                    enumLiteral_7=(Token)match(input,35,FOLLOW_2); 
 
                     				current = grammarAccess.getVitaminAccess().getVITAMIN_CEnumLiteralDeclaration_7().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_7, grammarAccess.getVitaminAccess().getVITAMIN_CEnumLiteralDeclaration_7());
@@ -3075,12 +2833,12 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // InternalRecipeDSL.g:1170:3: (enumLiteral_8= 'VITAMIN_E' )
+                    // InternalRecipeDSL.g:1074:3: (enumLiteral_8= 'VITAMIN_E' )
                     {
-                    // InternalRecipeDSL.g:1170:3: (enumLiteral_8= 'VITAMIN_E' )
-                    // InternalRecipeDSL.g:1171:4: enumLiteral_8= 'VITAMIN_E'
+                    // InternalRecipeDSL.g:1074:3: (enumLiteral_8= 'VITAMIN_E' )
+                    // InternalRecipeDSL.g:1075:4: enumLiteral_8= 'VITAMIN_E'
                     {
-                    enumLiteral_8=(Token)match(input,48,FOLLOW_2); 
+                    enumLiteral_8=(Token)match(input,36,FOLLOW_2); 
 
                     				current = grammarAccess.getVitaminAccess().getVITAMIN_EEnumLiteralDeclaration_8().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_8, grammarAccess.getVitaminAccess().getVITAMIN_EEnumLiteralDeclaration_8());
@@ -3092,12 +2850,12 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // InternalRecipeDSL.g:1178:3: (enumLiteral_9= 'VITAMIN_K' )
+                    // InternalRecipeDSL.g:1082:3: (enumLiteral_9= 'VITAMIN_K' )
                     {
-                    // InternalRecipeDSL.g:1178:3: (enumLiteral_9= 'VITAMIN_K' )
-                    // InternalRecipeDSL.g:1179:4: enumLiteral_9= 'VITAMIN_K'
+                    // InternalRecipeDSL.g:1082:3: (enumLiteral_9= 'VITAMIN_K' )
+                    // InternalRecipeDSL.g:1083:4: enumLiteral_9= 'VITAMIN_K'
                     {
-                    enumLiteral_9=(Token)match(input,49,FOLLOW_2); 
+                    enumLiteral_9=(Token)match(input,37,FOLLOW_2); 
 
                     				current = grammarAccess.getVitaminAccess().getVITAMIN_KEnumLiteralDeclaration_9().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_9, grammarAccess.getVitaminAccess().getVITAMIN_KEnumLiteralDeclaration_9());
@@ -3136,33 +2894,20 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x000000000001E000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x000000000003E000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000040000040L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000280000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x00000000002A0000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000003800000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000003820000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000038080000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x00000000380A0000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000008000000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0003FF0000000000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000004000020000L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000074000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000076000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000080010L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000108000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x000000000010A000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000E00000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000E02000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x000000000B008000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x000000000B00A000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000003FF0000000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000004002000L});
 
 }

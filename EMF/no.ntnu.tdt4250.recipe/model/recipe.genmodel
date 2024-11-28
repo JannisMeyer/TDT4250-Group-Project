@@ -26,7 +26,6 @@
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference recipe.ecore#//Page/instructions"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference recipe.ecore#//Page/ingredients"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference recipe.ecore#//Page/header"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute recipe.ecore#//Page/name"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference recipe.ecore#//Page/nutrients"/>
     </genClasses>
     <genClasses ecoreClass="recipe.ecore#//Macronutrients"/>
@@ -36,7 +35,7 @@
     <genClasses ecoreClass="recipe.ecore#//Instructions"/>
     <genClasses ecoreClass="recipe.ecore#//Image"/>
     <genClasses ecoreClass="recipe.ecore#//BasicInformation"/>
-    <genClasses ecoreClass="recipe.ecore#//UnitOfMeasure"/>
+    <genClasses ecoreClass="recipe.ecore#//UnitOfMeasureToggle"/>
     <genClasses ecoreClass="recipe.ecore#//Section">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute recipe.ecore#//Section/orderNumber"/>
     </genClasses>

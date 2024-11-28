@@ -1,0 +1,20 @@
+Page {
+	Header {
+		Title
+		BasicInformation
+		Image
+	}
+	Instructions {
+		orderNumber 1
+	}
+	Ingredients {
+		orderNumber 2
+		UnitOfMeasureToggle
+	}
+	Nutrients {
+		orderNumber 3
+		PercentageAmountToggle
+		Macronutrients
+		Vitamins {VITAMIN_A, VITAMIN_B1, VITAMIN_B3, VITAMIN_B5, VITAMIN_B6}
+	}
+}

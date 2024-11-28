@@ -30,340 +30,275 @@ public class RecipeDSLGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Page");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cPageKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final UnorderedGroup cUnorderedGroup_3 = (UnorderedGroup)cGroup.eContents().get(3);
-		private final Group cGroup_3_0 = (Group)cUnorderedGroup_3.eContents().get(0);
-		private final Keyword cInstructionsKeyword_3_0_0 = (Keyword)cGroup_3_0.eContents().get(0);
-		private final Assignment cInstructionsAssignment_3_0_1 = (Assignment)cGroup_3_0.eContents().get(1);
-		private final RuleCall cInstructionsInstructionsParserRuleCall_3_0_1_0 = (RuleCall)cInstructionsAssignment_3_0_1.eContents().get(0);
-		private final Group cGroup_3_1 = (Group)cUnorderedGroup_3.eContents().get(1);
-		private final Keyword cIngredientsKeyword_3_1_0 = (Keyword)cGroup_3_1.eContents().get(0);
-		private final Assignment cIngredientsAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
-		private final RuleCall cIngredientsIngredientsParserRuleCall_3_1_1_0 = (RuleCall)cIngredientsAssignment_3_1_1.eContents().get(0);
-		private final Group cGroup_3_2 = (Group)cUnorderedGroup_3.eContents().get(2);
-		private final Keyword cHeaderKeyword_3_2_0 = (Keyword)cGroup_3_2.eContents().get(0);
-		private final Assignment cHeaderAssignment_3_2_1 = (Assignment)cGroup_3_2.eContents().get(1);
-		private final RuleCall cHeaderHeaderParserRuleCall_3_2_1_0 = (RuleCall)cHeaderAssignment_3_2_1.eContents().get(0);
-		private final Group cGroup_3_3 = (Group)cUnorderedGroup_3.eContents().get(3);
-		private final Keyword cNutrientsKeyword_3_3_0 = (Keyword)cGroup_3_3.eContents().get(0);
-		private final Assignment cNutrientsAssignment_3_3_1 = (Assignment)cGroup_3_3.eContents().get(1);
-		private final RuleCall cNutrientsNutrientsParserRuleCall_3_3_1_0 = (RuleCall)cNutrientsAssignment_3_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final UnorderedGroup cUnorderedGroup_2 = (UnorderedGroup)cGroup.eContents().get(2);
+		private final Assignment cInstructionsAssignment_2_0 = (Assignment)cUnorderedGroup_2.eContents().get(0);
+		private final RuleCall cInstructionsInstructionsParserRuleCall_2_0_0 = (RuleCall)cInstructionsAssignment_2_0.eContents().get(0);
+		private final Assignment cIngredientsAssignment_2_1 = (Assignment)cUnorderedGroup_2.eContents().get(1);
+		private final RuleCall cIngredientsIngredientsParserRuleCall_2_1_0 = (RuleCall)cIngredientsAssignment_2_1.eContents().get(0);
+		private final Assignment cHeaderAssignment_2_2 = (Assignment)cUnorderedGroup_2.eContents().get(2);
+		private final RuleCall cHeaderHeaderParserRuleCall_2_2_0 = (RuleCall)cHeaderAssignment_2_2.eContents().get(0);
+		private final Assignment cNutrientsAssignment_2_3 = (Assignment)cUnorderedGroup_2.eContents().get(3);
+		private final RuleCall cNutrientsNutrientsParserRuleCall_2_3_0 = (RuleCall)cNutrientsAssignment_2_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//Page returns Page:
 		//    'Page'
-		//    name=EString
 		//    '{'
-		//        // Using & to create an unordered group
-		//        (
-		//            ('instructions' instructions=Instructions) &
-		//            ('ingredients' ingredients=Ingredients) &
-		//            ('header' header=Header) &
-		//            ('nutrients' nutrients=Nutrients)?
-		//        )
+		//    (
+		//        (instructions=Instructions) &
+		//        (ingredients=Ingredients) &
+		//        (header=Header) &
+		//        (nutrients=Nutrients)?
+		//    )
 		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Page'
-		//name=EString
 		//'{'
-		//    // Using & to create an unordered group
-		//    (
-		//        ('instructions' instructions=Instructions) &
-		//        ('ingredients' ingredients=Ingredients) &
-		//        ('header' header=Header) &
-		//        ('nutrients' nutrients=Nutrients)?
-		//    )
+		//(
+		//    (instructions=Instructions) &
+		//    (ingredients=Ingredients) &
+		//    (header=Header) &
+		//    (nutrients=Nutrients)?
+		//)
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//'Page'
 		public Keyword getPageKeyword_0() { return cPageKeyword_0; }
 		
-		//name=EString
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
-		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 		
-		//// Using & to create an unordered group
 		//(
-		//    ('instructions' instructions=Instructions) &
-		//    ('ingredients' ingredients=Ingredients) &
-		//    ('header' header=Header) &
-		//    ('nutrients' nutrients=Nutrients)?
+		//    (instructions=Instructions) &
+		//    (ingredients=Ingredients) &
+		//    (header=Header) &
+		//    (nutrients=Nutrients)?
 		//)
-		public UnorderedGroup getUnorderedGroup_3() { return cUnorderedGroup_3; }
+		public UnorderedGroup getUnorderedGroup_2() { return cUnorderedGroup_2; }
 		
-		//('instructions' instructions=Instructions)
-		public Group getGroup_3_0() { return cGroup_3_0; }
-		
-		//'instructions'
-		public Keyword getInstructionsKeyword_3_0_0() { return cInstructionsKeyword_3_0_0; }
-		
-		//instructions=Instructions
-		public Assignment getInstructionsAssignment_3_0_1() { return cInstructionsAssignment_3_0_1; }
+		//(instructions=Instructions)
+		public Assignment getInstructionsAssignment_2_0() { return cInstructionsAssignment_2_0; }
 		
 		//Instructions
-		public RuleCall getInstructionsInstructionsParserRuleCall_3_0_1_0() { return cInstructionsInstructionsParserRuleCall_3_0_1_0; }
+		public RuleCall getInstructionsInstructionsParserRuleCall_2_0_0() { return cInstructionsInstructionsParserRuleCall_2_0_0; }
 		
-		//('ingredients' ingredients=Ingredients)
-		public Group getGroup_3_1() { return cGroup_3_1; }
-		
-		//'ingredients'
-		public Keyword getIngredientsKeyword_3_1_0() { return cIngredientsKeyword_3_1_0; }
-		
-		//ingredients=Ingredients
-		public Assignment getIngredientsAssignment_3_1_1() { return cIngredientsAssignment_3_1_1; }
+		//(ingredients=Ingredients)
+		public Assignment getIngredientsAssignment_2_1() { return cIngredientsAssignment_2_1; }
 		
 		//Ingredients
-		public RuleCall getIngredientsIngredientsParserRuleCall_3_1_1_0() { return cIngredientsIngredientsParserRuleCall_3_1_1_0; }
+		public RuleCall getIngredientsIngredientsParserRuleCall_2_1_0() { return cIngredientsIngredientsParserRuleCall_2_1_0; }
 		
-		//('header' header=Header)
-		public Group getGroup_3_2() { return cGroup_3_2; }
-		
-		//'header'
-		public Keyword getHeaderKeyword_3_2_0() { return cHeaderKeyword_3_2_0; }
-		
-		//header=Header
-		public Assignment getHeaderAssignment_3_2_1() { return cHeaderAssignment_3_2_1; }
+		//(header=Header)
+		public Assignment getHeaderAssignment_2_2() { return cHeaderAssignment_2_2; }
 		
 		//Header
-		public RuleCall getHeaderHeaderParserRuleCall_3_2_1_0() { return cHeaderHeaderParserRuleCall_3_2_1_0; }
+		public RuleCall getHeaderHeaderParserRuleCall_2_2_0() { return cHeaderHeaderParserRuleCall_2_2_0; }
 		
-		//('nutrients' nutrients=Nutrients)?
-		public Group getGroup_3_3() { return cGroup_3_3; }
-		
-		//'nutrients'
-		public Keyword getNutrientsKeyword_3_3_0() { return cNutrientsKeyword_3_3_0; }
-		
-		//nutrients=Nutrients
-		public Assignment getNutrientsAssignment_3_3_1() { return cNutrientsAssignment_3_3_1; }
+		//(nutrients=Nutrients)?
+		public Assignment getNutrientsAssignment_2_3() { return cNutrientsAssignment_2_3; }
 		
 		//Nutrients
-		public RuleCall getNutrientsNutrientsParserRuleCall_3_3_1_0() { return cNutrientsNutrientsParserRuleCall_3_3_1_0; }
+		public RuleCall getNutrientsNutrientsParserRuleCall_2_3_0() { return cNutrientsNutrientsParserRuleCall_2_3_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
 	}
 	public class InstructionsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Instructions");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cInstructionsKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cOrderNumberKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cOrderNumberAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cOrderNumberEIntParserRuleCall_3_0 = (RuleCall)cOrderNumberAssignment_3.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Action cInstructionsAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cInstructionsKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cOrderNumberKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cOrderNumberAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cOrderNumberEIntParserRuleCall_4_0 = (RuleCall)cOrderNumberAssignment_4.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//Instructions returns Instructions:
+		//    {Instructions}
 		//    'Instructions'
 		//    '{'
-		//        'orderNumber' orderNumber=EInt
+		//    'orderNumber' orderNumber=EInt
 		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
+		//{Instructions}
 		//'Instructions'
 		//'{'
-		//    'orderNumber' orderNumber=EInt
+		//'orderNumber' orderNumber=EInt
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
+		//{Instructions}
+		public Action getInstructionsAction_0() { return cInstructionsAction_0; }
+		
 		//'Instructions'
-		public Keyword getInstructionsKeyword_0() { return cInstructionsKeyword_0; }
+		public Keyword getInstructionsKeyword_1() { return cInstructionsKeyword_1; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
 		//'orderNumber'
-		public Keyword getOrderNumberKeyword_2() { return cOrderNumberKeyword_2; }
+		public Keyword getOrderNumberKeyword_3() { return cOrderNumberKeyword_3; }
 		
 		//orderNumber=EInt
-		public Assignment getOrderNumberAssignment_3() { return cOrderNumberAssignment_3; }
+		public Assignment getOrderNumberAssignment_4() { return cOrderNumberAssignment_4; }
 		
 		//EInt
-		public RuleCall getOrderNumberEIntParserRuleCall_3_0() { return cOrderNumberEIntParserRuleCall_3_0; }
+		public RuleCall getOrderNumberEIntParserRuleCall_4_0() { return cOrderNumberEIntParserRuleCall_4_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 	public class IngredientsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Ingredients");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cIngredientsKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final UnorderedGroup cUnorderedGroup_2 = (UnorderedGroup)cGroup.eContents().get(2);
-		private final Group cGroup_2_0 = (Group)cUnorderedGroup_2.eContents().get(0);
-		private final Keyword cOrderNumberKeyword_2_0_0 = (Keyword)cGroup_2_0.eContents().get(0);
-		private final Assignment cOrderNumberAssignment_2_0_1 = (Assignment)cGroup_2_0.eContents().get(1);
-		private final RuleCall cOrderNumberEIntParserRuleCall_2_0_1_0 = (RuleCall)cOrderNumberAssignment_2_0_1.eContents().get(0);
-		private final Group cGroup_2_1 = (Group)cUnorderedGroup_2.eContents().get(1);
-		private final Keyword cUnittoggleKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
-		private final Assignment cUnittoggleAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
-		private final RuleCall cUnittoggleUnitOfMeasureParserRuleCall_2_1_1_0 = (RuleCall)cUnittoggleAssignment_2_1_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Action cIngredientsAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cIngredientsKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final UnorderedGroup cUnorderedGroup_3 = (UnorderedGroup)cGroup.eContents().get(3);
+		private final Group cGroup_3_0 = (Group)cUnorderedGroup_3.eContents().get(0);
+		private final Keyword cOrderNumberKeyword_3_0_0 = (Keyword)cGroup_3_0.eContents().get(0);
+		private final Assignment cOrderNumberAssignment_3_0_1 = (Assignment)cGroup_3_0.eContents().get(1);
+		private final RuleCall cOrderNumberEIntParserRuleCall_3_0_1_0 = (RuleCall)cOrderNumberAssignment_3_0_1.eContents().get(0);
+		private final Assignment cUnittoggleAssignment_3_1 = (Assignment)cUnorderedGroup_3.eContents().get(1);
+		private final RuleCall cUnittoggleUnitOfMeasureParserRuleCall_3_1_0 = (RuleCall)cUnittoggleAssignment_3_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//Ingredients returns Ingredients:
+		//    {Ingredients}
 		//    'Ingredients'
 		//    '{'
-		//        // Using & for unordered elements
-		//        (
-		//            ('orderNumber' orderNumber=EInt) &
-		//            ('unittoggle' unittoggle=UnitOfMeasure)?
-		//        )
+		//    (
+		//        ('orderNumber' orderNumber=EInt) &
+		//        (unittoggle=UnitOfMeasure)?
+		//    )
 		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
+		//{Ingredients}
 		//'Ingredients'
 		//'{'
-		//    // Using & for unordered elements
-		//    (
-		//        ('orderNumber' orderNumber=EInt) &
-		//        ('unittoggle' unittoggle=UnitOfMeasure)?
-		//    )
+		//(
+		//    ('orderNumber' orderNumber=EInt) &
+		//    (unittoggle=UnitOfMeasure)?
+		//)
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
+		//{Ingredients}
+		public Action getIngredientsAction_0() { return cIngredientsAction_0; }
+		
 		//'Ingredients'
-		public Keyword getIngredientsKeyword_0() { return cIngredientsKeyword_0; }
+		public Keyword getIngredientsKeyword_1() { return cIngredientsKeyword_1; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//// Using & for unordered elements
 		//(
 		//    ('orderNumber' orderNumber=EInt) &
-		//    ('unittoggle' unittoggle=UnitOfMeasure)?
+		//    (unittoggle=UnitOfMeasure)?
 		//)
-		public UnorderedGroup getUnorderedGroup_2() { return cUnorderedGroup_2; }
+		public UnorderedGroup getUnorderedGroup_3() { return cUnorderedGroup_3; }
 		
 		//('orderNumber' orderNumber=EInt)
-		public Group getGroup_2_0() { return cGroup_2_0; }
+		public Group getGroup_3_0() { return cGroup_3_0; }
 		
 		//'orderNumber'
-		public Keyword getOrderNumberKeyword_2_0_0() { return cOrderNumberKeyword_2_0_0; }
+		public Keyword getOrderNumberKeyword_3_0_0() { return cOrderNumberKeyword_3_0_0; }
 		
 		//orderNumber=EInt
-		public Assignment getOrderNumberAssignment_2_0_1() { return cOrderNumberAssignment_2_0_1; }
+		public Assignment getOrderNumberAssignment_3_0_1() { return cOrderNumberAssignment_3_0_1; }
 		
 		//EInt
-		public RuleCall getOrderNumberEIntParserRuleCall_2_0_1_0() { return cOrderNumberEIntParserRuleCall_2_0_1_0; }
+		public RuleCall getOrderNumberEIntParserRuleCall_3_0_1_0() { return cOrderNumberEIntParserRuleCall_3_0_1_0; }
 		
-		//('unittoggle' unittoggle=UnitOfMeasure)?
-		public Group getGroup_2_1() { return cGroup_2_1; }
-		
-		//'unittoggle'
-		public Keyword getUnittoggleKeyword_2_1_0() { return cUnittoggleKeyword_2_1_0; }
-		
-		//unittoggle=UnitOfMeasure
-		public Assignment getUnittoggleAssignment_2_1_1() { return cUnittoggleAssignment_2_1_1; }
+		//(unittoggle=UnitOfMeasure)?
+		public Assignment getUnittoggleAssignment_3_1() { return cUnittoggleAssignment_3_1; }
 		
 		//UnitOfMeasure
-		public RuleCall getUnittoggleUnitOfMeasureParserRuleCall_2_1_1_0() { return cUnittoggleUnitOfMeasureParserRuleCall_2_1_1_0; }
+		public RuleCall getUnittoggleUnitOfMeasureParserRuleCall_3_1_0() { return cUnittoggleUnitOfMeasureParserRuleCall_3_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 	public class HeaderElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Header");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cHeaderKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final UnorderedGroup cUnorderedGroup_2 = (UnorderedGroup)cGroup.eContents().get(2);
-		private final Group cGroup_2_0 = (Group)cUnorderedGroup_2.eContents().get(0);
-		private final Keyword cBasicinformationKeyword_2_0_0 = (Keyword)cGroup_2_0.eContents().get(0);
-		private final Assignment cBasicinformationAssignment_2_0_1 = (Assignment)cGroup_2_0.eContents().get(1);
-		private final RuleCall cBasicinformationBasicInformationParserRuleCall_2_0_1_0 = (RuleCall)cBasicinformationAssignment_2_0_1.eContents().get(0);
-		private final Group cGroup_2_1 = (Group)cUnorderedGroup_2.eContents().get(1);
-		private final Keyword cRecipetitleKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
-		private final Assignment cRecipetitleAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
-		private final RuleCall cRecipetitleTitleParserRuleCall_2_1_1_0 = (RuleCall)cRecipetitleAssignment_2_1_1.eContents().get(0);
-		private final Group cGroup_2_2 = (Group)cUnorderedGroup_2.eContents().get(2);
-		private final Keyword cImageKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
-		private final Assignment cImageAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cImageImageParserRuleCall_2_2_1_0 = (RuleCall)cImageAssignment_2_2_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Action cHeaderAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cHeaderKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final UnorderedGroup cUnorderedGroup_3 = (UnorderedGroup)cGroup.eContents().get(3);
+		private final Assignment cBasicinformationAssignment_3_0 = (Assignment)cUnorderedGroup_3.eContents().get(0);
+		private final RuleCall cBasicinformationBasicInformationParserRuleCall_3_0_0 = (RuleCall)cBasicinformationAssignment_3_0.eContents().get(0);
+		private final Assignment cRecipetitleAssignment_3_1 = (Assignment)cUnorderedGroup_3.eContents().get(1);
+		private final RuleCall cRecipetitleTitleParserRuleCall_3_1_0 = (RuleCall)cRecipetitleAssignment_3_1.eContents().get(0);
+		private final Assignment cImageAssignment_3_2 = (Assignment)cUnorderedGroup_3.eContents().get(2);
+		private final RuleCall cImageImageParserRuleCall_3_2_0 = (RuleCall)cImageAssignment_3_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//Header returns Header:
+		//    {Header}
 		//    'Header'
 		//    '{'
-		//        // Using & for unordered elements
-		//        (
-		//            ('basicinformation' basicinformation=BasicInformation) &
-		//            ('recipetitle' recipetitle=Title) &
-		//            ('image' image=Image)?
-		//        )
+		//    (
+		//        (basicinformation=BasicInformation) &
+		//        (recipetitle=Title) &
+		//        (image=Image)?
+		//    )
 		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
+		//{Header}
 		//'Header'
 		//'{'
-		//    // Using & for unordered elements
-		//    (
-		//        ('basicinformation' basicinformation=BasicInformation) &
-		//        ('recipetitle' recipetitle=Title) &
-		//        ('image' image=Image)?
-		//    )
+		//(
+		//    (basicinformation=BasicInformation) &
+		//    (recipetitle=Title) &
+		//    (image=Image)?
+		//)
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
+		//{Header}
+		public Action getHeaderAction_0() { return cHeaderAction_0; }
+		
 		//'Header'
-		public Keyword getHeaderKeyword_0() { return cHeaderKeyword_0; }
+		public Keyword getHeaderKeyword_1() { return cHeaderKeyword_1; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//// Using & for unordered elements
 		//(
-		//    ('basicinformation' basicinformation=BasicInformation) &
-		//    ('recipetitle' recipetitle=Title) &
-		//    ('image' image=Image)?
+		//    (basicinformation=BasicInformation) &
+		//    (recipetitle=Title) &
+		//    (image=Image)?
 		//)
-		public UnorderedGroup getUnorderedGroup_2() { return cUnorderedGroup_2; }
+		public UnorderedGroup getUnorderedGroup_3() { return cUnorderedGroup_3; }
 		
-		//('basicinformation' basicinformation=BasicInformation)
-		public Group getGroup_2_0() { return cGroup_2_0; }
-		
-		//'basicinformation'
-		public Keyword getBasicinformationKeyword_2_0_0() { return cBasicinformationKeyword_2_0_0; }
-		
-		//basicinformation=BasicInformation
-		public Assignment getBasicinformationAssignment_2_0_1() { return cBasicinformationAssignment_2_0_1; }
+		//(basicinformation=BasicInformation)
+		public Assignment getBasicinformationAssignment_3_0() { return cBasicinformationAssignment_3_0; }
 		
 		//BasicInformation
-		public RuleCall getBasicinformationBasicInformationParserRuleCall_2_0_1_0() { return cBasicinformationBasicInformationParserRuleCall_2_0_1_0; }
+		public RuleCall getBasicinformationBasicInformationParserRuleCall_3_0_0() { return cBasicinformationBasicInformationParserRuleCall_3_0_0; }
 		
-		//('recipetitle' recipetitle=Title)
-		public Group getGroup_2_1() { return cGroup_2_1; }
-		
-		//'recipetitle'
-		public Keyword getRecipetitleKeyword_2_1_0() { return cRecipetitleKeyword_2_1_0; }
-		
-		//recipetitle=Title
-		public Assignment getRecipetitleAssignment_2_1_1() { return cRecipetitleAssignment_2_1_1; }
+		//(recipetitle=Title)
+		public Assignment getRecipetitleAssignment_3_1() { return cRecipetitleAssignment_3_1; }
 		
 		//Title
-		public RuleCall getRecipetitleTitleParserRuleCall_2_1_1_0() { return cRecipetitleTitleParserRuleCall_2_1_1_0; }
+		public RuleCall getRecipetitleTitleParserRuleCall_3_1_0() { return cRecipetitleTitleParserRuleCall_3_1_0; }
 		
-		//('image' image=Image)?
-		public Group getGroup_2_2() { return cGroup_2_2; }
-		
-		//'image'
-		public Keyword getImageKeyword_2_2_0() { return cImageKeyword_2_2_0; }
-		
-		//image=Image
-		public Assignment getImageAssignment_2_2_1() { return cImageAssignment_2_2_1; }
+		//(image=Image)?
+		public Assignment getImageAssignment_3_2() { return cImageAssignment_3_2; }
 		
 		//Image
-		public RuleCall getImageImageParserRuleCall_2_2_1_0() { return cImageImageParserRuleCall_2_2_1_0; }
+		public RuleCall getImageImageParserRuleCall_3_2_0() { return cImageImageParserRuleCall_3_2_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 	public class EStringElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "no.ntnu.tdt4250.recipe.dsl.RecipeDSL.EString");
@@ -387,117 +322,96 @@ public class RecipeDSLGrammarAccess extends AbstractElementFinder.AbstractGramma
 	public class NutrientsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Nutrients");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cNutrientsKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final UnorderedGroup cUnorderedGroup_2 = (UnorderedGroup)cGroup.eContents().get(2);
-		private final Group cGroup_2_0 = (Group)cUnorderedGroup_2.eContents().get(0);
-		private final Keyword cOrderNumberKeyword_2_0_0 = (Keyword)cGroup_2_0.eContents().get(0);
-		private final Assignment cOrderNumberAssignment_2_0_1 = (Assignment)cGroup_2_0.eContents().get(1);
-		private final RuleCall cOrderNumberEIntParserRuleCall_2_0_1_0 = (RuleCall)cOrderNumberAssignment_2_0_1.eContents().get(0);
-		private final Group cGroup_2_1 = (Group)cUnorderedGroup_2.eContents().get(1);
-		private final Keyword cPercentagetoggleKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
-		private final Assignment cPercentagetoggleAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
-		private final RuleCall cPercentagetogglePercentageAmountToggleParserRuleCall_2_1_1_0 = (RuleCall)cPercentagetoggleAssignment_2_1_1.eContents().get(0);
-		private final Group cGroup_2_2 = (Group)cUnorderedGroup_2.eContents().get(2);
-		private final Keyword cVitaminsKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
-		private final Assignment cVitaminsAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cVitaminsVitaminsParserRuleCall_2_2_1_0 = (RuleCall)cVitaminsAssignment_2_2_1.eContents().get(0);
-		private final Group cGroup_2_3 = (Group)cUnorderedGroup_2.eContents().get(3);
-		private final Keyword cMacronutrientsKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
-		private final Assignment cMacronutrientsAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
-		private final RuleCall cMacronutrientsMacronutrientsParserRuleCall_2_3_1_0 = (RuleCall)cMacronutrientsAssignment_2_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Action cNutrientsAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cNutrientsKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final UnorderedGroup cUnorderedGroup_3 = (UnorderedGroup)cGroup.eContents().get(3);
+		private final Group cGroup_3_0 = (Group)cUnorderedGroup_3.eContents().get(0);
+		private final Keyword cOrderNumberKeyword_3_0_0 = (Keyword)cGroup_3_0.eContents().get(0);
+		private final Assignment cOrderNumberAssignment_3_0_1 = (Assignment)cGroup_3_0.eContents().get(1);
+		private final RuleCall cOrderNumberEIntParserRuleCall_3_0_1_0 = (RuleCall)cOrderNumberAssignment_3_0_1.eContents().get(0);
+		private final Assignment cPercentagetoggleAssignment_3_1 = (Assignment)cUnorderedGroup_3.eContents().get(1);
+		private final RuleCall cPercentagetogglePercentageAmountToggleParserRuleCall_3_1_0 = (RuleCall)cPercentagetoggleAssignment_3_1.eContents().get(0);
+		private final Assignment cVitaminsAssignment_3_2 = (Assignment)cUnorderedGroup_3.eContents().get(2);
+		private final RuleCall cVitaminsVitaminsParserRuleCall_3_2_0 = (RuleCall)cVitaminsAssignment_3_2.eContents().get(0);
+		private final Assignment cMacronutrientsAssignment_3_3 = (Assignment)cUnorderedGroup_3.eContents().get(3);
+		private final RuleCall cMacronutrientsMacronutrientsParserRuleCall_3_3_0 = (RuleCall)cMacronutrientsAssignment_3_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//Nutrients returns Nutrients:
+		//    {Nutrients}
 		//    'Nutrients'
 		//    '{'
-		//        // Using & for unordered elements
-		//        (
-		//            ('orderNumber' orderNumber=EInt) &
-		//            ('percentagetoggle' percentagetoggle=PercentageAmountToggle)? &
-		//            ('vitamins' vitamins=Vitamins)? &
-		//            ('macronutrients' macronutrients=Macronutrients)?
-		//        )
+		//    (
+		//        ('orderNumber' orderNumber=EInt) &
+		//        (percentagetoggle=PercentageAmountToggle)? &
+		//        (vitamins=Vitamins)? &
+		//        (macronutrients=Macronutrients)?
+		//    )
 		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
+		//{Nutrients}
 		//'Nutrients'
 		//'{'
-		//    // Using & for unordered elements
-		//    (
-		//        ('orderNumber' orderNumber=EInt) &
-		//        ('percentagetoggle' percentagetoggle=PercentageAmountToggle)? &
-		//        ('vitamins' vitamins=Vitamins)? &
-		//        ('macronutrients' macronutrients=Macronutrients)?
-		//    )
+		//(
+		//    ('orderNumber' orderNumber=EInt) &
+		//    (percentagetoggle=PercentageAmountToggle)? &
+		//    (vitamins=Vitamins)? &
+		//    (macronutrients=Macronutrients)?
+		//)
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
+		//{Nutrients}
+		public Action getNutrientsAction_0() { return cNutrientsAction_0; }
+		
 		//'Nutrients'
-		public Keyword getNutrientsKeyword_0() { return cNutrientsKeyword_0; }
+		public Keyword getNutrientsKeyword_1() { return cNutrientsKeyword_1; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//// Using & for unordered elements
 		//(
 		//    ('orderNumber' orderNumber=EInt) &
-		//    ('percentagetoggle' percentagetoggle=PercentageAmountToggle)? &
-		//    ('vitamins' vitamins=Vitamins)? &
-		//    ('macronutrients' macronutrients=Macronutrients)?
+		//    (percentagetoggle=PercentageAmountToggle)? &
+		//    (vitamins=Vitamins)? &
+		//    (macronutrients=Macronutrients)?
 		//)
-		public UnorderedGroup getUnorderedGroup_2() { return cUnorderedGroup_2; }
+		public UnorderedGroup getUnorderedGroup_3() { return cUnorderedGroup_3; }
 		
 		//('orderNumber' orderNumber=EInt)
-		public Group getGroup_2_0() { return cGroup_2_0; }
+		public Group getGroup_3_0() { return cGroup_3_0; }
 		
 		//'orderNumber'
-		public Keyword getOrderNumberKeyword_2_0_0() { return cOrderNumberKeyword_2_0_0; }
+		public Keyword getOrderNumberKeyword_3_0_0() { return cOrderNumberKeyword_3_0_0; }
 		
 		//orderNumber=EInt
-		public Assignment getOrderNumberAssignment_2_0_1() { return cOrderNumberAssignment_2_0_1; }
+		public Assignment getOrderNumberAssignment_3_0_1() { return cOrderNumberAssignment_3_0_1; }
 		
 		//EInt
-		public RuleCall getOrderNumberEIntParserRuleCall_2_0_1_0() { return cOrderNumberEIntParserRuleCall_2_0_1_0; }
+		public RuleCall getOrderNumberEIntParserRuleCall_3_0_1_0() { return cOrderNumberEIntParserRuleCall_3_0_1_0; }
 		
-		//('percentagetoggle' percentagetoggle=PercentageAmountToggle)?
-		public Group getGroup_2_1() { return cGroup_2_1; }
-		
-		//'percentagetoggle'
-		public Keyword getPercentagetoggleKeyword_2_1_0() { return cPercentagetoggleKeyword_2_1_0; }
-		
-		//percentagetoggle=PercentageAmountToggle
-		public Assignment getPercentagetoggleAssignment_2_1_1() { return cPercentagetoggleAssignment_2_1_1; }
+		//(percentagetoggle=PercentageAmountToggle)?
+		public Assignment getPercentagetoggleAssignment_3_1() { return cPercentagetoggleAssignment_3_1; }
 		
 		//PercentageAmountToggle
-		public RuleCall getPercentagetogglePercentageAmountToggleParserRuleCall_2_1_1_0() { return cPercentagetogglePercentageAmountToggleParserRuleCall_2_1_1_0; }
+		public RuleCall getPercentagetogglePercentageAmountToggleParserRuleCall_3_1_0() { return cPercentagetogglePercentageAmountToggleParserRuleCall_3_1_0; }
 		
-		//('vitamins' vitamins=Vitamins)?
-		public Group getGroup_2_2() { return cGroup_2_2; }
-		
-		//'vitamins'
-		public Keyword getVitaminsKeyword_2_2_0() { return cVitaminsKeyword_2_2_0; }
-		
-		//vitamins=Vitamins
-		public Assignment getVitaminsAssignment_2_2_1() { return cVitaminsAssignment_2_2_1; }
+		//(vitamins=Vitamins)?
+		public Assignment getVitaminsAssignment_3_2() { return cVitaminsAssignment_3_2; }
 		
 		//Vitamins
-		public RuleCall getVitaminsVitaminsParserRuleCall_2_2_1_0() { return cVitaminsVitaminsParserRuleCall_2_2_1_0; }
+		public RuleCall getVitaminsVitaminsParserRuleCall_3_2_0() { return cVitaminsVitaminsParserRuleCall_3_2_0; }
 		
-		//('macronutrients' macronutrients=Macronutrients)?
-		public Group getGroup_2_3() { return cGroup_2_3; }
-		
-		//'macronutrients'
-		public Keyword getMacronutrientsKeyword_2_3_0() { return cMacronutrientsKeyword_2_3_0; }
-		
-		//macronutrients=Macronutrients
-		public Assignment getMacronutrientsAssignment_2_3_1() { return cMacronutrientsAssignment_2_3_1; }
+		//(macronutrients=Macronutrients)?
+		public Assignment getMacronutrientsAssignment_3_3() { return cMacronutrientsAssignment_3_3; }
 		
 		//Macronutrients
-		public RuleCall getMacronutrientsMacronutrientsParserRuleCall_2_3_1_0() { return cMacronutrientsMacronutrientsParserRuleCall_2_3_1_0; }
+		public RuleCall getMacronutrientsMacronutrientsParserRuleCall_3_3_0() { return cMacronutrientsMacronutrientsParserRuleCall_3_3_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 	public class EIntElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "no.ntnu.tdt4250.recipe.dsl.RecipeDSL.EInt");
@@ -521,23 +435,23 @@ public class RecipeDSLGrammarAccess extends AbstractElementFinder.AbstractGramma
 	public class UnitOfMeasureElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "no.ntnu.tdt4250.recipe.dsl.RecipeDSL.UnitOfMeasure");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cUnitOfMeasureAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cUnitOfMeasureKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Action cUnitOfMeasureToggleAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cUnitOfMeasureToggleKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//UnitOfMeasure returns UnitOfMeasure:
-		//    {UnitOfMeasure}
-		//    'UnitOfMeasure';
+		//UnitOfMeasure returns UnitOfMeasureToggle:
+		//    {UnitOfMeasureToggle}
+		//    'UnitOfMeasureToggle';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{UnitOfMeasure}
-		//'UnitOfMeasure'
+		//{UnitOfMeasureToggle}
+		//'UnitOfMeasureToggle'
 		public Group getGroup() { return cGroup; }
 		
-		//{UnitOfMeasure}
-		public Action getUnitOfMeasureAction_0() { return cUnitOfMeasureAction_0; }
+		//{UnitOfMeasureToggle}
+		public Action getUnitOfMeasureToggleAction_0() { return cUnitOfMeasureToggleAction_0; }
 		
-		//'UnitOfMeasure'
-		public Keyword getUnitOfMeasureKeyword_1() { return cUnitOfMeasureKeyword_1; }
+		//'UnitOfMeasureToggle'
+		public Keyword getUnitOfMeasureToggleKeyword_1() { return cUnitOfMeasureToggleKeyword_1; }
 	}
 	public class BasicInformationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "no.ntnu.tdt4250.recipe.dsl.RecipeDSL.BasicInformation");
@@ -626,67 +540,57 @@ public class RecipeDSLGrammarAccess extends AbstractElementFinder.AbstractGramma
 	public class VitaminsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Vitamins");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cVitaminsKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cVitaminKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cVitaminAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cVitaminVitaminEnumRuleCall_4_0 = (RuleCall)cVitaminAssignment_4.eContents().get(0);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cCommaKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cVitaminAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cVitaminVitaminEnumRuleCall_5_1_0 = (RuleCall)cVitaminAssignment_5_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Action cVitaminsAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cVitaminsKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cVitaminAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cVitaminVitaminEnumRuleCall_3_0 = (RuleCall)cVitaminAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cCommaKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cVitaminAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cVitaminVitaminEnumRuleCall_4_1_0 = (RuleCall)cVitaminAssignment_4_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//Vitamins returns Vitamins:
+		//    {Vitamins}
 		//    'Vitamins'
-		//    '{'
-		//        'Vitamin' '{' Vitamin+=Vitamin ( "," Vitamin+=Vitamin)* '}'
-		//    '}';
+		//    '{' Vitamin+=Vitamin ( "," Vitamin+=Vitamin)* '}';
 		@Override public ParserRule getRule() { return rule; }
 		
+		//{Vitamins}
 		//'Vitamins'
-		//'{'
-		//    'Vitamin' '{' Vitamin+=Vitamin ( "," Vitamin+=Vitamin)* '}'
-		//'}'
+		//'{' Vitamin+=Vitamin ( "," Vitamin+=Vitamin)* '}'
 		public Group getGroup() { return cGroup; }
 		
+		//{Vitamins}
+		public Action getVitaminsAction_0() { return cVitaminsAction_0; }
+		
 		//'Vitamins'
-		public Keyword getVitaminsKeyword_0() { return cVitaminsKeyword_0; }
+		public Keyword getVitaminsKeyword_1() { return cVitaminsKeyword_1; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
-		
-		//'Vitamin'
-		public Keyword getVitaminKeyword_2() { return cVitaminKeyword_2; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
 		//Vitamin+=Vitamin
-		public Assignment getVitaminAssignment_4() { return cVitaminAssignment_4; }
+		public Assignment getVitaminAssignment_3() { return cVitaminAssignment_3; }
 		
 		//Vitamin
-		public RuleCall getVitaminVitaminEnumRuleCall_4_0() { return cVitaminVitaminEnumRuleCall_4_0; }
+		public RuleCall getVitaminVitaminEnumRuleCall_3_0() { return cVitaminVitaminEnumRuleCall_3_0; }
 		
 		//( "," Vitamin+=Vitamin)*
-		public Group getGroup_5() { return cGroup_5; }
+		public Group getGroup_4() { return cGroup_4; }
 		
 		//","
-		public Keyword getCommaKeyword_5_0() { return cCommaKeyword_5_0; }
+		public Keyword getCommaKeyword_4_0() { return cCommaKeyword_4_0; }
 		
 		//Vitamin+=Vitamin
-		public Assignment getVitaminAssignment_5_1() { return cVitaminAssignment_5_1; }
+		public Assignment getVitaminAssignment_4_1() { return cVitaminAssignment_4_1; }
 		
 		//Vitamin
-		public RuleCall getVitaminVitaminEnumRuleCall_5_1_0() { return cVitaminVitaminEnumRuleCall_5_1_0; }
+		public RuleCall getVitaminVitaminEnumRuleCall_4_1_0() { return cVitaminVitaminEnumRuleCall_4_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 	public class MacronutrientsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Macronutrients");
@@ -891,15 +795,13 @@ public class RecipeDSLGrammarAccess extends AbstractElementFinder.AbstractGramma
 	
 	//Page returns Page:
 	//    'Page'
-	//    name=EString
 	//    '{'
-	//        // Using & to create an unordered group
-	//        (
-	//            ('instructions' instructions=Instructions) &
-	//            ('ingredients' ingredients=Ingredients) &
-	//            ('header' header=Header) &
-	//            ('nutrients' nutrients=Nutrients)?
-	//        )
+	//    (
+	//        (instructions=Instructions) &
+	//        (ingredients=Ingredients) &
+	//        (header=Header) &
+	//        (nutrients=Nutrients)?
+	//    )
 	//    '}';
 	public PageElements getPageAccess() {
 		return pPage;
@@ -910,9 +812,10 @@ public class RecipeDSLGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//Instructions returns Instructions:
+	//    {Instructions}
 	//    'Instructions'
 	//    '{'
-	//        'orderNumber' orderNumber=EInt
+	//    'orderNumber' orderNumber=EInt
 	//    '}';
 	public InstructionsElements getInstructionsAccess() {
 		return pInstructions;
@@ -923,13 +826,13 @@ public class RecipeDSLGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//Ingredients returns Ingredients:
+	//    {Ingredients}
 	//    'Ingredients'
 	//    '{'
-	//        // Using & for unordered elements
-	//        (
-	//            ('orderNumber' orderNumber=EInt) &
-	//            ('unittoggle' unittoggle=UnitOfMeasure)?
-	//        )
+	//    (
+	//        ('orderNumber' orderNumber=EInt) &
+	//        (unittoggle=UnitOfMeasure)?
+	//    )
 	//    '}';
 	public IngredientsElements getIngredientsAccess() {
 		return pIngredients;
@@ -940,14 +843,14 @@ public class RecipeDSLGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//Header returns Header:
+	//    {Header}
 	//    'Header'
 	//    '{'
-	//        // Using & for unordered elements
-	//        (
-	//            ('basicinformation' basicinformation=BasicInformation) &
-	//            ('recipetitle' recipetitle=Title) &
-	//            ('image' image=Image)?
-	//        )
+	//    (
+	//        (basicinformation=BasicInformation) &
+	//        (recipetitle=Title) &
+	//        (image=Image)?
+	//    )
 	//    '}';
 	public HeaderElements getHeaderAccess() {
 		return pHeader;
@@ -968,15 +871,15 @@ public class RecipeDSLGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//Nutrients returns Nutrients:
+	//    {Nutrients}
 	//    'Nutrients'
 	//    '{'
-	//        // Using & for unordered elements
-	//        (
-	//            ('orderNumber' orderNumber=EInt) &
-	//            ('percentagetoggle' percentagetoggle=PercentageAmountToggle)? &
-	//            ('vitamins' vitamins=Vitamins)? &
-	//            ('macronutrients' macronutrients=Macronutrients)?
-	//        )
+	//    (
+	//        ('orderNumber' orderNumber=EInt) &
+	//        (percentagetoggle=PercentageAmountToggle)? &
+	//        (vitamins=Vitamins)? &
+	//        (macronutrients=Macronutrients)?
+	//    )
 	//    '}';
 	public NutrientsElements getNutrientsAccess() {
 		return pNutrients;
@@ -996,9 +899,9 @@ public class RecipeDSLGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return getEIntAccess().getRule();
 	}
 	
-	//UnitOfMeasure returns UnitOfMeasure:
-	//    {UnitOfMeasure}
-	//    'UnitOfMeasure';
+	//UnitOfMeasure returns UnitOfMeasureToggle:
+	//    {UnitOfMeasureToggle}
+	//    'UnitOfMeasureToggle';
 	public UnitOfMeasureElements getUnitOfMeasureAccess() {
 		return pUnitOfMeasure;
 	}
@@ -1052,10 +955,9 @@ public class RecipeDSLGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//Vitamins returns Vitamins:
+	//    {Vitamins}
 	//    'Vitamins'
-	//    '{'
-	//        'Vitamin' '{' Vitamin+=Vitamin ( "," Vitamin+=Vitamin)* '}'
-	//    '}';
+	//    '{' Vitamin+=Vitamin ( "," Vitamin+=Vitamin)* '}';
 	public VitaminsElements getVitaminsAccess() {
 		return pVitamins;
 	}

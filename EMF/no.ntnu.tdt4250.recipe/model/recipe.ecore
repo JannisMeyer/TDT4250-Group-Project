@@ -11,7 +11,6 @@
         eType="#//Ingredients" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="header" lowerBound="1"
         eType="#//Header" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="nutrients" eType="#//Nutrients"
         containment="true"/>
   </eClassifiers>
@@ -21,13 +20,13 @@
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Ingredients" eSuperTypes="#//Section">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="unittoggle" eType="#//UnitOfMeasure"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="unittoggle" eType="#//UnitOfMeasureToggle"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Instructions" eSuperTypes="#//Section"/>
   <eClassifiers xsi:type="ecore:EClass" name="Image"/>
   <eClassifiers xsi:type="ecore:EClass" name="BasicInformation"/>
-  <eClassifiers xsi:type="ecore:EClass" name="UnitOfMeasure" eSuperTypes="#//ToggleButton"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UnitOfMeasureToggle" eSuperTypes="#//ToggleButton"/>
   <eClassifiers xsi:type="ecore:EClass" name="Section" abstract="true" interface="true">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="ValidOrderNumberRange"/>

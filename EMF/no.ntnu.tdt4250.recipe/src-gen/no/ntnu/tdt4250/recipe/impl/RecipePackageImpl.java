@@ -16,7 +16,7 @@ import no.ntnu.tdt4250.recipe.RecipePackage;
 import no.ntnu.tdt4250.recipe.Section;
 import no.ntnu.tdt4250.recipe.Title;
 import no.ntnu.tdt4250.recipe.ToggleButton;
-import no.ntnu.tdt4250.recipe.UnitOfMeasure;
+import no.ntnu.tdt4250.recipe.UnitOfMeasureToggle;
 import no.ntnu.tdt4250.recipe.Vitamin;
 import no.ntnu.tdt4250.recipe.Vitamins;
 import no.ntnu.tdt4250.recipe.util.RecipeValidator;
@@ -83,7 +83,7 @@ public class RecipePackageImpl extends EPackageImpl implements RecipePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass unitOfMeasureEClass = null;
+	private EClass unitOfMeasureToggleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -259,18 +259,8 @@ public class RecipePackageImpl extends EPackageImpl implements RecipePackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getPage_Name() {
-		return (EAttribute) pageEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getPage_Nutrients() {
-		return (EReference) pageEClass.getEStructuralFeatures().get(4);
+		return (EReference) pageEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -339,8 +329,8 @@ public class RecipePackageImpl extends EPackageImpl implements RecipePackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getUnitOfMeasure() {
-		return unitOfMeasureEClass;
+	public EClass getUnitOfMeasureToggle() {
+		return unitOfMeasureToggleEClass;
 	}
 
 	/**
@@ -547,7 +537,6 @@ public class RecipePackageImpl extends EPackageImpl implements RecipePackage {
 		createEReference(pageEClass, PAGE__INSTRUCTIONS);
 		createEReference(pageEClass, PAGE__INGREDIENTS);
 		createEReference(pageEClass, PAGE__HEADER);
-		createEAttribute(pageEClass, PAGE__NAME);
 		createEReference(pageEClass, PAGE__NUTRIENTS);
 
 		macronutrientsEClass = createEClass(MACRONUTRIENTS);
@@ -561,7 +550,7 @@ public class RecipePackageImpl extends EPackageImpl implements RecipePackage {
 
 		basicInformationEClass = createEClass(BASIC_INFORMATION);
 
-		unitOfMeasureEClass = createEClass(UNIT_OF_MEASURE);
+		unitOfMeasureToggleEClass = createEClass(UNIT_OF_MEASURE_TOGGLE);
 
 		sectionEClass = createEClass(SECTION);
 		createEAttribute(sectionEClass, SECTION__ORDER_NUMBER);
@@ -621,7 +610,7 @@ public class RecipePackageImpl extends EPackageImpl implements RecipePackage {
 		// Add supertypes to classes
 		ingredientsEClass.getESuperTypes().add(this.getSection());
 		instructionsEClass.getESuperTypes().add(this.getSection());
-		unitOfMeasureEClass.getESuperTypes().add(this.getToggleButton());
+		unitOfMeasureToggleEClass.getESuperTypes().add(this.getToggleButton());
 		percentageAmountToggleEClass.getESuperTypes().add(this.getToggleButton());
 		nutrientsEClass.getESuperTypes().add(this.getSection());
 
@@ -636,8 +625,6 @@ public class RecipePackageImpl extends EPackageImpl implements RecipePackage {
 		initEReference(getPage_Header(), this.getHeader(), null, "header", null, 1, 1, Page.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEAttribute(getPage_Name(), ecorePackage.getEString(), "name", null, 1, 1, Page.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPage_Nutrients(), this.getNutrients(), null, "nutrients", null, 0, 1, Page.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -647,7 +634,7 @@ public class RecipePackageImpl extends EPackageImpl implements RecipePackage {
 
 		initEClass(ingredientsEClass, Ingredients.class, "Ingredients", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getIngredients_Unittoggle(), this.getUnitOfMeasure(), null, "unittoggle", null, 0, 1,
+		initEReference(getIngredients_Unittoggle(), this.getUnitOfMeasureToggle(), null, "unittoggle", null, 0, 1,
 				Ingredients.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -659,8 +646,8 @@ public class RecipePackageImpl extends EPackageImpl implements RecipePackage {
 		initEClass(basicInformationEClass, BasicInformation.class, "BasicInformation", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(unitOfMeasureEClass, UnitOfMeasure.class, "UnitOfMeasure", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
+		initEClass(unitOfMeasureToggleEClass, UnitOfMeasureToggle.class, "UnitOfMeasureToggle", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(sectionEClass, Section.class, "Section", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSection_OrderNumber(), ecorePackage.getEInt(), "orderNumber", null, 1, 1, Section.class,

@@ -76,13 +76,13 @@ public interface RecipeFactory extends EFactory {
 	BasicInformation createBasicInformation();
 
 	/**
-	 * Returns a new object of class '<em>Unit Of Measure</em>'.
+	 * Returns a new object of class '<em>Unit Of Measure Toggle</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Unit Of Measure</em>'.
+	 * @return a new object of class '<em>Unit Of Measure Toggle</em>'.
 	 * @generated
 	 */
-	UnitOfMeasure createUnitOfMeasure();
+	UnitOfMeasureToggle createUnitOfMeasureToggle();
 
 	/**
 	 * Returns a new object of class '<em>Percentage Amount Toggle</em>'.

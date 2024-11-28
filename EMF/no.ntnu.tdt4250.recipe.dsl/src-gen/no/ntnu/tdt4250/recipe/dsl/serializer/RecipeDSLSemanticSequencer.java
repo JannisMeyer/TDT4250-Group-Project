@@ -16,7 +16,7 @@ import no.ntnu.tdt4250.recipe.Page;
 import no.ntnu.tdt4250.recipe.PercentageAmountToggle;
 import no.ntnu.tdt4250.recipe.RecipePackage;
 import no.ntnu.tdt4250.recipe.Title;
-import no.ntnu.tdt4250.recipe.UnitOfMeasure;
+import no.ntnu.tdt4250.recipe.UnitOfMeasureToggle;
 import no.ntnu.tdt4250.recipe.Vitamins;
 import no.ntnu.tdt4250.recipe.dsl.services.RecipeDSLGrammarAccess;
 import org.eclipse.emf.ecore.EObject;
@@ -73,8 +73,8 @@ public class RecipeDSLSemanticSequencer extends AbstractDelegatingSemanticSequen
 			case RecipePackage.TITLE:
 				sequence_Title(context, (Title) semanticObject); 
 				return; 
-			case RecipePackage.UNIT_OF_MEASURE:
-				sequence_UnitOfMeasure(context, (UnitOfMeasure) semanticObject); 
+			case RecipePackage.UNIT_OF_MEASURE_TOGGLE:
+				sequence_UnitOfMeasure(context, (UnitOfMeasureToggle) semanticObject); 
 				return; 
 			case RecipePackage.VITAMINS:
 				sequence_Vitamins(context, (Vitamins) semanticObject); 
@@ -104,7 +104,7 @@ public class RecipeDSLSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Header returns Header
 	 *
 	 * Constraint:
-	 *     (basicinformation=BasicInformation | recipetitle=Title | image=Image)+
+	 *     (basicinformation=BasicInformation | recipetitle=Title | image=Image)*
 	 * </pre>
 	 */
 	protected void sequence_Header(ISerializationContext context, Header semanticObject) {
@@ -132,7 +132,7 @@ public class RecipeDSLSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Ingredients returns Ingredients
 	 *
 	 * Constraint:
-	 *     (orderNumber=EInt | unittoggle=UnitOfMeasure)+
+	 *     (orderNumber=EInt | unittoggle=UnitOfMeasure)*
 	 * </pre>
 	 */
 	protected void sequence_Ingredients(ISerializationContext context, Ingredients semanticObject) {
@@ -155,7 +155,7 @@ public class RecipeDSLSemanticSequencer extends AbstractDelegatingSemanticSequen
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RecipePackage.Literals.SECTION__ORDER_NUMBER));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getInstructionsAccess().getOrderNumberEIntParserRuleCall_3_0(), semanticObject.getOrderNumber());
+		feeder.accept(grammarAccess.getInstructionsAccess().getOrderNumberEIntParserRuleCall_4_0(), semanticObject.getOrderNumber());
 		feeder.finish();
 	}
 	
@@ -180,7 +180,7 @@ public class RecipeDSLSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Nutrients returns Nutrients
 	 *
 	 * Constraint:
-	 *     (orderNumber=EInt | percentagetoggle=PercentageAmountToggle | vitamins=Vitamins | macronutrients=Macronutrients)+
+	 *     (orderNumber=EInt | percentagetoggle=PercentageAmountToggle | vitamins=Vitamins | macronutrients=Macronutrients)*
 	 * </pre>
 	 */
 	protected void sequence_Nutrients(ISerializationContext context, Nutrients semanticObject) {
@@ -194,7 +194,7 @@ public class RecipeDSLSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Page returns Page
 	 *
 	 * Constraint:
-	 *     (name=EString (instructions=Instructions | ingredients=Ingredients | header=Header | nutrients=Nutrients)*)
+	 *     (instructions=Instructions | ingredients=Ingredients | header=Header | nutrients=Nutrients)+
 	 * </pre>
 	 */
 	protected void sequence_Page(ISerializationContext context, Page semanticObject) {
@@ -233,13 +233,13 @@ public class RecipeDSLSemanticSequencer extends AbstractDelegatingSemanticSequen
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     UnitOfMeasure returns UnitOfMeasure
+	 *     UnitOfMeasure returns UnitOfMeasureToggle
 	 *
 	 * Constraint:
-	 *     {UnitOfMeasure}
+	 *     {UnitOfMeasureToggle}
 	 * </pre>
 	 */
-	protected void sequence_UnitOfMeasure(ISerializationContext context, UnitOfMeasure semanticObject) {
+	protected void sequence_UnitOfMeasure(ISerializationContext context, UnitOfMeasureToggle semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

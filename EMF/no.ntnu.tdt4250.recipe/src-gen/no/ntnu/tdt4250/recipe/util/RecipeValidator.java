@@ -100,8 +100,8 @@ public class RecipeValidator extends EObjectValidator {
 			return validateImage((Image) value, diagnostics, context);
 		case RecipePackage.BASIC_INFORMATION:
 			return validateBasicInformation((BasicInformation) value, diagnostics, context);
-		case RecipePackage.UNIT_OF_MEASURE:
-			return validateUnitOfMeasure((UnitOfMeasure) value, diagnostics, context);
+		case RecipePackage.UNIT_OF_MEASURE_TOGGLE:
+			return validateUnitOfMeasureToggle((UnitOfMeasureToggle) value, diagnostics, context);
 		case RecipePackage.SECTION:
 			return validateSection((Section) value, diagnostics, context);
 		case RecipePackage.TOGGLE_BUTTON:
@@ -351,9 +351,9 @@ public class RecipeValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateUnitOfMeasure(UnitOfMeasure unitOfMeasure, DiagnosticChain diagnostics,
+	public boolean validateUnitOfMeasureToggle(UnitOfMeasureToggle unitOfMeasureToggle, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(unitOfMeasure, diagnostics, context);
+		return validate_EveryDefaultConstraint(unitOfMeasureToggle, diagnostics, context);
 	}
 
 	/**

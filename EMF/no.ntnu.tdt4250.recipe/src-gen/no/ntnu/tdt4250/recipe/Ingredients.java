@@ -24,12 +24,12 @@ public interface Ingredients extends Section {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Unittoggle</em>' containment reference.
-	 * @see #setUnittoggle(UnitOfMeasure)
+	 * @see #setUnittoggle(UnitOfMeasureToggle)
 	 * @see no.ntnu.tdt4250.recipe.RecipePackage#getIngredients_Unittoggle()
 	 * @model containment="true"
 	 * @generated
 	 */
-	UnitOfMeasure getUnittoggle();
+	UnitOfMeasureToggle getUnittoggle();
 
 	/**
 	 * Sets the value of the '{@link no.ntnu.tdt4250.recipe.Ingredients#getUnittoggle <em>Unittoggle</em>}' containment reference.
@@ -39,6 +39,6 @@ public interface Ingredients extends Section {
 	 * @see #getUnittoggle()
 	 * @generated
 	 */
-	void setUnittoggle(UnitOfMeasure value);
+	void setUnittoggle(UnitOfMeasureToggle value);
 
 } // Ingredients

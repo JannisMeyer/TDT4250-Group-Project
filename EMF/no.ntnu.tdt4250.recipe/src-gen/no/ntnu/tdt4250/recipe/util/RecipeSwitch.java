@@ -112,11 +112,11 @@ public class RecipeSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case RecipePackage.UNIT_OF_MEASURE: {
-			UnitOfMeasure unitOfMeasure = (UnitOfMeasure) theEObject;
-			T result = caseUnitOfMeasure(unitOfMeasure);
+		case RecipePackage.UNIT_OF_MEASURE_TOGGLE: {
+			UnitOfMeasureToggle unitOfMeasureToggle = (UnitOfMeasureToggle) theEObject;
+			T result = caseUnitOfMeasureToggle(unitOfMeasureToggle);
 			if (result == null)
-				result = caseToggleButton(unitOfMeasure);
+				result = caseToggleButton(unitOfMeasureToggle);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -270,17 +270,17 @@ public class RecipeSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Unit Of Measure</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Unit Of Measure Toggle</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Unit Of Measure</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Unit Of Measure Toggle</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseUnitOfMeasure(UnitOfMeasure object) {
+	public T caseUnitOfMeasureToggle(UnitOfMeasureToggle object) {
 		return null;
 	}
 

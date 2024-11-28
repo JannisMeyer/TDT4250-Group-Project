@@ -27,7 +27,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link no.ntnu.tdt4250.recipe.impl.PageImpl#getInstructions <em>Instructions</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.recipe.impl.PageImpl#getIngredients <em>Ingredients</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.recipe.impl.PageImpl#getHeader <em>Header</em>}</li>
- *   <li>{@link no.ntnu.tdt4250.recipe.impl.PageImpl#getName <em>Name</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.recipe.impl.PageImpl#getNutrients <em>Nutrients</em>}</li>
  * </ul>
  *
@@ -63,26 +62,6 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	 * @ordered
 	 */
 	protected Header header;
-
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getNutrients() <em>Nutrients</em>}' containment reference.
@@ -274,29 +253,6 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	 * @generated
 	 */
 	@Override
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RecipePackage.PAGE__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Nutrients getNutrients() {
 		return nutrients;
 	}
@@ -377,8 +333,6 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 			return getIngredients();
 		case RecipePackage.PAGE__HEADER:
 			return getHeader();
-		case RecipePackage.PAGE__NAME:
-			return getName();
 		case RecipePackage.PAGE__NUTRIENTS:
 			return getNutrients();
 		}
@@ -402,9 +356,6 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 			return;
 		case RecipePackage.PAGE__HEADER:
 			setHeader((Header) newValue);
-			return;
-		case RecipePackage.PAGE__NAME:
-			setName((String) newValue);
 			return;
 		case RecipePackage.PAGE__NUTRIENTS:
 			setNutrients((Nutrients) newValue);
@@ -430,9 +381,6 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 		case RecipePackage.PAGE__HEADER:
 			setHeader((Header) null);
 			return;
-		case RecipePackage.PAGE__NAME:
-			setName(NAME_EDEFAULT);
-			return;
 		case RecipePackage.PAGE__NUTRIENTS:
 			setNutrients((Nutrients) null);
 			return;
@@ -454,29 +402,10 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 			return ingredients != null;
 		case RecipePackage.PAGE__HEADER:
 			return header != null;
-		case RecipePackage.PAGE__NAME:
-			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case RecipePackage.PAGE__NUTRIENTS:
 			return nutrients != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy())
-			return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(')');
-		return result.toString();
 	}
 
 } //PageImpl

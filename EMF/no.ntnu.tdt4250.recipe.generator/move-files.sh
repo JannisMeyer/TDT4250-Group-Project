@@ -36,7 +36,7 @@ fi
 # API file
 if [ -f "$GENERATED_DIR/API_GET_Data_Generated.kt" ]; then
     cp "$GENERATED_DIR/API_GET_Data_Generated.kt" \
-       "$ANDROID_PROJECT/app/src/main/java/com/example/recipeexplorer/fragments/"
+       "$ANDROID_PROJECT/app/src/main/java/com/example/recipeexplorer/querying/"
     echo "Moved API_GET_Data_Generated.kt"
 else
     echo "Warning: API_GET_Data_Generated.kt not found"

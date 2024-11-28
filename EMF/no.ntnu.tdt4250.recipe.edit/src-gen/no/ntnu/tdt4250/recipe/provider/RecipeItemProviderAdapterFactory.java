@@ -211,26 +211,26 @@ public class RecipeItemProviderAdapterFactory extends RecipeAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link no.ntnu.tdt4250.recipe.UnitOfMeasure} instances.
+	 * This keeps track of the one adapter used for all {@link no.ntnu.tdt4250.recipe.UnitOfMeasureToggle} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected UnitOfMeasureItemProvider unitOfMeasureItemProvider;
+	protected UnitOfMeasureToggleItemProvider unitOfMeasureToggleItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link no.ntnu.tdt4250.recipe.UnitOfMeasure}.
+	 * This creates an adapter for a {@link no.ntnu.tdt4250.recipe.UnitOfMeasureToggle}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createUnitOfMeasureAdapter() {
-		if (unitOfMeasureItemProvider == null) {
-			unitOfMeasureItemProvider = new UnitOfMeasureItemProvider(this);
+	public Adapter createUnitOfMeasureToggleAdapter() {
+		if (unitOfMeasureToggleItemProvider == null) {
+			unitOfMeasureToggleItemProvider = new UnitOfMeasureToggleItemProvider(this);
 		}
 
-		return unitOfMeasureItemProvider;
+		return unitOfMeasureToggleItemProvider;
 	}
 
 	/**
@@ -465,8 +465,8 @@ public class RecipeItemProviderAdapterFactory extends RecipeAdapterFactory
 			imageItemProvider.dispose();
 		if (basicInformationItemProvider != null)
 			basicInformationItemProvider.dispose();
-		if (unitOfMeasureItemProvider != null)
-			unitOfMeasureItemProvider.dispose();
+		if (unitOfMeasureToggleItemProvider != null)
+			unitOfMeasureToggleItemProvider.dispose();
 		if (percentageAmountToggleItemProvider != null)
 			percentageAmountToggleItemProvider.dispose();
 		if (vitaminsItemProvider != null)

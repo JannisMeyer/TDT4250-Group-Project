@@ -10,7 +10,7 @@ import no.ntnu.tdt4250.recipe.Ingredients;
 import no.ntnu.tdt4250.recipe.Instructions;
 import no.ntnu.tdt4250.recipe.Nutrients;
 import no.ntnu.tdt4250.recipe.Page;
-import no.ntnu.tdt4250.recipe.UnitOfMeasure;
+import no.ntnu.tdt4250.recipe.UnitOfMeasureToggle;
 import no.ntnu.tdt4250.recipe.dsl.services.RecipeDSLGrammarAccess;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.formatting2.AbstractFormatter2;
@@ -33,7 +33,7 @@ public class RecipeDSLFormatter extends AbstractFormatter2 {
   }
 
   protected void _format(final Ingredients ingredients, @Extension final IFormattableDocument document) {
-    document.<UnitOfMeasure>format(ingredients.getUnittoggle());
+    document.<UnitOfMeasureToggle>format(ingredients.getUnittoggle());
   }
 
   @XbaseGenerated

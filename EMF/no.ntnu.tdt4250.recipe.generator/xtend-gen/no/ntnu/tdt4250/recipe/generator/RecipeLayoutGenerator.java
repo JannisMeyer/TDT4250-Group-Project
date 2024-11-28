@@ -13,7 +13,7 @@ import no.ntnu.tdt4250.recipe.Nutrients;
 import no.ntnu.tdt4250.recipe.Page;
 import no.ntnu.tdt4250.recipe.PercentageAmountToggle;
 import no.ntnu.tdt4250.recipe.Section;
-import no.ntnu.tdt4250.recipe.UnitOfMeasure;
+import no.ntnu.tdt4250.recipe.UnitOfMeasureToggle;
 import no.ntnu.tdt4250.recipe.Vitamins;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
@@ -503,7 +503,7 @@ public class RecipeLayoutGenerator {
     _builder.append("        ");
     _builder.newLine();
     {
-      UnitOfMeasure _unittoggle = ingredients.getUnittoggle();
+      UnitOfMeasureToggle _unittoggle = ingredients.getUnittoggle();
       boolean _tripleNotEquals = (_unittoggle != null);
       if (_tripleNotEquals) {
         _builder.append("        ");

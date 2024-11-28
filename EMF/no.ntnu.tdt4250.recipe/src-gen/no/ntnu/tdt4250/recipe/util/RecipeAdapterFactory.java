@@ -97,8 +97,8 @@ public class RecipeAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseUnitOfMeasure(UnitOfMeasure object) {
-			return createUnitOfMeasureAdapter();
+		public Adapter caseUnitOfMeasureToggle(UnitOfMeasureToggle object) {
+			return createUnitOfMeasureToggleAdapter();
 		}
 
 		@Override
@@ -240,16 +240,16 @@ public class RecipeAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link no.ntnu.tdt4250.recipe.UnitOfMeasure <em>Unit Of Measure</em>}'.
+	 * Creates a new adapter for an object of class '{@link no.ntnu.tdt4250.recipe.UnitOfMeasureToggle <em>Unit Of Measure Toggle</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see no.ntnu.tdt4250.recipe.UnitOfMeasure
+	 * @see no.ntnu.tdt4250.recipe.UnitOfMeasureToggle
 	 * @generated
 	 */
-	public Adapter createUnitOfMeasureAdapter() {
+	public Adapter createUnitOfMeasureToggleAdapter() {
 		return null;
 	}
 

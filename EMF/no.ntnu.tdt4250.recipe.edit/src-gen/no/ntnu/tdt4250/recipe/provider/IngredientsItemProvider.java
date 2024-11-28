@@ -189,7 +189,7 @@ public class IngredientsItemProvider extends ItemProviderAdapter implements IEdi
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(createChildParameter(RecipePackage.Literals.INGREDIENTS__UNITTOGGLE,
-				RecipeFactory.eINSTANCE.createUnitOfMeasure()));
+				RecipeFactory.eINSTANCE.createUnitOfMeasureToggle()));
 	}
 
 	/**

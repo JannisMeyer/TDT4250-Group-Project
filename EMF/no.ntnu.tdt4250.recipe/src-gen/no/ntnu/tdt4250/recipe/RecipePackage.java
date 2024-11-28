@@ -95,22 +95,13 @@ public interface RecipePackage extends EPackage {
 	int PAGE__HEADER = 2;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAGE__NAME = 3;
-
-	/**
 	 * The feature id for the '<em><b>Nutrients</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE__NUTRIENTS = 4;
+	int PAGE__NUTRIENTS = 3;
 
 	/**
 	 * The number of structural features of the '<em>Page</em>' class.
@@ -119,7 +110,7 @@ public interface RecipePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE_FEATURE_COUNT = 5;
+	int PAGE_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Page</em>' class.
@@ -363,32 +354,32 @@ public interface RecipePackage extends EPackage {
 	int TOGGLE_BUTTON_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link no.ntnu.tdt4250.recipe.impl.UnitOfMeasureImpl <em>Unit Of Measure</em>}' class.
+	 * The meta object id for the '{@link no.ntnu.tdt4250.recipe.impl.UnitOfMeasureToggleImpl <em>Unit Of Measure Toggle</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see no.ntnu.tdt4250.recipe.impl.UnitOfMeasureImpl
-	 * @see no.ntnu.tdt4250.recipe.impl.RecipePackageImpl#getUnitOfMeasure()
+	 * @see no.ntnu.tdt4250.recipe.impl.UnitOfMeasureToggleImpl
+	 * @see no.ntnu.tdt4250.recipe.impl.RecipePackageImpl#getUnitOfMeasureToggle()
 	 * @generated
 	 */
-	int UNIT_OF_MEASURE = 6;
+	int UNIT_OF_MEASURE_TOGGLE = 6;
 
 	/**
-	 * The number of structural features of the '<em>Unit Of Measure</em>' class.
+	 * The number of structural features of the '<em>Unit Of Measure Toggle</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_OF_MEASURE_FEATURE_COUNT = TOGGLE_BUTTON_FEATURE_COUNT + 0;
+	int UNIT_OF_MEASURE_TOGGLE_FEATURE_COUNT = TOGGLE_BUTTON_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>Unit Of Measure</em>' class.
+	 * The number of operations of the '<em>Unit Of Measure Toggle</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_OF_MEASURE_OPERATION_COUNT = TOGGLE_BUTTON_OPERATION_COUNT + 0;
+	int UNIT_OF_MEASURE_TOGGLE_OPERATION_COUNT = TOGGLE_BUTTON_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link no.ntnu.tdt4250.recipe.impl.PercentageAmountToggleImpl <em>Percentage Amount Toggle</em>}' class.
@@ -665,17 +656,6 @@ public interface RecipePackage extends EPackage {
 	EReference getPage_Header();
 
 	/**
-	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.recipe.Page#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see no.ntnu.tdt4250.recipe.Page#getName()
-	 * @see #getPage()
-	 * @generated
-	 */
-	EAttribute getPage_Name();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link no.ntnu.tdt4250.recipe.Page#getNutrients <em>Nutrients</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -748,14 +728,14 @@ public interface RecipePackage extends EPackage {
 	EClass getBasicInformation();
 
 	/**
-	 * Returns the meta object for class '{@link no.ntnu.tdt4250.recipe.UnitOfMeasure <em>Unit Of Measure</em>}'.
+	 * Returns the meta object for class '{@link no.ntnu.tdt4250.recipe.UnitOfMeasureToggle <em>Unit Of Measure Toggle</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Unit Of Measure</em>'.
-	 * @see no.ntnu.tdt4250.recipe.UnitOfMeasure
+	 * @return the meta object for class '<em>Unit Of Measure Toggle</em>'.
+	 * @see no.ntnu.tdt4250.recipe.UnitOfMeasureToggle
 	 * @generated
 	 */
-	EClass getUnitOfMeasure();
+	EClass getUnitOfMeasureToggle();
 
 	/**
 	 * Returns the meta object for class '{@link no.ntnu.tdt4250.recipe.Section <em>Section</em>}'.
@@ -994,14 +974,6 @@ public interface RecipePackage extends EPackage {
 		EReference PAGE__HEADER = eINSTANCE.getPage_Header();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PAGE__NAME = eINSTANCE.getPage_Name();
-
-		/**
 		 * The meta object literal for the '<em><b>Nutrients</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1068,14 +1040,14 @@ public interface RecipePackage extends EPackage {
 		EClass BASIC_INFORMATION = eINSTANCE.getBasicInformation();
 
 		/**
-		 * The meta object literal for the '{@link no.ntnu.tdt4250.recipe.impl.UnitOfMeasureImpl <em>Unit Of Measure</em>}' class.
+		 * The meta object literal for the '{@link no.ntnu.tdt4250.recipe.impl.UnitOfMeasureToggleImpl <em>Unit Of Measure Toggle</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see no.ntnu.tdt4250.recipe.impl.UnitOfMeasureImpl
-		 * @see no.ntnu.tdt4250.recipe.impl.RecipePackageImpl#getUnitOfMeasure()
+		 * @see no.ntnu.tdt4250.recipe.impl.UnitOfMeasureToggleImpl
+		 * @see no.ntnu.tdt4250.recipe.impl.RecipePackageImpl#getUnitOfMeasureToggle()
 		 * @generated
 		 */
-		EClass UNIT_OF_MEASURE = eINSTANCE.getUnitOfMeasure();
+		EClass UNIT_OF_MEASURE_TOGGLE = eINSTANCE.getUnitOfMeasureToggle();
 
 		/**
 		 * The meta object literal for the '{@link no.ntnu.tdt4250.recipe.Section <em>Section</em>}' class.

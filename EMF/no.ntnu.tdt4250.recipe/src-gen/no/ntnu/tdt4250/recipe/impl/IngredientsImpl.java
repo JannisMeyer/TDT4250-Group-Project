@@ -4,8 +4,7 @@ package no.ntnu.tdt4250.recipe.impl;
 
 import no.ntnu.tdt4250.recipe.Ingredients;
 import no.ntnu.tdt4250.recipe.RecipePackage;
-import no.ntnu.tdt4250.recipe.UnitOfMeasure;
-
+import no.ntnu.tdt4250.recipe.UnitOfMeasureToggle;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -56,7 +55,7 @@ public class IngredientsImpl extends MinimalEObjectImpl.Container implements Ing
 	 * @generated
 	 * @ordered
 	 */
-	protected UnitOfMeasure unittoggle;
+	protected UnitOfMeasureToggle unittoggle;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -107,7 +106,7 @@ public class IngredientsImpl extends MinimalEObjectImpl.Container implements Ing
 	 * @generated
 	 */
 	@Override
-	public UnitOfMeasure getUnittoggle() {
+	public UnitOfMeasureToggle getUnittoggle() {
 		return unittoggle;
 	}
 
@@ -116,8 +115,8 @@ public class IngredientsImpl extends MinimalEObjectImpl.Container implements Ing
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetUnittoggle(UnitOfMeasure newUnittoggle, NotificationChain msgs) {
-		UnitOfMeasure oldUnittoggle = unittoggle;
+	public NotificationChain basicSetUnittoggle(UnitOfMeasureToggle newUnittoggle, NotificationChain msgs) {
+		UnitOfMeasureToggle oldUnittoggle = unittoggle;
 		unittoggle = newUnittoggle;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
@@ -136,7 +135,7 @@ public class IngredientsImpl extends MinimalEObjectImpl.Container implements Ing
 	 * @generated
 	 */
 	@Override
-	public void setUnittoggle(UnitOfMeasure newUnittoggle) {
+	public void setUnittoggle(UnitOfMeasureToggle newUnittoggle) {
 		if (newUnittoggle != unittoggle) {
 			NotificationChain msgs = null;
 			if (unittoggle != null)
@@ -195,7 +194,7 @@ public class IngredientsImpl extends MinimalEObjectImpl.Container implements Ing
 			setOrderNumber((Integer) newValue);
 			return;
 		case RecipePackage.INGREDIENTS__UNITTOGGLE:
-			setUnittoggle((UnitOfMeasure) newValue);
+			setUnittoggle((UnitOfMeasureToggle) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -213,7 +212,7 @@ public class IngredientsImpl extends MinimalEObjectImpl.Container implements Ing
 			setOrderNumber(ORDER_NUMBER_EDEFAULT);
 			return;
 		case RecipePackage.INGREDIENTS__UNITTOGGLE:
-			setUnittoggle((UnitOfMeasure) null);
+			setUnittoggle((UnitOfMeasureToggle) null);
 			return;
 		}
 		super.eUnset(featureID);

@@ -69,8 +69,8 @@ public class RecipeFactoryImpl extends EFactoryImpl implements RecipeFactory {
 			return createImage();
 		case RecipePackage.BASIC_INFORMATION:
 			return createBasicInformation();
-		case RecipePackage.UNIT_OF_MEASURE:
-			return createUnitOfMeasure();
+		case RecipePackage.UNIT_OF_MEASURE_TOGGLE:
+			return createUnitOfMeasureToggle();
 		case RecipePackage.PERCENTAGE_AMOUNT_TOGGLE:
 			return createPercentageAmountToggle();
 		case RecipePackage.VITAMINS:
@@ -188,9 +188,9 @@ public class RecipeFactoryImpl extends EFactoryImpl implements RecipeFactory {
 	 * @generated
 	 */
 	@Override
-	public UnitOfMeasure createUnitOfMeasure() {
-		UnitOfMeasureImpl unitOfMeasure = new UnitOfMeasureImpl();
-		return unitOfMeasure;
+	public UnitOfMeasureToggle createUnitOfMeasureToggle() {
+		UnitOfMeasureToggleImpl unitOfMeasureToggle = new UnitOfMeasureToggleImpl();
+		return unitOfMeasureToggle;
 	}
 
 	/**

@@ -5,65 +5,64 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 Page returns Page:
     'Page'
-    name=EString
     '{'
-        // Using & to create an unordered group
-        (
-            ('instructions' instructions=Instructions) &
-            ('ingredients' ingredients=Ingredients) &
-            ('header' header=Header) &
-            ('nutrients' nutrients=Nutrients)?
-        )
+    (
+        (instructions=Instructions) &
+        (ingredients=Ingredients) &
+        (header=Header) &
+        (nutrients=Nutrients)?
+    )
     '}';
 
 Instructions returns Instructions:
+    {Instructions}
     'Instructions'
     '{'
-        'orderNumber' orderNumber=EInt
+    'orderNumber' orderNumber=EInt
     '}';
 
 Ingredients returns Ingredients:
+    {Ingredients}
     'Ingredients'
     '{'
-        // Using & for unordered elements
-        (
-            ('orderNumber' orderNumber=EInt) &
-            ('unittoggle' unittoggle=UnitOfMeasure)?
-        )
+    (
+        ('orderNumber' orderNumber=EInt) &
+        (unittoggle=UnitOfMeasure)?
+    )
     '}';
 
 Header returns Header:
+    {Header}
     'Header'
     '{'
-        // Using & for unordered elements
-        (
-            ('basicinformation' basicinformation=BasicInformation) &
-            ('recipetitle' recipetitle=Title) &
-            ('image' image=Image)?
-        )
+    (
+        (basicinformation=BasicInformation) &
+        (recipetitle=Title) &
+        (image=Image)?
+    )
     '}';
 
 EString returns ecore::EString:
     STRING | ID;
 
 Nutrients returns Nutrients:
+    {Nutrients}
     'Nutrients'
     '{'
-        // Using & for unordered elements
-        (
-            ('orderNumber' orderNumber=EInt) &
-            ('percentagetoggle' percentagetoggle=PercentageAmountToggle)? &
-            ('vitamins' vitamins=Vitamins)? &
-            ('macronutrients' macronutrients=Macronutrients)?
-        )
+    (
+        ('orderNumber' orderNumber=EInt) &
+        (percentagetoggle=PercentageAmountToggle)? &
+        (vitamins=Vitamins)? &
+        (macronutrients=Macronutrients)?
+    )
     '}';
 
 EInt returns ecore::EInt:
     '-'? INT;
 
-UnitOfMeasure returns UnitOfMeasure:
-    {UnitOfMeasure}
-    'UnitOfMeasure';
+UnitOfMeasure returns UnitOfMeasureToggle:
+    {UnitOfMeasureToggle}
+    'UnitOfMeasureToggle';
 
 BasicInformation returns BasicInformation:
     {BasicInformation}
@@ -82,23 +81,22 @@ PercentageAmountToggle returns PercentageAmountToggle:
     'PercentageAmountToggle';
 
 Vitamins returns Vitamins:
-    'Vitamins'
-    '{'
-        'Vitamin' '{' Vitamin+=Vitamin ( "," Vitamin+=Vitamin)* '}'
-    '}';
+    {Vitamins}
+    'Vitamins' 
+    '{' Vitamin+=Vitamin ( "," Vitamin+=Vitamin)* '}';
 
 Macronutrients returns Macronutrients:
     {Macronutrients}
     'Macronutrients';
 
 enum Vitamin returns Vitamin:
-    VITAMIN_A = 'VITAMIN_A' | 
-    VITAMIN_B1 = 'VITAMIN_B1' | 
-    VITAMIN_B2 = 'VITAMIN_B2' | 
-    VITAMIN_B3 = 'VITAMIN_B3' | 
-    VITAMIN_B5 = 'VITAMIN_B5' | 
-    VITAMIN_B6 = 'VITAMIN_B6' | 
-    VITAMIN_B12 = 'VITAMIN_B12' | 
-    VITAMIN_C = 'VITAMIN_C' | 
-    VITAMIN_E = 'VITAMIN_E' | 
+    VITAMIN_A = 'VITAMIN_A' |
+    VITAMIN_B1 = 'VITAMIN_B1' |
+    VITAMIN_B2 = 'VITAMIN_B2' |
+    VITAMIN_B3 = 'VITAMIN_B3' |
+    VITAMIN_B5 = 'VITAMIN_B5' |
+    VITAMIN_B6 = 'VITAMIN_B6' |
+    VITAMIN_B12 = 'VITAMIN_B12' |
+    VITAMIN_C = 'VITAMIN_C' |
+    VITAMIN_E = 'VITAMIN_E' |
     VITAMIN_K = 'VITAMIN_K';

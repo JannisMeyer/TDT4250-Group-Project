@@ -81,183 +81,140 @@ rulePage returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getPageAccess().getPageKeyword_0());
 		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getPageAccess().getNameEStringParserRuleCall_1_0());
-				}
-				lv_name_1_0=ruleEString
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getPageRule());
-					}
-					set(
-						$current,
-						"name",
-						lv_name_1_0,
-						"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.EString");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_2='{'
+		otherlv_1='{'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getPageAccess().getLeftCurlyBracketKeyword_2());
+			newLeafNode(otherlv_1, grammarAccess.getPageAccess().getLeftCurlyBracketKeyword_1());
 		}
 		(
 			(
 				{ 
-				  getUnorderedGroupHelper().enter(grammarAccess.getPageAccess().getUnorderedGroup_3());
+				  getUnorderedGroupHelper().enter(grammarAccess.getPageAccess().getUnorderedGroup_2());
 				}
 				(
 					(
 			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_3(), 0)}?=>(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_2(), 0)}?=>(
 					{
-						getUnorderedGroupHelper().select(grammarAccess.getPageAccess().getUnorderedGroup_3(), 0);
+						getUnorderedGroupHelper().select(grammarAccess.getPageAccess().getUnorderedGroup_2(), 0);
 					}
-								({true}?=>(otherlv_4='instructions'
-								{
-									newLeafNode(otherlv_4, grammarAccess.getPageAccess().getInstructionsKeyword_3_0_0());
-								}
-								(
-									(
-										{
-											newCompositeNode(grammarAccess.getPageAccess().getInstructionsInstructionsParserRuleCall_3_0_1_0());
+								({true}?=>((
+									{
+										newCompositeNode(grammarAccess.getPageAccess().getInstructionsInstructionsParserRuleCall_2_0_0());
+									}
+									lv_instructions_3_0=ruleInstructions
+									{
+										if ($current==null) {
+											$current = createModelElementForParent(grammarAccess.getPageRule());
 										}
-										lv_instructions_5_0=ruleInstructions
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getPageRule());
-											}
-											set(
-												$current,
-												"instructions",
-												lv_instructions_5_0,
-												"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Instructions");
-											afterParserOrEnumRuleCall();
-										}
-									)
+										set(
+											$current,
+											"instructions",
+											lv_instructions_3_0,
+											"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Instructions");
+										afterParserOrEnumRuleCall();
+									}
 								)
 								))
 					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getPageAccess().getUnorderedGroup_3());
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getPageAccess().getUnorderedGroup_2());
 					}
 				)
 			)|
 			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_3(), 1)}?=>(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_2(), 1)}?=>(
 					{
-						getUnorderedGroupHelper().select(grammarAccess.getPageAccess().getUnorderedGroup_3(), 1);
+						getUnorderedGroupHelper().select(grammarAccess.getPageAccess().getUnorderedGroup_2(), 1);
 					}
-								({true}?=>(otherlv_6='ingredients'
-								{
-									newLeafNode(otherlv_6, grammarAccess.getPageAccess().getIngredientsKeyword_3_1_0());
-								}
-								(
-									(
-										{
-											newCompositeNode(grammarAccess.getPageAccess().getIngredientsIngredientsParserRuleCall_3_1_1_0());
+								({true}?=>((
+									{
+										newCompositeNode(grammarAccess.getPageAccess().getIngredientsIngredientsParserRuleCall_2_1_0());
+									}
+									lv_ingredients_4_0=ruleIngredients
+									{
+										if ($current==null) {
+											$current = createModelElementForParent(grammarAccess.getPageRule());
 										}
-										lv_ingredients_7_0=ruleIngredients
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getPageRule());
-											}
-											set(
-												$current,
-												"ingredients",
-												lv_ingredients_7_0,
-												"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Ingredients");
-											afterParserOrEnumRuleCall();
-										}
-									)
+										set(
+											$current,
+											"ingredients",
+											lv_ingredients_4_0,
+											"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Ingredients");
+										afterParserOrEnumRuleCall();
+									}
 								)
 								))
 					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getPageAccess().getUnorderedGroup_3());
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getPageAccess().getUnorderedGroup_2());
 					}
 				)
 			)|
 			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_3(), 2)}?=>(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_2(), 2)}?=>(
 					{
-						getUnorderedGroupHelper().select(grammarAccess.getPageAccess().getUnorderedGroup_3(), 2);
+						getUnorderedGroupHelper().select(grammarAccess.getPageAccess().getUnorderedGroup_2(), 2);
 					}
-								({true}?=>(otherlv_8='header'
-								{
-									newLeafNode(otherlv_8, grammarAccess.getPageAccess().getHeaderKeyword_3_2_0());
-								}
-								(
-									(
-										{
-											newCompositeNode(grammarAccess.getPageAccess().getHeaderHeaderParserRuleCall_3_2_1_0());
+								({true}?=>((
+									{
+										newCompositeNode(grammarAccess.getPageAccess().getHeaderHeaderParserRuleCall_2_2_0());
+									}
+									lv_header_5_0=ruleHeader
+									{
+										if ($current==null) {
+											$current = createModelElementForParent(grammarAccess.getPageRule());
 										}
-										lv_header_9_0=ruleHeader
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getPageRule());
-											}
-											set(
-												$current,
-												"header",
-												lv_header_9_0,
-												"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Header");
-											afterParserOrEnumRuleCall();
-										}
-									)
+										set(
+											$current,
+											"header",
+											lv_header_5_0,
+											"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Header");
+										afterParserOrEnumRuleCall();
+									}
 								)
 								))
 					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getPageAccess().getUnorderedGroup_3());
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getPageAccess().getUnorderedGroup_2());
 					}
 				)
 			)|
 			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_3(), 3)}?=>(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getPageAccess().getUnorderedGroup_2(), 3)}?=>(
 					{
-						getUnorderedGroupHelper().select(grammarAccess.getPageAccess().getUnorderedGroup_3(), 3);
+						getUnorderedGroupHelper().select(grammarAccess.getPageAccess().getUnorderedGroup_2(), 3);
 					}
-								({true}?=>(otherlv_10='nutrients'
-								{
-									newLeafNode(otherlv_10, grammarAccess.getPageAccess().getNutrientsKeyword_3_3_0());
-								}
-								(
-									(
-										{
-											newCompositeNode(grammarAccess.getPageAccess().getNutrientsNutrientsParserRuleCall_3_3_1_0());
+								({true}?=>((
+									{
+										newCompositeNode(grammarAccess.getPageAccess().getNutrientsNutrientsParserRuleCall_2_3_0());
+									}
+									lv_nutrients_6_0=ruleNutrients
+									{
+										if ($current==null) {
+											$current = createModelElementForParent(grammarAccess.getPageRule());
 										}
-										lv_nutrients_11_0=ruleNutrients
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getPageRule());
-											}
-											set(
-												$current,
-												"nutrients",
-												lv_nutrients_11_0,
-												"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Nutrients");
-											afterParserOrEnumRuleCall();
-										}
-									)
+										set(
+											$current,
+											"nutrients",
+											lv_nutrients_6_0,
+											"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Nutrients");
+										afterParserOrEnumRuleCall();
+									}
 								)
 								))
 					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getPageAccess().getUnorderedGroup_3());
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getPageAccess().getUnorderedGroup_2());
 					}
 				)
 			)
 					)+
-					{getUnorderedGroupHelper().canLeave(grammarAccess.getPageAccess().getUnorderedGroup_3())}?
+					{getUnorderedGroupHelper().canLeave(grammarAccess.getPageAccess().getUnorderedGroup_2())}?
 				)
 			)
 				{ 
-				  getUnorderedGroupHelper().leave(grammarAccess.getPageAccess().getUnorderedGroup_3());
+				  getUnorderedGroupHelper().leave(grammarAccess.getPageAccess().getUnorderedGroup_2());
 				}
 		)
-		otherlv_12='}'
+		otherlv_7='}'
 		{
-			newLeafNode(otherlv_12, grammarAccess.getPageAccess().getRightCurlyBracketKeyword_4());
+			newLeafNode(otherlv_7, grammarAccess.getPageAccess().getRightCurlyBracketKeyword_3());
 		}
 	)
 ;
@@ -278,24 +235,31 @@ ruleInstructions returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='Instructions'
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getInstructionsAccess().getInstructionsAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='Instructions'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getInstructionsAccess().getInstructionsKeyword_0());
+			newLeafNode(otherlv_1, grammarAccess.getInstructionsAccess().getInstructionsKeyword_1());
 		}
-		otherlv_1='{'
+		otherlv_2='{'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getInstructionsAccess().getLeftCurlyBracketKeyword_1());
+			newLeafNode(otherlv_2, grammarAccess.getInstructionsAccess().getLeftCurlyBracketKeyword_2());
 		}
-		otherlv_2='orderNumber'
+		otherlv_3='orderNumber'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getInstructionsAccess().getOrderNumberKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getInstructionsAccess().getOrderNumberKeyword_3());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getInstructionsAccess().getOrderNumberEIntParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getInstructionsAccess().getOrderNumberEIntParserRuleCall_4_0());
 				}
-				lv_orderNumber_3_0=ruleEInt
+				lv_orderNumber_4_0=ruleEInt
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getInstructionsRule());
@@ -303,15 +267,15 @@ ruleInstructions returns [EObject current=null]
 					set(
 						$current,
 						"orderNumber",
-						lv_orderNumber_3_0,
+						lv_orderNumber_4_0,
 						"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.EInt");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_4='}'
+		otherlv_5='}'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getInstructionsAccess().getRightCurlyBracketKeyword_4());
+			newLeafNode(otherlv_5, grammarAccess.getInstructionsAccess().getRightCurlyBracketKeyword_5());
 		}
 	)
 ;
@@ -332,36 +296,43 @@ ruleIngredients returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='Ingredients'
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getIngredientsAccess().getIngredientsAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='Ingredients'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getIngredientsAccess().getIngredientsKeyword_0());
+			newLeafNode(otherlv_1, grammarAccess.getIngredientsAccess().getIngredientsKeyword_1());
 		}
-		otherlv_1='{'
+		otherlv_2='{'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getIngredientsAccess().getLeftCurlyBracketKeyword_1());
+			newLeafNode(otherlv_2, grammarAccess.getIngredientsAccess().getLeftCurlyBracketKeyword_2());
 		}
 		(
 			(
 				{ 
-				  getUnorderedGroupHelper().enter(grammarAccess.getIngredientsAccess().getUnorderedGroup_2());
+				  getUnorderedGroupHelper().enter(grammarAccess.getIngredientsAccess().getUnorderedGroup_3());
 				}
 				(
 					(
 			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getIngredientsAccess().getUnorderedGroup_2(), 0)}?=>(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getIngredientsAccess().getUnorderedGroup_3(), 0)}?=>(
 					{
-						getUnorderedGroupHelper().select(grammarAccess.getIngredientsAccess().getUnorderedGroup_2(), 0);
+						getUnorderedGroupHelper().select(grammarAccess.getIngredientsAccess().getUnorderedGroup_3(), 0);
 					}
-								({true}?=>(otherlv_3='orderNumber'
+								({true}?=>(otherlv_4='orderNumber'
 								{
-									newLeafNode(otherlv_3, grammarAccess.getIngredientsAccess().getOrderNumberKeyword_2_0_0());
+									newLeafNode(otherlv_4, grammarAccess.getIngredientsAccess().getOrderNumberKeyword_3_0_0());
 								}
 								(
 									(
 										{
-											newCompositeNode(grammarAccess.getIngredientsAccess().getOrderNumberEIntParserRuleCall_2_0_1_0());
+											newCompositeNode(grammarAccess.getIngredientsAccess().getOrderNumberEIntParserRuleCall_3_0_1_0());
 										}
-										lv_orderNumber_4_0=ruleEInt
+										lv_orderNumber_5_0=ruleEInt
 										{
 											if ($current==null) {
 												$current = createModelElementForParent(grammarAccess.getIngredientsRule());
@@ -369,7 +340,7 @@ ruleIngredients returns [EObject current=null]
 											set(
 												$current,
 												"orderNumber",
-												lv_orderNumber_4_0,
+												lv_orderNumber_5_0,
 												"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.EInt");
 											afterParserOrEnumRuleCall();
 										}
@@ -377,55 +348,49 @@ ruleIngredients returns [EObject current=null]
 								)
 								))
 					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getIngredientsAccess().getUnorderedGroup_2());
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getIngredientsAccess().getUnorderedGroup_3());
 					}
 				)
 			)|
 			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getIngredientsAccess().getUnorderedGroup_2(), 1)}?=>(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getIngredientsAccess().getUnorderedGroup_3(), 1)}?=>(
 					{
-						getUnorderedGroupHelper().select(grammarAccess.getIngredientsAccess().getUnorderedGroup_2(), 1);
+						getUnorderedGroupHelper().select(grammarAccess.getIngredientsAccess().getUnorderedGroup_3(), 1);
 					}
-								({true}?=>(otherlv_5='unittoggle'
-								{
-									newLeafNode(otherlv_5, grammarAccess.getIngredientsAccess().getUnittoggleKeyword_2_1_0());
-								}
-								(
-									(
-										{
-											newCompositeNode(grammarAccess.getIngredientsAccess().getUnittoggleUnitOfMeasureParserRuleCall_2_1_1_0());
+								({true}?=>((
+									{
+										newCompositeNode(grammarAccess.getIngredientsAccess().getUnittoggleUnitOfMeasureParserRuleCall_3_1_0());
+									}
+									lv_unittoggle_6_0=ruleUnitOfMeasure
+									{
+										if ($current==null) {
+											$current = createModelElementForParent(grammarAccess.getIngredientsRule());
 										}
-										lv_unittoggle_6_0=ruleUnitOfMeasure
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getIngredientsRule());
-											}
-											set(
-												$current,
-												"unittoggle",
-												lv_unittoggle_6_0,
-												"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.UnitOfMeasure");
-											afterParserOrEnumRuleCall();
-										}
-									)
+										set(
+											$current,
+											"unittoggle",
+											lv_unittoggle_6_0,
+											"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.UnitOfMeasure");
+										afterParserOrEnumRuleCall();
+									}
 								)
 								))
 					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getIngredientsAccess().getUnorderedGroup_2());
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getIngredientsAccess().getUnorderedGroup_3());
 					}
 				)
 			)
 					)+
-					{getUnorderedGroupHelper().canLeave(grammarAccess.getIngredientsAccess().getUnorderedGroup_2())}?
+					{getUnorderedGroupHelper().canLeave(grammarAccess.getIngredientsAccess().getUnorderedGroup_3())}?
 				)
 			)
 				{ 
-				  getUnorderedGroupHelper().leave(grammarAccess.getIngredientsAccess().getUnorderedGroup_2());
+				  getUnorderedGroupHelper().leave(grammarAccess.getIngredientsAccess().getUnorderedGroup_3());
 				}
 		)
 		otherlv_7='}'
 		{
-			newLeafNode(otherlv_7, grammarAccess.getIngredientsAccess().getRightCurlyBracketKeyword_3());
+			newLeafNode(otherlv_7, grammarAccess.getIngredientsAccess().getRightCurlyBracketKeyword_4());
 		}
 	)
 ;
@@ -446,168 +411,123 @@ ruleHeader returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='Header'
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getHeaderAccess().getHeaderAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='Header'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getHeaderAccess().getHeaderKeyword_0());
+			newLeafNode(otherlv_1, grammarAccess.getHeaderAccess().getHeaderKeyword_1());
 		}
-		otherlv_1='{'
+		otherlv_2='{'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getHeaderAccess().getLeftCurlyBracketKeyword_1());
+			newLeafNode(otherlv_2, grammarAccess.getHeaderAccess().getLeftCurlyBracketKeyword_2());
 		}
 		(
 			(
 				{ 
-				  getUnorderedGroupHelper().enter(grammarAccess.getHeaderAccess().getUnorderedGroup_2());
+				  getUnorderedGroupHelper().enter(grammarAccess.getHeaderAccess().getUnorderedGroup_3());
 				}
 				(
 					(
 			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getHeaderAccess().getUnorderedGroup_2(), 0)}?=>(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getHeaderAccess().getUnorderedGroup_3(), 0)}?=>(
 					{
-						getUnorderedGroupHelper().select(grammarAccess.getHeaderAccess().getUnorderedGroup_2(), 0);
+						getUnorderedGroupHelper().select(grammarAccess.getHeaderAccess().getUnorderedGroup_3(), 0);
 					}
-								({true}?=>(otherlv_3='basicinformation'
-								{
-									newLeafNode(otherlv_3, grammarAccess.getHeaderAccess().getBasicinformationKeyword_2_0_0());
-								}
-								(
-									(
-										{
-											newCompositeNode(grammarAccess.getHeaderAccess().getBasicinformationBasicInformationParserRuleCall_2_0_1_0());
+								({true}?=>((
+									{
+										newCompositeNode(grammarAccess.getHeaderAccess().getBasicinformationBasicInformationParserRuleCall_3_0_0());
+									}
+									lv_basicinformation_4_0=ruleBasicInformation
+									{
+										if ($current==null) {
+											$current = createModelElementForParent(grammarAccess.getHeaderRule());
 										}
-										lv_basicinformation_4_0=ruleBasicInformation
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getHeaderRule());
-											}
-											set(
-												$current,
-												"basicinformation",
-												lv_basicinformation_4_0,
-												"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.BasicInformation");
-											afterParserOrEnumRuleCall();
-										}
-									)
+										set(
+											$current,
+											"basicinformation",
+											lv_basicinformation_4_0,
+											"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.BasicInformation");
+										afterParserOrEnumRuleCall();
+									}
 								)
 								))
 					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getHeaderAccess().getUnorderedGroup_2());
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getHeaderAccess().getUnorderedGroup_3());
 					}
 				)
 			)|
 			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getHeaderAccess().getUnorderedGroup_2(), 1)}?=>(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getHeaderAccess().getUnorderedGroup_3(), 1)}?=>(
 					{
-						getUnorderedGroupHelper().select(grammarAccess.getHeaderAccess().getUnorderedGroup_2(), 1);
+						getUnorderedGroupHelper().select(grammarAccess.getHeaderAccess().getUnorderedGroup_3(), 1);
 					}
-								({true}?=>(otherlv_5='recipetitle'
-								{
-									newLeafNode(otherlv_5, grammarAccess.getHeaderAccess().getRecipetitleKeyword_2_1_0());
-								}
-								(
-									(
-										{
-											newCompositeNode(grammarAccess.getHeaderAccess().getRecipetitleTitleParserRuleCall_2_1_1_0());
+								({true}?=>((
+									{
+										newCompositeNode(grammarAccess.getHeaderAccess().getRecipetitleTitleParserRuleCall_3_1_0());
+									}
+									lv_recipetitle_5_0=ruleTitle
+									{
+										if ($current==null) {
+											$current = createModelElementForParent(grammarAccess.getHeaderRule());
 										}
-										lv_recipetitle_6_0=ruleTitle
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getHeaderRule());
-											}
-											set(
-												$current,
-												"recipetitle",
-												lv_recipetitle_6_0,
-												"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Title");
-											afterParserOrEnumRuleCall();
-										}
-									)
+										set(
+											$current,
+											"recipetitle",
+											lv_recipetitle_5_0,
+											"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Title");
+										afterParserOrEnumRuleCall();
+									}
 								)
 								))
 					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getHeaderAccess().getUnorderedGroup_2());
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getHeaderAccess().getUnorderedGroup_3());
 					}
 				)
 			)|
 			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getHeaderAccess().getUnorderedGroup_2(), 2)}?=>(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getHeaderAccess().getUnorderedGroup_3(), 2)}?=>(
 					{
-						getUnorderedGroupHelper().select(grammarAccess.getHeaderAccess().getUnorderedGroup_2(), 2);
+						getUnorderedGroupHelper().select(grammarAccess.getHeaderAccess().getUnorderedGroup_3(), 2);
 					}
-								({true}?=>(otherlv_7='image'
-								{
-									newLeafNode(otherlv_7, grammarAccess.getHeaderAccess().getImageKeyword_2_2_0());
-								}
-								(
-									(
-										{
-											newCompositeNode(grammarAccess.getHeaderAccess().getImageImageParserRuleCall_2_2_1_0());
+								({true}?=>((
+									{
+										newCompositeNode(grammarAccess.getHeaderAccess().getImageImageParserRuleCall_3_2_0());
+									}
+									lv_image_6_0=ruleImage
+									{
+										if ($current==null) {
+											$current = createModelElementForParent(grammarAccess.getHeaderRule());
 										}
-										lv_image_8_0=ruleImage
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getHeaderRule());
-											}
-											set(
-												$current,
-												"image",
-												lv_image_8_0,
-												"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Image");
-											afterParserOrEnumRuleCall();
-										}
-									)
+										set(
+											$current,
+											"image",
+											lv_image_6_0,
+											"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Image");
+										afterParserOrEnumRuleCall();
+									}
 								)
 								))
 					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getHeaderAccess().getUnorderedGroup_2());
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getHeaderAccess().getUnorderedGroup_3());
 					}
 				)
 			)
 					)+
-					{getUnorderedGroupHelper().canLeave(grammarAccess.getHeaderAccess().getUnorderedGroup_2())}?
+					{getUnorderedGroupHelper().canLeave(grammarAccess.getHeaderAccess().getUnorderedGroup_3())}?
 				)
 			)
 				{ 
-				  getUnorderedGroupHelper().leave(grammarAccess.getHeaderAccess().getUnorderedGroup_2());
+				  getUnorderedGroupHelper().leave(grammarAccess.getHeaderAccess().getUnorderedGroup_3());
 				}
 		)
-		otherlv_9='}'
+		otherlv_7='}'
 		{
-			newLeafNode(otherlv_9, grammarAccess.getHeaderAccess().getRightCurlyBracketKeyword_3());
-		}
-	)
-;
-
-// Entry rule entryRuleEString
-entryRuleEString returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getEStringRule()); }
-	iv_ruleEString=ruleEString
-	{ $current=$iv_ruleEString.current.getText(); }
-	EOF;
-
-// Rule EString
-ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		this_STRING_0=RULE_STRING
-		{
-			$current.merge(this_STRING_0);
-		}
-		{
-			newLeafNode(this_STRING_0, grammarAccess.getEStringAccess().getSTRINGTerminalRuleCall_0());
-		}
-		    |
-		this_ID_1=RULE_ID
-		{
-			$current.merge(this_ID_1);
-		}
-		{
-			newLeafNode(this_ID_1, grammarAccess.getEStringAccess().getIDTerminalRuleCall_1());
+			newLeafNode(otherlv_7, grammarAccess.getHeaderAccess().getRightCurlyBracketKeyword_4());
 		}
 	)
 ;
@@ -628,36 +548,43 @@ ruleNutrients returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='Nutrients'
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getNutrientsAccess().getNutrientsAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='Nutrients'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getNutrientsAccess().getNutrientsKeyword_0());
+			newLeafNode(otherlv_1, grammarAccess.getNutrientsAccess().getNutrientsKeyword_1());
 		}
-		otherlv_1='{'
+		otherlv_2='{'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getNutrientsAccess().getLeftCurlyBracketKeyword_1());
+			newLeafNode(otherlv_2, grammarAccess.getNutrientsAccess().getLeftCurlyBracketKeyword_2());
 		}
 		(
 			(
 				{ 
-				  getUnorderedGroupHelper().enter(grammarAccess.getNutrientsAccess().getUnorderedGroup_2());
+				  getUnorderedGroupHelper().enter(grammarAccess.getNutrientsAccess().getUnorderedGroup_3());
 				}
 				(
 					(
 			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_2(), 0)}?=>(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 0)}?=>(
 					{
-						getUnorderedGroupHelper().select(grammarAccess.getNutrientsAccess().getUnorderedGroup_2(), 0);
+						getUnorderedGroupHelper().select(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 0);
 					}
-								({true}?=>(otherlv_3='orderNumber'
+								({true}?=>(otherlv_4='orderNumber'
 								{
-									newLeafNode(otherlv_3, grammarAccess.getNutrientsAccess().getOrderNumberKeyword_2_0_0());
+									newLeafNode(otherlv_4, grammarAccess.getNutrientsAccess().getOrderNumberKeyword_3_0_0());
 								}
 								(
 									(
 										{
-											newCompositeNode(grammarAccess.getNutrientsAccess().getOrderNumberEIntParserRuleCall_2_0_1_0());
+											newCompositeNode(grammarAccess.getNutrientsAccess().getOrderNumberEIntParserRuleCall_3_0_1_0());
 										}
-										lv_orderNumber_4_0=ruleEInt
+										lv_orderNumber_5_0=ruleEInt
 										{
 											if ($current==null) {
 												$current = createModelElementForParent(grammarAccess.getNutrientsRule());
@@ -665,7 +592,7 @@ ruleNutrients returns [EObject current=null]
 											set(
 												$current,
 												"orderNumber",
-												lv_orderNumber_4_0,
+												lv_orderNumber_5_0,
 												"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.EInt");
 											afterParserOrEnumRuleCall();
 										}
@@ -673,123 +600,105 @@ ruleNutrients returns [EObject current=null]
 								)
 								))
 					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getNutrientsAccess().getUnorderedGroup_2());
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getNutrientsAccess().getUnorderedGroup_3());
 					}
 				)
 			)|
 			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_2(), 1)}?=>(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 1)}?=>(
 					{
-						getUnorderedGroupHelper().select(grammarAccess.getNutrientsAccess().getUnorderedGroup_2(), 1);
+						getUnorderedGroupHelper().select(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 1);
 					}
-								({true}?=>(otherlv_5='percentagetoggle'
-								{
-									newLeafNode(otherlv_5, grammarAccess.getNutrientsAccess().getPercentagetoggleKeyword_2_1_0());
-								}
-								(
-									(
-										{
-											newCompositeNode(grammarAccess.getNutrientsAccess().getPercentagetogglePercentageAmountToggleParserRuleCall_2_1_1_0());
+								({true}?=>((
+									{
+										newCompositeNode(grammarAccess.getNutrientsAccess().getPercentagetogglePercentageAmountToggleParserRuleCall_3_1_0());
+									}
+									lv_percentagetoggle_6_0=rulePercentageAmountToggle
+									{
+										if ($current==null) {
+											$current = createModelElementForParent(grammarAccess.getNutrientsRule());
 										}
-										lv_percentagetoggle_6_0=rulePercentageAmountToggle
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getNutrientsRule());
-											}
-											set(
-												$current,
-												"percentagetoggle",
-												lv_percentagetoggle_6_0,
-												"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.PercentageAmountToggle");
-											afterParserOrEnumRuleCall();
-										}
-									)
+										set(
+											$current,
+											"percentagetoggle",
+											lv_percentagetoggle_6_0,
+											"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.PercentageAmountToggle");
+										afterParserOrEnumRuleCall();
+									}
 								)
 								))
 					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getNutrientsAccess().getUnorderedGroup_2());
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getNutrientsAccess().getUnorderedGroup_3());
 					}
 				)
 			)|
 			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_2(), 2)}?=>(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 2)}?=>(
 					{
-						getUnorderedGroupHelper().select(grammarAccess.getNutrientsAccess().getUnorderedGroup_2(), 2);
+						getUnorderedGroupHelper().select(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 2);
 					}
-								({true}?=>(otherlv_7='vitamins'
-								{
-									newLeafNode(otherlv_7, grammarAccess.getNutrientsAccess().getVitaminsKeyword_2_2_0());
-								}
-								(
-									(
-										{
-											newCompositeNode(grammarAccess.getNutrientsAccess().getVitaminsVitaminsParserRuleCall_2_2_1_0());
+								({true}?=>((
+									{
+										newCompositeNode(grammarAccess.getNutrientsAccess().getVitaminsVitaminsParserRuleCall_3_2_0());
+									}
+									lv_vitamins_7_0=ruleVitamins
+									{
+										if ($current==null) {
+											$current = createModelElementForParent(grammarAccess.getNutrientsRule());
 										}
-										lv_vitamins_8_0=ruleVitamins
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getNutrientsRule());
-											}
-											set(
-												$current,
-												"vitamins",
-												lv_vitamins_8_0,
-												"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Vitamins");
-											afterParserOrEnumRuleCall();
-										}
-									)
+										set(
+											$current,
+											"vitamins",
+											lv_vitamins_7_0,
+											"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Vitamins");
+										afterParserOrEnumRuleCall();
+									}
 								)
 								))
 					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getNutrientsAccess().getUnorderedGroup_2());
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getNutrientsAccess().getUnorderedGroup_3());
 					}
 				)
 			)|
 			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_2(), 3)}?=>(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 3)}?=>(
 					{
-						getUnorderedGroupHelper().select(grammarAccess.getNutrientsAccess().getUnorderedGroup_2(), 3);
+						getUnorderedGroupHelper().select(grammarAccess.getNutrientsAccess().getUnorderedGroup_3(), 3);
 					}
-								({true}?=>(otherlv_9='macronutrients'
-								{
-									newLeafNode(otherlv_9, grammarAccess.getNutrientsAccess().getMacronutrientsKeyword_2_3_0());
-								}
-								(
-									(
-										{
-											newCompositeNode(grammarAccess.getNutrientsAccess().getMacronutrientsMacronutrientsParserRuleCall_2_3_1_0());
+								({true}?=>((
+									{
+										newCompositeNode(grammarAccess.getNutrientsAccess().getMacronutrientsMacronutrientsParserRuleCall_3_3_0());
+									}
+									lv_macronutrients_8_0=ruleMacronutrients
+									{
+										if ($current==null) {
+											$current = createModelElementForParent(grammarAccess.getNutrientsRule());
 										}
-										lv_macronutrients_10_0=ruleMacronutrients
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getNutrientsRule());
-											}
-											set(
-												$current,
-												"macronutrients",
-												lv_macronutrients_10_0,
-												"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Macronutrients");
-											afterParserOrEnumRuleCall();
-										}
-									)
+										set(
+											$current,
+											"macronutrients",
+											lv_macronutrients_8_0,
+											"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Macronutrients");
+										afterParserOrEnumRuleCall();
+									}
 								)
 								))
 					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getNutrientsAccess().getUnorderedGroup_2());
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getNutrientsAccess().getUnorderedGroup_3());
 					}
 				)
 			)
 					)+
-					{getUnorderedGroupHelper().canLeave(grammarAccess.getNutrientsAccess().getUnorderedGroup_2())}?
+					{getUnorderedGroupHelper().canLeave(grammarAccess.getNutrientsAccess().getUnorderedGroup_3())}?
 				)
 			)
 				{ 
-				  getUnorderedGroupHelper().leave(grammarAccess.getNutrientsAccess().getUnorderedGroup_2());
+				  getUnorderedGroupHelper().leave(grammarAccess.getNutrientsAccess().getUnorderedGroup_3());
 				}
 		)
-		otherlv_11='}'
+		otherlv_9='}'
 		{
-			newLeafNode(otherlv_11, grammarAccess.getNutrientsAccess().getRightCurlyBracketKeyword_3());
+			newLeafNode(otherlv_9, grammarAccess.getNutrientsAccess().getRightCurlyBracketKeyword_4());
 		}
 	)
 ;
@@ -846,13 +755,13 @@ ruleUnitOfMeasure returns [EObject current=null]
 		(
 			{
 				$current = forceCreateModelElement(
-					grammarAccess.getUnitOfMeasureAccess().getUnitOfMeasureAction_0(),
+					grammarAccess.getUnitOfMeasureAccess().getUnitOfMeasureToggleAction_0(),
 					$current);
 			}
 		)
-		otherlv_1='UnitOfMeasure'
+		otherlv_1='UnitOfMeasureToggle'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getUnitOfMeasureAccess().getUnitOfMeasureKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getUnitOfMeasureAccess().getUnitOfMeasureToggleKeyword_1());
 		}
 	)
 ;
@@ -993,28 +902,27 @@ ruleVitamins returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='Vitamins'
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getVitaminsAccess().getVitaminsAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='Vitamins'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getVitaminsAccess().getVitaminsKeyword_0());
+			newLeafNode(otherlv_1, grammarAccess.getVitaminsAccess().getVitaminsKeyword_1());
 		}
-		otherlv_1='{'
+		otherlv_2='{'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getVitaminsAccess().getLeftCurlyBracketKeyword_1());
-		}
-		otherlv_2='Vitamin'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getVitaminsAccess().getVitaminKeyword_2());
-		}
-		otherlv_3='{'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getVitaminsAccess().getLeftCurlyBracketKeyword_3());
+			newLeafNode(otherlv_2, grammarAccess.getVitaminsAccess().getLeftCurlyBracketKeyword_2());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getVitaminsAccess().getVitaminVitaminEnumRuleCall_4_0());
+					newCompositeNode(grammarAccess.getVitaminsAccess().getVitaminVitaminEnumRuleCall_3_0());
 				}
-				lv_Vitamin_4_0=ruleVitamin
+				lv_Vitamin_3_0=ruleVitamin
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getVitaminsRule());
@@ -1022,23 +930,23 @@ ruleVitamins returns [EObject current=null]
 					add(
 						$current,
 						"Vitamin",
-						lv_Vitamin_4_0,
+						lv_Vitamin_3_0,
 						"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Vitamin");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_5=','
+			otherlv_4=','
 			{
-				newLeafNode(otherlv_5, grammarAccess.getVitaminsAccess().getCommaKeyword_5_0());
+				newLeafNode(otherlv_4, grammarAccess.getVitaminsAccess().getCommaKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getVitaminsAccess().getVitaminVitaminEnumRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getVitaminsAccess().getVitaminVitaminEnumRuleCall_4_1_0());
 					}
-					lv_Vitamin_6_0=ruleVitamin
+					lv_Vitamin_5_0=ruleVitamin
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getVitaminsRule());
@@ -1046,20 +954,16 @@ ruleVitamins returns [EObject current=null]
 						add(
 							$current,
 							"Vitamin",
-							lv_Vitamin_6_0,
+							lv_Vitamin_5_0,
 							"no.ntnu.tdt4250.recipe.dsl.RecipeDSL.Vitamin");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)*
-		otherlv_7='}'
+		otherlv_6='}'
 		{
-			newLeafNode(otherlv_7, grammarAccess.getVitaminsAccess().getRightCurlyBracketKeyword_6());
-		}
-		otherlv_8='}'
-		{
-			newLeafNode(otherlv_8, grammarAccess.getVitaminsAccess().getRightCurlyBracketKeyword_7());
+			newLeafNode(otherlv_6, grammarAccess.getVitaminsAccess().getRightCurlyBracketKeyword_5());
 		}
 	)
 ;

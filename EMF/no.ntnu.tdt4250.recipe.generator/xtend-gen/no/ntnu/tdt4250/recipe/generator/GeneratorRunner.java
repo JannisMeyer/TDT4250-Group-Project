@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.util.Map;
 import no.ntnu.tdt4250.recipe.Page;
 import no.ntnu.tdt4250.recipe.RecipePackage;
+import no.ntnu.tdt4250.recipe.dsl.RecipeDSLStandaloneSetup;
 import no.ntnu.tdt4250.recipe.impl.RecipePackageImpl;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -12,6 +13,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.resource.IResourceFactory;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.InputOutput;
@@ -20,9 +22,30 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 @SuppressWarnings("all")
 public class GeneratorRunner {
   public static void main(final String[] args) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nRecipeDSLStandaloneSetup cannot be resolved."
-      + "\ncreateInjectorAndDoEMFRegistration cannot be resolved");
+    final Injector injector = new RecipeDSLStandaloneSetup().createInjectorAndDoEMFRegistration();
+    final String model = "extensivePage.recipedsl";
+    final String folder = "src/generated";
+    GeneratorRunner.registerMetamodel();
+    GeneratorRunner.registerResourceFactory(injector);
+    final Page page = GeneratorRunner.loadModel(model, injector);
+    final RecipeLayoutGenerator layoutGenerator = new RecipeLayoutGenerator();
+    final RecipeFragmentGenerator fragmentGenerator = new RecipeFragmentGenerator();
+    final APIGenerator apiGenerator = new APIGenerator();
+    String _string = layoutGenerator.generateLayout(page).toString();
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append(folder);
+    _builder.append("/fragment_detailed_result_generated.xml");
+    GeneratorRunner.writeText(_string, _builder.toString());
+    String _string_1 = fragmentGenerator.generateFragment(page).toString();
+    StringConcatenation _builder_1 = new StringConcatenation();
+    _builder_1.append(folder);
+    _builder_1.append("/DetailedResultFragmentGenerated.kt");
+    GeneratorRunner.writeText(_string_1, _builder_1.toString());
+    String _string_2 = apiGenerator.generateKotlinFile(page).toString();
+    StringConcatenation _builder_2 = new StringConcatenation();
+    _builder_2.append(folder);
+    _builder_2.append("/API_GET_Data_Generated.kt");
+    GeneratorRunner.writeText(_string_2, _builder_2.toString());
   }
 
   public static String writeText(final String text, final String filePath) {

@@ -58,8 +58,8 @@ class DetailedResultFragmentGenerated : Fragment() {
     }
     binding.recipePreparationTime.text = "${shownRecipe?.preparationTime} min"
     binding.calories.text = "${shownRecipe?.calories} kcal"
-    binding.textViewIngredients.text = shownRecipe?.ingredientsMetric?.joinToString(separator = "\n")
     binding.instructions.text = shownRecipe?.instructions?.let { formatInstructions(it) }
+    binding.textViewIngredients.text = shownRecipe?.ingredientsMetric?.joinToString(separator = "\n")
     binding.macroNutrients.text = shownRecipe?.macroNutrientsAmount?.joinToString(separator = "\n")
     binding.vitamins.text = shownRecipe?.vitaminsAmount?.joinToString(separator = "\n")
     }

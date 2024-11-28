@@ -18,7 +18,7 @@ class GeneratorRunner {
     	def static void main(String[] args) {
 	
 		val Injector injector = new RecipeDSLStandaloneSetup().createInjectorAndDoEMFRegistration()
-		val model = "standard.recipedsl"
+		val model = "extensivePage.recipedsl"
 		val folder = "src/generated"
 	
 		registerMetamodel

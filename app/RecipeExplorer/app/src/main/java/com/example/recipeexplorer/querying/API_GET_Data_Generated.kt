@@ -263,8 +263,10 @@ fun convertToRecipe(recipeInfo: RecipeInformation): Recipe {
     val macroNutrientsNames = listOf("Protein", "Fat", "Carbohydrates")
     val vitaminsNames = listOf(
 	            "Vitamin A", 
-	            "Vitamin B12", 
-	            "Vitamin C"
+	            "Vitamin B1", 
+	            "Vitamin B3", 
+	            "Vitamin B5", 
+	            "Vitamin B6"
     )
 
     val macroNutrientsAmount = recipeInfo.nutrients.filter { it.name in macroNutrientsNames }

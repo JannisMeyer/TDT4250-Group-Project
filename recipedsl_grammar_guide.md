@@ -15,16 +15,10 @@ The `orderNumber` attribute controls in which order sections appear on screen.
 ## Syntax Guide
 
 ### 1. Page Definition
-Every RecipeDSL file must start with a Page definition. The page name can be either a string (in quotes) or an identifier.
+Every RecipeDSL file must start with a Page definition:
 
 ```
-Page "recipe-name" {
-    // content
-}
-```
-or
-```
-Page simple_recipe {
+Page {
     // content
 }
 ```
@@ -33,7 +27,7 @@ Page simple_recipe {
 Instructions section is mandatory and requires an order number.
 
 ```
-instructions Instructions {
+Instructions {
     orderNumber 2
 }
 ```
@@ -44,9 +38,9 @@ Ingredients section is mandatory and includes:
 - Optional: unittoggle
 
 ```
-ingredients Ingredients {
+Ingredients {
     orderNumber 1
-    unittoggle UnitOfMeasure    // optional
+    UnitOfMeasureToggle    // optional
 }
 ```
 
@@ -57,10 +51,10 @@ Header section is mandatory and contains:
 - Optional: image
 
 ```
-header Header {
-    basicinformation BasicInformation
-    recipetitle Title
-    image Image    // optional
+Header {
+    BasicInformation
+    Title
+    Image    // optional
 }
 ```
 
@@ -72,15 +66,15 @@ The nutrients section is optional and can include:
 - Optional: macronutrients
 
 ```
-nutrients Nutrients {
+Nutrients {
     orderNumber 3
-    percentagetoggle PercentageAmountToggle
-    vitamins Vitamins {
-        Vitamin {
+    PercentageAmountToggle
+    Vitamins {
+        vitamin {
             VITAMIN_A, VITAMIN_B12, VITAMIN_C
         }
     }
-    macronutrients Macronutrients
+    Macronutrients
 }
 ```
 
@@ -99,77 +93,76 @@ Available vitamin options:
 
 ## Constraints
 1. OrderNumbers are between 1 and 3, and have to be unique
-2. The nutrient section has to contain at least 1 of the subsections *MacroNutrients* or *Vitamins*
+2. The nutrient section has to contain at least 1 of the subsections *Macronutrients* or *Vitamins*
 3. The vitamin section has to contain minimum 3 and a maximum 5 vitamins
-
 
 ## Complete Examples
 
 ### 1. Minimal Valid Recipe
 ```
-Page "minimal" {
-    instructions Instructions {
+Page {
+    Instructions {
         orderNumber 1
     }
-    ingredients Ingredients {
+    Ingredients {
         orderNumber 2
     }
-    header Header {
-        basicinformation BasicInformation
-        recipetitle Title
+    Header {
+        BasicInformation
+        Title
     }
 }
 ```
 
 ### 2. Full Featured Recipe
 ```
-Page "complete_recipe" {
-    instructions Instructions {
+Page {
+    Instructions {
         orderNumber 2
     }
-    ingredients Ingredients {
+    Ingredients {
         orderNumber 1
-        unittoggle UnitOfMeasure
+        UnitOfMeasureToggle
     }
-    header Header {
-        basicinformation BasicInformation
-        recipetitle Title
-        image Image
+    Header {
+        BasicInformation
+        Title
+        Image
     }
-    nutrients Nutrients {
+    Nutrients {
         orderNumber 3
-        percentagetoggle PercentageAmountToggle
-        vitamins Vitamins {
-            Vitamin {
+        PercentageAmountToggle
+        Vitamins {
+            vitamin {
                 VITAMIN_A,
                 VITAMIN_B12,
                 VITAMIN_C,
                 VITAMIN_D
             }
         }
-        macronutrients Macronutrients
+        Macronutrients
     }
 }
 ```
 
-### 3. Multiple Vitamin Groups
+### 3. Vitamin Example
 ```
-Page "vitamin_heavy" {
-    instructions Instructions {
+Page {
+    Instructions {
         orderNumber 1
     }
-    ingredients Ingredients {
+    Ingredients {
         orderNumber 2
     }
-    header Header {
-        basicinformation BasicInformation
-        recipetitle Title
+    Header {
+        BasicInformation
+        Title
     }
-    nutrients Nutrients {
+    Nutrients {
         orderNumber 3
-        vitamins Vitamins {
-            Vitamin {
-                VITAMIN_A, VITAMIN_C
+        Vitamins {
+            vitamin {
+                VITAMIN_A, VITAMIN_C, VITAMIN_B12
             }
         }
     }
@@ -179,14 +172,14 @@ Page "vitamin_heavy" {
 ## Common Mistakes to Avoid
 
 1. Missing Required Elements
-   - Every Page must have instructions, ingredients, and header sections
+   - Every Page must have Instructions, Ingredients, and Header sections
    - Instructions and Ingredients must have orderNumber
-   - Header must have basicinformation and recipetitle
+   - Header must have BasicInformation and Title
 
 2. Incorrect Ordering
    - While the sections can appear in any order within the Page, each section's internal elements must follow the grammar structure
 
 3. Vitamin Syntax
-   - Vitamins must be specified within a Vitamin block
+   - Vitamins must be specified within a vitamin block
    - Use commas to separate multiple vitamins
    - Only use predefined vitamin constants

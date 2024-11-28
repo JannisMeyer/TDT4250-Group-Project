@@ -17,6 +17,13 @@ The EMF-folder contains a bunch of plugin-projects, most notably
 * `no.ntnu.4250.recipe.dsl`: contains xtext code that defines a syntax for our DSL
 * `no.ntnu.4250.recipe.generator`: contains xtend code for code generation and script for moving files
 ### App
+Like stated via email, the app was created specifically for this project as our original idea to use an already existing project similar to this would have meant a tremendous amount of work to revive and alter it, so it would fit to the task specified. The chosen approach manifests a proof of concept. The app essentially consists of three types of files spread over various folders (apply the `App`-view in the left upper corner Android Studio):
+* /app/res/layout: Here the XML-files (.xml) reside which define the layout/UI of the app. Every screen of the app as well as some elements of a screen each have their own XML-file defining theor structure
+* /app/kotlin+java/com.example.recipeexplorer: Here the Kotlin-files (.kt) reside which connect and manipulate the layout and implement the logic of the app
+  * /fragments holds the logic for all fragments, so the screens of which the app consists of
+  * /adapter holds code necessary for the implementation of the list of recipes with arbitary length
+  * /querying holds code responsible for fetching recipes from the Spoonacular API
+* /app/Gradle Scripts: Here the Gradle-files (.kts) reside which include the libraries and plugins used in the implementation of the app
 
 ## Walkthrough
 ### Making a model

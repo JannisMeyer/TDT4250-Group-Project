@@ -148,34 +148,11 @@ Page {
                 VITAMIN_A,
                 VITAMIN_B12,
                 VITAMIN_C,
-                VITAMIN_D
+                VITAMIN_D,
+                VITAMIN_E
             }
         }
         Macronutrients
-    }
-}
-```
-
-### 3. Vitamin Example
-```
-Page {
-    Instructions {
-        orderNumber 1
-    }
-    Ingredients {
-        orderNumber 2
-    }
-    Header {
-        BasicInformation
-        Title
-    }
-    Nutrients {
-        orderNumber 3
-        Vitamins {
-            vitamin {
-                VITAMIN_A, VITAMIN_C, VITAMIN_B12
-            }
-        }
     }
 }
 ```
